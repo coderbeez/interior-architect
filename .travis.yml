@@ -7,6 +7,6 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - SECRET_KEY="whatever" python ./manage.py test
+  - SECRET_KEY="whatever" python .iaproject/iaproject/manage.py test
 
   #code from Anna_ci Slack
