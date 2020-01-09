@@ -1,17 +1,17 @@
 from django.contrib import admin
-from .models import Role, Point
+from .models import Role, Point, Example
 
 # Register your models here.
-#admin.site.register(Post)
-#admin.site.register(Comment)
 
 class PointInline(admin.TabularInline):
     model = Point
 
+class ExampleInline(admin.TabularInline):
+    model = Example
+
 class RoleAdmin(admin.ModelAdmin):
-    inlines = [PointInline]
+    inlines = [PointInline, ExampleInline]
     #from docs
 
 admin.site.register(Role, RoleAdmin)
 
-# Register your models here.

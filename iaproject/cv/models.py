@@ -1,4 +1,5 @@
 from django.db import models
+from portfolio.models import Project
 
 # Create your models here.
 class Role(models.Model):
@@ -15,6 +16,11 @@ class Role(models.Model):
 class Point(models.Model):
     role = models.ForeignKey('Role', on_delete=models.CASCADE, related_name='points')
     content = models.TextField()
+
+class Example(models.Model):
+    role = models.ForeignKey('Role', on_delete=models.CASCADE, related_name='examples')  
+    project = models.ForeignKey('portfolio.Project', on_delete=models.CASCADE, related_name='examples')
+    order = models.IntegerField()    
 
 
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
