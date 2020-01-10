@@ -1,9 +1,7 @@
 from django.contrib import admin
-from .models import Blog, Section, Comment
+from .models import Category, Blog, Section, Comment
 
 # Register your models here.
-#admin.site.register(Post)
-#admin.site.register(Comment)
 
 class SectionInline(admin.TabularInline):
     model = Section
@@ -15,4 +13,7 @@ class BlogAdmin(admin.ModelAdmin):
     inlines = [SectionInline, CommentInline]
     #from docs
 
+admin.site.register(Category)
 admin.site.register(Blog, BlogAdmin)
+
+
