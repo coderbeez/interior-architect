@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Blog, Comment
 
 # Register your models here.
 #admin.site.register(Post)
@@ -8,8 +8,8 @@ from .models import Post, Comment
 class CommentInline(admin.TabularInline):
     model = Comment
 
-class PostAdmin(admin.ModelAdmin):
+class BlogAdmin(admin.ModelAdmin):
     inlines = [CommentInline]
     #from docs
 
-admin.site.register(Post, PostAdmin)
+admin.site.register(Blog, BlogAdmin)
