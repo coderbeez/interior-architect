@@ -30,11 +30,6 @@ class Section(models.Model):
     content = models.TextField(blank=True)
 
 
-class Bullet(models.Model):
-    section = models.ForeignKey('Section', on_delete=models.CASCADE, related_name='bullets')
-    content = models.TextField()   
-
-
 class Comment(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()

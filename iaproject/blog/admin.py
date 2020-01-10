@@ -1,21 +1,15 @@
 from django.contrib import admin
-from nested_inline.admin import NestedStackedInline, NestedModelAdmin
-from .models import Category, Blog, Section, Bullet, Comment
+from .models import Category, Blog, Section, Comment
 
 # Register your models here.
 
-class BulletInline(NestedStackedInline):
-    model = Bullet
-
-class SectionInline(NestedStackedInline):
+class SectionInline(admin.TabularInline):
     model = Section
-    inlines = [BulletInline]
 
-class CommentInline(NestedStackedInline):
+class CommentInline(admin.TabularInline):
     model = Comment
 
-class BlogAdmin(NestedModelAdmin):
-    model = Blog
+class BlogAdmin(admin.ModelAdmin):
     inlines = [SectionInline, CommentInline]
     #from docs
 

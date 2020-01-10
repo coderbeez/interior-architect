@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Category, Blog, Section, Bullet, Comment
+from .models import Category, Blog, Section, Comment
 
 # Create your views here.
 def blogs(request):

@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content%}
-<h1>Blog Detail Page</h1>
+<h1>Blog Detail</h1>
 
 
-<h1>{{ blog.title }}</h1>
+<h2>{{ blog.title }}</h2>
 
 {% for section in sections %}
 <p>{{section.title}}</p>
 <p>{{section.content}}</p>
+
+{% endfor %}
+
+<p>{{bullets}}</p>
+
+<h2>Comments</h2>
+{% for comment in comments %}
+<p>{{comment.content}}</p>
 {% endfor %}
 
 
