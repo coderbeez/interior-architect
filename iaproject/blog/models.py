@@ -13,10 +13,10 @@ class Category(models.Model):
 
 class Blog(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='blogs')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, blank=True)
     date = models.DateField(default=timezone.now)
     image = models.ImageField(blank=True)
-    content = models.TextField()
+    content = models.TextField(blank=True)
 
     def __str__(self):
         return f'<Name: {self.title}, ID: {self.id}>'
@@ -25,9 +25,9 @@ class Blog(models.Model):
 
 class Section(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='sections')
-    title = models.CharField(max_length=500)
+    title = models.CharField(max_length=500, blank=True)
     image = models.ImageField(blank=True)
-    content = models.TextField()
+    content = models.TextField(blank=True)
 
 
 class Bullet(models.Model):
