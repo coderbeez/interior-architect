@@ -24,3 +24,4 @@ admin.site.register(Blog, BlogAdmin)
 
 
 #https://github.com/s-block/django-nested-inline
+#https://stackoverflow.com/questions/14308050/django-admin-nested-inline
