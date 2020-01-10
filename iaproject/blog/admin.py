@@ -1,12 +1,15 @@
 from django.contrib import admin
-from .models import Category, Blog, Section, Comment
+from .models import Category, Blog, Section, Bullet, Comment
 
 # Register your models here.
 
-class SectionInline(admin.TabularInline):
+class BulletInline(admin.StackedInline):
+    model = Bullet
+
+class SectionInline(admin.StackedInline):
     model = Section
 
-class CommentInline(admin.TabularInline):
+class CommentInline(admin.StackedInline):
     model = Comment
 
 class BlogAdmin(admin.ModelAdmin):
