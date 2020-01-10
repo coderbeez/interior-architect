@@ -2,4 +2,14 @@
 
 {% block content%}
 <h1>Portfolio List Page</h1>
+
+{% for project in projects %}
+<h2>{{project.title}}</h2>
+<p>{{project.content}}</p>
+<p>{{project.id}}</p>
+<img src="{{project.image}}">
+<a href="{% url 'project' pk=project.id%}">open</a>
+
+{% endfor %}
+
 {% endblock %}
