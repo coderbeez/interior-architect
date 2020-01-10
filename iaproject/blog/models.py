@@ -12,6 +12,7 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
+    category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='blogs')
     title = models.CharField(max_length=200)
     date = models.DateField(default=timezone.now)
     image = models.ImageField(blank=True)
