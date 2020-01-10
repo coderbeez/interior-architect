@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cv',
     'home',
     'portfolio',
+    'nested_inline',
 ]
 
 MIDDLEWARE = [
