@@ -1,4 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+
 body {
-    background-color: darkslategray;  
-    color: whitesmoke; 
+    /*background-color: #36454f;*/
+    font-family: 'Merriweather', serif;
+    font-family: 'Raleway', sans-serif;
+    
+    color: #36454f
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif; 
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+.stone {
+    /*background-color: rgba(243, 244, 244, 0.8);
+    background-color: #f4f4f4;
+    background-color: #e7e7e7;
+    background-color: #f3f3f3;*/
+    background-image: linear-gradient(to right, #f4f4f4, #f3f3f3);
+
+}
+
+
+.background--stone {
+    background-image: -webkit-linear-gradient(left, #f4f4f4, #e1e1e1);
+    background-image: -webkit-gradient(linear, left top, right top, from(#f4f4f4), to(#e1e1e1));
+    background-image: -o-linear-gradient(left, #f4f4f4, #e1e1e1);
+    background-image: linear-gradient(to right, #f4f4f4, #e1e1e1);
+
+}
+/* WHERE: Linear-gradient code from w3schools https://www.w3schools.com/css/css3_gradients.asp*/
+/* WHERE: Prefixes from https://autoprefixer.github.io/*/
+
+
+nav {
+    background-color: rgba(243, 244, 244, 0.8);
+    color: #36454f;
+    font-size: .9rem;
+}
+
+a {
+    color: #36454f; 
+}
+
+.merri {
+    font-family:'Merriweather', serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+}
+
+.mont {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.4rem;
+    letter-spacing: .06rem;
+}
+
+.nico {
+    font-family: 'Niconne', cursive;
+    font-size: 1.4rem;
 }

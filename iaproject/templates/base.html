@@ -12,22 +12,28 @@
     <title>Interior Architect - {% block title %}{% endblock %}</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'index' %}">Interior Archtect</a>
+<div class="text-center mt-4 mb-4">
+  <a href="{% url 'index' %}"><strong class="mont mr-3">COLETTE O'SULLIVAN</strong> <span class="merri">Interior Archtect & Designer</span></a>
+</div>
+
+    <nav class="navbar navbar-expand-lg mb-3">
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="{% url 'projects' %}">Portfolio</a>
-            <a class="nav-item nav-link" href="{% url 'blogs' %}">Blog</a>
+          <div class="navbar-nav mx-auto">
+            <a class="nav-item nav-link" href="{% url 'cv' %}">ABOUT</a>
+            <a class="nav-item nav-link" href="{% url 'blogs' %}">BLOG</a>
+            <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
             <a class="nav-item nav-link" href="{% url 'cv' %}">CV</a>
+            <a class="nav-item nav-link" href="{% url 'cv' %}">CONTACT</a>
           </div>
         </div>
       </nav>
 
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col">
                 {% block content %}{% endblock %}

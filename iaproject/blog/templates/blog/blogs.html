@@ -1,13 +1,40 @@
 {% extends 'base.html' %}
 
-{% block content%}
-<h1>Blog List Page</h1>
+{% load static %}
 
-{% for blog in blogs %}
-<p>{{ blog.category.title }}</p>
-<p>{{ blog.title }}</p>
-<p>{{ blog.id }}</p>
-<a href="{% url 'blog' pk=blog.id %}">open</a>
-{% endfor %}
+{% block title %}
+Blog List Page
+{% endblock %}
+
+{% block header %}
+<div class="text-center">
+    <h1>Blog List Page</h1>
+</div>
+{% endblock %}
+
+{% block content%}
+
+
+
+<div class="card-deck">
+    {% for blog in blogs %}
+
+    
+    
+        <div class="card rounded-0 border-0" style="width: 18rem;">
+            <img src="{% static 'image/play6.jpg' %}" class="card-img-top image-fluid rounded-0" alt="Placeholder image">
+            <div class="card-body text-center stone mb-3">
+                <a href="{% url 'blog' pk=blog.id %}">
+                <h3 class="card-title">{{ blog.category.title }}</h3>
+                <h4 class="card-text">{{ blog.title }}</h4>
+            </a>
+            </div>
+        </div>
+    
+      
+    {% endfor %}
+</div>
+
+<!--https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
 
 {% endblock %}
