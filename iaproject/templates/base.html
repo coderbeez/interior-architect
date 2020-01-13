@@ -2,48 +2,75 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <title>Interior Architect - {% block title %}{% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <title>Interior Architect - {% block title %}{% endblock %}</title>
 </head>
+
 <body>
-<div class="text-center mt-4 mb-4">
-  <a href="{% url 'index' %}"><strong class="mont mr-3">COLETTE O'SULLIVAN</strong> <span class="merri">Interior Archtect & Designer</span></a>
-</div>
+  <div class="text-center mt-4 mb-4">
+    <a href="{% url 'index' %}"><strong class="mont mr-3">COLETTE O'SULLIVAN</strong> <span class="merri">Interior
+        Architect & Designer</span></a>
+  </div>
 
-    <nav class="navbar navbar-expand-lg mb-3">
+  <nav class="navbar navbar-expand-lg mb-3">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mx-auto">
+        <a class="nav-item nav-link" href="{% url 'cv' %}">ABOUT</a>
+        <a class="nav-item nav-link" href="{% url 'blogs' %}">BLOG</a>
+        <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
+        <a class="nav-item nav-link" href="{% url 'cv' %}">CV</a>
+        <a class="nav-item nav-link" href="{% url 'cv' %}">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col col-md-9">
+        {% block content %}{% endblock %}
+      </div>
+
+      <div class="col col-md-3 stone">
+
+        <img src="{% static 'images/cos.jpg' %}" class="d-none d-md-block w-100 mt-3 mb-2" alt="portrait">
         
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav mx-auto">
-            <a class="nav-item nav-link" href="{% url 'cv' %}">ABOUT</a>
-            <a class="nav-item nav-link" href="{% url 'blogs' %}">BLOG</a>
-            <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
-            <a class="nav-item nav-link" href="{% url 'cv' %}">CV</a>
-            <a class="nav-item nav-link" href="{% url 'cv' %}">CONTACT</a>
-          </div>
-        </div>
-      </nav>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-pinterest-p"></i>
+        <i class="far fa-envelope"></i>
+          {% block sidebar %}{% endblock %}
+      </div>
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
     </div>
 
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+
+
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 </body>
+
 </html>

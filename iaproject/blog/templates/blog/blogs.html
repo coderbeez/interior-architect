@@ -21,9 +21,9 @@ Blog List Page
 
     
     
-        <div class="card rounded-0 border-0" style="width: 18rem;">
-            <img src="{% static 'image/play6.jpg' %}" class="card-img-top image-fluid rounded-0" alt="Placeholder image">
-            <div class="card-body text-center stone mb-3">
+        <div class="card rounded-0 border" style="width: 18rem;">
+            <img src="{% static 'images/portrait2.jpg' %}" class="card-img-top image-fluid rounded-0" alt="Placeholder image">
+            <div class="card-body text-center stone">
                 <a href="{% url 'blog' pk=blog.id %}">
                 <h3 class="card-title">{{ blog.category.title }}</h3>
                 <h4 class="card-text">{{ blog.title }}</h4>
