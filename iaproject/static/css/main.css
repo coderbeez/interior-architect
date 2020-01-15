@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
 
+.hide-start {
+    display: none;
+  }
+  /*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.
+  Bootstrap display classes not working with jQuery hide() so own css written.*/
+
 body {
     /*background-color: #36454f;*/
     font-family: 'Merriweather', serif;
@@ -60,14 +66,19 @@ h4 {
 
 
 nav {
-    background-color: rgba(243, 244, 244, 0.8);
-    color: #36454f;
+    background-color: rgba(243, 244, 244, .95);
+    color: #36454f!important;
     font-size: .9rem;
     font-family: 'Montserrat', sans-serif;
 }
 
+.navbar-text {
+    color: #36454f!important;
+    font-size: .9rem;
+    font-family: 'Montserrat', sans-serif;
+}
 a {
-    color: #36454f;
+    color: #36454f!important;
 }
 
 .merri {
