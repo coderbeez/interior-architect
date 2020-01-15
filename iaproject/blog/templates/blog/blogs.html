@@ -16,22 +16,27 @@ Blog List Page
 
 
 
-<div class="card-deck">
+<div class="row">
+   
+
+   
+
     {% for blog in blogs %}
 
     
-    
-        <div class="card rounded-0 border" style="width: 18rem;">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card rounded-0 border mb-2">
             <img src="{% static 'images/portrait2.jpg' %}" class="card-img-top image-fluid rounded-0" alt="Placeholder image">
-            <div class="card-body text-center stone">
+            <div class="card-body text-center stone" style="height: 7rem">
                 <a href="{% url 'blog' pk=blog.id %}">
                 <h3 class="card-title">{{ blog.category.title }}</h3>
                 <h4 class="card-text">{{ blog.title }}</h4>
             </a>
             </div>
         </div>
+    </div>
     
-      
+
     {% endfor %}
 </div>
 
