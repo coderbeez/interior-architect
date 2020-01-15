@@ -27,13 +27,13 @@ Blog List Page
     <div class="col-12 col-md-6 col-lg-4">
 
         <div class="card rounded-0 border mb-3">
-            <div class="card-img--wrap">
+            <div class="wrap-img--card">
                 <!-- Inline style allows url to come from database.-->
-                <div class="card-img--background" style="background-image: url({% static 'images/paint.jpg' %})">
+                <div class="background-img" style="background-image: url({% static 'images/paint.jpg' %})">
                 </div>
             </div>
           
-            <div class="card-body text-center stone card-body--height">
+            <div class="card-body text-center stone height-cardtext">
                 <a href="{% url 'blog' pk=blog.id %}">
                 <h3 class="card-title">{{ blog.category.title }}</h3>
                 <h4 class="card-text">{{ blog.title }}</h4>

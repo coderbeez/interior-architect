@@ -92,17 +92,22 @@ p {
 }
 
 /*WHY: Set height for blog card images as images are not consistent size.*/
-.card-img--wrap {
+.wrap-img--card {
     height: 250px;
     position: relative;
 }
 
+.wrap-img--section {
+    height: 400px;
+    position: relative;
+}
+
 /*WHY: Set height as title text is not conistent length.*/
-.card-body--height {
+.height-cardtext {
     height: 100px;
 }
 
-.card-img--background {
+.background-img {
     background-size: cover !important;
     background-position: center !important;
     height: 100%;
