@@ -6,12 +6,15 @@ body {
     /*background-color: #36454f;*/
     font-family: 'Merriweather', serif;
     font-family: 'Raleway', sans-serif;
-  
+
     color: #36454f
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif; 
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -22,7 +25,7 @@ h1 {
 h2 {
     font-size: 1.1rem;
     font-weight: bold;
-    
+
 }
 
 h3 {
@@ -51,6 +54,7 @@ h4 {
     background-image: linear-gradient(to right, #f4f4f4, #e1e1e1);
 
 }
+
 /* WHERE: Linear-gradient code from w3schools https://www.w3schools.com/css/css3_gradients.asp*/
 /* WHERE: Prefixes from https://autoprefixer.github.io/*/
 
@@ -59,21 +63,21 @@ nav {
     background-color: rgba(243, 244, 244, 0.8);
     color: #36454f;
     font-size: .9rem;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
-    color: #36454f; 
+    color: #36454f;
 }
 
 .merri {
-    font-family:'Merriweather', serif;
+    font-family: 'Merriweather', serif;
     font-family: 'Raleway', sans-serif;
     font-size: 1.4rem;
 }
 
 .mont {
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
     letter-spacing: .06rem;
 }
@@ -86,3 +90,21 @@ a {
 p {
     font-style: italic;
 }
+
+/*WHY: Set height for blog card images as images are not consistent size.*/
+.card-img--wrap {
+    height: 250px;
+    position: relative;
+}
+
+/*WHY: Set height as title text is not conistent length.*/
+.card-body--height {
+    height: 100px;
+}
+
+.card-img--background {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 100%;
+}
+/* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/

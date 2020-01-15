@@ -1,15 +1,45 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block title %}
+Project List Page
+{% endblock %}
+
+{% block header %}
+<div class="text-center">
+    <h1>Project List Page</h1>
+</div>
+{% endblock %}
+
 {% block content%}
-<h1>Portfolio List Page</h1>
 
-{% for project in projects %}
-<h2>{{project.title}}</h2>
-<p>{{project.content}}</p>
-<p>{{project.id}}</p>
-<img src="{{project.image}}">
-<a href="{% url 'project' pk=project.id%}">open</a>
 
-{% endfor %}
+
+<div class="row">
+   
+
+   
+
+    {% for project in projects %}
+
+    
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card rounded-0 border mb-2">
+            <img src="{% static 'images/portrait2.jpg' %}" class="card-img-top image-fluid rounded-0" alt="Placeholder image">
+            <div class="card-body text-center stone card-body--height">
+                <a href="{% url 'project' pk=project.id %}">
+                <!--<h3 class="card-title">{{ project.category.title }}</h3>-->
+                <h4 class="card-text">{{ project.title }}</h4>
+            </a>
+            </div>
+        </div>
+    </div>
+    
+
+    {% endfor %}
+</div>
+
+<!--https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
 
 {% endblock %}
