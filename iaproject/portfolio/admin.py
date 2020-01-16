@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Section
+from .models import Category, Project, Section
 
 # Register your models here.
 #admin.site.register(Post)
@@ -12,4 +12,5 @@ class ProjectAdmin(admin.ModelAdmin):
     inlines = [SectionInline]
     #from docs
 
+admin.site.register(Category)
 admin.site.register(Project, ProjectAdmin)

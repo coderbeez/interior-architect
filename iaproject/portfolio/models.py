@@ -2,7 +2,15 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+class Category(models.Model):
+    title = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return f'<Name: {self.title}>'
+        #name shown in admin
+
 class Project(models.Model):
+    category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=200)
     date = models.DateField(default=timezone.now)
     image = models.ImageField(blank=True)
