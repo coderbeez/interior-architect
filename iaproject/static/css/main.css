@@ -124,3 +124,18 @@ p {
     height: 100%;
 }
 /* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
+
+
+
+
+@media (max-width: 1200px) {
+    .sticky-navbar {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }  
+
+    
+    }
+    /*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
