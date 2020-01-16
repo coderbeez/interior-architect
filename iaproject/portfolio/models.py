@@ -13,7 +13,8 @@ class Project(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=200)
     date = models.DateField(default=timezone.now)
-    image = models.ImageField(blank=True)
+    image_portrait = models.ImageField(blank=True)
+    image_landscape = models.ImageField(blank=True)
     content = models.TextField()
 
     def __str__(self):
@@ -22,7 +23,8 @@ class Project(models.Model):
 
 class Section(models.Model):
     project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='sections')
-    image = models.ImageField(blank=True)
+    image_portrait = models.ImageField(blank=True)
+    image_landscape = models.ImageField(blank=True)
     content = models.TextField()
 
 
