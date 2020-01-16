@@ -24,6 +24,7 @@ class Project(models.Model):
 
 class Section(models.Model):
     project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='sections')
+    title = models.CharField(max_length=500, blank=True)
     image_portrait = models.ImageField(blank=True)
     image_landscape = models.ImageField(blank=True)
     content = models.TextField()
