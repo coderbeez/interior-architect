@@ -17,9 +17,10 @@ class Blog(models.Model):
     date = models.DateField(default=timezone.now)
     image = models.ImageField(blank=True)
     content = models.TextField(blank=True)
+    order = models.IntegerField(null=True)
 
     def __str__(self):
-        return f'<Name: {self.title}, ID: {self.id}>'
+        return f'<Order: {self.order}, Name: {self.title}, ID: {self.id}>'
         #name shown in admin
 
 

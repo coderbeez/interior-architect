@@ -4,7 +4,7 @@ from .models import Category, Blog, Section, Comment
 
 # Create your views here.
 def blogs(request):
-    blogs = Blog.objects.all().order_by('-id')
+    blogs = Blog.objects.all().order_by('order')
     context = {'blogs': blogs}
     return render(request, 'blog/blogs.html', context)
 
