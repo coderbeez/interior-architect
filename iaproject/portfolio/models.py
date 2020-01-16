@@ -16,9 +16,10 @@ class Project(models.Model):
     image_portrait = models.ImageField(blank=True)
     image_landscape = models.ImageField(blank=True)
     content = models.TextField()
+    order = models.IntegerField(null=True)
 
     def __str__(self):
-        return f'<Name: {self.title}, ID: {self.id}>'
+        return f'<Order: {self.order}, Name: {self.title}, ID: {self.id}>'
         #name shown in admin
 
 class Section(models.Model):

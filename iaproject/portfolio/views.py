@@ -5,7 +5,7 @@ from .models import Category, Project, Section
 # Create your views here.
 def projects(request):
     #return HttpResponse('Portfolio List')
-    projects = Project.objects.all().order_by('-date')
+    projects = Project.objects.all().order_by('order')
     context = {'projects': projects}
     return render(request, 'portfolio/projects.html', context)
 
