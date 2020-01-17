@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block title %}
+Project
+{% endblock %}
+
 {% block content %}
-<h1>Project Detail Page</h1>
 
+<h1 class="text-center">{{ project.title }}</h1>
+<h2 class="text-center">{{ project.category.title }}</h2>
+<img src="{% static 'images/portrait1.jpg' %}" class="d-md-none image-fluid w-100" alt="Placeholder image">
+<img src="{% static 'images/landscape1.jpg' %}" class="d-none d-md-block image-fluid w-100" alt="Placeholder image">
+<p>{{ project.content|linebreaks }}</p>
 
-<h2>{{project.title}}</h2>
-<p>{{project.content}}</p>
-<img src="{{project.image}}">
-
+<!--SECTIONS-->
 {% for section in sections %}
-<p>{{section.content}}</p>
-{% endfor %}
+<section class="mt-3">
+<img src="{% static 'images/portrait2.jpg' %}" class="d-md-none image-fluid w-100" alt="Placeholder image">
+<img src="{% static 'images/landscape2.jpg' %}" class="d-none d-md-block image-fluid w-100" alt="Placeholder image">
 
+<h3 class="mt-3">{{ section.title }}</h3>
+<p>{{ section.content|linebreaks }}</p>
+</section>
+{% endfor %}
 
 {% endblock %}

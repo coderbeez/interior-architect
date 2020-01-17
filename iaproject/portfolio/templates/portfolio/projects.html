@@ -29,7 +29,7 @@ Project List Page
             <img src="{% static 'images/portrait2.jpg' %}" class="card-img-top image-fluid rounded-0" alt="Placeholder image">
             <div class="card-body text-center stone height-cardtext">
                 <a href="{% url 'project' pk=project.id %}">
-                <!--<h3 class="card-title">{{ project.category.title }}</h3>-->
+                <h3 class="card-title">{{ project.category.title }}</h3>
                 <h4 class="card-text">{{ project.title }}</h4>
             </a>
             </div>
