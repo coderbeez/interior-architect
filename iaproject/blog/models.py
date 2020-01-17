@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Category(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=20)
     
     def __str__(self):
         return f'<Name: {self.title}>'
@@ -12,12 +12,12 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='blogs') # null ok !!!
-    title = models.CharField(max_length=200, blank=True) # char blank
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='blogs') # no null !!!
+    title = models.CharField(max_length=50) # char blank - no blank
     date = models.DateField(default=timezone.now) # auto
-    image = models.ImageField(blank=True) # ?
+    image = models.ImageField(blank=True) # image blank
     content = models.TextField(blank=True) # text blank
-    order = models.IntegerField(null=True) # null ok - should not be required in form!!!
+    order = models.IntegerField(null=True, blank=True) # null ok - should not be required in form!!!
     exclude = models.BooleanField(default=False) # yes no
 
     def __str__(self):
@@ -36,7 +36,7 @@ class Section(models.Model):
 class Comment(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='comments')
     date = models.DateField(default=timezone.now)
-    name = models.CharField(max_length=100, blank=True)
+    name = models.CharField(max_length=30, blank=True)
     content = models.TextField() # don't want this to blank ever
     reply = models.TextField(blank=True)
  
