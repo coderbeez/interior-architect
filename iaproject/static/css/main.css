@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alata|Alef|Asul|B612|Cantarell|Comfortaa|GFS+Neohellenic|Gudea|Josefin+Sans|Karla|Kulim+Park|M+PLUS+1p|Oxygen|Pavanam|Poppins|Puritan|Reem+Kufi|Sulphur+Point|Syncopate&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Arapey|Barlow+Semi+Condensed|Crimson+Text|Fira+Sans+Extra+Condensed|Frank+Ruhl+Libre|Gelasio|Gudea|Gupter|Hind+Vadodara|Ibarra+Real+Nova|Jaldi|Martel|Neuton|PT+Serif|Pontano+Sans&display=swap');
+
+
 
 .hide-start {
     display: none;
@@ -8,35 +13,72 @@
   /*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.
   Bootstrap display classes not working with jQuery hide() so own css written.*/
 
+  
 body {
+    font-family: 'Asul', sans-serif;
+    font-family: 'Kulim Park', sans-serif;
+    font-family: 'Alef', sans-serif;
+    font-family: 'Gudea', sans-serif;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Alata', sans-serif;
+    font-family: 'Poppins', sans-serif;
     /*background-color: #36454f;*/
     font-family: 'Merriweather', serif;
     font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
-    color: #36454f
+
+    color: #36454f;
+    color: #333537;
+    color: black;
 }
 
-h1,
+
+
+p {
+    font-family: 'Jaldi', sans-serif;
+    font-family: 'Hind Vadodara', sans-serif;
+   
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    
+    font-family: 'Gelasio', serif;
+    font-family: 'Gudea', sans-serif;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+/*h1,
 h2,
 h3,
 h4 {
     font-family: 'Montserrat', sans-serif;
+}*/
+
+.title {
+    font-size: 1.2rem;
+    letter-spacing: .06rem;
+    font-weight: 600;
+    color: black;
+}
+
+.title-tagline {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
 }
 
 h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 h2 {
     font-size: 1.1rem;
-    font-weight: bold;
-
+    font-weight: 500;
 }
 
 h3 {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: .9rem;
 }
 
 h4 {
@@ -47,11 +89,27 @@ h4 {
     /*background-color: rgba(243, 244, 244, 0.8);
     background-color: #f4f4f4;
     background-color: #e7e7e7;
-    background-color: #f3f3f3;*/
-    background-image: linear-gradient(to right, #f4f4f4, #f3f3f3);
+    background-image: linear-gradient(to right, #f4f4f4, #f3f3f3);*/
+    background-color: #f3f3f3;
+    background-color: rgb(238, 233, 229);
+    background-color: rgb(247, 245, 244);
+    background-color: #4e525e;
+    background-color: #f9f9f9;
+    background-color: #ECECEC;
+    background-color: #F4F4F3;
+    background-color: rgba(243, 244, 244, .95);
 
 }
 
+.opacity {
+    /*opacity: 0.5;*/
+    /*background: rgba(76, 175, 80, 0.3)*/
+    /*background: white;
+   border: 20px solid rgba(0, 0, 0, 0.3);*/
+   box-shadow: 0 0 0 20px rgba(255, 255, 255, .4);
+   background-color: white;
+}
+/*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
 
 .background--stone {
     background-image: -webkit-linear-gradient(left, #f4f4f4, #e1e1e1);
@@ -69,38 +127,29 @@ nav {
     background-color: rgba(243, 244, 244, .95);
     color: #36454f!important;
     font-size: .9rem;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-text {
     color: #36454f!important;
     font-size: .9rem;
-    font-family: 'Montserrat', sans-serif;
+
 }
 a {
-    color: #36454f!important;
+    color: #000000!important;
 }
 
-.merri {
-    font-family: 'Merriweather', serif;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.4rem;
+
+
+.card-body--category {
+  font-size: .9rem;
+  font-weight: bold;
 }
 
-.mont {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: .06rem;
-}
+.card-body--title {
+    font-size: .8rem;
+  }
 
-.nico {
-    font-family: 'Niconne', cursive;
-    font-size: 1.4rem;
-}
 
-p {
-    font-style: italic;
-}
 
 /*WHY: Set height for blog card images as images are not consistent size.*/
 .wrap-img--card {
@@ -134,8 +183,80 @@ p {
         position: sticky;
         top: 0;
         z-index: 10;
-      }  
-
-    
+      }     
     }
     /*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
+
+
+    /*----------MEDIA QUERIES----------*/
+/*
+@media (min-width: 768px) and (max-width: 991px) {   
+
+
+    .title, .title-tagline {
+        font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: .9rem;
+    }
+
+    
+}
+
+@media (min-width: 992px) {
+       
+    .title, .title-tagline {
+        font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: .9rem;
+    }
+
+    
+}
+
+*/
+
+
+
+
+  
+
+
+/*a.j-paginate.juicer-button {
+    margin: auto;
+    border: 1px solid #000000;
+  }
+  
+  .juicer-feed h1.referral {
+    margin: 0px;
+  }
+
+  .juicer-feed .j-paginate:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.juicer-feed {
+    font-family: 'Montserrat', sans-serif;
+}
+
+*/
