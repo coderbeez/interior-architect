@@ -4,6 +4,48 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Alata|Alef|Asul|B612|Cantarell|Comfortaa|GFS+Neohellenic|Gudea|Josefin+Sans|Karla|Kulim+Park|M+PLUS+1p|Oxygen|Pavanam|Poppins|Puritan|Reem+Kufi|Sulphur+Point|Syncopate&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Alegreya|Arapey|Barlow+Semi+Condensed|Crimson+Text|Fira+Sans+Extra+Condensed|Frank+Ruhl+Libre|Gelasio|Gudea|Gupter|Hind+Vadodara|Ibarra+Real+Nova|Jaldi|Martel|Neuton|PT+Serif|Pontano+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ovo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ovo|PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,600,600i,700,700i&display=swap');
+
+.font-500{
+    font-weight: 500;
+}
+
+.font-600{
+    font-weight: 600;
+}
+
+.font-700{
+    font-weight: 700;
+}
+
+.font-8rem{
+    font-size: .8rem;
+}
+
+.font-9rem{
+    font-size: .9rem;
+}
+
+
+.font-1rem{
+    font-size: 1rem;
+}
+
+.font-11rem{
+    font-size: 1.1rem;
+}
+
+.font-12rem{
+    font-size: 1.2rem;
+}
+
+
+.font-13rem{
+    font-size: 13rem;
+}
 
 
 
@@ -14,6 +56,8 @@
   Bootstrap display classes not working with jQuery hide() so own css written.*/
 
   
+  /* text-transform: uppercase;*/
+
 body {
     font-family: 'Asul', sans-serif;
     font-family: 'Kulim Park', sans-serif;
@@ -26,6 +70,8 @@ body {
     font-family: 'Merriweather', serif;
     font-family: 'Raleway', sans-serif;
     font-family: 'Montserrat', sans-serif;
+    
+    
 
 
     color: #36454f;
@@ -35,7 +81,7 @@ body {
 
 
 
-p {
+/*p {
     font-family: 'Jaldi', sans-serif;
     font-family: 'Hind Vadodara', sans-serif;
    
@@ -45,14 +91,21 @@ p {
     font-family: 'Gudea', sans-serif;
     font-family: 'Frank Ruhl Libre', serif;
     font-family: 'Ibarra Real Nova', serif;
+}*/
+
+p {
+    font-family: 'Ibarra Real Nova', serif;
+    font-family: 'Ovo', serif;
+    font-family: 'PT Serif', serif;
+    font-family: 'Ibarra Real Nova', serif;
 }
 
-/*h1,
-h2,
-h3,
-h4 {
-    font-family: 'Montserrat', sans-serif;
-}*/
+h1,
+h2
+{
+    text-transform: uppercase;
+    /*font-family: 'Montserrat', sans-serif;*/
+}
 
 .title {
     font-size: 1.2rem;
@@ -78,7 +131,15 @@ h2 {
 }
 
 h3 {
+    /*font-family: 'Ibarra Real Nova', serif;*/
+    font-weight: 500;
+    /*font-style: italic;*/
     font-size: .9rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+    /*font-family: 'Ibarra Real Nova', serif;*/
+
 }
 
 h4 {
@@ -101,13 +162,14 @@ h4 {
 
 }
 
+
 .opacity {
     /*opacity: 0.5;*/
-    /*background: rgba(76, 175, 80, 0.3)*/
+    background: rgba(255, 255, 255, .6);
     /*background: white;
    border: 20px solid rgba(0, 0, 0, 0.3);*/
-   box-shadow: 0 0 0 20px rgba(255, 255, 255, .4);
-   background-color: white;
+   /*box-shadow: 0 0 0 40px rgba(255, 255, 255, .6);*/
+   /*background-color: white;*/
 }
 /*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
 
@@ -127,11 +189,14 @@ nav {
     background-color: rgba(243, 244, 244, .95);
     color: #36454f!important;
     font-size: .9rem;
+    font-weight: 500;
 }
 
 .navbar-text {
     color: #36454f!important;
     font-size: .9rem;
+    text-transform: uppercase;
+    font-weight: 500;
 
 }
 a {
@@ -162,6 +227,26 @@ a {
     position: relative;
 }
 
+.italics {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.overline {
+    text-decoration: overline;
+}
+
+.height4 {
+    min-height: 400px;
+}
+
 /*WHY: Set height as title text is not conistent length.*/
 .height-cardtext {
     height: 100px;
@@ -173,6 +258,34 @@ a {
     height: 100%;
 }
 /* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
+
+
+
+
+/*h1 {text-align: center; position: relative;}
+h1 .border {border-bottom: 3px solid #000000; position: absolute; width: 100%; left: 0; top: 50%; margin-top: -1px; z-index: 1;}
+h1 .text {background-color: #fff; position: relative; z-index: 2; padding: 10px; display: inline-block;}
+
+https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-behind-text/32769911*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -189,24 +302,12 @@ a {
 
 
     /*----------MEDIA QUERIES----------*/
-/*
+
 @media (min-width: 768px) and (max-width: 991px) {   
 
 
-    .title, .title-tagline {
-        font-size: 1.3rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
+    p {
         font-size: 1rem;
-    }
-
-    h3 {
-        font-size: .9rem;
     }
 
     
@@ -214,26 +315,19 @@ a {
 
 @media (min-width: 992px) {
        
-    .title, .title-tagline {
-        font-size: 1.3rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-    h3 {
-        font-size: .9rem;
-    }
+   p {
+       font-size: 1rem;
+   }
 
     
 }
 
-*/
+#pairing {
+    font-family: 'Ibarra Real Nova', serif;
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+
 
 
 
