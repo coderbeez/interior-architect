@@ -16,6 +16,8 @@ class Blog(models.Model):
     title = models.CharField(max_length=50) # char blank - no blank
     date = models.DateField(default=timezone.now) # auto
     image = models.ImageField(blank=True) # image blank
+    caption = models.CharField(max_length=200, blank=True)
+    caption_url = models.URLField(max_length=200, blank=True)
     content = models.TextField(blank=True) # text blank
     order = models.IntegerField(null=True, blank=True) # null ok - should not be required in form!!!
     exclude = models.BooleanField(default=False) # yes no
@@ -29,6 +31,8 @@ class Section(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='sections') #gotta have
     title = models.CharField(max_length=500, blank=True) # char blank
     image = models.ImageField(blank=True) # ?
+    caption = models.CharField(max_length=200, blank=True)
+    caption_url = models.URLField(max_length=200, blank=True)
     content = models.TextField(blank=True) # text blank
     
 
