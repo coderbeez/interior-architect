@@ -98,6 +98,7 @@ p {
     font-family: 'Ovo', serif;
     font-family: 'PT Serif', serif;
     font-family: 'Ibarra Real Nova', serif;
+   
 }
 
 h1,
@@ -165,7 +166,7 @@ h4 {
 
 .opacity {
     /*opacity: 0.5;*/
-    background: rgba(255, 255, 255, .6);
+    background: rgba(255, 255, 255, .8);
     /*background: white;
    border: 20px solid rgba(0, 0, 0, 0.3);*/
    /*box-shadow: 0 0 0 40px rgba(255, 255, 255, .6);*/
@@ -184,6 +185,10 @@ h4 {
 /* WHERE: Linear-gradient code from w3schools https://www.w3schools.com/css/css3_gradients.asp*/
 /* WHERE: Prefixes from https://autoprefixer.github.io/*/
 
+
+.height4 {
+    min-height: 300px;
+}
 
 nav {
     background-color: rgba(243, 244, 244, .95);
@@ -248,9 +253,7 @@ a {
     text-decoration: overline;
 }
 
-.height4 {
-    min-height: 400px;
-}
+
 
 /*WHY: Set height as title text is not conistent length.*/
 .height-cardtext {
@@ -315,6 +318,10 @@ https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-be
         font-size: 1rem;
     }
 
+    .height4 {
+        min-height: 400px;
+    }
+
     
 }
 
@@ -324,6 +331,9 @@ https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-be
        font-size: 1rem;
    }
 
+   .height4 {
+    min-height: 400px;
+}
     
 }
 

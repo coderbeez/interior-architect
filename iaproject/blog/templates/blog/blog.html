@@ -10,24 +10,38 @@ Blog
 
 <div class="row mt-4">
 
-    <div class="col-12 col-md-6 offset-lg-1 col-lg-5" style="background-image: url({% static 'images/paint.jpg' %})">
+    <!--<div class="col-12 d-md-none p-4">
+        <div class="border-top border-bottom border-dark p-2">
+            <h1 class="text-center font-600 font-8rem">{{ blog.category.title }}</h1>
+            <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
+        </div>
+    </div>-->
 
-        <!--<div class="d-flex justify-content-center border border-dark">
+    <div class="col-12 col-md-6 offset-lg-1 col-lg-5 height4 d-flex justify-content-center
+    " style="background-image: url({% static 'images/paint.jpg' %})">
 
-                <div class="align-self-center p-5 m-0 opacity">
-                    <h1 class="text-center">{{ blog.category.title }}</h1>
-                    <h2 class="text-center">{{ blog.title }}</h2>
-                </div>-->
+    <div class="col-12 d-md-none p-4 align-self-center opacity">
+        <div class="border-top border-bottom border-dark p-2">
+            <h1 class="text-center font-600 font-8rem">{{ blog.category.title }}</h1>
+            <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
+        </div>
+    </div>    
+    
+    
+    <!--<div class="d-inline-block d-md-none align-self-center">
 
+            <div class=" opacity">
+                <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
+                <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
+            </div>
+        </div>-->
         <!-- WHY: Inline style allows url to come from database.-->
-        <!--</div>-->
     </div>
 
 
-    <div class="col-12 col-md-6 col-lg-5 stone d-flex justify-content-center height4">
+    <div class="col-12 col-md-6 col-lg-5 stone d-flex justify-content-center height4 ">
         <div class="align-self-center m-3 ">
-            <div class="border-top border-bottom border-dark">
-
+            <div class="d-none d-md-inline-block border-top border-bottom border-dark">
                 <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
                 <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
             </div>
@@ -36,7 +50,7 @@ Blog
         </div>
     </div>
 
-    <div class="col-12 offset-lg-1 ">
+    <div class="col-12 offset-lg-1">
         {% if blog.caption_url %}
         <a href="{{ blog.caption_url }}" class="caption">{{ blog.caption }}</a>
         {% else %}
@@ -59,14 +73,14 @@ Blog
 
 
             {% if section.image %}
-<div class="p-md-3 p-lg-5">
-            <img src="{% static 'images/tall.jpg' %}" class="img-fluid" alt="Placeholder image">
+            <div class="p-md-3 p-lg-5">
+                <img src="{% static 'images/tall.jpg' %}" class="img-fluid" alt="Placeholder image">
                 {% if section.caption_url %}
                 <a href="{{ section.caption_url }}" class="caption pl-md-1">{{ section.caption }}</a>
                 {% else %}
                 <span class="caption pl-md-1">{{ section.caption }}</span>
                 {% endif %}
-        </div>
+            </div>
             {% endif %}
 
 
