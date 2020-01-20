@@ -8,103 +8,97 @@ Blog
 
 {% block content%}
 
-<div class="row mt-4">
+<!--TITLE-->
+<section class="row mt-4">
 
-    <!--<div class="col-12 d-md-none p-4">
-        <div class="border-top border-bottom border-dark p-2">
-            <h1 class="text-center font-600 font-8rem">{{ blog.category.title }}</h1>
-            <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
-        </div>
-    </div>-->
-
-    <div class="col-12 col-md-6 offset-lg-1 col-lg-5 height4 d-flex justify-content-center
-    " style="background-image: url({% static 'images/paint.jpg' %})">
-
-    <div class="col-12 d-md-none p-4 align-self-center opacity">
-        <div class="border-top border-bottom border-dark p-2">
-            <h1 class="text-center font-600 font-8rem">{{ blog.category.title }}</h1>
-            <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
-        </div>
-    </div>    
-    
-    
-    <!--<div class="d-inline-block d-md-none align-self-center">
-
-            <div class=" opacity">
+    <div class="col-12 col-md-6 height4 d-flex justify-content-center" style="background-image: url({% static 'images/paint.jpg' %})">
+        <!-- WHY: Inline style allows url to come from database.-->
+        <div class="col-12 d-md-none p-4 align-self-center opacity">
+            <div class="border-top border-bottom border-dark p-2">
                 <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
                 <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
             </div>
-        </div>-->
-        <!-- WHY: Inline style allows url to come from database.-->
+        </div>
     </div>
 
-
-    <div class="col-12 col-md-6 col-lg-5 stone d-flex justify-content-center height4 ">
-        <div class="align-self-center m-3 ">
-            <div class="d-none d-md-inline-block border-top border-bottom border-dark">
-                <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-                <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
+    <div class="col-12 col-md-6 stone d-flex justify-content-center height4">
+        <div class="align-self-center m-3 text-center">
+            <div class="d-none d-md-inline-block border-top border-bottom border-dark p-2">
+                <h1 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
+                <h2 class="font-500 font-1rem">{{ blog.title }}</h2>
             </div>
             <p>{{ blog.content|linebreaks }}</p>
             <!--BUG: class not being applied with linebreaks-->
         </div>
     </div>
 
-    <div class="col-12 offset-lg-1">
+    <!--<div class="col-12">
         {% if blog.caption_url %}
         <a href="{{ blog.caption_url }}" class="caption">{{ blog.caption }}</a>
         {% else %}
         <span class="caption">{{ blog.caption }}</span>
         {% endif %}
-    </div>
-</div>
+    </div>-->
 
+</section>
 
-<div class="row">
-    <div class="col-12 col-lg-10 offset-lg-1">
+<!--SECTIONS-->
+<section class="row border-stone">
+    <div class="col-12 col-lg-10 offset-lg-1 mb-5">
 
-        <!--SECTIONS-->
         {% for section in sections %}
-        <section class="m-lg-3">
+        <div class="mt-5">
 
-
-            <h3 class="mt-5">{{ section.title }}</h3>
+            <h3>{{ section.title }}</h3>
             <p>{{ section.content|linebreaks }}</p>
 
-
             {% if section.image %}
-            <div class="p-md-3 p-lg-5">
-                <img src="{% static 'images/tall.jpg' %}" class="img-fluid" alt="Placeholder image">
-                {% if section.caption_url %}
-                <a href="{{ section.caption_url }}" class="caption pl-md-1">{{ section.caption }}</a>
-                {% else %}
-                <span class="caption pl-md-1">{{ section.caption }}</span>
-                {% endif %}
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-2">
+                        <img src="{% static 'images/wide.jpg' %}" class="img-fluid" alt="Placeholder image">
+                        {% if section.caption_url %}
+                        <a href="{{ section.caption_url }}" class="caption pl-md-1">{{ section.caption }}</a>
+                        {% else %}
+                        <span class="caption pl-md-1">{{ section.caption }}</span>
+                        {% endif %}
+                </div>
             </div>
+            <!--WHY: Grid used to vary img size by device size and center.-->
             {% endif %}
 
-
-
-
-
-
-
-
-
-
-
-        </section>
+        </div>
         {% endfor %}
 
-        <section class="mt-3 border-top stone">
-            <h2>COMMENTS</h2>
-            {% for comment in comments %}
-            <p class="mb-2">{{ comment.content|linebreaks }}</p>
-            {% endfor %}
-        </section>
-
-
     </div>
-</div>
+
+</section>
+
+<!--COMMENTS SECTION-->
+<section class="stone row stone pt-5 mb-5">
+
+    <div class="col-12 col-md-5 col-lg-4 offset-lg-1 text-center">
+        <div class="border-top border-bottom border-dark p-2">
+            <h2 class="mt-2 font-500 font-1rem">COMMENTS</h2>
+        </div>
+        <p class="mt-3">I would love to hear from you! Simply leave a comment or query about this blog and I will reply.</p>  
+    </div>
+
+    <div class="col-12 col-md-7 col-lg-6 text-center">
+        <textarea class="border-0 textarea-width" style="width:100%" rows=5></textarea>
+        <button class="p-2 m-2">POST COMMENT</button>
+    </div>
+
+
+    <div class="col-12 col-lg-10 offset-lg-1 text-center mt-4">
+        
+        {% for comment in comments %}
+            <p class="mb-5"><span class="uppercase">{{ comment.name }} </span>{{ comment.content }} <br>
+            <span class="italics">{{ comment.reply }}</span></p>
+        {% endfor %}
+    
+    </div>
+
+</section>
+
 
 {% endblock %}

@@ -147,6 +147,28 @@ h4 {
     font-size: 1rem;
 }
 
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 0px;
+    font-size: .8rem;
+
+
+
+
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.textarea-width {
+width: 100;
+}
+
+.border-stone {
+border: 1.49px solid rgba(244, 244, 244);
+}
+
 .stone {
     /*background-color: rgba(243, 244, 244, 0.8);
     background-color: #f4f4f4;
@@ -160,6 +182,8 @@ h4 {
     background-color: #ECECEC;
     background-color: #F4F4F3;
     background-color: rgba(243, 244, 244, .95);
+    background-color: #f4f4f4;
+    background-color: rgba(244, 244, 244, .95);
 
 }
 
