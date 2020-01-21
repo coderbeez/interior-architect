@@ -43,7 +43,13 @@
         <a class="nav-item nav-link" href="{% url 'blogs' %}">BLOG</a>
         <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
         <a class="nav-item nav-link" href="{% url 'cv' %}">CONTACT</a>
-        <a class="nav-item nav-link" href="{% url 'register' %}">LOGIN</a>
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'logout' %}">LOGOUT</a>
+        {% else %}
+        <a class="nav-item nav-link" href="{% url 'register' %}">REGISTER</a>
+        <a class="nav-item nav-link" href="{% url 'login' %}">LOGIN</a>
+        {% endif %}
+        <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7 -->
       </div>
     </div>
   </nav>
