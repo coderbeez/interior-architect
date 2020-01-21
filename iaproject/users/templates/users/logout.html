@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Logout
+{% endblock %}
+
+{% block content %}
+
+<div>
+
+<p>You have been logged out!</p>
+
+
+    <div class="">
+        <small class="text-muted">Login Again? <a class="ml-2" href="{% url 'login' %}">Login</a></small>
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
