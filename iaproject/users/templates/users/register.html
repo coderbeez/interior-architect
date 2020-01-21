@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<div>
+
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Register</legend>
+{{ form.as_p }}
+<!--WHY: Render form in paragraph tags.-->
+<!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
+
+        </fieldset>
+
+<div class="form-group">
+    <button class="btn" type="submit">Register</button>
+</div>
+
+    </form>
+<div class="">
+    <small class="text-muted">Already have an account? <a class="ml-2" href="#">Log In</a></small>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

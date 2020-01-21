@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'cv',
-    'home',
-    'portfolio',
-    'nested_inline',
+    'blog.apps.BlogConfig',
+    'cv.apps.CvConfig',
+    'home.apps.HomeConfig',
+    'portfolio.apps.PortfolioConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
