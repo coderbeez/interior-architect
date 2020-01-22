@@ -10,15 +10,19 @@ Project
 
 <h1 class="text-center">{{ project.title }}</h1>
 <h2 class="text-center">{{ project.category.title }}</h2>
-<img src="{% static 'images/portrait1.jpg' %}" class="d-md-none image-fluid w-100" alt="Placeholder image">
-<img src="{% static 'images/landscape1.jpg' %}" class="d-none d-md-block image-fluid w-100" alt="Placeholder image">
+<img src="{{ project.image_portrait.url }}" class="d-md-none image-fluid w-100" alt="Project portrait Placeholder image">
+<img src="{{ project.image_landscape.url }}" class="d-none d-md-block image-fluid w-100" alt="Project landscape Placeholder image">
 <p>{{ project.content|linebreaks }}</p>
 
 <!--SECTIONS-->
 {% for section in sections %}
 <section class="mt-3">
-<img src="{% static 'images/portrait2.jpg' %}" class="d-md-none image-fluid w-100" alt="Placeholder image">
-<img src="{% static 'images/landscape2.jpg' %}" class="d-none d-md-block image-fluid w-100" alt="Placeholder image">
+    {% if section.image_portrait %}
+<img src="{{ section.image_portrait.url }}" class="d-md-none image-fluid w-100" alt="Section portrait Placeholder image">
+{% endif %}
+{% if section.image_landscape %}
+<img src="{{ section.image_landscape.url }}" class="d-none d-md-block image-fluid w-100" alt="Section landscape Placeholder image">
+{% endif %}
 
 <h3 class="mt-3">{{ section.title }}</h3>
 <p>{{ section.content|linebreaks }}</p>
