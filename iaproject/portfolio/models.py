@@ -13,8 +13,9 @@ class Project(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=200)
     date = models.DateField(default=timezone.now)
-    image_portrait = models.ImageField(blank=True, upload_to="project_images")
-    image_landscape = models.ImageField(blank=True, upload_to="project_images")
+    image_portrait = models.ImageField(default='project_portrait_default.jpg', upload_to="project_images")
+    image_landscape = models.ImageField(default='project_landscape_default.jpg', upload_to="project_images")
+    # Added defaults to prevent error is missing image in template
     content = models.TextField()
     order = models.IntegerField(null=True)
     exclude = models.BooleanField(default=False)
