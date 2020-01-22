@@ -135,8 +135,18 @@ STATICFILES_DIRS = [
     #'/var/www/static/',
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# full path to a directory where we would like django to store uploaded files
+# for performance reasons the files are not stored in the database
+MEDIA_URL = '/media/'
+# public url of media directory(folder)
+# how we access the image in the browser /media/profile-pics/image.jpg
+# Credit: Corey Schafer https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'index' # where u want successful login to redirect
 LOGIN_URL = 'login' # after addind decorator to route default url for login
 #Credit Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
+
+

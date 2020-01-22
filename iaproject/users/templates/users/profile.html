@@ -10,9 +10,11 @@ Login
 
 {% block content %}
 
-<h1>{{ user.username }}</h1>
+<p>{{ user.username }}</p>
     <!--WHAT: Built in django - represents the current logged in user.-->
     <!--WHERE: Corey Schaferhttps://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7 -->
 
+<p>{{ user.email }}</p>
+<img class="rounded-circle" src="{{ user.profile.image.url }}"
 
 {% endblock %}
