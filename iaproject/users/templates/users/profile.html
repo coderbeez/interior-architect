@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-Login
+Profile
 {% endblock %}
 
 {% block content %}
@@ -15,6 +15,25 @@ Login
     <!--WHERE: Corey Schaferhttps://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7 -->
 
 <p>{{ user.email }}</p>
-<img class="rounded-circle" src="{{ user.profile.image.url }}"
+<img class="rounded-circle" src="{{ user.profile.image.url }}">
+
+<form method="POST" enctype="multipart/form-data">
+    <!--WHY: encode type needed to ensure form can pass image data properly -->
+    {% csrf_token %}
+
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Profile Info</legend>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+        <!--WHY: combining 2 django forms in 1 html form-->
+        
+    </fieldset>
+
+    <div class="form-group">
+        <button class="btn" type="submit">Update</button>
+    </div>
+    
+</form>
+<!--WHERE: Corey Schafer https://www.youtube.com/watch?v=CQ90L5jfldw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=9-->
 
 {% endblock %}

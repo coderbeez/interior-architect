@@ -14,22 +14,24 @@ Register
 
     <form method="POST">
         {% csrf_token %}
+
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Register</legend>
-{{ form|crispy }}
-<!--WHY: After vertical bar say we want to use cripsy filter.-->
-<!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
-
+            {{ form|crispy }}
+            <!--WHY: After vertical bar say we want to use cripsy filter.-->
+            <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
         </fieldset>
 
-<div class="form-group">
-    <button class="btn" type="submit">Register</button>
-</div>
-
+        <div class="form-group">
+            <button class="btn" type="submit">Register</button>
+        </div>
+        
     </form>
-<div class="">
-    <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login' %}">Log In</a></small>
-</div>
+
+
+    <div class="">
+        <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login' %}">Log In</a></small>
+    </div>
 
 
 </div>
