@@ -11,7 +11,7 @@ Blog
 <!--TITLE-->
 <section class="row mt-4">
 
-    <div class="col-12 col-md-6 height4 d-flex justify-content-center background-img" style="background-image: url({% static 'images/paint.jpg' %})">
+    <div class="col-12 col-md-6 height4 d-flex justify-content-center background-img" style="background-image: url({{ blog.image.url }})">
         <!-- WHY: Inline style allows url to come from database.-->
         <div class="col-12 d-md-none p-4 align-self-center opacity">
             <div class="border-top border-bottom border-dark p-2">
@@ -55,7 +55,7 @@ Blog
             {% if section.image %}
             <div class="row">
                 <div class="col-12 col-md-8 offset-md-2">
-                        <img src="{% static 'images/wide.jpg' %}" class="img-fluid" alt="Placeholder image">
+                        <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
                         {% if section.caption_url %}
                         <a href="{{ section.caption_url }}" class="caption pl-md-1">{{ section.caption }}</a>
                         {% else %}
@@ -92,7 +92,7 @@ Blog
     <div class="col-12 col-lg-10 offset-lg-1 text-center mt-4">
         
         {% for comment in comments %}
-            <p class="mb-5"><span class="uppercase">{{ comment.name }} </span>{{ comment.content }} <br>
+            <p class="mb-5">* {{ comment.content }} <br>
             <span class="italics">{{ comment.reply }}</span></p>
         {% endfor %}
     

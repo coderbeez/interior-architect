@@ -29,7 +29,7 @@ Blog List Page
         <div class="card rounded-0 border mb-3">
             <div class="wrap-img--card">
                 <!-- Inline style allows url to come from database.-->
-                <div class="background-img" style="background-image: url({% static 'images/paint.jpg' %})">
+                <div class="background-img" style="background-image: url({{ blog.image.url }})">
                 </div>
             </div>
           

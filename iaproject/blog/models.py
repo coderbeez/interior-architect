@@ -15,9 +15,7 @@ class Blog(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='blogs') # no null !!!
     title = models.CharField(max_length=50) # char blank - no blank
     date = models.DateField(default=timezone.now) # auto
-    image = models.ImageField(blank=True) # image blank
-    caption = models.CharField(max_length=200, blank=True)
-    caption_url = models.URLField(max_length=200, blank=True)
+    image = models.ImageField(default='blog_default.jpg', upload_to='blog_images') # image blank
     content = models.TextField(blank=True) # text blank
     order = models.IntegerField(null=True, blank=True) # null ok - should not be required in form!!!
     exclude = models.BooleanField(default=False) # yes no
@@ -30,7 +28,7 @@ class Blog(models.Model):
 class Section(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='sections') #gotta have
     title = models.CharField(max_length=500, blank=True) # char blank
-    image = models.ImageField(blank=True) # ?
+    image = models.ImageField(blank=True, upload_to='blog_images') # ?
     caption = models.CharField(max_length=200, blank=True)
     caption_url = models.URLField(max_length=200, blank=True)
     content = models.TextField(blank=True) # text blank
@@ -40,7 +38,6 @@ class Section(models.Model):
 class Comment(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='comments')
     date = models.DateField(default=timezone.now)
-    name = models.CharField(max_length=30, blank=True)
     content = models.TextField() # don't want this to blank ever
     reply = models.TextField(blank=True)
  
