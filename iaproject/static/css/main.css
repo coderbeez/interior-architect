@@ -169,6 +169,10 @@ width: 100;
 border: 1.5px solid rgba(244, 244, 244);
 }
 
+.border-stone--1 {
+    border: 1px solid rgba(244, 244, 244);
+    }
+
 .stone {
     /*background-color: rgba(243, 244, 244, 0.8);
     background-color: #f4f4f4;
@@ -214,8 +218,12 @@ border: 1.5px solid rgba(244, 244, 244);
     min-height: 300px;
 }
 
+.height-card {
+    height: 700px;
+}
+
 nav {
-    background-color: rgba(243, 244, 244, .95);
+    background-color: rgba(244, 244, 244, .95);
     color: #36454f!important;
     font-size: .9rem;
     font-weight: 500;
