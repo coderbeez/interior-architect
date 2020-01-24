@@ -12,22 +12,25 @@ def blogs(request):
 def blog(request, pk):
     blog = Blog.objects.get(pk=pk)
     sections = Section.objects.filter(blog=blog)
-    comments = Comment.objects.filter(blog=blog)
-    form = CommentForm()
-    context = {'blog': blog, 'sections': sections, 'comments': comments, 'form': form}
-    
+    comments = Comment.objects.filter(blog=blog).order_by('-id')
+    form = CommentForm() #equate to request.GET
     
     if request.method == 'POST':
-        form = CommentForm(request.POST)
+        form = CommentForm(request.POST) #tried instance=blog and blog=blog
         if form.is_valid():
             comment = Comment (
                 blog = blog,
                 content = form.cleaned_data['content']
             )
             comment.save()
-            messages.success(request, f'Comment added')
-            #return redirect('blog')
-            #esle form is not valid??? only thing that could be would be empty contents?
-        
+            #from printout... think there should be a cleaner way to do this
+            messages.success(request, f'Thanks for your comment!')
+            #form = CommentForm() don't need with redirect
+            return redirect('blog', pk=pk)
+            #redirect to avoid resubmission problems - ask Paul/Google
+            #might not need an else as django creates validation errors???
+            #credit: https://stackoverflow.com/questions/3209906/django-return-redirect-with-parameters
+
+    context = {'blog': blog, 'sections': sections, 'comments': comments, 'form': form}    
 
     return render(request, 'blog/blog.html', context)
