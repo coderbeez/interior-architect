@@ -59,67 +59,16 @@
   /* text-transform: uppercase;*/
 
 body {
-    font-family: 'Asul', sans-serif;
-    font-family: 'Kulim Park', sans-serif;
-    font-family: 'Alef', sans-serif;
-    font-family: 'Gudea', sans-serif;
-    font-family: 'Comfortaa', cursive;
-    font-family: 'Alata', sans-serif;
-    font-family: 'Poppins', sans-serif;
-    /*background-color: #36454f;*/
-    font-family: 'Merriweather', serif;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+
+h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
-    
-    
-
-
-    color: #36454f;
-    color: #333537;
-    color: black;
-}
-
-
-
-/*p {
-    font-family: 'Jaldi', sans-serif;
-    font-family: 'Hind Vadodara', sans-serif;
-   
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    
-    font-family: 'Gelasio', serif;
-    font-family: 'Gudea', sans-serif;
-    font-family: 'Frank Ruhl Libre', serif;
-    font-family: 'Ibarra Real Nova', serif;
-}*/
-
-p {
-    font-family: 'Ibarra Real Nova', serif;
-    font-family: 'Ovo', serif;
-    font-family: 'PT Serif', serif;
-    font-family: 'Ibarra Real Nova', serif;
-   
-}
-
-h1,
-h2
-{
     text-transform: uppercase;
-    /*font-family: 'Montserrat', sans-serif;*/
 }
 
-.title {
-    font-size: 1.2rem;
-    letter-spacing: .06rem;
-    font-weight: 600;
-    color: black;
-}
 
-.title-tagline {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: black;
-}
 
 h1 {
     font-size: 1.2rem;
@@ -132,37 +81,70 @@ h2 {
 }
 
 h3 {
-    /*font-family: 'Ibarra Real Nova', serif;*/
     font-weight: 500;
-    /*font-style: italic;*/
     font-size: .9rem;
     text-align: center;
-    text-transform: uppercase;
-    
-    /*font-family: 'Ibarra Real Nova', serif;*/
-
 }
 
 h4 {
     font-size: 1rem;
 }
 
+.heading-category {
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.heading-title {
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.heading-section {
+    font-weight: 500;
+    font-size: .9rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+
+
+.title {
+    font-size: 1.2rem;
+    letter-spacing: .06rem;
+    font-weight: 600;
+}
+
+.title-tagline {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
 button {
     background-color: #000000;
     color: #ffffff;
     border: 0px;
     font-size: .8rem;
-
-
-
-
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /*text-align: center;*/
+    padding: 8px;
+    margin: 8px;
 }
 
 .uppercase {
     text-transform: uppercase;
 }
-.textarea-width {
-width: 100;
+
+.textarea-style {
+width: 100%;
+border: 0;
 }
 
 .border-stone {
@@ -174,44 +156,17 @@ border: 1.5px solid rgba(244, 244, 244);
     }
 
 .stone {
-    /*background-color: rgba(243, 244, 244, 0.8);
-    background-color: #f4f4f4;
-    background-color: #e7e7e7;
-    background-image: linear-gradient(to right, #f4f4f4, #f3f3f3);*/
-    background-color: #f3f3f3;
-    background-color: rgb(238, 233, 229);
-    background-color: rgb(247, 245, 244);
-    background-color: #4e525e;
-    background-color: #f9f9f9;
-    background-color: #ECECEC;
-    background-color: #F4F4F3;
-    background-color: rgba(243, 244, 244, .95);
-    background-color: #f4f4f4;
     background-color: rgba(244, 244, 244, .95);
 
 }
 
 
 .opacity {
-    /*opacity: 0.5;*/
     background: rgba(255, 255, 255, .8);
-    /*background: white;
-   border: 20px solid rgba(0, 0, 0, 0.3);*/
-   /*box-shadow: 0 0 0 40px rgba(255, 255, 255, .6);*/
-   /*background-color: white;*/
 }
 /*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
 
-.background--stone {
-    background-image: -webkit-linear-gradient(left, #f4f4f4, #e1e1e1);
-    background-image: -webkit-gradient(linear, left top, right top, from(#f4f4f4), to(#e1e1e1));
-    background-image: -o-linear-gradient(left, #f4f4f4, #e1e1e1);
-    background-image: linear-gradient(to right, #f4f4f4, #e1e1e1);
 
-}
-
-/* WHERE: Linear-gradient code from w3schools https://www.w3schools.com/css/css3_gradients.asp*/
-/* WHERE: Prefixes from https://autoprefixer.github.io/*/
 
 
 .height4 {
@@ -224,16 +179,18 @@ border: 1.5px solid rgba(244, 244, 244);
 
 nav {
     background-color: rgba(244, 244, 244, .95);
-    color: #36454f!important;
+    color: #000000!important;
     font-size: .9rem;
     font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-text {
-    color: #36454f!important;
+    color: #000000!important;
     font-size: .9rem;
     text-transform: uppercase;
     font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 
 }
 a {
@@ -241,7 +198,6 @@ a {
 }
 
 .caption {
-    font-family: 'Ibarra Real Nova', serif;
     font-size: .9rem;
     font-style: italic;
     font-weight: 600;

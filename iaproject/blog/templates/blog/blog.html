@@ -85,23 +85,16 @@ Blog
     </div>
 
     <div class="col-12 col-md-7 col-lg-6 text-center">
-        <textarea class="border-0 textarea-width" style="width:100%" rows=5></textarea>
-        <button class="p-2 m-2">POST COMMENT</button>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+         <button type="submit">POST COMMENT</button>
+        </form>
+        <!--<textarea class="textarea-style" rows=5></textarea>
+        <button class="p-2 m-2">POST COMMENT</button>-->
     </div>
 
-    <form method="POST">
-        
-        {% csrf_token %}
-    
-        <fieldset class="form-group">
-                        {{ form }}
-        </fieldset>
-    
-        <div class="form-group">
-            <button class="btn" type="submit">POST COMMENT</button>
-        </div>
-        
-    </form>
+
 
 
     <div class="col-12 col-lg-10 offset-lg-1 text-center mt-4">
