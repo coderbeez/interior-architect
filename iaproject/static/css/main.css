@@ -21,6 +21,13 @@
     font-weight: 700;
 }
 
+
+.font-6rem{
+    font-size: .6rem;
+}
+
+
+
 .font-8rem{
     font-size: .8rem;
 }
@@ -168,10 +175,25 @@ border: 1.5px solid rgba(244, 244, 244);
 /*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
 
 
+.testr{
+    border: solid 1px red;
+}
+
+.testg{
+    border: solid 1px green;
+}
 
 
 .height4 {
     min-height: 300px;
+}
+
+.height2 {
+    min-height: 200px;
+}
+
+.height150 {
+    min-height: 150px;
 }
 
 .height-card {
