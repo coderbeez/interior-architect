@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
-    path('cv/', include('cv.urls')),
+    path('about/', include('cv.urls')),
     path('portfolio/', include('portfolio.urls')),
     path('users/', include('users.urls')), # not how corey did it may need to change???
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), # class based views
