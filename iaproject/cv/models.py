@@ -24,3 +24,31 @@ class Example(models.Model):
 
 
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
+
+
+class Contact(models.Model):
+    ARCHITECTURE = 'Architecture'
+    INTERIOR_DESIGN = 'Interior Design'
+    GRAPHICS = 'Graphics'
+    OTHER = 'Other'
+
+    CATEGORY_CHOICES = [
+        (ARCHITECTURE, 'Architecture'),
+        (INTERIOR_DESIGN, 'Interior Design'),
+        (GRAPHICS, 'Graphics'),
+        (OTHER, 'Other'),
+    ]
+
+    category = models.CharField(
+        max_length=20,
+        choices=CATEGORY_CHOICES,
+        default=OTHER,
+    )
+# from django docs 
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=50, blank=True)
+    location = models.CharField(max_length=200, blank=True)
+    query = models.TextField()
+    reply = models.TextField(blank=True)
+
