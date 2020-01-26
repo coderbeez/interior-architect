@@ -1,5 +1,36 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Contact
+{% endblock %}
+
 {% block content%}
-<h1>Contact Page</h1>
+
+<section class="row">
+    <div class="d-none d-md-block col-md-4 background-contact" style="background-image: url({% static 'images/handset.jpg' %})">
+        
+    </div>
+
+    <div class="col-12 col-md-8 col-lg-6 offset-lg-1">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+            {{ form|crispy }}
+        </fieldset>
+         <button type="submit">POST CONTACT</button>
+        </form>
+    </div>
+
+</section>
+
+   
+    <!--<textarea class="textarea-style" rows=5></textarea>
+    <button class="p-2 m-2">POST COMMENT</button>-->
+
+
+
+
 {% endblock %}
