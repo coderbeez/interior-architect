@@ -1,13 +1,19 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
+from django.shortcuts import render
 from django.contrib import messages
 from .models import Category, Blog, Section, Comment
 from .forms import CommentForm
 
 # Create your views here.
 def blogs(request):
-    blogs = Blog.objects.filter(exclude=False).order_by('order')
-    context = {'blogs': blogs}
-    return render(request, 'blog/blogs.html', context)
+    blog_list = Blog.objects.filter(exclude=False).order_by('order')
+    paginator = Paginator(blog_list, 3) # Show 3 blogs per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'blog/blogs.html', {'page_obj': page_obj})
+    # pagination from django docs https://docs.djangoproject.com/en/3.0/topics/pagination/
+
 
 def blog(request, pk):
     blog = Blog.objects.get(pk=pk)
