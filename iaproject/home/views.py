@@ -6,7 +6,7 @@ from blog.models import Category, Blog
 def index(request):
     #return HttpResponse('Home')
 
-    blogs = Blog.objects.filter(exclude=False).order_by('order')[:4]
+    blogs = Blog.objects.filter(exclude=False).order_by('order')[:3]
     context = {'blogs': blogs}
 
 
