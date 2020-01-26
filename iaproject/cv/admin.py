@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Role, Point, Example
+from .models import Role, Point, Example, Contact
 
 # Register your models here.
 
@@ -14,4 +14,5 @@ class RoleAdmin(admin.ModelAdmin):
     #from docs
 
 admin.site.register(Role, RoleAdmin)
+admin.site.register(Contact)
 
