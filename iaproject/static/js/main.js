@@ -59,6 +59,14 @@ $window.scroll(function() {
         let value = $(this).attr('data-btn');
         let target = $('[data-div=' + value + ']');
         console.log(value);
+        $("[data-div]").slideUp();
+        console.log('slide up')
+        if (target.is(":hidden")) {
+            console.log('hidden');
+        }
+        else {
+            console.log('not hidden');
+        }
         slide(target);
     });
 
