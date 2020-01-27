@@ -2,6 +2,16 @@ $(document).ready(function () {
 
 console.log('test all');
 
+$('#circle').circleProgress({
+    value: 0.75,
+    size: 80,
+    fill: {
+      gradient: ["#aaaaaa", "#616161"]
+    }
+  });
+
+
+  
 
 
 var distance = $('nav').offset().top,

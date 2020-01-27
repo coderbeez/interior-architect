@@ -464,3 +464,30 @@ ul.timeline > li:before {
     z-index: 400;
 }
 /*WHERE: Timeline https://bootsnipp.com/snippets/xrKXW*/
+
+
+
+.circle {
+    width: 100px;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle canvas {
+    vertical-align: top;
+}
+
+.circle strong {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+/*WHERE: http://kottenator.github.io/jquery-circle-progress/ */
