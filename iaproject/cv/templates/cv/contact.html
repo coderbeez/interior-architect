@@ -14,8 +14,11 @@ Contact
         
     </div>
 
-    <div class="col-12 col-md-8 col-lg-6 offset-lg-1">
-        <form method="POST">
+    <div class="col-12 col-md-8 col-lg-6 offset-lg-1 border-stone">
+        <h1 class="text-center">Contact form</h1>
+        <p class="italics text-center">I will respod to all queries. * fields are required.
+        </p>
+        <form method="POST" class="">
             {% csrf_token %}
             <fieldset>
             {{ form|crispy }}
