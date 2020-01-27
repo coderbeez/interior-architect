@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import Contact
+from .models import Role, Point, Example, Contact
 from .forms import ContactForm
 
 # Create your views here.
+
 def about(request):
-    #return HttpResponse('CV')
-    return render(request, 'cv/about.html')   
+    roles = Role.objects.all().order_by('-id')
+    context = {'roles': roles}
+    return render(request, 'cv/about.html', context)   
 
 
 def contact(request):
