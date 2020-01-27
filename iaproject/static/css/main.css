@@ -9,7 +9,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,600,600i,700,700i&display=swap');
 
+.hide-start {
+    display: none;
+}
+/*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.*/
 
+
+.heading {
+    color: #000000;
+}
 
 .font-500{
     font-weight: 500;
@@ -422,3 +430,37 @@ https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-be
 }
 
     
+/* TIMELINE */
+
+/*TIMELINE*/
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid black;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+/*WHERE: Timeline https://bootsnipp.com/snippets/xrKXW*/
