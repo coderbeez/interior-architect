@@ -2,4 +2,49 @@
 
 {% block content%}
 <h1>About Page</h1>
+
+{% for role in roles %}
+<div class="border mb-3">
+<p>TEST ROLE HEADING</p>
+<h2>{{ role.company }}</h2>
+<p>{{ role.link }}</p>
+<p>{{ role.title }}</p>
+<p class="">{{ role.content }}</p>
+
+
+<ul>
+    {% for point in role.points.all %}
+    <li>point {{ point.content }}</li>
+    {% endfor %}
+</ul>
+
+    {% for example in role.examples.all %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card rounded-0 border-0 mb-2">
+            <img src="{{ example.project.image_landscape.url }}" class="card-img-top image-fluid rounded-0 border-stone--1" alt="Placeholder image">
+            <div class="card-body text-center stone height-cardtext">
+                <a href="{% url 'project' pk=example.project.id %}">
+                <h3 class="card-title">{{ example.project.category.title }}</h3>
+                <h4 class="card-text">{{ example.project.title }}</h4>
+
+            </a>
+            </div>
+        </div>
+    </div>
+
+
+    <p>example {{ example.project.image_portrait }}</p>
+    {% endfor %}
+
+</div>
+{% endfor %}
+
+<!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
+
+
+
+
+
+
+
 {% endblock %}
