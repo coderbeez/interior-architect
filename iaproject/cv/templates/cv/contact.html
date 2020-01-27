@@ -9,16 +9,19 @@ Contact
 
 {% block content%}
 
-<section class="row">
-    <div class="d-none d-md-block col-md-4 background-contact" style="background-image: url({% static 'images/handset.jpg' %})">
+<section class="row mb-4">
+    
+    <div class="d-none d-md-block col-md-5 col-lg-5  background-contact" style="background-image: url({% static 'images/handset.jpg' %})">
         
     </div>
 
-    <div class="col-12 col-md-8 col-lg-6 offset-lg-1 border-stone">
-        <h1 class="text-center">Contact form</h1>
-        <p class="italics text-center">I will respod to all queries. * fields are required.
-        </p>
-        <form method="POST" class="">
+
+    <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
+        <div class="border-top border-bottom border-dark p-2 mt-3">
+        <h1 class="text-center mt-3">Contact Form</h1>
+        <p class="italics text-center">I will respond to all queries. <br class="d-block d-md-none">* Fields are required.</p>
+    </div>
+        <form method="POST" class="mt-3">
             {% csrf_token %}
             <fieldset>
             {{ form|crispy }}
@@ -26,6 +29,8 @@ Contact
          <button type="submit">POST CONTACT</button>
         </form>
     </div>
+
+    
 
 </section>
 
