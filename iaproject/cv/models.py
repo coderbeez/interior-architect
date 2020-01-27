@@ -26,6 +26,14 @@ class Example(models.Model):
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
 
+class Skill(models.Model):
+    program = models.CharField(max_length=50)
+    percent = models.DecimalField(max_digits=3, decimal_places=2) 
+    def __str__(self):
+        return f'{self.program} {self.percent}'
+        #name shown in admin
+
+
 class Contact(models.Model):
     ARCHITECTURE = 'Architecture'
     INTERIOR_DESIGN = 'Interior Design'
