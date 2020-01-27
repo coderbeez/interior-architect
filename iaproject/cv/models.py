@@ -4,13 +4,13 @@ from portfolio.models import Project
 # Create your models here.
 class Role(models.Model):
     company = models.CharField(max_length=200)
-    link = models.CharField(max_length=200, blank=True)
+    link = models.URLField(max_length=200, blank=True)
     title = models.CharField(max_length=200)
     timeframe = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(blank=True)
 
     def __str__(self):
-        return f'<Name: {self.company} {self.title}, ID: {self.id}>'
+        return f'Name: {self.company} {self.title}, ID: {self.id}'
         #name shown in admin
 
 class Point(models.Model):
@@ -19,7 +19,7 @@ class Point(models.Model):
 
 class Example(models.Model):
     role = models.ForeignKey('Role', on_delete=models.CASCADE, related_name='examples')  
-    project = models.ForeignKey('portfolio.Project', on_delete=models.CASCADE, related_name='examples')
+    project = models.ForeignKey('portfolio.Project', on_delete=models.CASCADE, related_name='cv_examples')
     order = models.IntegerField()    
 
 
