@@ -2,16 +2,20 @@ $(document).ready(function () {
 
 console.log('test all');
 
-$('#circle').circleProgress({
-    value: 0.75,
-    size: 80,
-    fill: {
-      gradient: ["#aaaaaa", "#616161"]
-    }
-  });
 
 
-  
+$('[data-circle]').each(function() {
+    $(this).circleProgress({
+        value: $(this).attr('data-circle'),
+        size: 80,
+        fill: {
+          gradient: ["#C3C3C3", "#404040"]
+        }
+    });  
+});
+
+/*WHERE: Based on code from... modified to use data attributes & use for each*/
+/*WHERE: .each iterator function from https://stackoverflow.com/questions/34949440/how-to-get-data-attribute-value-of-all-elements-using-jquery*/
 
 
 var distance = $('nav').offset().top,
@@ -64,14 +68,14 @@ $window.scroll(function() {
     
     
      
-    $("[data-btn]").click(function () {
+    $('[data-btn]').click(function () {
         console.log('test slider');
         let value = $(this).attr('data-btn');
         let target = $('[data-div=' + value + ']');
         console.log(value);
-        $("[data-div]").slideUp();
+        $('[data-div]').slideUp();
         console.log('slide up')
-        if (target.is(":hidden")) {
+        if (target.is(':hidden')) {
             console.log('hidden');
         }
         else {
