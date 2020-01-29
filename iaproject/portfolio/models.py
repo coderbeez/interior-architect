@@ -29,6 +29,9 @@ class Section(models.Model):
     title = models.CharField(max_length=500, blank=True)
     image_portrait = models.ImageField(blank=True, upload_to="project_images")
     image_landscape = models.ImageField(blank=True, upload_to="project_images")
+    image = models.ImageField(blank=True, upload_to="project_images")
+    caption = models.CharField(max_length=200, blank=True)
+    caption_url = models.URLField(max_length=200, blank=True)
     content = models.TextField()
 
 
