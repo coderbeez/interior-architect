@@ -8,6 +8,8 @@ class Role(models.Model):
     title = models.CharField(max_length=200)
     timeframe = models.CharField(max_length=200)
     content = models.TextField(blank=True)
+    order = models.IntegerField(null=True, blank=True)
+    job = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Name: {self.company} {self.title}, ID: {self.id}'

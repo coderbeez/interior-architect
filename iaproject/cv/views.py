@@ -7,9 +7,10 @@ from .forms import ContactForm
 # Create your views here.
 
 def about(request):
-    roles = Role.objects.all().order_by('-id')
+    jobs = Role.objects.filter(job=True).order_by('order')
+    studies = Role.objects.filter(job=False).order_by('order')
     skills = Skill.objects.all()
-    context = {'roles': roles, 'skills': skills}
+    context = {'jobs': jobs, 'studies': studies, 'skills': skills}
     return render(request, 'cv/about.html', context)   
 
 
