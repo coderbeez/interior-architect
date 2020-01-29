@@ -9,22 +9,25 @@ Project List Page
 {% block content%}
 
 <div class="row">
- 
+
     {% for project in projects %}
 
-    
-    <div class="col-12 col-md-6 col-lg-4">
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card rounded-0 border-0 mb-2">
-            <img src="{{ project.image_portrait.url }}" class="card-img-top image-fluid rounded-0 border-stone--1" alt="Placeholder image">
-            <div class="card-body text-center stone height-cardtext">
-                <a href="{% url 'project' pk=project.id %}">
-                <h3 class="card-title">{{ project.category.title }}</h3>
-                <h4 class="card-text">{{ project.title }}</h4>
-            </a>
+            <img src="{{ project.image_portrait.url }}" class="card-img-top image-fluid rounded-0 border-stone"
+                alt="Placeholder image">
+            <div class="card-body text-center stone">
+                <div class="border-top border-bottom border-dark p-2">
+                    <a href="{% url 'project' pk=project.id %}">
+                        <h2 class="font-600 font-8rem mt-2 heading">{{ project.category.title }}</h2>
+                        <h3 class="font-500 font-1rem heading">{{ project.title }}</h3>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    
+
 
     {% endfor %}
 </div>
