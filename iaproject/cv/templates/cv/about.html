@@ -20,7 +20,7 @@
 
 <div class="row border-stone">
 
-    <!--EXTPERTISE-->
+    <!--EXPERTISE-->
     <!--HEADING-->
     <div class="col-12 col-lg-3 offset-lg-1 mt-4">
         <!--SMALL-->
@@ -51,18 +51,19 @@
     </div>
     <!--WHERE: Multiply in template tag from https://stackoverflow.com/questions/6285327/how-to-do-math-in-a-django-template-->
 
-    <!--EMPLOYMENT & EDUCATION-->
+    <!--EDUCATION-->
     <!--HEADING-->
     <div class="col-12 col-lg-3 offset-lg-1 mt-4">
         <!--SMALL-->
         <div class="d-block d-md-none border-top border-bottom border-dark p-2 mt-4 mb-4 text-center">
-            <h2>EMPLOYMENT & EDUCATION</h2>
-            <span class="italics">Download CV </span><a class="link" href="#">here</a>
+            <h2>EDUCATION</h2>
+            <span class="italics">Training & Qualifications</span>
         </div>
         <!--MD & LG-->
         <div class="d-none d-md-block">
-            <h2>EMPLOYMENT & EDUCATION</h2>
-            <span class="italics">Download CV </span><a class="link" href="#">here</a>
+            <h2>EDUCATION</h2>
+            <span class="italics">Training & Qualifications</span>
+            
         </div>
     </div>
 
@@ -70,21 +71,25 @@
     <div class="col-12 col-lg-7 p-1">
         <ul class="timeline">
 
-            {% for role in roles %}
-            <li data-slide="role">
-                <strong class="uppercase">{{ role.title }}</strong>
-                <span class="d-none d-md-block float-right">{{ role.timeframe }}</span>
-                <p class="d-block d-md-none m-0">{{ role.timeframe }}</p>
-                <div class=""><p class="m-0">{{ role.company }}</p>
-                        <button class="button-more" data-btn="id{{ role.id }}">...</button> </div>
-                        <div class="hide-start stone pt-2" data-div="id{{ role.id }}">
-                            <ul>
-                                {% for point in role.points.all %}
+            {% for study in studies %}
+            <li data-slide="job">
+                <strong class="uppercase">{{ study.title }}</strong>
+                <span class="d-none d-md-block float-right">{{ study.timeframe }}</span>
+                <p class="d-block d-md-none m-0">{{ study.timeframe }}</p>
+                <p class="m-0">{{ study.company }}</p>
+                <small class="italics">{{ study.content }}</small>
+                        {% if study.examples.all %}
+                        <button class="button-more" data-btn="id{{ job.id }}">...</button>
+                        {% endif %}
+                        <div class="hide-start stone pt-2" data-div="id{{ job.id }}">
+                            
+                            <!--<ul>
+                                {% for point in job.points.all %}
                                 <li>{{ point.content }}</li>
                                 {% endfor %}
-                            </ul>
+                            </ul>-->
 
-                            {% for example in role.examples.all %}
+                            {% for example in study.examples.all %}
                             <div class="row mt-3">
                                 <div class="col-12">
                                     <strong>Example</strong>
@@ -100,23 +105,76 @@
             </li>
             {% endfor %}
         </ul>
-
-
-
-
-
-
         <!--END TIMELINE-->
         <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
-
-
         <!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
-
-
-
-
-
     </div>
+
+
+
+     <!--EMPLOYMENT-->
+    <!--HEADING-->
+    <div class="col-12 col-lg-3 offset-lg-1 mt-4">
+        <!--SMALL-->
+        <div class="d-block d-md-none border-top border-bottom border-dark p-2 mt-4 mb-4 text-center">
+            <h2>EMPLOYMENT</h2>
+            <span class="italics">Download Full CV </span><a class="link" href="#">here</a>
+        </div>
+        <!--MD & LG-->
+        <div class="d-none d-md-block">
+            <h2>EMPLOYMENT</h2>
+            <span class="italics">Download Full CV </span><a class="link" href="#">here</a>
+        </div>
+    </div>
+
+    <!--CONTENT-->
+    <div class="col-12 col-lg-7 p-1">
+        <ul class="timeline">
+
+            {% for job in jobs %}
+            <li data-slide="job">
+                <strong class="uppercase">{{ job.title }}</strong>
+                <span class="d-none d-md-block float-right">{{ job.timeframe }}</span>
+                <p class="d-block d-md-none m-0">{{ job.timeframe }}</p>
+                <p class="m-0">{{ job.company }}</p>
+                        <button class="button-more" data-btn="id{{ job.id }}">...</button>
+                        <div class="hide-start stone pt-2" data-div="id{{ job.id }}">
+                            <ul>
+                                {% for point in job.points.all %}
+                                <li>{{ point.content }}</li>
+                                {% endfor %}
+                            </ul>
+
+                            {% for example in job.examples.all %}
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <strong>Example</strong>
+                                    <a class="link" href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
+                                    <img src="{{ example.project.image_portrait.url }}" class="d-block d-md-none img-fluid border-stone"
+                                        alt="Placeholder image"> 
+                                        <img src="{{ example.project.image_landscape.url }}" class="d-none d-md-block img-fluid border-stone"
+                                        alt="Placeholder image"> 
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <!--END TIMELINE-->
+        <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
+        <!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
+    </div>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
