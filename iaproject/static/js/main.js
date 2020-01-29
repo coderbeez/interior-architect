@@ -9,7 +9,7 @@ $('[data-circle]').each(function() {
         value: $(this).attr('data-circle'),
         size: 80,
         fill: {
-          gradient: ["#C3C3C3", "#404040"]
+          gradient: ["#c9c9c9", "#787676"]
         }
     });  
 });

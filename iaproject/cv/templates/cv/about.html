@@ -67,41 +67,33 @@
     </div>
 
     <!--CONTENT-->
-    <div class="col-12 col-lg-7">
+    <div class="col-12 col-lg-7 p-1">
         <ul class="timeline">
 
             {% for role in roles %}
             <li data-slide="role">
-                <span>{{ role.title }}</span>
-                <span class="float-right">{{ role.timeframe }}</span>
-                <p><strong>{{ role.company }} </strong><span class="italics">{{ role.content }}</span</p> <br>
-                        <button data-btn="id{{ role.id }}">see more...</button>
-                        <div class="testr hide-start" data-div="id{{ role.id }}">
+                <strong class="uppercase">{{ role.title }}</strong>
+                <span class="d-none d-md-block float-right">{{ role.timeframe }}</span>
+                <p class="d-block d-md-none m-0">{{ role.timeframe }}</p>
+                <div class=""><p class="m-0">{{ role.company }}</p>
+                        <button class="button-more" data-btn="id{{ role.id }}">...</button> </div>
+                        <div class="hide-start stone pt-2" data-div="id{{ role.id }}">
                             <ul>
                                 {% for point in role.points.all %}
-                                <li>point {{ point.content }}</li>
+                                <li>{{ point.content }}</li>
                                 {% endfor %}
                             </ul>
 
                             {% for example in role.examples.all %}
                             <div class="row mt-3">
-                                <div class="col-12 col-md-6 stone">
-                                    <div class="border-top border-bottom border-dark p-1">
-                                        <a href="{% url 'project' pk=example.project.id %}">
-                                            <h1 class="font-600 font-8rem mt-3">
-                                                {{ example.project.category.title  }}
-                                            </h1>
-                                            <h2 class="font-500 font-1rem">{{ example.project.title }}</h2>
-                                        </a>
-                                    </div>
-                                    <small>{{ example.project.content|truncatewords:25}}</small>
-
+                                <div class="col-12">
+                                    <strong>Example</strong>
+                                    <a class="link" href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
+                                    <img src="{{ example.project.image_portrait.url }}" class="d-block d-md-none img-fluid"
+                                        alt="Placeholder image"> 
+                                        <img src="{{ example.project.image_landscape.url }}" class="d-none d-md-block img-fluid"
+                                        alt="Placeholder image"> 
                                 </div>
-                                <div class="col-12 col-md-6 p-0">
-                                    <img src="{{ example.project.image_landscape.url }}" class="img-fluid border-stone"
-                                        alt="Placeholder image">
-                                </div>
-
                             </div>
                             {% endfor %}
                         </div>
