@@ -51,7 +51,7 @@ $window.scroll(function() {
      */
     function slide(target) {
         if (target.is(":hidden")) {
-            target.slideDown();
+            target.slideDown(2000);
         } else {
             target.slideUp();
         }
