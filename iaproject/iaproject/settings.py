@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'extra_views',
 ]
 
 MIDDLEWARE = [
