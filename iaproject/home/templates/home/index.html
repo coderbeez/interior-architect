@@ -68,7 +68,7 @@ Home
       <!--BLOGS-->
       {% for blog in blogs %}
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 d-md-none d-lg-block col-lg-4">
         <div class="card rounded-0 border-0 mb-2">
           <div class="height150 d-flex justify-content-center background-img"
             style="background-image: url({{ blog.image.url }})"></div>
@@ -80,6 +80,16 @@ Home
             <small class="d-none d-lg-inline-block">{{ blog.content|truncatewords:25}}</small>
           </div>
         </div>
+      </div>
+
+      <div class="d-none d-md-block d-lg-none col-md-6 background-img height2"
+      style="background-image: url({{ blog.image.url }})">
+        
+      </div>
+      <div class="d-none d-md-block d-lg-none col-md-6 testr stone">
+        <h3 class="card-title">{{ blog.category.title }}</h3>
+              <h4 class="card-text">{{ blog.title }}</h4>
+        <small class="">{{ blog.content|truncatewords:25}}</small>
       </div>
 
 
