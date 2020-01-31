@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Comments
+{% endblock %}
+
+{% block content%}
+
+<section class="row mb-4">
+
+    <div class="d-none d-md-block col-md-5 col-lg-5  background-contact"
+        style="background-image: url({% static 'images/contact2.jpg' %})">
+
+    </div>
+
+
+    <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
+        <div class="border-top border-bottom border-dark p-2 mt-3 client">
+            <h1 class="text-center mt-3 client">Comments List</h1>
+            <p class="italics text-center client">Sorted by date & replied. <br class="d-block d-md-none">Click reply to
+                post reply.</p>
+        </div>
+
+
+
+            {% for comment in comments %}
+            <div class="col-12 stone mb-3">
+            <table class="mt-3">
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>{{ comment.blog.title }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Date Rec.</strong></td>
+                    <td>{{ comment.date }}</td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Comment</strong></td>
+                    <td>{{ comment.content}}</td>
+                </tr>
+
+                
+                <tr>
+                    {% if comment.reply %}
+                    <td><strong>Reply</strong></td>                 
+                    <td>{{ comment.reply}}</td>
+                    {% else %}
+                    <td></td>
+                    <td><a href="#" class="button-a">REPLY</a></td>
+                    {% endif %}
+                </tr>
+                
+            </table>
+
+    
+           
+                </div>
+            {% endfor %}
+         
+
+       
+
+
+
+
+</section>
+
+
+
+
+
+
+
+{% endblock %}

@@ -44,7 +44,7 @@
         <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
         <a class="nav-item nav-link" href="{% url 'contact' %}">CONTACT</a>
         {% if user.is_authenticated %}
-        <a class="nav-item nav-link client" href="#">comments</a>
+        <a class="nav-item nav-link client" href="{% url 'comments' %}">comments</a>
         <a class="nav-item nav-link client" href="{% url 'contacts' %}">contacts</a>
         <a class="nav-item nav-link client" href="{% url 'logout' %}">logout</a>
         {% endif %}
