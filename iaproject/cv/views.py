@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Role, Point, Example, Skill, Contact
 from .forms import ContactForm
 
@@ -28,3 +29,8 @@ def contact(request):
 
     return render(request, 'cv/contact.html', context)   
   
+@login_required
+def contacts(request):
+    contacts = Contact.objects.all().order_by('reply', 'id') #order by oldest contacts without reply
+    context = {'contacts': contacts}
+    return render(request, 'cv/contacts.html', context)

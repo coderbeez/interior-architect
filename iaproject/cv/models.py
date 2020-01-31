@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from portfolio.models import Project
 
 # Create your models here.
@@ -48,7 +49,7 @@ class Contact(models.Model):
         (GRAPHICS, 'Graphics'),
         (OTHER, 'Other'),
     ]
-
+    date = models.DateField(default=timezone.now)
     category = models.CharField(
         max_length=20,
         choices=CATEGORY_CHOICES,
