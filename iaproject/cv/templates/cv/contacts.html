@@ -47,19 +47,17 @@ Contacts
                 </tr>
 
                 
-                <tr>
-                    {% if contact.reply %}
-                    <td><strong>Reply</strong></td>                 
-                    <td>{{ contact.reply}}</td>
-                    {% else %}
-                    <td></td>
-                    <td><a href="#" class="button-a">REPLY</a></td>
-                    {% endif %}
-                </tr>
+                
                 
             </table>
 
     
+            <form method="POST"  action="{% url 'contacts' contact.pk %}">
+                {% csrf_token %}
+                {{ form }}
+             <button type="submit">SAVE REPLY</button>
+            </form>
+            <!--Credit https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop-->
            
                 </div>
             {% endfor %}
