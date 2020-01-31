@@ -154,6 +154,8 @@ h4 {
 }
 
 
+
+
 button, .button-a {
     background-color: #000000;
     color: #ffffff;
@@ -531,4 +533,8 @@ ul {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.client {
+    color: #B8190C!important;
 }

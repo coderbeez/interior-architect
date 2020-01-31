@@ -44,12 +44,13 @@
         <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
         <a class="nav-item nav-link" href="{% url 'contact' %}">CONTACT</a>
         {% if user.is_authenticated %}
-        <a class="nav-item nav-link" href="{% url 'logout' %}">LOGOUT</a>
-        <a class="nav-item nav-link" href="{% url 'profile' %}">PROFILE</a>
-        {% else %}
-        <a class="nav-item nav-link" href="{% url 'register' %}">REGISTER</a>
-        <a class="nav-item nav-link" href="{% url 'login' %}">LOGIN</a>
+        <a class="nav-item nav-link client" href="#">comments</a>
+        <a class="nav-item nav-link client" href="{% url 'contacts' %}">contacts</a>
+        <a class="nav-item nav-link client" href="{% url 'logout' %}">logout</a>
         {% endif %}
+        <!--<a class="nav-item nav-link" href="{% url 'profile' %}">PROFILE</a>
+        <a class="nav-item nav-link" href="{% url 'register' %}">REGISTER</a>-->
+       
         <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7 -->
       </div>
     </div>
