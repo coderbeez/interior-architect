@@ -14,3 +14,11 @@ class CommentForm(forms.ModelForm):
         
         #customising model form fields from django docs https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/
     #Credit: Coding Entrepreneurs Try DJANGO Tutorial - 26 - Form Widgets https://www.youtube.com/watch?v=-oWIyFYyNQw
+
+
+class ReplyForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['reply']
+        labels = {'reply': _(''),}
+        widgets = {'reply': Textarea(attrs={'rows':5, 'class': 'textarea-style'}),}

@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Category, Blog, Section, Comment
-from .forms import CommentForm
+from .forms import CommentForm, ReplyForm
 
 # Create your views here.
 def blogs(request):
@@ -48,3 +48,23 @@ def comments(request):
     comments = Comment.objects.filter(reply='').order_by('id') #order by oldest without reply
     context = {'comments': comments}
     return render(request, 'blog/comments.html', context)    
+
+
+
+@login_required
+def reply(request, pk):
+    comment = Comment.objects.get(pk=pk)
+    form = ReplyForm()
+    if request.method == 'POST':
+        form = ReplyForm(request.POST, instance=comment) # POST the form data
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Reply added')
+            return redirect('comments')
+            # post get redirect pattern... redirect to profile sends a get request and prevents reload???
+    else:
+        form = ReplyForm(instance=comment) # POST the form data - don't think I need this
+       
+    context = {'comment': comment, 'form': form}
+    return render(request, 'blog/reply.html', context) #why can I access user. in template???   
+# passing in instance so fields are prepopulated as its an update form    

@@ -4,7 +4,7 @@
 
 
 {% block title %}
-Comments
+Comments Reply
 {% endblock %}
 
 {% block content%}
@@ -19,14 +19,14 @@ Comments
 
     <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
         <div class="border-top border-bottom border-dark p-2 mt-3 client">
-            <h1 class="text-center mt-3 client">Comments List</h1>
+            <h1 class="text-center mt-3 client">Comments Reply</h1>
             <p class="italics text-center client">Sorted by date & replied. <br class="d-block d-md-none">Click reply to
                 post reply.</p>
         </div>
 
 
 
-            {% for comment in comments %}
+            
             <div class="col-12 stone mb-3">
             <table class="mt-3">
                 <tr>
@@ -44,22 +44,20 @@ Comments
                 </tr>
 
                 
-                <tr>
-                    {% if comment.reply %}
-                    <td><strong>Reply</strong></td>                 
-                    <td>{{ comment.reply}}</td>
-                    {% else %}
-                    <td></td>
-                    <td><a href="{% url 'comment_reply' pk=comment.id %}">REPLY</a></td>
-                    {% endif %}
-                </tr>
+               
                 
             </table>
 
     
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+             <button type="submit">POST REPLY</button>
+            </form>
            
                 </div>
-            {% endfor %}
+         
          
 
        
