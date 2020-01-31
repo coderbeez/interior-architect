@@ -44,13 +44,27 @@ def blog(request, pk):
 
   
 @login_required
-def comments(request):
+def comments(request, pk=None):
     comments = Comment.objects.filter(reply='').order_by('id') #order by oldest without reply
-    context = {'comments': comments}
+    form = ReplyForm()
+
+    if pk:
+        comment = Comment.objects.get(pk=pk)
+
+    #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
+
+    if request.method == 'POST':
+        form = ReplyForm(request.POST, instance=comment) # POST the form data
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Reply posted')
+            return redirect('comments')
+
+    context = {'comments': comments, 'form': form}
     return render(request, 'blog/comments.html', context)    
 
 
-
+#Not Using
 @login_required
 def reply(request, pk):
     comment = Comment.objects.get(pk=pk)

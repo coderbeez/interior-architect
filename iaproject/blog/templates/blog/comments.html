@@ -42,27 +42,21 @@ Comments
                     <td><strong>Comment</strong></td>
                     <td>{{ comment.content}}</td>
                 </tr>
-
-                
-                <tr>
-                    {% if comment.reply %}
-                    <td><strong>Reply</strong></td>                 
-                    <td>{{ comment.reply}}</td>
-                    {% else %}
-                    <td></td>
-                    <td><a href="{% url 'comment_reply' pk=comment.id %}">REPLY</a></td>
-                    {% endif %}
-                </tr>
                 
             </table>
 
+            <form method="POST"  action="{% url 'comments' comment.pk %}">
+                {% csrf_token %}
+                {{ form }}
+             <button type="submit">POST REPLY</button>
+            </form>
+            <!--Credit https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop-->
     
            
                 </div>
             {% endfor %}
          
-
-       
+  
 
 
 
