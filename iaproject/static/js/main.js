@@ -1,37 +1,53 @@
 $(document).ready(function () {
 
-console.log('test all');
+    console.log('test all');
+
+    /**----------------------------------------
+    * Navbar Styling
+    ----------------------------------------*/
+
+    /**
+     * Highlight current page as active on navbar.
+     */
+    function activeNav() {
+        let value = $('[data-page]').attr('data-page');
+        let target = $('[data-nav=' + value + ']');
+        target.addClass('active');
+    }
+
+    activeNav()
 
 
 
-$('[data-circle]').each(function() {
-    $(this).circleProgress({
-        value: $(this).attr('data-circle'),
-        size: 80,
-        fill: {
-          gradient: ["#c9c9c9", "#787676"]
+
+
+    $('[data-circle]').each(function () {
+        $(this).circleProgress({
+            value: $(this).attr('data-circle'),
+            size: 80,
+            fill: {
+                gradient: ["#c9c9c9", "#787676"]
+            }
+        });
+    });
+
+    /*WHERE: Based on code from... modified to use data attributes & use for each*/
+    /*WHERE: .each iterator function from https://stackoverflow.com/questions/34949440/how-to-get-data-attribute-value-of-all-elements-using-jquery*/
+
+
+    var distance = $('nav').offset().top,
+        $window = $(window);
+
+    $window.scroll(function () {
+        if ($window.scrollTop() >= distance) {
+            // Your div has reached the top
+            console.log("test nav");
+            $("[data-nav=navbrand]").show();
+        } else {
+            $("[data-nav=navbrand]").hide();
         }
-    });  
-});
-
-/*WHERE: Based on code from... modified to use data attributes & use for each*/
-/*WHERE: .each iterator function from https://stackoverflow.com/questions/34949440/how-to-get-data-attribute-value-of-all-elements-using-jquery*/
-
-
-var distance = $('nav').offset().top,
-    $window = $(window);
-
-$window.scroll(function() {
-    if ( $window.scrollTop() >= distance ) {
-        // Your div has reached the top
-        console.log("test nav");
-        $("[data-nav=navbrand]").show();
-    }
-    else{
-        $("[data-nav=navbrand]").hide();
-    }
-});
-//https://stackoverflow.com/questions/7543718/test-in-jquery-if-an-element-is-at-the-top-of-screen
+    });
+    //https://stackoverflow.com/questions/7543718/test-in-jquery-if-an-element-is-at-the-top-of-screen
 
     /*$("nav").scroll(function() {
         console.log('test');
@@ -40,9 +56,9 @@ $window.scroll(function() {
       });*/
 
 
-/**----------------------------------------
-    * Accordion
-    ----------------------------------------*/
+    /**----------------------------------------
+        * Accordion
+        ----------------------------------------*/
 
     /**
      * Check current state of an accordion target.
@@ -65,9 +81,9 @@ $window.scroll(function() {
      */
 
 
-    
-    
-     
+
+
+
     $('[data-btn]').click(function () {
         console.log('test slider');
         let value = $(this).attr('data-btn');
@@ -77,8 +93,7 @@ $window.scroll(function() {
         console.log('slide up')
         if (target.is(':hidden')) {
             console.log('hidden');
-        }
-        else {
+        } else {
             console.log('not hidden');
         }
         slide(target);

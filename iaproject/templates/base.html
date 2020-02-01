@@ -39,14 +39,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mx-auto">
-        <a class="nav-item nav-link" href="{% url 'about' %}">ABOUT</a>
-        <a class="nav-item nav-link" href="{% url 'blogs' %}">BLOG</a>
-        <a class="nav-item nav-link" href="{% url 'projects' %}">PORTFOLIO</a>
-        <a class="nav-item nav-link" href="{% url 'contact' %}">CONTACT</a>
+        <a class="nav-item nav-link" data-nav="about" href="{% url 'about' %}">ABOUT</a>
+        <a class="nav-item nav-link" data-nav="blog" href="{% url 'blogs' %}">BLOG</a>
+        <a class="nav-item nav-link" data-nav="portfolio" href="{% url 'projects' %}">PORTFOLIO</a>
+        <a class="nav-item nav-link" data-nav="contact" href="{% url 'contact' %}">CONTACT</a>
         {% if user.is_authenticated %}
-        <a class="nav-item nav-link client" href="{% url 'comments' %}">comments</a>
-        <a class="nav-item nav-link client" href="{% url 'contacts' %}">contacts</a>
-        <a class="nav-item nav-link client" href="{% url 'logout' %}">logout</a>
+        <a class="nav-item nav-link client" data-nav="comments" href="{% url 'comments' %}">comments</a>
+        <a class="nav-item nav-link client" data-nav="contacts" href="{% url 'contacts' %}">contacts</a>
+        <a class="nav-item nav-link client" data-nav="logout" href="{% url 'logout' %}">logout</a>
         {% endif %}
         <!--<a class="nav-item nav-link" href="{% url 'profile' %}">PROFILE</a>
         <a class="nav-item nav-link" href="{% url 'register' %}">REGISTER</a>-->
