@@ -14,7 +14,7 @@ Home
 
     <!--CAROUSEL ROW-->
     <div class="row">
-      <div class="col-12 p-0">
+      <div class="col-12">
 
         <div id="carouselExampleFade" class="carousel slide carousel-fade border-stone p-0 m-0" data-ride="carousel">
           <div class="carousel-inner">
@@ -46,7 +46,7 @@ Home
 
 
     <!--PROJECT TITLE ROW-->
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-12 text-right">
         <h1>Portfolio</h1>
         <span class="italics">Portfolio Sample Projects</span>
@@ -55,8 +55,8 @@ Home
 
 
 
-<!--BLOG TITLE ROW-->
-    <div class="row">
+    <!--BLOG TITLE ROW-->
+    <div class="row mt-3">
       <div class="col-12">
         <h1>Blogs</h1>
         <span class="italics">Most Liked Blogs</span>
@@ -64,33 +64,63 @@ Home
     </div>
 
     <!--BLOG CARD ROW-->
-    <div class="row mt-3">
-      <!--BLOGS-->
+    <div class="row mt-3 mb-4 testr">
       {% for blog in blogs %}
+      <!--SM & LG SCREENS-->
+      <div class="col-12 d-block d-md-none d-lg-block col-lg-4">
 
-      <div class="col-12 d-md-none d-lg-block col-lg-4">
-        <div class="card rounded-0 border-0 mb-2">
-          <div class="height150 d-flex justify-content-center background-img"
-            style="background-image: url({{ blog.image.url }})"></div>
-          <div class="card-body text-center stone height-cardtext">
-            <a href="{% url 'blog' pk=blog.id %}">
-              <h3 class="card-title">{{ blog.category.title }}</h3>
-              <h4 class="card-text">{{ blog.title }}</h4>
-            </a>
-            <small class="d-none d-lg-inline-block">{{ blog.content|truncatewords:25}}</small>
-          </div>
-        </div>
-      </div>
+        <div class="card stone rounded-0 border-0 mb-2">
 
-      <div class="d-none d-md-block d-lg-none col-md-6 background-img height2"
-      style="background-image: url({{ blog.image.url }})">
+          <div class="height150 background-img" style="background-image: url({{ blog.image.url }})"></div>
+           
+                
+                <div class="card-body text-center stone pb-0">
+                    <div class="border-top border-bottom border-dark p-0 height100">
+                        <a href="{% url 'blog' pk=blog.id %}">
+                            <h2 class="font-600 font-8rem mt-3 heading">{{ blog.category.title }}</h2>
+                            <h3 class="font-500 font-1rem heading">{{ blog.title }}</h3>
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-center height150">
+                    <small class="align-self-center">{{ blog.content }}</small>
+                  </div>
+                </div>
+            
         
+
+
+
+
+          <!--<div class="height2 background-img" style="background-image: url({{ blog.image.url }})"></div>
+          <div class="text-center stone height125 d-flex justify-content-center p-1">
+            <div class="border-top border-bottom border-dark p-2 align-self-center ">
+              <a href="{% url 'blog' pk=blog.id %}">
+                <h3 class="font-600 font-8rem">{{ blog.category.title }}</h3>
+                <h4 class="font-500 font-1rem">{{ blog.title }}</h4>
+              </a>
+            </div>
+          </div>
+          <div class="text-center stone height125 d-flex justify-content-center p-1">
+            <small class="align-self-center">{{ blog.content }}</small>
+          </div>-->
+        </div>
+
       </div>
-      <div class="d-none d-md-block d-lg-none col-md-6 testr stone">
-        <h3 class="card-title">{{ blog.category.title }}</h3>
-              <h4 class="card-text">{{ blog.title }}</h4>
-        <small class="">{{ blog.content|truncatewords:25}}</small>
+
+      <!--MEDIUM SCREENS-->
+
+      <div class="col-md-6 d-none d-md-block d-lg-none mb-3 background-img height2"
+        style="background-image: url({{ blog.image.url }})">
       </div>
+
+      <div class="col-md-6 d-none d-md-block d-lg-none mb-3 stone">
+        <div class="border-top border-bottom border-dark mt-3 testg">
+          <h3 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h3>
+          <h4 class="font-500 font-1rem">{{ blog.title }}</h4>
+        </div>
+        <small>{{ blog.content|truncatewords:20}}</small>
+      </div>
+
 
 
       {% endfor %}
@@ -99,80 +129,42 @@ Home
 
     <!--end left col-->
 
-</section>
+  </section>
 
-    <!--SIDEBAR-->
-    <aside class="col-12 col-md-4 col-lg-3">
+  <!--SIDEBAR-->
+  <aside class="col-12 col-md-4 col-lg-3">
 
-      <img src="{% static 'images/cos.jpg' %}" class="img-fluid mb-3" alt="portrait">
+    <img src="{% static 'images/cos.jpg' %}" class="img-fluid mb-3" alt="portrait">
 
-      <p class="stone p-3 mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, itaque! Dolore,
-        cupiditate at dicta commodi
-        magni hic officiis, autem odit dolorum beatae aspernatur modi exercitationem voluptatibus asperiores cum qui
-        sequi.</p>
+    <p class="stone p-3 mb-4">I am a qualified architectural technician and interior designer. I am a highly creative
+      person that displays an excellent attention to detail and a strong communication and technical skill set.</p>
 
-      <div class="mb-3 text-center">
-        <h2>INSTAGRAM</h2>
-        <span class="italics">Most Recent Posts</span>
-        
-<!--JUICER INSTAGRAM FEED-->
-        <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
-        <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
-        <ul class="juicer-feed" data-feed-id="colette_o_sullivan" data-per="2">
-          <h1 class="referral"></h1>
-        </ul>
-        <!--WHY: Removing h1 results in juicer logo showing-->
+    <div class="mb-4 text-center">
+      <h2>INSTAGRAM</h2>
+      <span class="italics">Most Recent Posts</span>
+
+      <!--JUICER INSTAGRAM FEED-->
+      <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
+      <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
+      <ul class="juicer-feed" data-feed-id="colette_o_sullivan" data-per="2">
+        <h1 class="referral"></h1>
+      </ul>
+      <!--WHY: Removing h1 results in juicer logo showing-->
+    </div>
+
+    <section class="row mb-3">
+      <div class="col-12 text-center">
+        <small>
+          <a class="mr-3" href="#">- site by coderbeez</a>
+          <a class="link" href="{% url 'login' %}">admin -</a>
+        </small>
       </div>
-
-<section class="row stone">
-  <div class="col-12 text-center">
-    <small>site by coderbeez <a class="link" href="{% url 'login' %}">admin</a></small>
-  </div>
-</section>
+    </section>
 
 
-    </aside>
+  </aside>
 
 
 
 </div>
 {% endblock %}
-
-
-
-
-<!--<div class="col-6">
-        <div class="p-0 mb-3 height150 d-flex justify-content-center background-img"
-        style="background-image: url({{ blog.image.url }})">
-        <div class="p-1 align-self-center opacity m-2" style="width: 80%;">
-          <div class="border-top border-bottom border-dark p-1">
-            <a href="{% url 'blog' pk=blog.id %}">
-              <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-              <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
-            </a>
-          </div>
-        </div>
-
-      </div>
-      <div class="align-self-center text-center">
-        <div class="border-bottom border-dark p-2">
-          <h1 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-          <h2 class="font-500 font-1rem">{{ blog.title }}</h2>
-          <small>{{ blog.content|truncatewords:25}}</small>
-      </div> 
-      </div>
-
-
-
-    </div>-->
-
-
-<!--<div class="col-6  mb-3 stone d-flex justify-content-center height150">
-      <div class="align-self-center text-center">
-        <div class="border-top border-bottom border-dark p-2">
-          <h1 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-          <h2 class="font-500 font-1rem">{{ blog.title }}</h2>
-      </div>
-        <small>{{ blog.content|truncatewords:25}}</small>
-      </div>
-    </div>-->

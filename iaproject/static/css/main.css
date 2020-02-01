@@ -129,6 +129,16 @@ h4 {
     text-align: center;
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#787676;
+    text-decoration: none;
+}
+
 .link {
     text-decoration: none;
     font-style: italic;
@@ -146,11 +156,15 @@ h4 {
     font-size: 1.2rem;
     letter-spacing: .06rem;
     font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .title-tagline {
     font-size: 1.2rem;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -236,8 +250,28 @@ border: 2px solid rgba(244, 244, 244);
     min-height: 200px;
 }
 
+.height250 {
+    min-height: 250px;
+}
+
+.height225 {
+    min-height: 225px;
+}
+
 .height150 {
     min-height: 150px;
+}
+
+.height100 {
+    min-height: 100px;
+}
+
+.height125 {
+    min-height: 125px;
+}
+
+.height75{
+    min-height: 75px;
 }
 
 .height-card {

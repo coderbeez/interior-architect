@@ -18,71 +18,75 @@
 
 
 
-<div class="row border-stone">
+<div class="row border-stone mb-4">
+    <div class="col-12 m-0 p-0">
 
-    <!--EXPERTISE-->
-    <!--HEADING-->
-    <div class="col-12 col-lg-3 offset-lg-1 mt-4">
-        <!--SMALL-->
-        <div class="d-block d-md-none border-top border-bottom border-dark p-2 mt-4 mb-3 text-center">
-            <h2>Expertise</h2>
-            <span class="italics">Proficiency Levels</span>
-        </div>
-        <!--MD & LG-->
-        <div class="d-none d-md-block">
-            <h2>Expertise</h2>
-            <span class="italics">Proficiency Levels</span>
-        </div>
-    </div>
-
-    <!--CONTENT-->
-    <div class="col-12 col-lg-7">
-        <div class="row">
-            {% for skill in skills %}
-            <div class="col-6 col-md-3 text-center mt-2">
-                <div class="circle" data-circle='{{ skill.percent }}'>
-                    <strong class="">{% widthratio skill.percent 1 100 %}%</strong>
-                    <span class="">{{ skill.program }}</span>
+        <!--EXPERTISE-->
+        <section class="row m-0 mt-4">
+            <!--HEADING-->
+            <div class="col-12 col-lg-3 offset-lg-1">
+                <!--SMALL-->
+                <div class="d-block d-md-none border-top border-bottom border-dark p-2 mt-4 mb-4 text-center">
+                    <h2>Expertise</h2>
+                    <span class="italics">Proficiency Levels</span>
+                </div>
+                <!--MD & LG-->
+                <div class="d-none d-md-block mb-md-3 mt-4">
+                    <h2>Expertise</h2>
+                    <span class="italics">Proficiency Levels</span>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        <!--WHY: Row used to allow grid to determine number circles to display per screen width-->
-    </div>
-    <!--WHERE: Multiply in template tag from https://stackoverflow.com/questions/6285327/how-to-do-math-in-a-django-template-->
 
-    <!--EDUCATION-->
-    <!--HEADING-->
-    <div class="col-12 col-lg-3 offset-lg-1 mt-4">
-        <!--SMALL-->
-        <div class="d-block d-md-none border-top border-bottom border-dark p-2 mt-4 mb-4 text-center">
-            <h2>EDUCATION</h2>
-            <span class="italics">Training & Qualifications</span>
-        </div>
-        <!--MD & LG-->
-        <div class="d-none d-md-block">
-            <h2>EDUCATION</h2>
-            <span class="italics">Training & Qualifications</span>
-            
-        </div>
-    </div>
+            <!--CONTENT-->
+            <div class="col-12 col-lg-7">
+                <div class="row">
+                    {% for skill in skills %}
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="circle" data-circle='{{ skill.percent }}'>
+                            <strong class="">{% widthratio skill.percent 1 100 %}%</strong>
+                            <span class="">{{ skill.program }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!--WHY: Row used to allow grid to determine number circles to display per screen width-->
+            </div>
+            <!--WHERE: Multiply in template tag from https://stackoverflow.com/questions/6285327/how-to-do-math-in-a-django-template-->
+        </section>
 
-    <!--CONTENT-->
-    <div class="col-12 col-lg-7 p-1">
-        <ul class="timeline">
+        <!--EDUCATION-->
+        <section class="row m-0 mt-4">
+            <!--HEADING-->
+            <div class="col-12 col-lg-3 offset-lg-1 mt-4">
+                <!--SMALL-->
+                <div class="d-block d-md-none border-top border-bottom border-dark p-2 mb-3 text-center">
+                    <h2>EDUCATION</h2>
+                    <span class="italics">Training & Qualifications</span>
+                </div>
+                <!--MD & LG-->
+                <div class="d-none d-md-block mt-lg-4">
+                    <h2>EDUCATION</h2>
+                    <span class="italics">Training & Qualifications</span>
 
-            {% for study in studies %}
-            <li data-slide="job">
-                <strong class="uppercase">{{ study.title }}</strong>
-                <span class="d-none d-md-block float-right">{{ study.timeframe }}</span>
-                <p class="d-block d-md-none m-0">{{ study.timeframe }}</p>
-                <p class="m-0">{{ study.company }}</p>
-                <small class="italics">{{ study.content }}</small>
+                </div>
+            </div>
+
+            <!--CONTENT-->
+            <div class="col-12 col-lg-7 p-1">
+                <ul class="timeline">
+
+                    {% for study in studies %}
+                    <li data-slide="job">
+                        <strong class="uppercase">{{ study.title }}</strong>
+                        <span class="d-none d-md-block float-right">{{ study.timeframe }}</span>
+                        <p class="d-block d-md-none m-0">{{ study.timeframe }}</p>
+                        <p class="m-0">{{ study.company }}</p>
+                        <small class="italics">{{ study.content }}</small>
                         {% if study.examples.all %}
                         <button class="button-more" data-btn="id{{ job.id }}">...</button>
                         {% endif %}
                         <div class="hide-start stone pt-2" data-div="id{{ job.id }}">
-                            
+
                             <!--<ul>
                                 {% for point in job.points.all %}
                                 <li>{{ point.content }}</li>
@@ -93,50 +97,53 @@
                             <div class="row mt-3">
                                 <div class="col-12">
                                     <strong>Example</strong>
-                                    <a class="link" href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
-                                    <img src="{{ example.project.image_portrait.url }}" class="d-block d-md-none img-fluid"
-                                        alt="Placeholder image"> 
-                                        <img src="{{ example.project.image_landscape.url }}" class="d-none d-md-block img-fluid"
-                                        alt="Placeholder image"> 
+                                    <a class="link"
+                                        href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
+                                    <img src="{{ example.project.image_portrait.url }}"
+                                        class="d-block d-md-none img-fluid" alt="Placeholder image">
+                                    <img src="{{ example.project.image_landscape.url }}"
+                                        class="d-none d-md-block img-fluid" alt="Placeholder image">
                                 </div>
                             </div>
                             {% endfor %}
                         </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <!--END TIMELINE-->
-        <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
-        <!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
-    </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <!--END TIMELINE-->
+                <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
+                <!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
+            </div>
+        </section>
 
 
 
-     <!--EMPLOYMENT-->
-    <!--HEADING-->
-    <div class="col-12 col-lg-3 offset-lg-1 mt-4">
-        <!--SMALL-->
-        <div class="d-block d-md-none border-top border-bottom border-dark p-2 mt-4 mb-4 text-center">
-            <h2>EMPLOYMENT</h2>
-            <span class="italics">Download Full CV </span><a class="link" href="#">here</a>
-        </div>
-        <!--MD & LG-->
-        <div class="d-none d-md-block">
-            <h2>EMPLOYMENT</h2>
-            <span class="italics">Download Full CV </span><a class="link" href="#">here</a>
-        </div>
-    </div>
+        <!--EMPLOYMENT-->
+        <!--HEADING-->
+        <section class="row m-0">
+            <div class="col-12 col-lg-3 offset-lg-1 mt-4">
+                <!--SMALL-->
+                <div class="d-block d-md-none border-top border-bottom border-dark p-2 mb-3 text-center">
+                    <h2>EMPLOYMENT</h2>
+                    <span class="italics">Download Full CV </span><a class="link" href="#">here</a>
+                </div>
+                <!--MD & LG-->
+                <div class="d-none d-md-block mt-lg-4">
+                    <h2>EMPLOYMENT</h2>
+                    <span class="italics">Download Full CV </span><a class="link" href="#">here</a>
+                </div>
+            </div>
 
-    <!--CONTENT-->
-    <div class="col-12 col-lg-7 p-1">
-        <ul class="timeline">
+            <!--CONTENT-->
+            <div class="col-12 col-lg-7 p-1">
+                <ul class="timeline">
 
-            {% for job in jobs %}
-            <li data-slide="job">
-                <strong class="uppercase">{{ job.title }}</strong>
-                <span class="d-none d-md-block float-right">{{ job.timeframe }}</span>
-                <p class="d-block d-md-none m-0">{{ job.timeframe }}</p>
-                <p class="m-0">{{ job.company }}</p>
+                    {% for job in jobs %}
+                    <li data-slide="job">
+                        <strong class="uppercase">{{ job.title }}</strong>
+                        <span class="d-none d-md-block float-right">{{ job.timeframe }}</span>
+                        <p class="d-block d-md-none m-0">{{ job.timeframe }}</p>
+                        <p class="m-0">{{ job.company }}</p>
                         <button class="button-more" data-btn="id{{ job.id }}">...</button>
                         <div class="hide-start stone pt-2" data-div="id{{ job.id }}">
                             <ul>
@@ -149,32 +156,35 @@
                             <div class="row mt-3">
                                 <div class="col-12">
                                     <strong>Example</strong>
-                                    <a class="link" href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
-                                    <img src="{{ example.project.image_portrait.url }}" class="d-block d-md-none img-fluid border-stone"
-                                        alt="Placeholder image"> 
-                                        <img src="{{ example.project.image_landscape.url }}" class="d-none d-md-block img-fluid border-stone"
-                                        alt="Placeholder image"> 
+                                    <a class="link"
+                                        href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
+                                    <img src="{{ example.project.image_portrait.url }}"
+                                        class="d-block d-md-none img-fluid border-stone" alt="Placeholder image">
+                                    <img src="{{ example.project.image_landscape.url }}"
+                                        class="d-none d-md-block img-fluid border-stone" alt="Placeholder image">
                                 </div>
                             </div>
                             {% endfor %}
                         </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <!--END TIMELINE-->
-        <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
-        <!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
+                    </li>
+                    {% endfor %}
+                </ul>
+                <!--END TIMELINE-->
+                <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
+                <!--WHERE: https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
     </div>
-
-
-
-
-
-
-
-
-
-
 </div>
 
 
