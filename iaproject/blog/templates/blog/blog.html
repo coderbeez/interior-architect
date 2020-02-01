@@ -100,8 +100,8 @@ Blog
     <div class="col-12 col-lg-10 offset-lg-1 text-center mt-4">
         
         {% for comment in comments %}
-            <p class="mb-5">* {{ comment.content }} <br>
-            <span class="italics">{{ comment.reply }}</span></p>
+            <p class="mb-4">{{ comment.content }} <br>
+            <span class="mr-2">REPLY</span><span class="italics">{{ comment.reply }}</span></p>
         {% endfor %}
     
     </div>

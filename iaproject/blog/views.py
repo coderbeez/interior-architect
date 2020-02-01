@@ -8,7 +8,7 @@ from .forms import CommentForm, ReplyForm
 # Create your views here.
 def blogs(request):
     blog_list = Blog.objects.filter(exclude=False).order_by('order')
-    paginator = Paginator(blog_list, 3) # Show 3 blogs per page.
+    paginator = Paginator(blog_list, 6) # Show 3 blogs per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'blog/blogs.html', {'page_obj': page_obj})
