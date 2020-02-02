@@ -7,7 +7,7 @@ def index(request):
     #return HttpResponse('Home')
 
     blogs = Blog.objects.filter(exclude=False).order_by('order')[:3]
-    context = {'blogs': blogs}
+    context = {'title': 'Home', 'blogs': blogs}
 
 
 

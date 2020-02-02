@@ -11,7 +11,7 @@ def about(request):
     jobs = Role.objects.filter(job=True).order_by('order')
     studies = Role.objects.filter(job=False).order_by('order')
     skills = Skill.objects.all()
-    context = {'jobs': jobs, 'studies': studies, 'skills': skills}
+    context = {'title': 'About', 'jobs': jobs, 'studies': studies, 'skills': skills}
     return render(request, 'cv/about.html', context)   
 
 
@@ -25,7 +25,7 @@ def contact(request):
             messages.success(request, f'Thanks for your query, I will get back shortly!')
             #form = CommentForm() don't need with redirect
             return redirect('index')
-    context = {'form': form} 
+    context = {'title': 'Contact', 'form': form} 
 
     return render(request, 'cv/contact.html', context)   
   
@@ -53,5 +53,5 @@ def contacts(request, pk=None):
             messages.success(request, f'Contact reply saved')
             return redirect('contacts')
 
-    context = {'contacts': contacts, 'form': form}
+    context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
     return render(request, 'cv/contacts.html', context)    

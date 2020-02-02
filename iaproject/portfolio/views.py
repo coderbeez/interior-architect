@@ -7,8 +7,16 @@ from .models import Category, Project, Section
 # Create your views here.
 def projects(request):
     projects = Project.objects.filter(exclude=False).order_by('order')
-    context = {'projects': projects}
+    context = {'title': 'Portfolio', 'projects': projects}
     return render(request, 'portfolio/projects.html', context)
+
+def project(request, pk):
+    project = Project.objects.get(pk=pk)
+    sections = Section.objects.filter(project=project)
+    context = {'title': 'Portfolio', 'project': project, 'sections': sections}
+    return render(request, 'portfolio/project.html', context)
+
+
 
 class ProjectListView(ListView):
     model = Project
@@ -17,11 +25,7 @@ class ProjectListView(ListView):
     ordering = ['order']
 
 
-def project(request, pk):
-    project = Project.objects.get(pk=pk)
-    sections = Section.objects.filter(project=project)
-    context = {'project': project, 'sections': sections}
-    return render(request, 'portfolio/project.html', context)
+
 
 class ProjectDetailView(DetailView): #expecting pk by default
     model = Project

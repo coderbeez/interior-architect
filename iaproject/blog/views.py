@@ -8,10 +8,11 @@ from .forms import CommentForm, ReplyForm
 # Create your views here.
 def blogs(request):
     blog_list = Blog.objects.filter(exclude=False).order_by('order')
-    paginator = Paginator(blog_list, 6) # Show 3 blogs per page.
+    paginator = Paginator(blog_list, 3) # Show 3 blogs per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'blog/blogs.html', {'page_obj': page_obj})
+    context = {'title': 'Blog', 'page_obj': page_obj}
+    return render(request, 'blog/blogs.html', context)
     # pagination from django docs https://docs.djangoproject.com/en/3.0/topics/pagination/
 
 
@@ -37,7 +38,7 @@ def blog(request, pk):
             #might not need an else as django creates validation errors???
             #credit: https://stackoverflow.com/questions/3209906/django-return-redirect-with-parameters
 
-    context = {'blog': blog, 'sections': sections, 'comments': comments, 'form': form}    
+    context = {'title': 'Blog', 'blog': blog, 'sections': sections, 'comments': comments, 'form': form}    
 
     return render(request, 'blog/blog.html', context)
 
@@ -60,7 +61,7 @@ def comments(request, pk=None):
             messages.success(request, f'Reply posted')
             return redirect('comments')
 
-    context = {'comments': comments, 'form': form}
+    context = {'title': 'Comments', 'comments': comments, 'form': form}
     return render(request, 'blog/comments.html', context)    
 
 
