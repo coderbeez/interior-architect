@@ -101,7 +101,10 @@ Blog
         
         {% for comment in comments %}
             <p class="mb-4">{{ comment.content }} <br>
+                {% if comment.reply %}
             <span class="mr-2">REPLY</span><span class="italics">{{ comment.reply }}</span></p>
+            {% endif %}
+            <!--WHY: Included if to prevent REPLY from printing is no reply.-->
         {% endfor %}
     
     </div>
