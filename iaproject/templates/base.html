@@ -11,7 +11,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <title>Interior Architect - {% block title %}{% endblock %}</title>
+  <title>Interior Architect {{ title }}</title>
 </head>
 
 <body>
@@ -39,14 +39,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mx-auto">
-        <a class="nav-item nav-link" data-nav="about" href="{% url 'about' %}">ABOUT</a>
-        <a class="nav-item nav-link" data-nav="blog" href="{% url 'blogs' %}">BLOG</a>
-        <a class="nav-item nav-link" data-nav="portfolio" href="{% url 'projects' %}">PORTFOLIO</a>
-        <a class="nav-item nav-link" data-nav="contact" href="{% url 'contact' %}">CONTACT</a>
+        <a class="nav-item nav-link" data-nav="About" href="{% url 'about' %}">ABOUT</a>
+        <a class="nav-item nav-link" data-nav="Blog" href="{% url 'blogs' %}">BLOG</a>
+        <a class="nav-item nav-link" data-nav="Portfolio" href="{% url 'projects' %}">PORTFOLIO</a>
+        <a class="nav-item nav-link" data-nav="Contact" href="{% url 'contact' %}">CONTACT</a>
         {% if user.is_authenticated %}
-        <a class="nav-item nav-link client" data-nav="comments" href="{% url 'comments' %}">comments</a>
-        <a class="nav-item nav-link client" data-nav="contacts" href="{% url 'contacts' %}">contacts</a>
-        <a class="nav-item nav-link client" data-nav="logout" href="{% url 'logout' %}">logout</a>
+        <a class="nav-item nav-link client" data-nav="Comments" href="{% url 'comments' %}">comments</a>
+        <a class="nav-item nav-link client" data-nav="Contacts" href="{% url 'contacts' %}">contacts</a>
+        <a class="nav-item nav-link client" data-nav="Logout" href="{% url 'logout' %}">logout</a>
         {% endif %}
         <!--<a class="nav-item nav-link" href="{% url 'profile' %}">PROFILE</a>
         <a class="nav-item nav-link" href="{% url 'register' %}">REGISTER</a>-->

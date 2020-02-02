@@ -1,57 +1,39 @@
 {% extends 'base.html' %}
-
-{% load static %}
-
-
-{% block title %}
-Contacts
-{% endblock %}
-
 {% block content%}
+{% include 'include.html' with tagline='Outstanding contacts needing reply.' %}
 
-<section class="row mb-4" data-page="contacts">
+{% for contact in contacts %}
+<div class="stone mb-4 p-2">
 
-    <div class="d-none d-md-block col-md-5 col-lg-5 bg-img--desk">
-    </div>
+    <table class="mt-2">
+        <tr>
+            <td><strong>Category</strong></td>
+            <td>{{ contact.category }} {{ contact.location }}</td>
+        </tr>
+        <tr>
+            <td><strong>Date</strong></td>
+            <td>{{ contact.date }}</td>
+        </tr>
+        <tr>
+            <td><strong>From</strong></td>
+            <td>{{ contact.name }}<br>{{ contact.email }}<br>{{ contact.phone }}</td>
+        </tr>
+        <tr>
+            <td><strong>Query</strong></td>
+            <td>{{ contact.query}}</td>
+        </tr>
+    </table>
 
-    <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
-        <div class="border-top border-bottom border-dark p-2 mt-3 client">
-            <h1 class="text-center mt-3 client">Contacts List</h1>
-            <p class="italics text-center client">Sorted by date & replied. <br class="d-block d-md-none">Click reply to
-                post reply.</p>
-        </div>
+    <form method="POST" action="{% url 'contacts' contact.pk %}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">SAVE REPLY</button>
+    </form>
+    <!--Credit https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop-->
 
-        {% for contact in contacts %}
-        <div class="col-12 stone mb-3">
-            <table class="mt-3">
-                <tr>
-                    <td><strong>Category</strong></td>
-                    <td>{{ contact.category }} {{ contact.location }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Date Rec.</strong></td>
-                    <td>{{ contact.date }}</td>
-                </tr>
-                <tr>
-                    <td><strong>From</strong></td>
-                    <td>{{ contact.name }} {{ contact.email }} {{ contact.phone }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Query</strong></td>
-                    <td>{{ contact.query}}</td>
-                </tr>
-            </table>
+</div>
+{% endfor %}
 
-            <form method="POST" action="{% url 'contacts' contact.pk %}">
-                {% csrf_token %}
-                {{ form }}
-                <button type="submit">SAVE REPLY</button>
-            </form>
-            <!--Credit https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop-->
-
-        </div>
-        {% endfor %}
-
+</div>
 </section>
-
 {% endblock %}
