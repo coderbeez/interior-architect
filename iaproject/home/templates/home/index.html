@@ -14,7 +14,7 @@ Home
 
 
 <!--PROJECT TITLE ROW-->
-<div class="row mt-3">
+<div class="row">
   <div class="col-12">
     <h1>Portfolio</h1>
     <span class="italics">Portfolio Sample Projects</span>
@@ -23,9 +23,10 @@ Home
 
     <!--CAROUSEL ROW-->
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 p-md-0 p-lg-15">
+        <!--WHY: Padding removed on medium devices to line up with blog images as background image does not take padding into account.-->
 
-        <div id="carouselExampleFade" class="carousel slide carousel-fade border-stone p-0 m-0" data-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade border-stone" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="4000">
               <img src="{% static 'images/portrait1.jpg' %}" class="d-block d-md-none w-100" alt="Image1">

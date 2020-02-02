@@ -358,6 +358,8 @@ nav {
     background-repeat: no-repeat;
     height: 100%;
 }
+
+
 /* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
 
 .background-contact {
@@ -426,6 +428,11 @@ https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-be
    p {
        font-size: 1rem;
    }
+
+   .p-lg-15 {
+       padding: 15px !important;
+   }
+   /*WHY: Used to add Bootstrap default padding size back to lg devices after removing it for md screens.*/
 
    /*.height4 {
     min-height: 400px;
