@@ -1,16 +1,8 @@
 {% extends 'base.html' %}
-
-{% load static %}
-{% load crispy_forms_tags %}
-
-{% block title %}
-Blog
-{% endblock %}
-
 {% block content%}
 
 <!--TITLE-->
-<section class="row mt-4" data-page="blog">
+<section class="row mt-4" data-page="{{ title }}">
 
     <div class="col-12 col-md-6 order-2 order-md-1 height4 d-flex justify-content-center background-img" style="background-image: url({{ blog.image.url }})">
         <!-- WHY: Inline style allows url to come from database.-->
