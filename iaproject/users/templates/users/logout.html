@@ -9,18 +9,24 @@ Logout
 
 {% block content %}
 
-<div data-page="logout">
 
-<p>You have been logged out!</p>
+<section class="row mb-4" data-page="logout">
 
-
-    <div class="">
-        <small class="text-muted">Login Again? <a class="ml-2" href="{% url 'login' %}">Login</a></small>
+    <div class="d-none d-md-block col-md-5 col-lg-5 bg-img--desk">
     </div>
 
+    <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
 
-</div>
+        <div class="border-top border-bottom border-dark p-2 mt-3 client text-center">
+            <h1 class="mt-3 client">Logout</h1>
+            <p class="italics client">You have been logged out.</p>
+        </div>
 
+        <p class="mt-4">Need to login again?</p>
+        <a class="button-a mt-4" href="{% url 'login' %}">Login</a>
 
+    </div>
+
+</section>
 
 {% endblock %}

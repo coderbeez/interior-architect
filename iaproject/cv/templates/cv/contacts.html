@@ -14,7 +14,6 @@ Contacts
     <div class="d-none d-md-block col-md-5 col-lg-5 bg-img--desk">
     </div>
 
-
     <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
         <div class="border-top border-bottom border-dark p-2 mt-3 client">
             <h1 class="text-center mt-3 client">Contacts List</h1>
@@ -22,10 +21,8 @@ Contacts
                 post reply.</p>
         </div>
 
-        
-
-            {% for contact in contacts %}
-            <div class="col-12 stone mb-3">
+        {% for contact in contacts %}
+        <div class="col-12 stone mb-3">
             <table class="mt-3">
                 <tr>
                     <td><strong>Category</strong></td>
@@ -43,35 +40,18 @@ Contacts
                     <td><strong>Query</strong></td>
                     <td>{{ contact.query}}</td>
                 </tr>
-
-                
-                
-                
             </table>
 
-    
-            <form method="POST"  action="{% url 'contacts' contact.pk %}">
+            <form method="POST" action="{% url 'contacts' contact.pk %}">
                 {% csrf_token %}
                 {{ form }}
-             <button type="submit">SAVE REPLY</button>
+                <button type="submit">SAVE REPLY</button>
             </form>
             <!--Credit https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop-->
-           
-                </div>
-            {% endfor %}
-         
 
-       
-
-
-
+        </div>
+        {% endfor %}
 
 </section>
-
-
-
-
-
-
 
 {% endblock %}

@@ -10,31 +10,45 @@ Register
 
 {% block content %}
 
-<div>
 
-    <form method="POST">
-        {% csrf_token %}
+<section class="row mb-4" data-page="register">
 
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Register</legend>
-            {{ form|crispy }}
-            <!--WHY: After vertical bar say we want to use cripsy filter.-->
-            <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
-        </fieldset>
-
-        <div class="form-group">
-            <button class="btn" type="submit">Register</button>
-        </div>
-        
-    </form>
-
-
-    <div class="">
-        <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login' %}">Log In</a></small>
+    <div class="d-none d-md-block col-md-5 col-lg-5 bg-img--desk">
     </div>
 
+    <div class="col-12 col-md-7 col-lg-6 offset-lg-1 border-stone">
 
-</div>
+        <div class="border-top border-bottom border-dark p-2 mt-3 client text-center">
+            <h1 class="mt-3 client">Register</h1>
+            <p class="italics client">Register for site administration.</p>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <fieldset class="form-group mt-4">
+                {{ form|crispy }}
+                <!--WHY: After vertical bar say we want to use cripsy filter.-->
+                <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
+            </fieldset>
+
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+
+        </form>
+
+
+        <p class="mt-4">Already have an account?</p>
+        <a class="button-a d-inline-block" href="{% url 'login' %}">Log In</a>
+        <!--WHY: Bootstrap d-inline-block used to enure all button stays within border stone. -->
+
+    </div>
+
+</section>
+
+
+
 
 
 
