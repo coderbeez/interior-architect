@@ -12,6 +12,13 @@ Home
   <!--LEFT COL-->
   <section class="col-12 col-md-8 col-lg-9">
 
+    <!--INTRO ROW - SMALL DEVICES-->
+<div class="row d-md-none">
+  <div class="col-12">
+    {% include "home/include-intro.html" %}
+  </div>
+</div>
+
 
 <!--PROJECT TITLE ROW-->
 <div class="row">
@@ -138,11 +145,10 @@ Home
   <!--SIDEBAR-->
   <aside class="col-12 col-md-4 col-lg-3">
 
-    <img src="{% static 'images/cos.jpg' %}" class="img-fluid mb-3" alt="portrait">
-
-    <p class="stone p-3 mb-4">I am a qualified architectural technician and interior designer. I am a highly creative
-      person that displays an excellent attention to detail and a strong communication and technical skill set.</p>
-
+    <div class="d-none d-md-block">
+    {% include "home/include-intro.html" %}
+  </div>
+  
     <div class="mb-4 text-center">
       <h2>INSTAGRAM</h2>
       <span class="italics">Most Recent Posts</span>
