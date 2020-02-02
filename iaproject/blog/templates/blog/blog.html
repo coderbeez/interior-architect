@@ -12,7 +12,7 @@ Blog
 <!--TITLE-->
 <section class="row mt-4" data-page="blog">
 
-    <div class="col-12 col-md-6 height4 d-flex justify-content-center background-img" style="background-image: url({{ blog.image.url }})">
+    <div class="col-12 col-md-6 order-2 order-md-1 height4 d-flex justify-content-center background-img" style="background-image: url({{ blog.image.url }})">
         <!-- WHY: Inline style allows url to come from database.-->
         <div class="col-12 d-md-none p-4 align-self-center opacity">
             <div class="border-top border-bottom border-dark p-2">
@@ -22,7 +22,7 @@ Blog
         </div>
     </div>
 
-    <div class="col-12 col-md-6 stone d-flex justify-content-center height4">
+    <div class="col-12 col-md-6 order-1 order-md-2 stone d-flex justify-content-center height4">
         <div class="align-self-center m-3 text-center">
             <div class="d-none d-md-inline-block border-top border-bottom border-dark p-2">
                 <h1 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
