@@ -358,9 +358,30 @@ nav {
     background-repeat: no-repeat;
     height: 100%;
 }
-
-
 /* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
+
+
+
+.bg-img--work {
+    background: url("/static/images/work.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+
+.bg-img--desk {
+    background: url("/static/images/desk.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+
+
+
 
 .background-contact {
     background-size: cover;
@@ -434,9 +455,7 @@ https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-be
    }
    /*WHY: Used to add Bootstrap default padding size back to lg devices after removing it for md screens.*/
 
-   /*.height4 {
-    min-height: 400px;
-}*/
+   
     
 }
 
