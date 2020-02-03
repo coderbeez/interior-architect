@@ -1,40 +1,30 @@
 {% extends 'base.html' %}
 {% block content%}
 
-<div class="row" data-page="{{ title }}">
-
+<section class="row" data-page="{{ title }}">
+    <!--BLOG CARDS-->
     {% for blog in page_obj %}
-
     <div class="col-12 col-md-6 col-lg-4">
-
         <div class="card rounded-0 border-0 mb-3">
-
             <!-- Inline style allows url to come from database.-->
-            <div class="height4 d-flex justify-content-center background-img"
+            <div class="bg-img d-flex justify-content-center"
                 style="background-image: url({{ blog.image.url }})">
-
-                <div class="p-4 m-2 align-self-center opacity">
-                    <div class="border-top border-bottom border-dark p-2" >
+                <div class="header-opaque align-self-center">
+                    <div class="header-border" >
                         <a href="{% url 'blog' pk=blog.id %}">
-                            <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-                            <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
+                            <h1 class="header-category">{{ blog.category.title }}</h1>
+                            <h2 class="header-title">{{ blog.title }}</h2>
                         </a>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
-
     </div>
-
-
 {% endfor %}
+</section>
+<!--https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
 
-</div>
-
-
+<!--PAGINATION-->
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
@@ -53,7 +43,4 @@
     </span>
 </div>
 <!--# pagination from django docs https://docs.djangoproject.com/en/3.0/topics/pagination/-->
-
-<!--https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
-
 {% endblock %}

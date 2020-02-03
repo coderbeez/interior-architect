@@ -2,32 +2,30 @@
 {% load static %}
 {% block content%}
 
-<div class="row">
+<div class="row" data-page="{{ title }}">
   <!--LEFT COL-->
   <section class="col-12 col-md-8 col-lg-9">
 
     <!--INTRO ROW - SMALL DEVICES-->
-<div class="row d-md-none">
-  <div class="col-12">
-    {% include "home/include-intro.html" %}
-  </div>
-</div>
+    <article class="row d-md-none">
+      <div class="col-12">
+        {% include "home/include-intro.html" %}
+      </div>
+    </article>
 
 
-<!--PROJECT TITLE ROW-->
-<div class="row">
-  <div class="col-12">
-    <h1>Portfolio</h1>
-    <span class="italics">Portfolio Sample Projects</span>
-  </div>
-</div>
+    <!--PROJECTS ARTICLE-->
+    <article class="row">
+      <div class="col-12">
+        <h1 class="h-article">Portfolio</h1>
+        <span class="">Portfolio Sample Projects</span>
+      </div>
 
-    <!--CAROUSEL ROW-->
-    <div class="row">
+      <!--PROJECTS CAROUSEL-->
       <div class="col-12 p-md-0 p-lg-15">
         <!--WHY: Padding removed on medium devices to line up with blog images as background image does not take padding into account.-->
 
-        <div id="carouselExampleFade" class="carousel slide carousel-fade border-stone" data-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade border-color--stone" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-interval="4000">
               <img src="{% static 'images/portrait1.jpg' %}" class="d-block d-md-none w-100" alt="Image1">
@@ -53,122 +51,87 @@
         </div>
 
       </div>
-    </div>
+    </article>
 
-
-    
-
-
-
-    <!--BLOG TITLE ROW-->
-    <div class="row mt-4">
+    <!--BLOG ARTICLE-->
+    <article class="row mt-4 mb-4">
       <div class="col-12">
-        <h1>Blogs</h1>
-        <span class="italics">Most Liked Blogs</span>
+        <h1 class="h-article">Blogs</h1>
+        <span class="">Most Liked Blogs</span>
       </div>
-    </div>
 
-    <!--BLOG CARD ROW-->
-    <div class="row mb-4">
+      <!--BLOG CARDS-->
       {% for blog in blogs %}
       <!--SM & LG SCREENS-->
       <div class="col-12 d-block d-md-none d-lg-block col-lg-4">
 
-        <div class="card stone rounded-0 border-0 mb-2">
-
-          <div class="height150 background-img" style="background-image: url({{ blog.image.url }})"></div>
-           
-                
-                <div class="card-body text-center stone pb-0">
-                    <div class="border-top border-bottom border-dark p-0 height100">
-                        <a href="{% url 'blog' pk=blog.id %}">
-                            <h2 class="font-600 font-8rem mt-3 heading">{{ blog.category.title }}</h2>
-                            <h3 class="font-500 font-1rem heading">{{ blog.title }}</h3>
-                        </a>
-                    </div>
-                    <div class="d-flex justify-content-center height150">
-                    <small class="align-self-center">{{ blog.content }}</small>
-                  </div>
-                </div>
-            
-        
-
-
-
-
-          <!--<div class="height2 background-img" style="background-image: url({{ blog.image.url }})"></div>
-          <div class="text-center stone height125 d-flex justify-content-center p-1">
-            <div class="border-top border-bottom border-dark p-2 align-self-center ">
+        <div class="card bg-color--stone rounded-0 border-0 mb-2">
+          <div class="bg-img height-150" style="background-image: url({{ blog.image.url }})"></div>
+          <div class="card-body text-center bg-color--stone pb-0">
+            <div class="header-border height-115">
               <a href="{% url 'blog' pk=blog.id %}">
-                <h3 class="font-600 font-8rem">{{ blog.category.title }}</h3>
-                <h4 class="font-500 font-1rem">{{ blog.title }}</h4>
+                <h2 class="header-category">{{ blog.category.title }}</h2>
+                <h3 class="header-title">{{ blog.title }}</h3>
               </a>
             </div>
+            <div class="d-flex justify-content-center height-160">
+              <small class="align-self-center">{{ blog.content }}</small>
+            </div>
           </div>
-          <div class="text-center stone height125 d-flex justify-content-center p-1">
-            <small class="align-self-center">{{ blog.content }}</small>
-          </div>-->
         </div>
 
       </div>
 
       <!--MEDIUM SCREENS-->
 
-      <div class="col-md-6 d-none d-md-block d-lg-none mb-3 background-img height2"
+      <div class="col-md-6 d-none d-md-block d-lg-none mb-4 bg-img height-200"
         style="background-image: url({{ blog.image.url }})">
       </div>
 
-      <div class="col-md-6 d-none d-md-block d-lg-none mb-3 stone">
-        <div class="border-top border-bottom border-dark mt-3 testg">
-          <h3 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h3>
-          <h4 class="font-500 font-1rem">{{ blog.title }}</h4>
+      <div class="col-md-6 d-none d-md-block d-lg-none mb-4 bg-color--stone text-center">
+        <div class="header-border mt-3">
+          <h2 class="header-category">{{ blog.category.title }}</h2>
+          <h3 class="header-title">{{ blog.title }}</h3>
         </div>
         <small>{{ blog.content|truncatewords:20}}</small>
       </div>
 
-
-
       {% endfor %}
-    </div>
+    </article>
 
 
     <!--end left col-->
-
   </section>
 
   <!--SIDEBAR-->
   <aside class="col-12 col-md-4 col-lg-3">
 
-    <div class="d-none d-md-block">
-    {% include "home/include-intro.html" %}
-  </div>
-  
-    <div class="mb-4 text-center">
-      <h2>INSTAGRAM</h2>
-      <span class="italics">Most Recent Posts</span>
+    <!--CLIENT INTRO-->
+    <article class="d-none d-md-block">
+      {% include "home/include-intro.html" %}
+    </article>
 
-      <!--JUICER INSTAGRAM FEED-->
+    <!--INSTAGRAM FEED-->
+    <article class="mb-4">
+      <h2 class="h-article">INSTAGRAM</h2>
+      <span>Most Recent Posts</span>
       <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
       <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
       <ul class="juicer-feed" data-feed-id="colette_o_sullivan" data-per="2">
         <h1 class="referral"></h1>
+        <!--WHY: Removing h1 results in juicer logo showing-->
       </ul>
-      <!--WHY: Removing h1 results in juicer logo showing-->
-    </div>
+    </article>
+    <!--WHERE: Powered by Juicer https://www.juicer.io/-->
 
-    <section class="row mb-3">
-      <div class="col-12 text-center">
+    <!--SITE ADMIN-->
+      <section class="text-center">
         <small>
           <a class="mr-3" href="#">- site by coderbeez</a>
           <a class="link" href="{% url 'login' %}">admin -</a>
         </small>
-      </div>
-    </section>
-
+      </section>
 
   </aside>
-
-
-
 </div>
 {% endblock %}

@@ -1,30 +1,24 @@
 {% extends 'base.html' %}
 {% block content%}
 
-<div class="row" data-page="{{ title }}">
-
+<section class="row" data-page="{{ title }}">
+<!--PROJECT CARDS-->
     {% for project in projects %}
-
-
     <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card rounded-0 border-0 mb-2">
-            <img src="{{ project.image_portrait.url }}" class="card-img-top image-fluid rounded-0 border-stone"
+            <img src="{{ project.image_portrait.url }}" class="card-img-top image-fluid rounded-0 border-color--stone"
                 alt="Placeholder image">
-            <div class="card-body text-center stone">
-                <div class="border-top border-bottom border-dark p-2">
+            <div class="card-body bg-color--stone">
+                <div class="header-border">
                     <a href="{% url 'project' pk=project.id %}">
-                        <h2 class="font-600 font-8rem mt-3 heading">{{ project.category.title }}</h2>
-                        <h3 class="font-500 font-1rem heading">{{ project.title }}</h3>
+                        <h1 class="header-category">{{ project.category.title }}</h1>
+                        <h2 class="header-title">{{ project.title }}</h2>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
-
     {% endfor %}
-</div>
-
 <!--https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
-
+</section>
 {% endblock %}

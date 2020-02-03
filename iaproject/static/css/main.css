@@ -14,129 +14,39 @@
 }
 /*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.*/
 
-
-.heading {
-    color: #000000;
-}
-
-.font-500{
-    font-weight: 500;
-}
-
-.font-600{
-    font-weight: 600;
-}
-
-.font-700{
-    font-weight: 700;
-}
-
-
-.font-6rem{
-    font-size: .6rem;
-}
-
-
-
-.font-8rem{
-    font-size: .8rem;
-}
-
-.font-9rem{
-    font-size: .9rem;
-}
-
-
-.font-1rem{
-    font-size: 1rem;
-}
-
-.font-11rem{
-    font-size: 1.1rem;
-}
-
-.font-12rem{
-    font-size: 1.2rem;
-}
-
-
-.font-13rem{
-    font-size: 13rem;
-}
-
-
-
-.hide-start {
-    display: none;
-  }
-  /*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.
-  Bootstrap display classes not working with jQuery hide() so own css written.*/
-
-  
-  /* text-transform: uppercase;*/
+/*------FONTS------*/
 
 body {
     font-family: 'Ibarra Real Nova', serif;
 }
 
+span {
+    font-style: italic;
+}
+/*Put near top as other css might overwrite*/
 
-h1, h2, h3, h4, .heading {
+
+h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-
 }
 
-
-
-h1 {
+.name {
     font-size: 1.2rem;
-    font-weight: 500;
-}
-
-h2 {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-h3 {
-    font-weight: 500;
-    font-size: .9rem;
-    text-align: center;
-}
-
-h4 {
-    font-size: 1rem;
-}
-
-.heading-category {
+    letter-spacing: .07rem;
     font-weight: 600;
-    font-size: .8rem;
-    text-transform: uppercase;
-    text-align: center;
 }
 
-.heading-title {
-    font-weight: 500;
-    font-size: 1rem;
-    text-transform: uppercase;
-    text-align: center;
+.name-tagline {
+    letter-spacing: 0rem;
+    text-transform: capitalize;
+    font-style: normal;
 }
 
-.heading-section {
-    font-weight: 500;
+figcaption {
     font-size: .9rem;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-a {
-    color: #000000;
-    text-decoration: none;
-}
-
-a:hover {
-    color:#787676;
-    text-decoration: none;
+    font-style: italic;
+    font-weight: 600;
 }
 
 .link {
@@ -151,24 +61,131 @@ a:hover {
     color: black;
 }
 
+.h-section {
+    font-weight: 500;
+    font-size: .9rem;
+    text-align: center;
+}
 
-.title {
+.h-article {
     font-size: 1.2rem;
-    letter-spacing: .06rem;
+    font-weight: 500;
+    margin: 0px;
+}
+
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#787676;
+    text-decoration: none;
+}
+
+.client {
+    color: #B8190C!important;
+}
+
+/*------HEADERS------*/
+
+.header-border {
+    border-top: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    text-align: center;
+    padding: .5rem;
+}
+
+.header-opaque {
+    background: rgba(255, 255, 255, .8);
+    padding: 1.5rem;
+    margin: 1rem;
+}
+/*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
+
+.header-category {
     font-weight: 600;
+    font-size: .8rem;
+    margin-top: .5rem;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+}
+
+.header-title {
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+a > .header-category:hover, a > .header-title:hover {
+    color: #787676;
+}
+
+/*------BACKGROUNDS & BORDERS------*/
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    /*height: 100%;*/
+}
+/* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
+/* WHY: Important to overwrite Bootstrap???? - taken off*/
+
+.bg-img--work {
+    background: url("/static/images/work.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+
+.bg-img--desk {
+    background: url("/static/images/desk.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+/*Credit:https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django*/
+
+.bg-color--stone {
+    background-color: rgba(244, 244, 244, .95);
 
 }
 
-.title-tagline {
-    font-size: 1.2rem;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+.border-color--stone {
+    border: 2px solid rgba(244, 244, 244);
+    }
+
+.height-150 {
+        min-height: 150px;
+    }
+
+    .height-160 {
+        min-height: 160px;
+    }
+
+.height-115 {
+        min-height: 115px;
+    }
+
+    
+.height-200 {
+    min-height: 200px;
 }
+/*WHY: Must be below header to overwrite default 300px*/
 
-
-
+.textarea-style {
+    width: 100%;
+    border: 0;
+    }
+    /*WHY: class added in forms.py*/
+    
+/*------BUTTONS------*/
 
 button, .button-a {
     background-color: #000000;
@@ -177,7 +194,6 @@ button, .button-a {
     font-size: .8rem;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    /*text-align: center;*/
     padding: 8px;
     margin: 8px;
 }
@@ -203,80 +219,7 @@ button:hover, .button-a:hover {
 }
 /*WHY: Background color specified to stop button styles applyig.*/
 
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.textarea-style {
-width: 100%;
-border: 0;
-}
-
-.border-stone {
-border: 2px solid rgba(244, 244, 244);
-}
-
-.border-stone--1 {
-    border: 1px solid rgba(244, 244, 244);
-    }
-
-.stone {
-    background-color: rgba(244, 244, 244, .95);
-
-}
-
-
-.opacity {
-    background: rgba(255, 255, 255, .8);
-}
-/*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
-
-
-.testr{
-    border: solid 1px red;
-}
-
-.testg{
-    border: solid 1px green;
-}
-
-
-.height4 {
-    min-height: 300px;
-}
-
-.height2 {
-    min-height: 200px;
-}
-
-.height250 {
-    min-height: 250px;
-}
-
-.height225 {
-    min-height: 225px;
-}
-
-.height150 {
-    min-height: 150px;
-}
-
-.height100 {
-    min-height: 100px;
-}
-
-.height125 {
-    min-height: 125px;
-}
-
-.height75{
-    min-height: 75px;
-}
-
-.height-card {
-    height: 700px;
-}
+/*------NAVBAR------*/
 
 nav {
     background-color: rgba(244, 244, 244, .95);
@@ -295,17 +238,12 @@ nav {
 
 }
 
-/*a {
-    color: #000000;
-}*/
+/*------CARDS------*/
 
-
-
-.caption {
-    font-size: .9rem;
-    font-style: italic;
-    font-weight: 600;
+.height-card {
+    height: 700px;
 }
+
 
 .card-body--category {
   font-size: .9rem;
@@ -315,7 +253,6 @@ nav {
 .card-body--title {
     font-size: .8rem;
   }
-
 
 
 /*WHY: Set height for blog card images as images are not consistent size.*/
@@ -329,175 +266,15 @@ nav {
     position: relative;
 }
 
-.italics {
-    font-style: italic;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-.overline {
-    text-decoration: overline;
-}
-
-
-
 /*WHY: Set height as title text is not conistent length.*/
 .height-cardtext {
     height: 100px;
 }
 
-.background-img {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat;
-    height: 100%;
-}
-/* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
-
-
-
-.bg-img--work {
-    background: url("/static/images/work.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 300px;
-}
-
-
-.bg-img--desk {
-    background: url("/static/images/desk.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 300px;
-}
-/*Credit:https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django*/
-
-
-
-
-.background-contact {
-    background-size: cover;
-    background-position: center;  
-}
-
-
-/*h1 {text-align: center; position: relative;}
-h1 .border {border-bottom: 3px solid #000000; position: absolute; width: 100%; left: 0; top: 50%; margin-top: -1px; z-index: 1;}
-h1 .text {background-color: #fff; position: relative; z-index: 2; padding: 10px; display: inline-block;}
-
-https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-behind-text/32769911*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1200px) {
-    .sticky-navbar {
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        z-index: 10;
-      }     
-    }
-    /*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
-
-
-    /*----------MEDIA QUERIES----------*/
-
-@media (min-width: 768px) and (max-width: 991px) {   
-
-
-    p {
-        font-size: 1rem;
-    }
-
-    /*.height4 {
-        min-height: 400px;
-    }*/
-
-    
-}
-
-@media (min-width: 992px) {
-       
-   p {
-       font-size: 1rem;
-   }
-
-   .p-lg-15 {
-       padding: 15px !important;
-   }
-   /*WHY: Used to add Bootstrap default padding size back to lg devices after removing it for md screens.*/
-
-   
-    
-}
-
-#pairing {
-    font-family: 'Ibarra Real Nova', serif;
-    font-family: 'Frank Ruhl Libre', serif;
-}
-
-
-
-
-
-
-  
-
-
-/*a.j-paginate.juicer-button {
-    margin: auto;
-    border: 1px solid #000000;
-  }
-  
-  .juicer-feed h1.referral {
-    margin: 0px;
-  }
-
-  .juicer-feed .j-paginate:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-.juicer-feed {
-    font-family: 'Montserrat', sans-serif;
-}
-
-*/
-
-
-/* INSTAGRAM JUICER FEED */
+/*------INSTAGRAM JUICER FEED------*/
 /*can't target the a need to leave default*/
 
 .juicer-feed h1.referral {
-   
     margin: auto!important;
   
 }
@@ -524,7 +301,7 @@ https://stackoverflow.com/questions/32769825/bootstrap-text-element-with-line-be
 }
 
     
-/* TIMELINE */
+/*------TIMELINE------*/
 
 /*TIMELINE*/
 ul.timeline {
@@ -557,10 +334,13 @@ ul.timeline > li:before {
     height: 20px;
     z-index: 400;
 }
+
+ul {
+    padding-left: 25px;
+}
 /*WHERE: Timeline https://bootsnipp.com/snippets/xrKXW*/
 
-
-
+/*------EXPERTISE CIRCLES------*/
 .circle {
     width: 100px;
     margin: 0;
@@ -586,15 +366,34 @@ ul.timeline > li:before {
 
 /*WHERE: http://kottenator.github.io/jquery-circle-progress/ */
 
-ul {
+/*------MEDIA QUERIES------*/
+
+@media (max-width: 767px) {
+    .sticky-navbar {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }     
+    }
+    /*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
+
+@media (min-width: 768px) and (max-width: 991px) {   
    
-    padding-left: 25px;
 }
 
-.uppercase {
-    text-transform: uppercase;
+@media (min-width: 992px) {   
+     .p-lg-15 {
+       padding: 15px !important;
+       padding-top: 0px !important;
+   }
+   /*WHY: Used to add Bootstrap default padding size back to lg devices after removing it for md screens.*/    
 }
 
-.client {
-    color: #B8190C!important;
+.testr{
+    border: solid 1px red;
+}
+
+.testg{
+    border: solid 1px green;
 }

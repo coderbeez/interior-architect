@@ -1,109 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!--TITLE SECTION-->
-<section class="row" data-page="{{ title }}">
+<!--PROJECT HEADER-->
+<header class="row" data-page="{{ title }}">
 
     <div class="col-12 order-3 order-md-1 text-center p-0">
-        <img src="{{ project.image_portrait.url }}" class="d-md-none image-fluid w-100" alt="Project portrait Placeholder image">
-<img src="{{ project.image_landscape.url }}" class="d-none d-md-block image-fluid w-100 border-stone" alt="Project landscape Placeholder image">
+        <img src="{{ project.image_portrait.url }}" class="d-md-none image-fluid w-100"
+            alt="Project portrait Placeholder image">
+        <img src="{{ project.image_landscape.url }}" class="d-none d-md-block image-fluid w-100 border-color--stone"
+            alt="Project landscape Placeholder image">
     </div>
-    
-    <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center stone">
+
+    <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center bg-color--stone">
         <div class="align-self-center m-3 text-center">
-            <div class="border-top border-bottom border-dark p-2">
-                <h1 class="font-600 font-8rem mt-2">{{ project.category.title }}</h1>
-                <h2 class="font-500 font-1rem">{{ project.title }}</h2>
+            <div class="header-border">
+                <h1 class="header-category">{{ project.category.title }}</h1>
+                <h2 class="header-title">{{ project.title }}</h2>
             </div>
         </div>
     </div>
 
-
-    <div class="col-12 col-md-6 order-2 order-md-3 col-lg-6 text-center stone">
+    <div class="col-12 col-md-6 col-lg-6 order-2 order-md-3 text-center bg-color--stone">
         <p>{{ project.content|linebreaks }}</p>
     </div>
+</header>
 
-    
-  
-</section>
-
-
-<!--SECTIONS-->
-<section class="row border-stone">
+<!--PROJECT CONTENT-->
+<section class="row border-color--stone">
     <div class="col-12 col-lg-10 offset-lg-1 mb-5">
-
         {% for section in sections %}
         <div class="mt-5">
-
-            <h3>{{ section.title }}</h3>
+            <h3 class="h-section">{{ section.title }}</h3>
             <p>{{ section.content|linebreaks }}</p>
-
             {% if section.image %}
-            <div class="row">
+            <figure class="row">
                 <div class="col-12 col-lg-10 offset-lg-1">
-                        <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
-                        {% if section.caption_url %}
-                        <a href="{{ section.caption_url }}" class="caption pl-md-1">{{ section.caption }}</a>
-                        {% else %}
-                        <span class="caption pl-md-1">{{ section.caption }}</span>
-                        {% endif %}
+                    <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
+                    <figcaption class="pl-md-1">
+                        {{ section.caption }}
+                    </figcaption>
+                    {% if section.caption_url %}
+                        <a href="{{ section.caption_url }}" class="link">
+                            source
+                        </a>
+                    {% endif %}
                 </div>
-            </div>
-            <!--WHY: Grid used to vary img size by device size and center.-->
+            </figure>
             {% endif %}
-
         </div>
         {% endfor %}
-
     </div>
-
 </section>
-
-
-
-
-
-
-
-<!--<section class="row">
-<div class="col-12 col-md-6">
-<h2 class="">{{ project.category.title }}</h2>
-<h1 class="">{{ project.title }}</h1>
-</div>
-
-<div class="col-12 col-md-6">
-<p>{{ project.content|linebreaks }}</p>
-</div>
-
-</section>-->
-
-
-<!--SECTIONS-->
-<!--<div class="row border-stone">
-{% for section in sections %}
-
-    <div class="col-lg-10 offset-lg-1">
-
-<section class="mt-3">
-    <h3 class="mt-3">{{ section.title }}</h3>
-    {% if section.image_portrait %}
-   
-
-       
-<img src="{{ section.image_portrait.url }}" class="image-fluid w-100" alt="Section portrait Placeholder image">
-{% endif %}
-{% if section.image_landscape %}
-<img src="{{ section.image_landscape.url }}" class="image-fluid w-100" alt="Section landscape Placeholder image">
-{% endif %}
-
-
-<p>{{ section.content|linebreaks }}</p>
-</section>
-</div>
-
-{% endfor %}
-</div>-->
-
-
-
 {% endblock %}

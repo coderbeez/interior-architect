@@ -1,107 +1,92 @@
 {% extends 'base.html' %}
 {% block content%}
 
-<!--TITLE-->
-<section class="row mt-4" data-page="{{ title }}">
+<!--BLOG HEADER-->
+<header class="row mt-4" data-page="{{ title }}">
 
-    <div class="col-12 col-md-6 order-2 order-md-1 height4 d-flex justify-content-center background-img" style="background-image: url({{ blog.image.url }})">
+    <div class="col-12 col-md-6 order-2 order-md-1 bg-img d-flex justify-content-center"
+        style="background-image: url({{ blog.image.url }})">
         <!-- WHY: Inline style allows url to come from database.-->
-        <div class="col-12 d-md-none p-4 align-self-center opacity">
-            <div class="border-top border-bottom border-dark p-2">
-                <h1 class="text-center font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-                <h2 class="text-center font-500 font-1rem">{{ blog.title }}</h2>
+        <!--HEADER TEXT - SM DEVICES-->
+        <div class="col-12 d-md-none header-opaque align-self-center">
+            <div class="header-border">
+                <h1 class="header-category">{{ blog.category.title }}</h1>
+                <h2 class="header-title">{{ blog.title }}</h2>
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-md-6 order-1 order-md-2 stone d-flex justify-content-center height4">
+    <div class="col-12 col-md-6 order-1 order-md-2 bg-color--stone d-flex justify-content-center">
         <div class="align-self-center m-3 text-center">
-            <div class="d-none d-md-inline-block border-top border-bottom border-dark p-2">
-                <h1 class="font-600 font-8rem mt-2">{{ blog.category.title }}</h1>
-                <h2 class="font-500 font-1rem">{{ blog.title }}</h2>
+            <!--HEADER TEXT - MD & LG DEVICES-->
+            <div class="d-none d-md-inline-block header-border">
+                <h1 class="header-category">{{ blog.category.title }}</h1>
+                <h2 class="header-title">{{ blog.title }}</h2>
             </div>
             <p>{{ blog.content|linebreaks }}</p>
             <!--BUG: class not being applied with linebreaks-->
         </div>
     </div>
 
-    <!--<div class="col-12">
-        {% if blog.caption_url %}
-        <a href="{{ blog.caption_url }}" class="caption">{{ blog.caption }}</a>
-        {% else %}
-        <span class="caption">{{ blog.caption }}</span>
-        {% endif %}
-    </div>-->
+</header>
 
-</section>
-
-<!--SECTIONS-->
-<section class="row border-stone">
+<!--BLOG CONTENT-->
+<section class="row border-color--stone">
     <div class="col-12 col-lg-10 offset-lg-1 mb-5">
-
         {% for section in sections %}
         <div class="mt-5">
-
-            <h3>{{ section.title }}</h3>
+            <h3 class="h-section">{{ section.title }}</h3>
             <p>{{ section.content|linebreaks }}</p>
-
             {% if section.image %}
-            <div class="row">
+            <figure class="row">
                 <div class="col-12 col-md-8 offset-md-2">
-                        <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
-                        {% if section.caption_url %}
-                        <a href="{{ section.caption_url }}" class="caption pl-md-1">{{ section.caption }}</a>
-                        {% else %}
-                        <span class="caption pl-md-1">{{ section.caption }}</span>
-                        {% endif %}
+                    <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
+                    <figcaption class="d-inline-block pl-md-1 ">
+                        {{ section.caption }}
+                    </figcaption>
+                    {% if section.caption_url %}
+                        <a href="{{ section.caption_url }}" class="link">
+                            source
+                        </a>
+                    {% endif %}
                 </div>
-            </div>
-            <!--WHY: Grid used to vary img size by device size and center.-->
+            </figure>
             {% endif %}
-
         </div>
         {% endfor %}
-
     </div>
-
 </section>
 
-<!--COMMENTS SECTION-->
-<section class="stone row stone pt-5 mb-5">
-
-    <div class="col-12 col-md-5 col-lg-4 offset-lg-1 text-center">
-        <div class="border-top border-bottom border-dark p-2">
-            <h2 class="mt-2 font-500 font-1rem">COMMENTS</h2>
+<!--BLOG COMMENTS-->
+<section class="row bg-color--stone pt-5 mb-5">
+    <!--HEADING-->
+    <header class="col-12 col-md-5 col-lg-4 offset-lg-1 text-center">
+        <div class="header-border">
+            <h1 class="header-title mt-2">COMMENTS</h1>
         </div>
-        <p class="mt-3">I would love to hear from you! Simply leave a comment or query about this blog and I will reply.</p>  
-    </div>
+        <p class="mt-3">I would love to hear from you! Simply leave a comment or query about this blog and I will reply.
+        </p>
+    </header>
 
+    <!--COMMENT FORM-->
     <div class="col-12 col-md-7 col-lg-6 text-center">
         <form method="POST">
             {% csrf_token %}
             {{ form }}
-         <button type="submit">POST COMMENT</button>
+            <button type="submit">POST COMMENT</button>
         </form>
-        <!--<textarea class="textarea-style" rows=5></textarea>
-        <button class="p-2 m-2">POST COMMENT</button>-->
     </div>
 
-
-
-
+    <!--COMMENTS TODATE-->
     <div class="col-12 col-lg-10 offset-lg-1 text-center mt-4">
-        
         {% for comment in comments %}
-            <p class="mb-4">{{ comment.content }} <br>
-                {% if comment.reply %}
-            <span class="mr-2">REPLY</span><span class="italics">{{ comment.reply }}</span></p>
-            {% endif %}
-            <!--WHY: Included if to prevent REPLY from printing is no reply.-->
+        <p class="mb-4">{{ comment.content }} <br>
+            {% if comment.reply %}
+            <span class="mr-2">REPLY</span><span class="">{{ comment.reply }}</span></p>
+        {% endif %}
+        <!--WHY: Included if to prevent REPLY from printing is no reply.-->
         {% endfor %}
-    
     </div>
 
 </section>
-
-
 {% endblock %}
