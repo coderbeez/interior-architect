@@ -27,19 +27,14 @@
 
         <div id="carouselExampleFade" class="carousel slide carousel-fade border-color--stone" data-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="4000">
-              <img src="{% static 'images/portrait1.jpg' %}" class="d-block d-md-none w-100" alt="Image1">
-              <img src="{% static 'images/landscape1.jpg' %}" class="d-none d-md-block w-100" alt="Image1L">
-            </div>
+
+{% for project in projects %}
             <div class="carousel-item" data-interval="4000">
-              <img src="{% static 'images/portrait2.jpg' %}" class="d-block d-md-none w-100" alt="Image2">
-              <img src="{% static 'images/landscape2.jpg' %}" class="d-none d-md-block w-100" alt="Image2L">
+              <img src="{{ project.image_portrait.url }}" class="d-block d-md-none w-100" alt="Image {{ project.title }}">
+              <img src="{{ project.image_landscape.url }}" class="d-none d-md-block w-100" alt="Image {{ project.title }}">
             </div>
-            <div class="carousel-item" data-interval="4000">
-              <img src="{% static 'images/portrait3.jpg' %}" class="d-block d-md-none w-100" alt="Image3">
-              <img src="{% static 'images/landscape3.jpg' %}" class="d-none d-md-block w-100" alt="Image3L">
-            </div>
-          </div>
+            {% endfor %}
+  
           <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>

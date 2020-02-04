@@ -2,6 +2,10 @@ $(document).ready(function () {
 
     console.log('test all');
 
+    $('#carouselExampleFade').find('.carousel-item').first().addClass('active');
+/*Credit: https://stackoverflow.com/questions/52870493/carousel-set-first-loop-image-as-active-item*/
+
+    console.log('carousel');
     /**----------------------------------------
     * Navbar Styling
     ----------------------------------------*/
