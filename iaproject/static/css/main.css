@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Alata|Alef|Asul|B612|Cantarell|Comfortaa|GFS+Neohellenic|Gudea|Josefin+Sans|Karla|Kulim+Park|M+PLUS+1p|Oxygen|Pavanam|Poppins|Puritan|Reem+Kufi|Sulphur+Point|Syncopate&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Alegreya|Arapey|Barlow+Semi+Condensed|Crimson+Text|Fira+Sans+Extra+Condensed|Frank+Ruhl+Libre|Gelasio|Gudea|Gupter|Hind+Vadodara|Ibarra+Real+Nova|Jaldi|Martel|Neuton|PT+Serif|Pontano+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Ovo&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Ovo|PT+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,600,600i,700,700i&display=swap');
 
@@ -24,6 +16,10 @@ span {
     font-style: italic;
 }
 /*Put near top as other css might overwrite*/
+
+li > span {
+    font-style: normal;
+}
 
 
 h1, h2, h3, h4 {
