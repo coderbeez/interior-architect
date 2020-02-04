@@ -34,6 +34,7 @@
               <img src="{{ project.image_landscape.url }}" class="d-none d-md-block w-100" alt="Image {{ project.title }}">
             </div>
             {% endfor %}
+            <!--WHY: Active class added to first item in loop using js.-->
   
           <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -70,7 +71,7 @@
               </a>
             </div>
             <div class="d-flex justify-content-center height-160">
-              <small class="align-self-center">{{ blog.content }}</small>
+              <small class="align-self-center">{{ blog.content|truncatewords:40 }}</small>
             </div>
           </div>
         </div>
