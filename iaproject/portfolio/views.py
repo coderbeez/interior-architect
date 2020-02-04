@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Category, Project, Section
+from .models import Category, Project, Section, Download
 
 # Credit: Class based views Corey https://www.youtube.com/watch?v=-s7e_Fy6NRU&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=10
 
@@ -13,7 +13,8 @@ def projects(request):
 def project(request, pk):
     project = Project.objects.get(pk=pk)
     sections = Section.objects.filter(project=project)
-    context = {'title': 'Portfolio', 'project': project, 'sections': sections}
+    downloads = Download.objects.filter(project=project, exclude=False)
+    context = {'title': 'Portfolio', 'project': project, 'sections': sections, 'downloads': downloads}
     return render(request, 'portfolio/project.html', context)
 
 
