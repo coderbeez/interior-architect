@@ -211,6 +211,7 @@ button, .button-a {
 
 button:hover, .button-a:hover {
     background-color: #787676;
+    color: #000000;
 }
 
 .button-more {

@@ -80,17 +80,15 @@
                 <th>Description</th>
                 <td>{{ download.content }}</td>
             </tr>
+            {% if download.price %}
             <tr>
                 <th>Price</th>
-                {% if download.price %}
                 <td>€{{ download.price }}</td>
-                {% else %}
-                <td>Free</td>
-                {% endif %}
             </tr>
+            {% endif %}
         </table>
         {% if download.price %}
-        <a class="d-inline-block button-a" href="#">DOWNLOAD€</a>
+        <a class="d-inline-block button-a" href="#">PURCHASE</a>
         {% else %}
         <a class="d-inline-block button-a" href="#">DOWNLOAD</a>
         {% endif %}
