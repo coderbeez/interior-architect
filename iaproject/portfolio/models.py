@@ -17,9 +17,9 @@ class Project(models.Model):
     image_landscape = models.ImageField(default='project_landscape_default.jpg', upload_to="project_images")
     # Added defaults to prevent error is missing image in template
     content = models.TextField()
-    order = models.IntegerField(null=True)
-    exclude = models.BooleanField(default=False)
+    order = models.IntegerField(null=True, blank=True)
     home = models.BooleanField(default=False)
+    exclude = models.BooleanField(default=False)
     
 
     def __str__(self):
@@ -34,6 +34,7 @@ class Section(models.Model):
     caption = models.CharField(max_length=200, blank=True)
     caption_url = models.URLField(max_length=200, blank=True)
     content = models.TextField()
+    exclude = models.BooleanField(default=False)
 
 
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
