@@ -84,6 +84,15 @@ a:hover {
     color: #B8190C!important;
 }
 
+td, th {
+    padding: 2px;
+    vertical-align: top;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
 /*------HEADERS------*/
 
 .header-border {
@@ -153,10 +162,16 @@ a > .header-category:hover, a > .header-title:hover {
 
 }
 
+.bg-color--white {
+    background-color: #ffffff;
+
+}
+
 .border-color--stone {
     border: 2px solid rgba(244, 244, 244);
     }
 
+    
 .height-150 {
         min-height: 150px;
     }

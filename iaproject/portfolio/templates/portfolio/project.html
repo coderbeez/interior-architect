@@ -40,9 +40,9 @@
                         {{ section.caption }}
                     </figcaption>
                     {% if section.caption_url %}
-                        <a href="{{ section.caption_url }}" class="link">
-                            source
-                        </a>
+                    <a href="{{ section.caption_url }}" class="link">
+                        source
+                    </a>
                     {% endif %}
                 </div>
             </figure>
@@ -51,4 +51,53 @@
         {% endfor %}
     </div>
 </section>
+
+
+
+
+{% if downloads %}
+<!--PROJECT DOWNLOADS-->
+<article class="row pt-4 bg-color--stone">
+
+    <header class="col-12 col-md-5 col-lg-4 offset-lg-1 text-center">
+        <div class="header-border">
+            <h1 class="header-title mt-2">DOWNLOADS</h1>
+        </div>
+        <span class="d-block mt-4">Additional project content available for download.
+        </span>
+    </header>
+
+    <section class="col-12 col-md-6">
+        {% for download in downloads %}
+        <div class="bg-color--white mb-4 p-2">
+
+        <table class="mt-2">
+            <tr>
+                <th>Title</th>
+                <td class="uppercase">{{ download.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ download.content }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                {% if download.price %}
+                <td>€{{ download.price }}</td>
+                {% else %}
+                <td>Free</td>
+                {% endif %}
+            </tr>
+        </table>
+        {% if download.price %}
+        <a class="d-inline-block button-a" href="#">DOWNLOAD€</a>
+        {% else %}
+        <a class="d-inline-block button-a" href="#">DOWNLOAD</a>
+        {% endif %}
+
+    </div>
+    {% endfor %} 
+    </section>
+</article>
+{% endif %}
 {% endblock %}
