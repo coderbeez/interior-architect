@@ -90,7 +90,7 @@
         {% if download.price %}
         <a class="d-inline-block button-a" href="#">PURCHASE</a>
         {% else %}
-        <a class="d-inline-block button-a" href="#">DOWNLOAD</a>
+        <a class="d-inline-block button-a" href="{{ download.download.url }}">DOWNLOAD</a>
         {% endif %}
 
     </div>
