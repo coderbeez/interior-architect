@@ -20,8 +20,7 @@ class Project(models.Model):
     order = models.IntegerField(null=True)
     exclude = models.BooleanField(default=False)
     home = models.BooleanField(default=False)
-    pdf = models.FileField(blank=True, upload_to="project_pdfs")
-    pdf_price = models.DecimalField(null=True, blank=True, max_digits=5, decimal_places=2)
+    
 
     def __str__(self):
         return f'<Order: {self.order}, Name: {self.title}, ID: {self.id}>'
@@ -39,3 +38,12 @@ class Section(models.Model):
 
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
+class Download(models.Model):
+    project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='downloads')
+    title = models.CharField(max_length=500, blank=True)
+    content = models.TextField()
+    download = models.FileField(upload_to="project_downloads")
+    price = models.DecimalField(null=True, blank=True, max_digits=5, decimal_places=2) #some pdfs are free
+    exclude = models.BooleanField(default=False)
+
+    
