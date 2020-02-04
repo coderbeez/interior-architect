@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <header class="row mt-3" data-page="{{ title }}">
@@ -111,12 +112,12 @@
                 <!--SM DEVICES-->
                 <div class="d-block d-md-none header-border mb-3">
                     <h2>EMPLOYMENT</h2>
-                    <span class="">Download Full CV </span><a class="link" href="#">here</a>
+                    <span class="">Download Full CV </span><a class="link" href="{% static 'pdfs/cv_colette_o_sullivan.pdf' %}">here</a>
                 </div>
                 <!--MD & LG DEVICES-->
                 <div class="d-none d-md-block mt-lg-4">
                     <h1 class="h-article">EMPLOYMENT</h1>
-                    <span>Download Full CV </span><a class="link" href="#">here</a>
+                    <span>Download Full CV </span><a class="link" href="{% static 'pdfs/cv_colette_o_sullivan.pdf' %}">here</a>
                 </div>
             </header>
 
