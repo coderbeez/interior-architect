@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from django.views.generic import ListView, DetailView
 from .models import Category, Project, Section, Download
 
@@ -6,9 +7,13 @@ from .models import Category, Project, Section, Download
 
 # Create your views here.
 def projects(request):
-    projects = Project.objects.filter(exclude=False).order_by('order')
-    context = {'title': 'Portfolio', 'projects': projects}
+    project_list = Project.objects.filter(exclude=False).order_by('order')
+    paginator = Paginator(project_list, 3) # Show 3 blogs per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'title': 'Portfolio', 'page_obj': page_obj}
     return render(request, 'portfolio/projects.html', context)
+    # pagination from django docs https://docs.djangoproject.com/en/3.0/topics/pagination/
 
 def project(request, pk):
     project = Project.objects.get(pk=pk)
