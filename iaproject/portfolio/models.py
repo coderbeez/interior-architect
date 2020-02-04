@@ -19,16 +19,18 @@ class Project(models.Model):
     content = models.TextField()
     order = models.IntegerField(null=True)
     exclude = models.BooleanField(default=False)
+    home = models.BooleanField(default=False)
+    pdf = models.FileField(blank=True, upload_to="project_pdfs")
+    pdf_price = models.DecimalField(null=True, blank=True, max_digits=5, decimal_places=2)
 
     def __str__(self):
         return f'<Order: {self.order}, Name: {self.title}, ID: {self.id}>'
         #name shown in admin
+  
 
 class Section(models.Model):
     project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='sections')
     title = models.CharField(max_length=500, blank=True)
-    image_portrait = models.ImageField(blank=True, upload_to="project_images")
-    image_landscape = models.ImageField(blank=True, upload_to="project_images")
     image = models.ImageField(blank=True, upload_to="project_images")
     caption = models.CharField(max_length=200, blank=True)
     caption_url = models.URLField(max_length=200, blank=True)

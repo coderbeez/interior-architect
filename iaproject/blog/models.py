@@ -19,6 +19,7 @@ class Blog(models.Model):
     content = models.TextField(blank=True) # text blank
     order = models.IntegerField(null=True, blank=True) # null ok - should not be required in form!!!
     exclude = models.BooleanField(default=False) # yes no
+    home = models.BooleanField(default=False) 
 
     def __str__(self):
         return f'<Order: {self.order}, Name: {self.title}, ID: {self.id}>'
