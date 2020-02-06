@@ -17,9 +17,19 @@ def add(request, pk):
     project = download.project.id
     if not download in cart.downloads.all():
         cart.downloads.add(download)
-        messages.success(request, f'Download added to cart.')
+        new_count = 0
+        new_total = 0.00
+        for download in cart.downloads.all():
+            new_count += 1
+            new_total += float(download.price)
+        cart.count = new_count
+        cart.total = new_total
+        cart.save()
+        messages.success(request, f'{download.title} added to cart.')
+        #cart.total += download.price
+        #cart.save()
     else: 
-        messages.success(request, f'Download already in cart.')
+        messages.success(request, f'{download.title} already in cart.')
     return redirect('project', pk=project)   #don't need reverse... i think built in... request throws an error
 # after u add to cart where do u want to go?
 
@@ -29,7 +39,15 @@ def remove(request, pk):
     download = Download.objects.get(pk=pk)
     if download in cart.downloads.all():
         cart.downloads.remove(download)
-        messages.success(request, f'Download removed from cart.')
+        new_count = 0
+        new_total = 0.00
+        for download in cart.downloads.all():
+            new_count += 1
+            new_total += float(download.price)
+        cart.count = new_count
+        cart.total = new_total
+        cart.save()
+        messages.success(request, f'{download.title} removed from cart.')
     #else:
         #messages.success(request, f'Download not in cart.')  
     return redirect('cart')   #do i need reverse????          
