@@ -32,14 +32,15 @@ def add(request, pk): #make cart for first time when add
     project = download.project.id
     if not download in cart.downloads.all():
         cart.downloads.add(download)
-        new_count = 0
+        #new_count = 0
         new_total = 0.00
         for download in cart.downloads.all():
-            new_count += 1
+            #new_count += 1
             new_total += float(download.price)
-        cart.count = new_count
+        #cart.count = new_count
         cart.total = new_total
         cart.save()
+        request.session['download_count'] = cart.downloads.count() #create
         messages.success(request, f'{download.title} added to cart.')
         #cart.total += download.price
         #cart.save()
@@ -62,14 +63,15 @@ def remove(request, pk):
     download = Download.objects.get(pk=pk)
     if download in cart.downloads.all():
         cart.downloads.remove(download)
-        new_count = 0
+        #new_count = 0
         new_total = 0.00
         for download in cart.downloads.all():
-            new_count += 1
+            #new_count += 1
             new_total += float(download.price)
-        cart.count = new_count
+        #cart.count = new_count
         cart.total = new_total
         cart.save()
+        request.session['download_count'] = cart.downloads.count() #create
         messages.success(request, f'{download.title} removed from cart.')
     #else:
         #messages.success(request, f'Download not in cart.')  
