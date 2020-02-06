@@ -13,6 +13,7 @@
     <tr>
         <td>{{ item.title }}</td>
         <td>{{ item.price }}</td>
+        <td><a class="d-inline-block button-a" href="{% url 'remove' pk=item.id %}">REMOVE</a></td>
     </tr>
 {% endfor %}
 <tr>
