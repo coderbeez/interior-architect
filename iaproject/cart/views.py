@@ -7,12 +7,27 @@ from .models import Cart
 # Credit: Coding Point https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23
 
 def cart(request):
-    cart = Cart.objects.all()[0]
+    try:
+        current_cart_id = request.session['cart_id']
+        cart = Cart.objects.get(pk=current_cart_id)
+    except: 
+        current_cart_id = None 
+        cart = None
+        messages.success(request, f'A cart has not been created.')
     context = {'title': 'Cart', 'cart': cart}
     return render(request, 'cart/cart.html', context)
 
-def add(request, pk):
-    cart = Cart.objects.all()[0]
+def add(request, pk): #make cart for first time when add
+    #cart = Cart.objects.all()[0]
+    try: #checking to see if theres a cart id in session already
+        current_cart_id = request.session['cart_id'] #request has a session attribute with key value pairs
+    except: #if not create it
+        new_cart = Cart()# new instance of model
+        new_cart.save()
+        request.session['cart_id'] = new_cart.id #create
+        current_cart_id = request.session['cart_id']
+
+    cart = Cart.objects.get(pk=current_cart_id)    
     download = Download.objects.get(pk=pk)
     project = download.project.id
     if not download in cart.downloads.all():
@@ -35,7 +50,15 @@ def add(request, pk):
 
 
 def remove(request, pk):
-    cart = Cart.objects.all()[0]
+    try: #checking to see if theres a cart id in session already
+        current_cart_id = request.session['cart_id'] #request has a session attribute with key value pairs
+    except: #if not create it
+        new_cart = Cart()# new instance of model
+        new_cart.save()
+        request.session['cart_id'] = new_cart.id #create
+        current_cart_id = request.session['cart_id']
+
+    cart = Cart.objects.get(pk=current_cart_id)    
     download = Download.objects.get(pk=pk)
     if download in cart.downloads.all():
         cart.downloads.remove(download)
