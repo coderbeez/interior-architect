@@ -2,16 +2,28 @@
 {% block content %}
 {% include 'include.html' with tagline='Downloads in current shopping cart.' %}
 
-{% for item in cart.downloads.all %}
 <div class="bg-color--stone mb-4 p-2">
 
-{{ item.title }}
-{{ item.price }}
-    
+<table>  
+    <thead>
+        <th>Title</th>
+        <th>Price</th>
+    </thead>
+    {% for item in cart.downloads.all %}
+    <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.price }}</td>
+    </tr>
+{% endfor %}
+<tr>
+    <td><strong>Total</strong></td>
+    <td>{{ cart.total }}</td>
+</tr>
+
+</table> 
 
 </div>
-{% endfor %}
-
+<!--WHERE: Coding Point Django tutorial for beginners - 22 Cart App https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s -->
 </div>
 </section>
 {% endblock %}
