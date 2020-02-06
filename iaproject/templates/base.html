@@ -42,9 +42,11 @@
         <a class="nav-item nav-link" data-nav="Portfolio" href="{% url 'projects' %}">PORTFOLIO</a>
         <a class="nav-item nav-link" data-nav="Contact" href="{% url 'contact' %}">CONTACT</a>
 
+        {% if request.session.cart_id %}
         <a class="nav-item nav-link" data-nav="Cart" href="{% url 'cart' %}">CART {{ request.session.download_count }}</a>
         <!--WHERE: Coding Point https://www.youtube.com/watch?v=lmdAMQDRRrQ&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=25
--->
+-->     {% endif %}
+
         {% if user.is_authenticated %}
         <a class="nav-item nav-link client" data-nav="Comments" href="{% url 'comments' %}">comments</a>
         <a class="nav-item nav-link client" data-nav="Contacts" href="{% url 'contacts' %}">contacts</a>
