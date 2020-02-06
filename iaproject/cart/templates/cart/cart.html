@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'include.html' with tagline='Downloads in current shopping cart.' %}
+
+{% for item in cart.downloads.all %}
+<div class="bg-color--stone mb-4 p-2">
+
+{{ item.title }}
+{{ item.price }}
+    
+
+</div>
+{% endfor %}
+
+</div>
+</section>
+{% endblock %}

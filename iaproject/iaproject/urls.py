@@ -28,6 +28,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('about/', include('cv.urls')),
     path('portfolio/', include('portfolio.urls')),
+    path('cart/', include('cart.urls')),
     path('users/', include('users.urls')), # not how corey did it may need to change???
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), # class based views
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), # handles forms & logic but not templates
