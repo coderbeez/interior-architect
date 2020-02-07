@@ -93,6 +93,10 @@ td, th {
     text-transform: uppercase;
 }
 
+mute, .mute {
+    color:  #aeacac;
+}
+
 /*------HEADERS------*/
 
 .header-border {

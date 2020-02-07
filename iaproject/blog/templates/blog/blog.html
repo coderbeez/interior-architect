@@ -64,9 +64,13 @@
         <div class="header-border">
             <h1 class="header-title mt-2">COMMENTS</h1>
         </div>
-        <span class="d-block mt-4">I would love to hear from you! Simply leave a comment or query about this blog and I will reply.
+        <span class="d-inline-block mt-4">Like this blog?</span>
+        <a class="d-inline-block button-a" href="{% url 'like' pk=blog.id %}">Like</a>
+        <i class="far fa-heart mute"></i>
+        <mute>{{ blog.like }}</mute>
+        <span class="d-block mt-2 mb-2">I would love to hear from you! Simply leave a comment or query about this blog and I will reply.
         </span>
-        <span class="d-block mt-4">Like this blog? <a class="button-a" href="{% url 'like' pk=blog.id %}">Like</a></span>
+        
     </header>
 
     <!--COMMENT FORM-->
