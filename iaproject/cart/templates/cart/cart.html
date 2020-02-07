@@ -2,9 +2,10 @@
 {% block content %}
 {% include 'include.html' with tagline='Downloads in current shopping cart.' %}
 
-<div class="bg-color--stone mb-4 p-2">
 
-<table>  
+<div class="bg-color--stone mb-4 p-2">
+    {% if request.session.download_count is not 0 %}  
+<table class="table">  
     <thead>
         <th>Title</th>
         <th>Price</th>
@@ -12,16 +13,23 @@
     {% for item in cart.downloads.all %}
     <tr>
         <td>{{ item.title }}</td>
-        <td>{{ item.price }}</td>
-        <td><a class="d-inline-block button-a" href="{% url 'remove' pk=item.id %}">REMOVE</a></td>
+        <td>€{{ item.price }}</td>
+        <td><a class="d-inline-block button-a m-0" href="{% url 'remove' pk=item.id %}">
+            <i class="d-md-none fas fa-trash-alt"></i>
+            <span class="d-none d-md-inline-block">REMOVE</span>
+        </a></td>
     </tr>
 {% endfor %}
 <tr>
-    <td><strong>Total</strong></td>
-    <td>{{ cart.total }}</td>
+    <td>TOTAL</td>
+    <td>€{{ cart.total }}</td>
+    <td></td>
 </tr>
 
 </table> 
+{% else %}
+<p>This cart is empty. Visit a portfolio project page to add a download.</p>
+{% endif %}
 
 </div>
 <!--WHERE: Coding Point Django tutorial for beginners - 22 Cart App https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s -->

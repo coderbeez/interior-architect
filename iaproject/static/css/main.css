@@ -17,7 +17,7 @@ span {
 }
 /*Put near top as other css might overwrite*/
 
-li > span {
+li > span, a > span {
     font-style: normal;
 }
 
