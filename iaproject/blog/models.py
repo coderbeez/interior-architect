@@ -20,6 +20,7 @@ class Blog(models.Model):
     order = models.IntegerField(null=True, blank=True) # null ok - should not be required in form!!!
     home = models.BooleanField(default=False) 
     exclude = models.BooleanField(default=False) # yes no
+    like = models.IntegerField(default=0)
     
 
     def __str__(self):

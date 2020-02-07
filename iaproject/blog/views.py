@@ -43,6 +43,14 @@ def blog(request, pk):
     return render(request, 'blog/blog.html', context)
 
 
+def like(request, pk):
+    blog = Blog.objects.get(pk=pk)
+    blog.like += 1
+    blog.save()
+    messages.success(request, f'Thanks for liking this blog!')
+    return redirect('blog', pk=pk)
+    #Credit: https://stackoverflow.com/questions/36479776/adding-vote-buttons-to-django-objects
+
   
 @login_required
 def comments(request, pk=None):
