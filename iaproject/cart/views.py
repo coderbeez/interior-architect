@@ -1,7 +1,13 @@
+import stripe
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from iaproject.settings import STRIPE_PUBLISHABLE, STRIPE_SECRET
 from portfolio.models import Download
 from .models import Cart
+
+
+
+#stripe.api_key = settings.STRIPE_SECRET # new
 
 # Create your views here.
 # Credit: Coding Point https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23
@@ -79,3 +85,32 @@ def remove(request, pk):
 
 
 
+
+
+
+def charge(request):
+    current_cart_id = request.session['cart_id']
+    cart = Cart.objects.get(pk=current_cart_id)
+
+    stripe.api_key = STRIPE_SECRET
+
+
+    session = stripe.checkout.Session.create(
+  payment_method_types=['card'],
+  line_items=[{
+    'name': 'Drawing',
+    'description': 'Full Floor Plans',
+    #'images': ['https://example.com/t-shirt.png'],
+    'amount': 5000,
+    'currency': 'eur',
+    'quantity': 1,
+  }],
+success_url='http://127.0.0.1:8000/cart/success?session_id={CHECKOUT_SESSION_ID}',
+  cancel_url='http://127.0.0.1:8000/cart/cart',
+)
+    context = {'sid': session.id,}
+    return render(request, 'cart/charge.html', context)
+
+
+def success(request):
+    return render(request, 'cart/success.html')

@@ -151,4 +151,5 @@ LOGIN_REDIRECT_URL = 'index' # where u want successful login to redirect
 LOGIN_URL = 'login' # after addind decorator to route default url for login
 #Credit Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
 
-
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE') 
+STRIPE_SECRET = os.getenv('STRIPE_SECRET') 
