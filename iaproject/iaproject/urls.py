@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
     path('about/', include('cv.urls')),
+    path('contact/', include('contact.urls')),
     path('portfolio/', include('portfolio.urls')),
     path('cart/', include('cart.urls')),
     path('users/', include('users.urls')), # not how corey did it may need to change???
