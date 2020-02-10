@@ -37,9 +37,32 @@ def contacts(request, pk=None):
             form = ReplyForm(request.POST, instance=contact) # POST the form data
             if form.is_valid():
                 form.save()
-                send_mail('Reply from COS Interior Architect',f'Thank you for your enquiry. {contact.reply}','cos.interior.architect@gmail.com',[contact.email,'coletteo32@gmail.com',],fail_silently=False,)
-                messages.success(request, f'Contact reply saved')
+                send_mail('Reply from COS Interior Architect',
+                f"""
+                Dear {contact.name}
+
+                Many thanks you for your {contact.category} enquiry.
+
+                QUERY: {contact.query} 
+
+                REPLY: {contact.reply}
+
+                Please do not hesitate to contact me with any further queries.
+
+                All the best
+                Colette O'Sullivan
+
+                INTERIOR ARCHITECT & DESIGNER
+                http://www.coletteosullivan.com/
+
+                """,
+                'cos.interior.architect@gmail.com',
+                [contact.email,'coletteo32@gmail.com',],
+                fail_silently=False,)
+                messages.success(request, f'{contact.name} emailed or enquiry closed.')
                 return redirect('contacts')
 
     context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
     return render(request, 'contact/contacts.html', context)    
+
+#https://realpython.com/python-f-strings/
