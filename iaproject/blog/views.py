@@ -70,24 +70,4 @@ def comments(request, pk=None):
             return redirect('comments')
 
     context = {'title': 'Comments', 'comments': comments, 'form': form}
-    return render(request, 'blog/comments.html', context)    
-
-
-#Not Using
-@login_required
-def reply(request, pk):
-    comment = Comment.objects.get(pk=pk)
-    form = ReplyForm()
-    if request.method == 'POST':
-        form = ReplyForm(request.POST, instance=comment) # POST the form data
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Reply added')
-            return redirect('comments')
-            # post get redirect pattern... redirect to profile sends a get request and prevents reload???
-    else:
-        form = ReplyForm(instance=comment) # POST the form data - don't think I need this
-       
-    context = {'comment': comment, 'form': form}
-    return render(request, 'blog/reply.html', context) #why can I access user. in template???   
-# passing in instance so fields are prepopulated as its an update form    
+    return render(request, 'blog/comments.html', context)
