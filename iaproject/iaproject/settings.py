@@ -152,5 +152,14 @@ LOGIN_REDIRECT_URL = 'index' # where u want successful login to redirect
 LOGIN_URL = 'login' # after addind decorator to route default url for login
 #Credit Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
 
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE') 
-STRIPE_SECRET = os.getenv('STRIPE_SECRET') 
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
+#EMAIL config
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cos.interior.architect@gmail.com'
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
+EMAIL_USE_TLS = True
+
+# Credit Brad Traversy real estate project
