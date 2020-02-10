@@ -105,9 +105,9 @@ def charge(request):
     'currency': 'eur',
     'quantity': 1,
   }],
-success_url='http://127.0.0.1:8000/cart/success?session_id={CHECKOUT_SESSION_ID}',
-  cancel_url='http://127.0.0.1:8000/cart/cart',
-)
+success_url=request.build_absolute_uri('/cart/success?session_id={CHECKOUT_SESSION_ID}'),
+cancel_url=request.build_absolute_uri('/cart'),
+) #need the absolute urls
     context = {'sid': session.id,}
     return render(request, 'cart/charge.html', context)
 
