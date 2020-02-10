@@ -28,4 +28,5 @@ class Contact(models.Model):
     location = models.CharField(max_length=200, blank=True)
     query = models.TextField()
     reply = models.TextField(blank=True)
+    exclude = models.BooleanField(default=False)
 

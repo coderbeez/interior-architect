@@ -19,7 +19,7 @@ def blogs(request):
 def blog(request, pk):
     blog = Blog.objects.get(pk=pk)
     sections = Section.objects.filter(blog=blog)
-    comments = Comment.objects.filter(blog=blog).order_by('-id')
+    comments = Comment.objects.filter(blog=blog, exclude=False).order_by('-id')
     form = CommentForm() #equate to request.GET
     
     if request.method == 'POST':
@@ -54,7 +54,7 @@ def like(request, pk):
   
 @login_required
 def comments(request, pk=None):
-    comments = Comment.objects.filter(reply='').order_by('id') #order by oldest without reply
+    comments = Comment.objects.filter(exclude=False, reply='').order_by('id') #order by oldest without reply
     form = ReplyForm()
 
     if pk:

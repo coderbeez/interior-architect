@@ -97,6 +97,11 @@ mute, .mute {
     color:  #aeacac;
 }
 
+.exclude {
+    /*color: #B8190C;
+    font-weight: 700;*/
+    margin-left: 1rem;
+}
 /*------HEADERS------*/
 
 .header-border {

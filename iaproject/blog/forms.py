@@ -19,6 +19,6 @@ class CommentForm(forms.ModelForm):
 class ReplyForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['reply']
-        labels = {'reply': _(''),}
+        fields = ['reply', 'exclude']
+        labels = {'reply': _(''), 'exclude': _('exclude'),}
         widgets = {'reply': Textarea(attrs={'rows':5, 'class': 'textarea-style'}),}

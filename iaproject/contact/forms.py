@@ -15,8 +15,8 @@ class ContactForm(forms.ModelForm):
 class ReplyForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['reply']
-        labels = {'reply': _(''),}
+        fields = ['reply', 'exclude']
+        labels = {'reply': _(''), 'exclude': _('exclude'),}
         widgets = {'reply': Textarea(attrs={'rows':5, 'class': 'textarea-style'}),}
 
         #customising model form fields from django docs https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/
