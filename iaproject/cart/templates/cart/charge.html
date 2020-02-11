@@ -1,22 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
 {% block content %}
-{% include 'include.html' with tagline='Purchase complete.' %}
 
+<div data-sid="{{ sid }}"></div> 
 
-
-<div class="bg-color--stone mb-4 p-2">
-<p data-sid="{{ sid }}">checkout</p> 
- 
-
-
-</div>
-
-</div>
-</section>
 {% endblock %}
 
 {% block stripe_js %}

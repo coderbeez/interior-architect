@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block stripe_js %}
-
-{% endblock %}
+{% load mathfilters %}
 
 {% block content %}
-{% include 'include.html' with tagline='Purchase your downloads.' %}
-
-
+{% include 'include.html' with tagline='Many thanks for purchasing today.' %}
 
 <div class="bg-color--stone mb-4 p-2">
-<p>success</p>    
+<p class="mt-2">Your downloads will be emailed shortly.</p>
 
+<strong>Order Summary</strong>
+{% for item in stripe_data.display_items %}
+<p>* <span>{{ item.custom.name }} </span> €{{ item.amount|intdiv:100 }} {{ item.custom.description }}</p>
+{% endfor %}
 
-
+<p>Stripe will email a receipt to you.</p>
+<p>If you have any problems, don't hesitate to contact me quoting the reference number {{ stripe_data.client_reference_id }}.</p>
 </div>
 
 </div>
