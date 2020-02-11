@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'extra_views',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
