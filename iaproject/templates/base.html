@@ -61,11 +61,13 @@
   <!--MESSAGES-->
   {% if messages %}
   {% for message in messages %}
-  <section class="alert alert-{{ message.tags }}">
+  <span class="d-block text-center message--{{ message.tags }}">
     {{ message }}
-  </section>
+  </span>
   {% endfor %}
   {% endif %}
+
+  
   <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
 
   <!--MAIN BLOCK CONTENT-->

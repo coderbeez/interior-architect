@@ -135,6 +135,21 @@ a > .header-category:hover, a > .header-title:hover {
     color: #787676;
 }
 
+.message--success {
+    color: #42a813;
+    font-weight: 700;
+}
+
+.message--warning {
+    color:#eda332;
+    font-weight: 700;
+}
+
+.message--error {
+    color: #B8190C;
+    font-weight: 700;
+}
+
 /*------BACKGROUNDS & BORDERS------*/
 
 .bg-img {

@@ -16,7 +16,7 @@ def cart(request):
     except: 
         current_cart_id = None 
         cart = None
-        messages.success(request, f'A cart has not been created.')
+        messages.error(request, f'A cart has not been created.')
     context = {'title': 'Cart', 'cart': cart}
     return render(request, 'cart/cart.html', context)
 
@@ -42,7 +42,7 @@ def add(request, pk): #make cart for first time when add
         request.session['download_count'] = cart.downloads.count() 
         messages.success(request, f'{download.title} added to cart.')
     else: 
-        messages.success(request, f'{download.title} already in cart.')
+        messages.warning(request, f'{download.title} already in cart.')
     return redirect('project', pk=project)   #don't need reverse... i think built in... request throws an error
 # after u add to cart where do u want to go?
 
