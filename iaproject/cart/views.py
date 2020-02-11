@@ -6,9 +6,6 @@ from portfolio.models import Download
 from .models import Cart
 
 
-
-#stripe.api_key = settings.STRIPE_SECRET # new
-
 # Create your views here.
 # Credit: Coding Point https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23
 
@@ -24,7 +21,6 @@ def cart(request):
     return render(request, 'cart/cart.html', context)
 
 def add(request, pk): #make cart for first time when add
-    #cart = Cart.objects.all()[0]
     try: #checking to see if theres a cart id in session already
         current_cart_id = request.session['cart_id'] #request has a session attribute with key value pairs
     except: #if not create it
@@ -38,18 +34,13 @@ def add(request, pk): #make cart for first time when add
     project = download.project.id
     if not download in cart.downloads.all():
         cart.downloads.add(download)
-        #new_count = 0
         new_total = 0.00
         for download in cart.downloads.all():
-            #new_count += 1
             new_total += float(download.price)
-        #cart.count = new_count
         cart.total = new_total
         cart.save()
-        request.session['download_count'] = cart.downloads.count() #create
+        request.session['download_count'] = cart.downloads.count() 
         messages.success(request, f'{download.title} added to cart.')
-        #cart.total += download.price
-        #cart.save()
     else: 
         messages.success(request, f'{download.title} already in cart.')
     return redirect('project', pk=project)   #don't need reverse... i think built in... request throws an error
@@ -69,12 +60,9 @@ def remove(request, pk):
     download = Download.objects.get(pk=pk)
     if download in cart.downloads.all():
         cart.downloads.remove(download)
-        #new_count = 0
         new_total = 0.00
         for download in cart.downloads.all():
-            #new_count += 1
             new_total += float(download.price)
-        #cart.count = new_count
         cart.total = new_total
         cart.save()
         request.session['download_count'] = cart.downloads.count() #create
@@ -84,33 +72,38 @@ def remove(request, pk):
     return redirect('cart')   #do i need reverse????          
 
 
-
-
-
-
 def charge(request):
     current_cart_id = request.session['cart_id']
     cart = Cart.objects.get(pk=current_cart_id)
-
+    items = []
+    for download in cart.downloads.all():
+        item = {'name': download.title, 'description': download.content, 'amount': int((download.price)*100), 'currency': 'eur', 'quantity': 1}
+        items.append(item)
     stripe.api_key = STRIPE_SECRET
-
-
     session = stripe.checkout.Session.create(
-  payment_method_types=['card'],
-  line_items=[{
-    'name': 'Drawing',
-    'description': 'Full Floor Plans',
-    #'images': ['https://example.com/t-shirt.png'],
-    'amount': 5000,
-    'currency': 'eur',
-    'quantity': 1,
-  }],
-success_url=request.build_absolute_uri('/cart/success?session_id={CHECKOUT_SESSION_ID}'),
-cancel_url=request.build_absolute_uri('/cart'),
-) #need the absolute urls
+        payment_method_types=['card'],
+        line_items=items,
+        success_url='http://127.0.0.1:8000/cart/success?session_id={CHECKOUT_SESSION_ID}',
+        #success_url=request.build_absolute_uri('/cart/success?session_id={CHECKOUT_SESSION_ID}'),
+        cancel_url=request.build_absolute_uri('/cart'),
+        client_reference_id='A0'+str(cart.id)
+        )
     context = {'sid': session.id,}
+    
     return render(request, 'cart/charge.html', context)
 
 
 def success(request):
-    return render(request, 'cart/success.html')
+    stripe_session = request.GET.get('session_id')
+    stripe_data = stripe.checkout.Session.retrieve(stripe_session)
+
+    cart_id = request.session['cart_id']
+    cart = Cart.objects.get(pk=cart_id)
+    cart.stripe = stripe_session
+    cart.save()
+    del request.session['cart_id']
+    
+    context = {'title': 'Purchase Complete', 'stripe_data': stripe_data, }
+    return render(request, 'cart/success.html', context)
+    #https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get
+    #https://stackoverflow.com/questions/16039399/how-to-clear-all-session-variables-without-getting-logged-out
