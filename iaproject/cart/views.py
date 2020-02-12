@@ -2,11 +2,9 @@ import stripe
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from iaproject.settings import STRIPE_PUBLISHABLE, STRIPE_SECRET
-from portfolio.models import Download
 from .models import Cart
+from portfolio.models import Download
 
-
-# Create your views here.
 # Credit: Coding Point https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23
 
 def cart(request):
@@ -16,7 +14,7 @@ def cart(request):
     except: 
         current_cart_id = None 
         cart = None
-        messages.error(request, f'A cart has not been created.')
+        messages.error(request, f'A cart has not been created!')
     context = {'title': 'Cart', 'cart': cart}
     return render(request, 'cart/cart.html', context)
 
@@ -43,9 +41,8 @@ def add(request, pk): #make cart for first time when add
         messages.success(request, f'{download.title} added to cart.')
     else: 
         messages.warning(request, f'{download.title} already in cart.')
-    return redirect('project', pk=project)   #don't need reverse... i think built in... request throws an error
-# after u add to cart where do u want to go?
-
+    return redirect('project', pk=project) #request throws an error?
+    #after u add to cart where do u want to go - assume u want to stay on project pg
 
 def remove(request, pk):
     try: #checking to see if theres a cart id in session already
@@ -68,9 +65,8 @@ def remove(request, pk):
         request.session['download_count'] = cart.downloads.count() #create
         messages.success(request, f'{download.title} removed from cart.')
     #else:
-        #messages.success(request, f'Download not in cart.')  
-    return redirect('cart')   #do i need reverse????          
-
+        #messages.warning(request, f'Download is not in cart.')#do I need?
+    return redirect('cart')       
 
 def charge(request):
     current_cart_id = request.session['cart_id']
@@ -89,20 +85,17 @@ def charge(request):
         client_reference_id='A0'+str(cart.id)
         )
     context = {'sid': session.id,}
-    
     return render(request, 'cart/charge.html', context)
-
+    #Do i have to hard code success url?
 
 def success(request):
     stripe_session = request.GET.get('session_id')
     stripe_data = stripe.checkout.Session.retrieve(stripe_session)
-
     cart_id = request.session['cart_id']
     cart = Cart.objects.get(pk=cart_id)
     cart.stripe = stripe_session
-    cart.save()
-    del request.session['cart_id']
-    
+    cart.save() #saving the session id to cart model so have record and can see what carts were purchased
+    del request.session['cart_id'] #can't purchase same cart twice
     context = {'title': 'Purchase Complete', 'stripe_data': stripe_data, }
     return render(request, 'cart/success.html', context)
     #https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get
