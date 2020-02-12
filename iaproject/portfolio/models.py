@@ -20,7 +20,6 @@ class Project(models.Model):
     order = models.IntegerField(null=True, blank=True)
     home = models.BooleanField(default=False)
     exclude = models.BooleanField(default=False)
-    
 
     def __str__(self):
         return f'<Order: {self.order}, Name: {self.title}, ID: {self.id}>'
@@ -47,4 +46,5 @@ class Download(models.Model):
     price = models.DecimalField(null=True, blank=True, max_digits=5, decimal_places=2) #some pdfs are free
     exclude = models.BooleanField(default=False)
 
-    
+    def __str__(self):
+        return f'ID {self.id}: {self.title}'
