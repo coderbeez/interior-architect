@@ -12,6 +12,11 @@ class DownloadInline(admin.TabularInline):
     model = Download
 
 class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('order', 'title', 'category', 'home', 'exclude')
+    ordering = ('exclude', 'order')
+    list_display_links = ('title',)
+    list_filter = ('home', 'exclude')
+    list_editable = ('order', 'home', 'exclude')
     inlines = [SectionInline, DownloadInline]
     #from docs
 
