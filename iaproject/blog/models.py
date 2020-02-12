@@ -18,7 +18,6 @@ class Blog(models.Model):
     image = models.ImageField(default='blog_default.jpg', upload_to='blog_images') # image blank
     content = models.TextField(blank=True) # text blank
     order = models.IntegerField(null=True, blank=True) # null ok - should not be required in form!!!
-    home = models.BooleanField(default=False) 
     exclude = models.BooleanField(default=False) # yes no
     like = models.IntegerField(default=0)
     
