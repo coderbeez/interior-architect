@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import Category, Project, Section, Download
 
-
-# Create your views here.
 def projects(request):
     project_list = Project.objects.filter(exclude=False).order_by('order')
     paginator = Paginator(project_list, 3) # Show 3 blogs per page.
@@ -16,6 +14,6 @@ def projects(request):
 def project(request, pk):
     project = Project.objects.get(pk=pk)
     sections = Section.objects.filter(project=project)
-    downloads = Download.objects.filter(project=project, exclude=False)
+    downloads = Download.objects.filter(exclude=False, project=project)
     context = {'title': 'Portfolio', 'project': project, 'sections': sections, 'downloads': downloads}
     return render(request, 'portfolio/project.html', context)
