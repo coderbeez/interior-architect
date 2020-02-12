@@ -6,7 +6,7 @@ class SectionInline(admin.TabularInline):
 
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('order', 'title', 'category', 'like', 'exclude')
-    ordering = ('order',)
+    ordering = ('exclude','order')
     list_display_links = ('title',)
     list_filter = ('exclude',)
     list_editable = ('order', 'exclude')
