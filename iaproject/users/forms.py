@@ -1,9 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
-
-
 
 class UserRegisterForm(UserCreationForm): # form inherits from UserCreationForm
     email = forms.EmailField() # and adds the email field
@@ -23,9 +20,4 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email']
-
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta: #not adding any additional fields so can go straight to meta
-        model = Profile
-        fields = ['image']
 # Credit Corey https://www.youtube.com/watch?v=CQ90L5jfldw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=9    
