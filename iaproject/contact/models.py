@@ -1,27 +1,24 @@
 from django.db import models
 from django.utils import timezone
 
-
-# Create your models here.
 class Contact(models.Model):
     ARCHITECTURE = 'Architecture'
-    INTERIOR_DESIGN = 'Interior Design'
     GRAPHICS = 'Graphics'
-    OTHER = 'Other'
+    INTERIOR_DESIGN = 'Interior Design'
+    GENERAL = 'General'
 
     CATEGORY_CHOICES = [
         (ARCHITECTURE, 'Architecture'),
-        (INTERIOR_DESIGN, 'Interior Design'),
         (GRAPHICS, 'Graphics'),
-        (OTHER, 'Other'),
+        (INTERIOR_DESIGN, 'Interior Design'),
+        (GENERAL, 'General'),
     ]
+
     date = models.DateField(default=timezone.now)
     category = models.CharField(
         max_length=20,
         choices=CATEGORY_CHOICES,
-        default=OTHER,
-    )
-# from django docs 
+    ) 
     name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
     phone = models.CharField(max_length=50, blank=True)
@@ -29,4 +26,8 @@ class Contact(models.Model):
     query = models.TextField()
     reply = models.TextField(blank=True)
     exclude = models.BooleanField(default=False)
-
+    
+    def __str__(self):
+        return f'{self.name}'
+    # from django docs  
+    # Why define choice variables https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django  
