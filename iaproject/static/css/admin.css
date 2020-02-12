@@ -25,3 +25,7 @@ a {
 a.section:link, a.section:visited{
     color: #B8190C!important;
 }
+
+#changelist .actions .button, #changelist #toolbar form input[type="submit"] {
+    color: #ffffff!important;
+}
