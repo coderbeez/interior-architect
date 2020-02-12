@@ -55,10 +55,15 @@ def comments(request, pk=None):
         form = ReplyForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Reply posted')
+            if comment.exclude:
+                messages.success(request, f'Comment excluded!')
+            elif comment.reply !='':
+                messages.success(request, f'Comment reply posted!')
+            else:
+                messages.warning(request, 'No change saved.')    
             return redirect('comments')
         else:
-            messages.error(request, f'Something went wrong - reply not posted!')   
+            messages.error(request, f'Something went wrong!')   
     context = {'title': 'Comments', 'comments': comments, 'form': form}
     return render(request, 'blog/comments.html', context)
     #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
