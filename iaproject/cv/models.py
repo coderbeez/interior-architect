@@ -13,8 +13,7 @@ class Role(models.Model):
     job = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'Name: {self.company} {self.title}, ID: {self.id}'
-        #name shown in admin
+        return f'{self.company} {self.title}'
 
 class Point(models.Model):
     role = models.ForeignKey('Role', on_delete=models.CASCADE, related_name='points')
@@ -24,14 +23,12 @@ class Example(models.Model):
     role = models.ForeignKey('Role', on_delete=models.CASCADE, related_name='examples')  
     project = models.ForeignKey('portfolio.Project', on_delete=models.CASCADE, related_name='cv_examples')
     order = models.IntegerField()    
-
-
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
 
 class Skill(models.Model):
     program = models.CharField(max_length=50)
-    percent = models.DecimalField(max_digits=3, decimal_places=2) 
+    percent = models.DecimalField(max_digits=3, decimal_places=2)
+
     def __str__(self):
         return f'{self.program} {self.percent}'
-        #name shown in admin
