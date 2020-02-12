@@ -1,73 +1,67 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from .models import Contact
 from .forms import ContactForm, ReplyForm
 
-# Create your views here.
-
 def contact(request):
     form = ContactForm()
     if request.method == 'POST':
-        form = ContactForm(request.POST) #tried instance=blog and blog=blog
+        form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             send_mail('New Contact','You have a new contact.','cos.interior.architect@gmail.com',['coletteo32@gmail.com', 'sullivanedel@hotmail.com'],fail_silently=False,)
-            #django docs
             messages.success(request, f'Thanks for your query, I will get back shortly!')
             return redirect('index')
+        else:
+            messages.error(request, f'Sorry something went wrong!')   
     context = {'title': 'Contact', 'form': form} 
-
-    return render(request, 'contact/contact.html', context)   
-  
+    return render(request, 'contact/contact.html', context)
+    #send mail from django docs 
 
 @login_required
 def contacts(request, pk=None):
     contacts = Contact.objects.filter(exclude=False, reply='').order_by('id') #order by oldest without reply
     form = ReplyForm()
 
-    if pk:
+    if request.method == 'POST':
         contact = Contact.objects.get(pk=pk)
+        form = ReplyForm(request.POST, instance=contact) # POST the form data
+        if form.is_valid():
+            form.save()
+            if contact.exclude:
+                messages.success(request, f'{contact.name} contact closed.')
+            elif contact.reply !='':
+                send_mail('Reply from COS Interior Architect',
+                f"""
+                Dear {contact.name}
 
-    #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
+                Many thanks you for your {contact.category} enquiry.
 
-        if request.method == 'POST':
-            form = ReplyForm(request.POST, instance=contact) # POST the form data
-            if form.is_valid():
-                form.save()
-                if contact.exclude:
-                    messages.success(request, f'{contact.name} contact closed.')
-                elif contact.reply !='':
-                    send_mail('Reply from COS Interior Architect',
-                    f"""
-                    Dear {contact.name}
+                QUERY: {contact.query} 
 
-                    Many thanks you for your {contact.category} enquiry.
+                REPLY: {contact.reply}
 
-                    QUERY: {contact.query} 
+                Please do not hesitate to contact me with any further queries.
 
-                    REPLY: {contact.reply}
+                All the best
+                Colette O'Sullivan
 
-                    Please do not hesitate to contact me with any further queries.
+                INTERIOR ARCHITECT & DESIGNER
+                http://www.coletteosullivan.com/
 
-                    All the best
-                    Colette O'Sullivan
-
-                    INTERIOR ARCHITECT & DESIGNER
-                    http://www.coletteosullivan.com/
-
-                    """,
-                    'cos.interior.architect@gmail.com',
-                    [contact.email,],
-                    fail_silently=False,)
-                    messages.success(request, f'{contact.name} emailed.')
-                else:
-                    messages.success(request, 'No change saved.')    
-                return redirect('contacts')
-
+                """,
+                'cos.interior.architect@gmail.com',
+                [contact.email,],
+                fail_silently=False,)
+                messages.success(request, f'{contact.name} emailed.')
+            else:
+                messages.warning(request, 'No change saved!')    
+            return redirect('contacts')
+        else:
+            messages.error(request, f'Something went wrong!')      
     context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
     return render(request, 'contact/contacts.html', context)    
-
-#https://realpython.com/python-f-strings/
+    #https://realpython.com/python-f-strings/
+    #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
