@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'mathfilters',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -162,3 +163,14 @@ EMAIL_HOST_USER = 'cos.interior.architect@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
 # Credit Brad Traversy real estate project
+
+#AWS S3 Configuration
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_FILE_OVERWRITE = False #stops files with same name being overwritten
+AWS_DEFAULT_ACL = None #current default can cause issues
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
+#Credit https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+#Credit Corey Schafer https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16

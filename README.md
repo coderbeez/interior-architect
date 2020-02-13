@@ -30,3 +30,6 @@ Trying to implement get or 404 throws error
 'Manager' object has no attribute 'get_object_or_404'
 
 https://pypi.org/project/django-mathfilters/
+
+AWS django storages
+https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
