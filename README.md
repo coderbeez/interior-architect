@@ -33,3 +33,5 @@ https://pypi.org/project/django-mathfilters/
 
 AWS django storages
 https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+
+Brad Traversy Real Estate https://www.udemy.com/course/python-django-dev-to-deployment/
