@@ -5,7 +5,7 @@ python:
 #before_install:
   #- chmod +x manage.py
 install:
-  - pip install -r requirements.txt
+  - pip install -r iaproject/requirements.txt
 script:
   - SECRET_KEY="whatever" python iaproject/manage.py test
 
