@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = (os.environ.get("DEBUG_VALUE") == 'True')
 #Corey 16 debug will be set to true if debug value if equal to true
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://interiorarchitect.herokuapp.com/']
 #Enter heroku address here Corey 16
 
 # Application definition
