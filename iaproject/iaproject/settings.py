@@ -162,6 +162,7 @@ LOGIN_URL = 'login' # after addind decorator to route default url for login
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+STRIPE_SUCCESS_URL = os.getenv('STRIPE_SUCCESS_URL')
 
 #Email Configuration
 EMAIL_HOST = 'smtp.gmail.com'
