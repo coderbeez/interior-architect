@@ -61,10 +61,10 @@
       <!--SM & LG SCREENS-->
       <div class="col-12 d-block d-md-none d-lg-block col-lg-4">
 
-        <div class="card bg-color--stone rounded-0 border-0 mb-2">
+        <div class="card bg-color--stone rounded-0 border-0 mb-4 mb-md-2">
           <div class="bg-img height-150" style="background-image: url({{ blog.image.url }})"></div>
           <div class="card-body text-center bg-color--stone pb-0">
-            <div class="header-border height-115">
+            <div class="header-border height-100">
               <a href="{% url 'blog' pk=blog.id %}">
                 <h2 class="header-category">{{ blog.category.title }}</h2>
                 <h3 class="header-title">{{ blog.title }}</h3>
