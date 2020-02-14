@@ -81,7 +81,7 @@ def charge(request):
         line_items=items,
         success_url=STRIPE_SUCCESS_URL,
         #success_url='http://127.0.0.1:8000/cart/success?session_id={CHECKOUT_SESSION_ID}',
-        #success_url=request.build_absolute_uri('/cart/success?session_id={CHECKOUT_SESSION_ID}'),
+        success_url=request.build_absolute_uri('/cart/success?session_id=')+'{CHECKOUT_SESSION_ID}',
         cancel_url=request.build_absolute_uri('/cart'),
         client_reference_id='A0'+str(cart.id)
         )
