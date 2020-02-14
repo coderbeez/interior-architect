@@ -79,8 +79,6 @@ def charge(request):
     session = stripe.checkout.Session.create(
         payment_method_types=['card'],
         line_items=items,
-        #success_url=STRIPE_SUCCESS_URL,
-        #success_url='http://127.0.0.1:8000/cart/success?session_id={CHECKOUT_SESSION_ID}',
         success_url=request.build_absolute_uri('/cart/success?session_id=')+'{CHECKOUT_SESSION_ID}',
         cancel_url=request.build_absolute_uri('/cart'),
         client_reference_id='A0'+str(cart.id)
@@ -90,7 +88,7 @@ def charge(request):
     #Do i have to hard code success url?
 
 def success(request):
-    stripe.api_key = STRIPE_SECRET
+    stripe.api_key = STRIPE_SECRET #got an error after heroku deploy needing this
     stripe_session = request.GET.get('session_id')
     stripe_data = stripe.checkout.Session.retrieve(stripe_session)
     cart_id = request.session['cart_id']

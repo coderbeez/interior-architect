@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get("DEBUG_VALUE") == 'True')
+DEBUG = (os.environ.get("DEBUG_VALUE") == 'True') #will return boolean True if string true
 #Corey 16 debug will be set to true if debug value if equal to true
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
@@ -162,7 +162,6 @@ LOGIN_URL = 'login' # after addind decorator to route default url for login
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
-#STRIPE_SUCCESS_URL = os.getenv('STRIPE_SUCCESS_URL')
 
 #Email Configuration
 EMAIL_HOST = 'smtp.gmail.com'
