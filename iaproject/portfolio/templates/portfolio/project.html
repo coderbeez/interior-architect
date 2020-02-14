@@ -20,8 +20,10 @@
         </div>
     </div>
 
-    <div class="col-12 col-md-6 order-2 order-md-3 text-center bg-color--stone pr-lg-5 ">
-        <p>{{ project.content|linebreaks }}</p>
+    <div class="col-12 col-md-6 order-2 order-md-3 text-center bg-color--stone pr-lg-5 d-flex justify-content-center">
+        <div class="align-self-center">
+            <p>{{ project.content|linebreaks }}</p>
+        </div>
     </div>
 </header>
 
@@ -34,7 +36,7 @@
             <p>{{ section.content|linebreaks }}</p>
             {% if section.image %}
             <figure class="row">
-                <div class="col-12 col-lg-10 offset-lg-1">
+                <div class="col-12 col-lg-10 offset-lg-1 text-center">
                     <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
                     <figcaption class="pl-md-1">
                         {{ section.caption }}
