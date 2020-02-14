@@ -239,7 +239,7 @@ button:hover, .button-a:hover {
 }
 
 .button-more {
-    background-color: transparent;
+    background-color: #ffffff;
     color: #787676;
     font-size: 1.2rem;
     padding: 0px;
@@ -250,7 +250,7 @@ button:hover, .button-a:hover {
 }
 
 .button-more:hover {
-    background-color: transparent;
+    background-color: #ffffffff;
     color: black;
 }
 /*WHY: Background color specified to stop button styles applyig.*/
