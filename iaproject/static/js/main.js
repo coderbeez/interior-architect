@@ -71,9 +71,9 @@ $(document).ready(function () {
      */
     function slide(target) {
         if (target.is(":hidden")) {
-            target.slideDown(2000);
+            target.slideDown(3000);
         } else {
-            target.slideUp(2000);
+            target.slideUp(3000);
         }
     }
 
@@ -93,7 +93,7 @@ $(document).ready(function () {
         let value = $(this).attr('data-btn');
         let target = $('[data-div=' + value + ']');
         console.log(value);
-        $('[data-div]').slideUp(2000);
+        $('[data-div]').slideUp(3000);
         console.log('slide up')
         if (target.is(':hidden')) {
             console.log('hidden');
