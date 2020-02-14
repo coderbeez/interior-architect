@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = (os.environ.get("DEBUG_VALUE") == 'True')
 #Corey 16 debug will be set to true if debug value if equal to true
 
-ALLOWED_HOSTS = ['https://interiorarchitect.herokuapp.com/']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 #Enter heroku address here Corey 16
 
 # Application definition
@@ -166,7 +166,7 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 #Email Configuration
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'cos.interior.architect@gmail.com'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
 # Credit Brad Traversy real estate project
