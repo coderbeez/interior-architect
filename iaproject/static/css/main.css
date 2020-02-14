@@ -245,7 +245,7 @@ button:hover, .button-a:hover {
     padding: 0px;
     margin: 0px;
     letter-spacing: .2rem;
-    line-height: .2rem;
+    /*line-height: .2rem;causing bug in ios*/
     font-weight: 700;
 }
 
