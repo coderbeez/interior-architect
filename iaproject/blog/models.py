@@ -23,7 +23,7 @@ class Blog(models.Model):
 class Section(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, related_name='sections') #gotta have
     title = models.CharField(max_length=500, blank=True) # char blank
-    content = models.TextField()
+    content = models.TextField(blank=True)
     image = models.ImageField(blank=True, upload_to='blog_images') # ?
     caption = models.CharField(max_length=200, blank=True)
     caption_url = models.URLField(max_length=200, blank=True)

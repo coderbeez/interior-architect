@@ -28,7 +28,7 @@ class Section(models.Model):
     image = models.ImageField(blank=True, upload_to="project_images")
     caption = models.CharField(max_length=200, blank=True)
     caption_url = models.URLField(max_length=200, blank=True)
-    content = models.TextField()
+    content = models.TextField(blank=True)
     exclude = models.BooleanField(default=False)
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
