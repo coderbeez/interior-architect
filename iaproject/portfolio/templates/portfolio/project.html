@@ -2,12 +2,12 @@
 {% block content %}
 
 <!--PROJECT HEADER-->
-<header class="row" data-page="{{ title }}">
+<header class="row border-color--stone" data-page="{{ title }}">
 
-    <div class="col-12 order-3 order-md-1 text-center p-0">
+    <div class="col-12 col-lg-8 offset-lg-2 order-3 order-md-1 text-center p-0 ">
         <img src="{{ project.image_portrait.url }}" class="d-md-none image-fluid w-100"
             alt="Project portrait Placeholder image">
-        <img src="{{ project.image_landscape.url }}" class="d-none d-md-block image-fluid w-100 border-color--stone"
+        <img src="{{ project.image_landscape.url }}" class="d-none d-md-block image-fluid w-100"
             alt="Project landscape Placeholder image">
     </div>
 
