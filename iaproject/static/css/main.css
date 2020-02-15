@@ -93,6 +93,10 @@ td, th {
     text-transform: uppercase;
 }
 
+.italics {
+    font-style: italic;
+}
+
 mute, .mute {
     color:  #aeacac;
 }

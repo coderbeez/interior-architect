@@ -17,14 +17,14 @@
     </div>
 
     <div class="col-12 col-md-6 order-1 order-md-2 bg-color--stone d-flex justify-content-center">
-        <div class="align-self-center m-3 text-center">
+        <div class="align-self-center m-3 m-md-4 m-lg-5 text-center">
             <!--HEADER TEXT - MD & LG DEVICES-->
             <div class="d-inline-block header-border">
                 <h1 class="header-category">{{ blog.category.title }}</h1>
                 <h2 class="header-title">{{ blog.title }}</h2>
             </div>
-            <p>{{ blog.content|linebreaks }}</p>
-            <!--BUG: class not being applied with linebreaks-->
+            <p class="italics m-0 mt-3">{{ blog.content }}</p>
+            <!--BUG: class not being applied with to alls ps when using linebreaks-->
         </div>
     </div>
 
@@ -32,16 +32,17 @@
 
 <!--BLOG CONTENT-->
 <section class="row border-color--stone">
-    <div class="col-12 col-lg-10 offset-lg-1 mb-5">
+    <div class="col-12 col-lg-10 offset-lg-1 mb-4">
         {% for section in sections %}
-        <div class="mt-5">
+        <div class="mt-4">
             <h3 class="h-section">{{ section.title }}</h3>
             <p>{{ section.content|linebreaks }}</p>
             {% if section.image %}
             <figure class="row">
-                <div class="col-12 col-md-8 offset-md-2">
+                <div class="col-12 col-md-8 offset-md-2 text-center">
                     <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
-                    <figcaption class="d-inline-block pl-md-1 ">
+                    <br>
+                    <figcaption class="pl-md-1 ">
                         {{ section.caption }}
                     </figcaption>
                     {% if section.caption_url %}
