@@ -7,7 +7,7 @@ from .forms import CommentForm, ReplyForm
 
 def blogs(request):
     blog_list = Blog.objects.filter(exclude=False).order_by('order')
-    paginator = Paginator(blog_list, 3) # Show 3 blogs per page. Change to 6!
+    paginator = Paginator(blog_list, 6) # Show 3 blogs per page. Change to 6!
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {'title': 'Blog', 'page_obj': page_obj}
