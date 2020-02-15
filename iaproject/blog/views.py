@@ -16,7 +16,7 @@ def blogs(request):
 
 def blog(request, pk):
     blog = Blog.objects.get(pk=pk)
-    sections = Section.objects.filter(blog=blog)
+    sections = Section.objects.filter(blog=blog).order_by('id')
     comments = Comment.objects.filter(exclude=False, blog=blog).order_by('-id')
     form = CommentForm()
     if request.method == 'POST':

@@ -13,7 +13,7 @@ def projects(request):
 
 def project(request, pk):
     project = Project.objects.get(pk=pk)
-    sections = Section.objects.filter(project=project)
+    sections = Section.objects.filter(project=project).order_by('id')
     downloads = Download.objects.filter(exclude=False, project=project)
     context = {'title': 'Portfolio', 'project': project, 'sections': sections, 'downloads': downloads}
     return render(request, 'portfolio/project.html', context)
