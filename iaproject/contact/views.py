@@ -65,7 +65,7 @@ def contacts(request, pk=None):
                 msg.attach_alternative(html_content, "text/html")
                 msg.send()               
                 #send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False, auth_user=None, auth_password=None,
-              connection=None, html_message=html_message)
+                #connection=None, html_message=html_message)
                 messages.success(request, f'{contact.name} emailed.')
             else:
                 messages.warning(request, 'No change saved!')    
