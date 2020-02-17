@@ -12,7 +12,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            send_mail('New Contact','You have a new contact.','cos.interior.architect@gmail.com',['coletteo32@gmail.com', 'sullivanedel@hotmail.com'],fail_silently=False,)
+            send_mail('New Contact','You have a new contact.','cos.interior.architect@gmail.com',['sullivanedel@hotmail.com',],fail_silently=False,)
             messages.success(request, f'Thanks for your query, I will get back shortly!')
             return redirect('index')
         else:
@@ -56,7 +56,8 @@ def contacts(request, pk=None):
                 html_message = render_to_string(template_name='contact/email_message.html').strip()
                 from_email = 'cos.interior.architect@gmail.com'
                 recipient_list = [contact.email,]
-                send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False)
+                send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False, auth_user=None, auth_password=None,
+              connection=None, html_message=html_message)
                 messages.success(request, f'{contact.name} emailed.')
             else:
                 messages.warning(request, 'No change saved!')    
