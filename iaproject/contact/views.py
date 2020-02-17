@@ -60,9 +60,10 @@ def contacts(request, pk=None):
                 http://www.coletteosullivan.com/
 
                 """
-                html_content = "<h1>hello</h1><a href='https://www.coletteosullivan.com'>click</a>"
+                #html_content = "<h1>hello</h1><a href='https://www.coletteosullivan.com'>click</a>"
+                html_template = get_template('contact/reply_email.html').render()
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-                msg.attach_alternative(html_content, "text/html")
+                msg.attach_alternative(html_template, "text/html")
                 msg.send()               
                 #send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False, auth_user=None, auth_password=None,
                 #connection=None, html_message=html_message)
