@@ -56,7 +56,7 @@ def contacts(request, pk=None):
                 html_message = render_to_string(template_name='contact/email_message.html').strip()
                 from_email = 'cos.interior.architect@gmail.com'
                 recipient_list = [contact.email,]
-                send_mail(subject, message, from_email, recipient_list, fail_silently=False, html_message)
+                send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False)
                 messages.success(request, f'{contact.name} emailed.')
             else:
                 messages.warning(request, 'No change saved!')    
