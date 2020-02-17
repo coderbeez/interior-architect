@@ -19,7 +19,12 @@ def contact(request):
             messages.error(request, f'Sorry something went wrong!')   
     context = {'title': 'Contact', 'form': form} 
     return render(request, 'contact/contact.html', context)
-    #send mail from django docs 
+    #send mail from django docs
+
+'''def reply_email(request, pk):
+    contact = Contact.objects.get(pk=pk)
+    context = {'contact': contact,}
+    return render(request, 'contact/reply_email.html', context)'''
 
 @login_required
 def contacts(request, pk=None):
@@ -61,7 +66,7 @@ def contacts(request, pk=None):
 
                 """
                 #html_content = "<h1>hello</h1><a href='https://www.coletteosullivan.com'>click</a>"
-                html_template = get_template('contact/reply_email.html').render()
+                html_template = get_template('contact/reply_email.html', {'contact': contact,}).render()
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
                 msg.attach_alternative(html_template, "text/html")
                 msg.send()               
@@ -78,31 +83,3 @@ def contacts(request, pk=None):
     #https://realpython.com/python-f-strings/
     #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
 
-def reply_email(request, pk):
-    contact = Contact.objects.get(pk=pk)
-    context = {'contact': contact,}
-    return render(request, 'contact/reply_email.html', context)
-
-'''send_mail('Reply from COS Interior Architect',
-                f"""
-                Dear {contact.name}
-
-                Many thanks you for your {contact.category} enquiry.
-
-                QUERY: {contact.query} 
-
-                REPLY: {contact.reply}
-
-                Please do not hesitate to contact me with any further queries.
-
-                All the best
-                Colette O'Sullivan
-
-                INTERIOR ARCHITECT & DESIGNER
-                http://www.coletteosullivan.com/
-
-                """,
-                'cos.interior.architect@gmail.com',
-                [contact.email,],
-                fail_silently=False,)
-                '''
