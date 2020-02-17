@@ -33,7 +33,40 @@ def contacts(request, pk=None):
             if contact.exclude:
                 messages.success(request, f'{contact.name} contact closed.')
             elif contact.reply !='':
-                send_mail('Reply from COS Interior Architect',
+                subject = 'Reply from COS Interior Architect'
+                message = f"""
+                Dear {contact.name}
+
+                Many thanks you for your {contact.category} enquiry.
+
+                QUERY: {contact.query} 
+
+                REPLY: {contact.reply}
+
+                Please do not hesitate to contact me with any further queries.
+
+                All the best
+                Colette O'Sullivan
+
+                INTERIOR ARCHITECT & DESIGNER
+                http://www.coletteosullivan.com/
+
+                """
+                from_email = 'cos.interior.architect@gmail.com'
+                recipient_list = [contact.email,]
+                send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+                messages.success(request, f'{contact.name} emailed.')
+            else:
+                messages.warning(request, 'No change saved!')    
+            return redirect('contacts')
+        else:
+            messages.error(request, f'Something went wrong!')      
+    context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
+    return render(request, 'contact/contacts.html', context)    
+    #https://realpython.com/python-f-strings/
+    #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
+
+'''send_mail('Reply from COS Interior Architect',
                 f"""
                 Dear {contact.name}
 
@@ -55,13 +88,4 @@ def contacts(request, pk=None):
                 'cos.interior.architect@gmail.com',
                 [contact.email,],
                 fail_silently=False,)
-                messages.success(request, f'{contact.name} emailed.')
-            else:
-                messages.warning(request, 'No change saved!')    
-            return redirect('contacts')
-        else:
-            messages.error(request, f'Something went wrong!')      
-    context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
-    return render(request, 'contact/contacts.html', context)    
-    #https://realpython.com/python-f-strings/
-    #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
+                '''
