@@ -1,31 +1,21 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-        <body>
-            <p>Dear {{ contact.name }},<br>
-                Many thanks you for your {{ contact.category }} enquiry.</p>
+<p>Dear {{ contact.name }},<br>
+Many thanks you for your {{ contact.category }} enquiry.</p>
                             
-                <table style="background-color: #f4f4f4; border: 1px solid black; width: 80%">
-                    <tr>
-                        <td style="padding: 15px;"><strong>QUERY</strong></td>
-                        <td style="padding: 15px;">{{ contact.query }}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 15px;"><strong>REPLY</strong></td>
-                        <td style="padding: 15px;">{{ contact.reply }}</td>
-                    </tr>
-                </table>
+<table style="background-color: #f4f4f4; border: 1px solid black double ; width: 80%">
+<tr>
+<td style="padding: 15px; vertical-align: top;"> <strong>QUERY</strong></td>
+<td style="padding: 15px;">{{ contact.query }}</td>
+</tr>
+<tr>
+<td style="padding: 15px; vertical-align: top;"><strong>REPLY</strong></td>
+<td style="padding: 15px;">{{ contact.reply }}</td>
+</tr>
+</table>
                             
-                <p style="font-style: italic;">Please do not hesitate to contact me with any further queries.<br>
-                Colette O'Sullivan<br>
-                Interior Architect & Designer</p>
+<p>Please do not hesitate to contact me with any further queries.</p>
+<p style="font-style: italic;">Colette O'Sullivan<br>
+Interior Architect & Designer</p>
                 
-                <hr>
-                            
-                <a href="https://www.coletteosullivan.com/" style="color: black; text-decoration: none;">web</a>
-                <a href="https://www.coletteosullivan.com/"><i class="fab fa-instagram"></i></a>
-                
-        </body>
-    </head>
-</html>
-
+<hr>
+<a href="https://www.coletteosullivan.com/" style="color: black; text-decoration: none;">web</a>
+<a href="https://www.coletteosullivan.com/" style="color: black; text-decoration: none;">instagram</a>
