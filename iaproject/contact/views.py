@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
 from .models import Contact
 from .forms import ContactForm, ReplyForm
 
@@ -52,6 +53,7 @@ def contacts(request, pk=None):
                 http://www.coletteosullivan.com/
 
                 """
+                html_message = render_to_string(template_name='contact/email_message.html').strip()
                 from_email = 'cos.interior.architect@gmail.com'
                 recipient_list = [contact.email,]
                 send_mail(subject, message, from_email, recipient_list, fail_silently=False)
