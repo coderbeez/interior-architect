@@ -78,6 +78,11 @@ def contacts(request, pk=None):
     #https://realpython.com/python-f-strings/
     #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
 
+def reply_email(request, pk):
+    contact = Contact.objects.get(pk=pk)
+    context = {'contact': contact,}
+    return render(request, 'contact/reply_email.html', context)
+
 '''send_mail('Reply from COS Interior Architect',
                 f"""
                 Dear {contact.name}
