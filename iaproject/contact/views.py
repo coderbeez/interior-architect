@@ -1,8 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.shortcuts import render, redirect
-from django.template.loader import render_to_string
+from django.template.loader import get_template
 from .models import Contact
 from .forms import ContactForm, ReplyForm
 
@@ -34,8 +34,15 @@ def contacts(request, pk=None):
             if contact.exclude:
                 messages.success(request, f'{contact.name} contact closed.')
             elif contact.reply !='':
+                
+
+
+
+                #subject, from_email, to = 'hello', 'from@example.com', 'to@example.com'    
                 subject = 'Reply from COS Interior Architect'
-                message = f"""
+                from_email = 'cos.interior.architect@gmail.com'
+                to = [contact.email,]
+                text_content = f"""
                 Dear {contact.name}
 
                 Many thanks you for your {contact.category} enquiry.
@@ -53,10 +60,11 @@ def contacts(request, pk=None):
                 http://www.coletteosullivan.com/
 
                 """
-                html_message = render_to_string(template_name='contact/email_message.html').strip()
-                from_email = 'cos.interior.architect@gmail.com'
-                recipient_list = [contact.email,]
-                send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False, auth_user=None, auth_password=None,
+                html_content = "<h1>hello</h1><a href='https://www.coletteosullivan.com'>click</a>"
+                msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                msg.attach_alternative(html_content, "text/html")
+                msg.send()               
+                #send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False, auth_user=None, auth_password=None,
               connection=None, html_message=html_message)
                 messages.success(request, f'{contact.name} emailed.')
             else:
