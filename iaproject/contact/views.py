@@ -66,7 +66,7 @@ def contacts(request, pk=None):
 
                 """
                 #html_content = "<h1>hello</h1><a href='https://www.coletteosullivan.com'>click</a>"
-                html_template = get_template('contact/reply_email.html').render({'contact': contact,})
+                html_template = get_template('contact/reply_email.html').render({'contact': contact, 'title': 'Contact Reply'})
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
                 msg.attach_alternative(html_template, "text/html")
                 msg.send()               

@@ -1,6 +1,8 @@
-<html>
-    <head>
-        <body>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% include 'include.html' with tagline='Many thanks for your query.' %}
             <p>Dear {{ contact.name }},</p>
 
             <p>Many thanks you for your {{ contact.category }} enquiry.</p>
@@ -15,6 +17,7 @@
             Colette O'Sullivan</p>
             
             <a href="https://www.coletteosullivan.com/">Interior Architect & Designer</a>
-        </body>
-    </head>
-</html>
+            
+        </div>
+    </section>
+    {% endblock %}
