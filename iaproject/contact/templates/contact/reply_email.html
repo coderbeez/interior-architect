@@ -1,23 +1,22 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-{% block content %}
+<p>Dear {{ contact.name }},<br>
+Many thanks you for your {{ contact.category }} enquiry.</p>
+            
+<table style="background-color: #f4f4f4;">
+    <tr>
+        <td><strong>QUERY</strong></td>
+        <td>{{ contact.query }}</td>
+    </tr>
+    <tr>
+        <td><strong>REPLY</strong></td>
+        <td>{{ contact.reply }}</td>
+    </tr>
+</table>
+            
+<p style="font-style: italic;">Please do not hesitate to contact me with any further queries.<br>
+Colette O'Sullivan<br>
+Interior Architect & Designer</p>
 
-{% include 'include.html' with tagline='Many thanks for your query.' %}
-            <p>Dear {{ contact.name }},</p>
-
-            <p>Many thanks you for your {{ contact.category }} enquiry.</p>
+<hr>
             
-            <p>QUERY: {{ contact.query }}</p>
-            
-            <p>REPLY: {{ contact.reply }}</p>
-            
-            <p>Please do not hesitate to contact me with any further queries.</p>
-            
-            <p>All the best<br>
-            Colette O'Sullivan</p>
-            
-            <a href="https://www.coletteosullivan.com/">Interior Architect & Designer</a>
-            
-        </div>
-    </section>
-    {% endblock %}
+<a href="https://www.coletteosullivan.com/">web</a>
+<a href="https://www.coletteosullivan.com/">instagram</a>
