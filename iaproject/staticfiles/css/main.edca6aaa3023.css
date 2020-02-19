@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,400i,600,600i,700,700i&display=swap');
+
+.hide-start {
+    display: none;
+}
+/*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.*/
+
+/*------FONTS------*/
+
+body {
+    font-family: 'Ibarra Real Nova', serif;
+}
+
+span {
+    font-style: italic;
+}
+/*Put near top as other css might overwrite*/
+
+li > span, a > span {
+    font-style: normal;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 1.2rem;
+    letter-spacing: .07rem;
+    font-weight: 600;
+}
+
+.name-tagline {
+    letter-spacing: 0rem;
+    text-transform: capitalize;
+    font-style: normal;
+}
+
+figcaption {
+    font-size: .9rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.link {
+    text-decoration: none;
+    font-style: italic;
+    color: #787676;
+    
+}
+
+.link:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.h-section {
+    font-weight: 500;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.h-article {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0px;
+}
+
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#787676;
+    text-decoration: none;
+}
+
+.client {
+    color: #B8190C!important;
+}
+
+td, th {
+    padding: 2px;
+    vertical-align: top;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.italics {
+    font-style: italic;
+}
+
+mute, .mute {
+    color:  #aeacac;
+}
+
+.exclude {
+    /*color: #B8190C;
+    font-weight: 700;*/
+    margin-left: 1rem;
+}
+/*------HEADERS------*/
+
+.header-border {
+    border-top: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    text-align: center;
+    padding: .5rem;
+}
+
+.header-opaque {
+    background: rgba(255, 255, 255, .8);
+    padding: 1.5rem;
+    margin: 1rem;
+}
+/*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
+
+.header-category {
+    font-weight: 600;
+    font-size: .8rem;
+    margin-top: .5rem;
+    text-transform: uppercase;
+}
+
+.header-title {
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+a > .header-category:hover, a > .header-title:hover {
+    color: #787676;
+}
+
+.message--success {
+    color: #42a813;
+    font-weight: 700;
+}
+
+.message--warning {
+    color:#eda332;
+    font-weight: 700;
+}
+
+.message--error {
+    color: #B8190C;
+    font-weight: 700;
+}
+
+/*------BACKGROUNDS & BORDERS------*/
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    /*height: 100%;*/
+}
+/* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
+/* WHY: Important to overwrite Bootstrap???? - taken off*/
+
+.bg-img--work {
+    background: url("/static/images/work.caebcbd05d4c.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+
+.bg-img--desk {
+    background: url("/static/images/desk.a682f37db855.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+/*Credit:https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django*/
+
+.bg-color--stone {
+    background-color: rgba(244, 244, 244, .95);
+
+}
+
+.bg-color--white {
+    background-color: #ffffff;
+
+}
+
+.border-color--stone {
+    border: 2px solid rgba(244, 244, 244);
+    }
+
+    
+.height-150 {
+        min-height: 150px;
+    }
+
+    .height-160 {
+        min-height: 160px;
+    }
+
+.height-115 {
+        min-height: 115px;
+    }
+
+    .height-100 {
+        min-height: 100px;
+    }    
+    
+.height-200 {
+    min-height: 200px;
+}
+/*WHY: Must be below header to overwrite default 300px*/
+
+.textarea-style {
+    width: 100%;
+    border: 0;
+    }
+    /*WHY: class added in forms.py*/
+    
+/*------BUTTONS------*/
+
+button, .button-a {
+    background-color: #000000;
+    color: #ffffff;
+    border: 0px;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px;
+    margin: 8px;
+}
+
+button:hover, .button-a:hover {
+    background-color: #787676;
+    color: #000000;
+}
+
+.button-more {
+    background-color: #ffffff;
+    color: #787676;
+    font-size: 1.2rem;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: .2rem;
+    /*line-height: .2rem;causing bug in ios*/
+    font-weight: 700;
+}
+
+.button-more:hover {
+    background-color: #ffffffff;
+    color: black;
+}
+/*WHY: Background color specified to stop button styles applyig.*/
+
+/*------NAVBAR------*/
+
+nav {
+    background-color: rgba(244, 244, 244, .95);
+    color: #000000!important;
+    font-size: .9rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-text {
+    color: #000000!important;
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/*------CARDS------*/
+
+.height-card {
+    height: 700px;
+}
+
+
+.card-body--category {
+  font-size: .9rem;
+  font-weight: bold;
+}
+
+.card-body--title {
+    font-size: .8rem;
+  }
+
+
+/*WHY: Set height for blog card images as images are not consistent size.*/
+.wrap-img--card {
+    height: 250px;
+    position: relative;
+}
+
+.wrap-img--section {
+    height: 400px;
+    position: relative;
+}
+
+/*WHY: Set height as title text is not conistent length.*/
+.height-cardtext {
+    height: 100px;
+}
+
+/*------INSTAGRAM JUICER FEED------*/
+/*can't target the a need to leave default*/
+
+.juicer-feed h1.referral {
+    margin: auto!important;
+  
+}
+
+.juicer-feed .j-loading-wrapper, .juicer-feed .j-paginate {
+    margin: auto!important;
+}
+
+.juicer-feed .j-paginate {
+    border: 1.5px solid black!important;    color: black!important;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+
+.juicer-feed:hover {
+    font-family: 'Montserrat', sans-serif!important;
+    text-transform: uppercase!important;
+    font-size: 10px!important;
+}
+
+.j-paginate:hover {
+    background: #ffffff!important;
+    color: #000000!important;
+}
+
+    
+/*------TIMELINE------*/
+
+/*TIMELINE*/
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d6d6d6;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #d6d6d6;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+ul {
+    padding-left: 25px;
+}
+/*WHERE: Timeline https://bootsnipp.com/snippets/xrKXW*/
+
+/*------EXPERTISE CIRCLES------*/
+.circle {
+    width: 100px;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle canvas {
+    vertical-align: top;
+}
+
+.circle strong {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+/*WHERE: http://kottenator.github.io/jquery-circle-progress/ */
+
+
+/*------DJANGO ADMIN------*/
+
+
+
+/*------MEDIA QUERIES------*/
+
+@media (max-width: 767px) {
+    .sticky-navbar {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }     
+    }
+    /*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
+
+@media (min-width: 768px) and (max-width: 991px) {   
+   
+}
+
+@media (min-width: 992px) {   
+     .p-lg-15 {
+       padding: 15px !important;
+       padding-top: 0px !important;
+   }
+   /*WHY: Used to add Bootstrap default padding size back to lg devices after removing it for md screens.*/    
+}
+
+.testr{
+    border: solid 1px red;
+}
+
+.testg{
+    border: solid 1px green;
+}
