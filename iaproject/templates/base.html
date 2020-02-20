@@ -46,14 +46,14 @@
 
         {% if request.session.cart_id %}
         <a class="nav-item nav-link" data-nav="Cart" href="{% url 'cart' %}">CART {{ request.session.download_count }}</a>
-        <!--WHERE: Coding Point https://www.youtube.com/watch?v=lmdAMQDRRrQ&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=25
--->     {% endif %}
+        <!--WHERE: Coding Point Cart App https://www.youtube.com/watch?v=lmdAMQDRRrQ&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=25-->     {% endif %}
 
         {% if user.is_authenticated %}
         <a class="nav-item nav-link client" data-nav="Comments" href="{% url 'comments' %}">comments</a>
         <a class="nav-item nav-link client" data-nav="Contacts" href="{% url 'contacts' %}">contacts</a>
         <a class="nav-item nav-link client" data-nav="Logout" href="{% url 'logout' %}">logout</a>
         {% endif %}
+        <!--WHERE: Corey Schafer Django Series https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
       </div>
     </div>
   </nav>
@@ -66,9 +66,6 @@
   </span>
   {% endfor %}
   {% endif %}
-
-  
-  <!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
 
   <!--MAIN BLOCK CONTENT-->
   <main class="container mb-4">

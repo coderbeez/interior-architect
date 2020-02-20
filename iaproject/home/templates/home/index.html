@@ -13,7 +13,6 @@
       </div>
     </article>
 
-
     <!--PROJECTS ARTICLE-->
     <article class="row">
       <div class="col-12">
@@ -60,7 +59,6 @@
       {% for blog in blogs %}
       <!--SM & LG SCREENS-->
       <div class="col-12 d-block d-md-none d-lg-block col-lg-4">
-
         <div class="card bg-color--stone rounded-0 border-0 mb-4 mb-md-2">
           <div class="bg-img height-150" style="background-image: url({{ blog.image.url }})"></div>
           <div class="card-body text-center bg-color--stone pb-0">
@@ -75,15 +73,12 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <!--MEDIUM SCREENS-->
-
       <div class="col-md-6 d-none d-md-block d-lg-none mb-4 bg-img height-200"
         style="background-image: url({{ blog.image.url }})">
       </div>
-
       <div class="col-md-6 d-none d-md-block d-lg-none mb-4 bg-color--stone text-center">
         <div class="header-border mt-3">
           <h2 class="header-category">{{ blog.category.title }}</h2>
@@ -91,7 +86,6 @@
         </div>
         <small>{{ blog.content|truncatewords:20}}</small>
       </div>
-
       {% endfor %}
     </article>
 
@@ -115,10 +109,10 @@
       <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
       <ul class="juicer-feed" data-feed-id="colette_o_sullivan" data-per="1">
         <h1 class="referral"></h1>
-        <!--WHY: Removing h1 results in juicer logo showing-->
+        <!--WHY: Removing h1 results in juicer logo being displayed.-->
       </ul>
     </article>
-    <!--WHERE: Powered by Juicer https://www.juicer.io/-->
+    <!--WHERE: Instagram feed by Juicer https://www.juicer.io/-->
 
     <!--SITE ADMIN-->
       <section class="text-center">

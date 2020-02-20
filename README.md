@@ -43,50 +43,54 @@ https://www.youtube.com/watch?v=51mmqf5a0Ss
 https://startcodingnow.com/making-your-own-email-templates-in-django/
 
 <div align="center">
-<img src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/header.png" alt="Qwerty header">
+<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
 </div>
 
-# [Qwerty](https://coderbeez-qwerty.herokuapp.com/index)
+# [COLETTE O'SULLIVAN](https://coletteosullivan.com)
 
-*A website to assist coding students save notes and share links, developed for Code Institute's data centric development milestone project.*
+*A portfolio website for an interior architect and designer, developed for Code Institute's full stack framework milestone project.*
 
 # UX
 
-Qwerty is a website developed to assist coding students studying HTML, CSS, JavaScript and Python languages for Code Institute’s Diploma in Full Stack Web Development. The site allows students to save notes and share links for each language.
+ is a website developed to assist coding students studying HTML, CSS, JavaScript and Python languages for Code Institute’s Diploma in Full Stack Web Development. The site allows students to save notes and share links for each language.
 
-1. **Notes** Students can register to host their own language notes using familiar topic headings with a full range of CRUD operations. Registration and log in are required for Notes. To facilitate assessment a test user has been setup with email tester@gmail.com, password testUser, and notes created for JavaScript and Python.
+1. **About** Students can register to host their own language notes using familiar topic headings with a full range of CRUD operations. Registration and log in are required for Notes. To facilitate assessment a test user has been setup with email tester@gmail.com, password testUser, and notes created for JavaScript and Python.
 
-2. **Links** Language links are again grouped under familiar topic headings and categorised by type, i.e. instruct, practice, resource and other. Students can create a new link, add a star rating or report a problem with an existing link. No registration or log in is required for Links.
+2. **Blog** Language links are again grouped under familiar topic headings and categorised by type, i.e. instruct, practice, resource and other. Students can create a new link, add a star rating or report a problem with an existing link. No registration or log in is required for Links.
 
-3. **Distraction** Inspiration and motivation is provided by coding quotes, suggested language links, daily award site links and a Spotify playlist for those times when Stack Overflow just isn’t delivering.
+3. **Portfolio** Inspiration and motivation is provided by coding quotes, suggested language links, daily award site links and a Spotify playlist for those times when Stack Overflow just isn’t delivering.
+
+4. **Contact** Inspiration and motivation is provided by coding quotes, suggested language links, daily award site links and a Spotify playlist for those times when Stack Overflow just isn’t delivering.
+
+5. **Admin** Inspiration and motivation is provided by coding quotes, suggested language links, daily award site links and a Spotify playlist for those times when Stack Overflow just isn’t delivering.
 
 ## User Stories
 
 User stories for potential visitors to the website include:
 
-### Find A Link
+### Home Owner
 
-I’m struggling with the JavaScript automated testing topic and looking for some links for further study. I visit the Qwerty site, select JavaScript from the links dropdown. I’m presented with a familiar list of JavaScript topics – I select Jasmine. A list of link types opens – I select instruct. A list of link names with star ratings and i buttons opens. After reading the description under additional information, I click a YouTube link. Having watched the video I go back and add my rating of 4 stars. I’m registered on the site already but I haven’t had to log in to use links.
+I’m struggling with the JavaScript automated testing topic and looking for some links for further study. I visit the COLETTE O'SULLIVAN site, select JavaScript from the links dropdown. I’m presented with a familiar list of JavaScript topics – I select Jasmine. A list of link types opens – I select instruct. A list of link names with star ratings and i buttons opens. After reading the description under additional information, I click a YouTube link. Having watched the video I go back and add my rating of 4 stars. I’m registered on the site already but I haven’t had to log in to use links.
 
-### Share A Link
+### New Build - Architecture
 
-I’ve come across a great YouTube video for PyMongo which I’d like to share with my fellow students. On Slack, links tend to get lost unless pinned, so I open Qwerty and select Python from the links dropdown. I click add new. I enter the details, selecting MongoDB for topic, instruct for type and give it a 5 star rating. I could add a description but its optional, so I skip this time. It’s quick and easy – I don’t need to register or log in to add a link.  I could have done a search for the word PyMongo to check if the link already existed but Qwerty will flag it and simply add my star rating if another student has already added this url.
+I’ve come across a great YouTube video for PyMongo which I’d like to share with my fellow students. On Slack, links tend to get lost unless pinned, so I open COLETTE O'SULLIVAN and select Python from the links dropdown. I click add new. I enter the details, selecting MongoDB for topic, instruct for type and give it a 5 star rating. I could add a description but its optional, so I skip this time. It’s quick and easy – I don’t need to register or log in to add a link.  I could have done a search for the word PyMongo to check if the link already existed but COLETTE O'SULLIVAN will flag it and simply add my star rating if another student has already added this url.
 
-### Create & Read Notes
+### Interior Design Student
 
-As study needs to fit around home and work life, notes must be accessible from multiple devices - my personal laptop, work desktop and mobile. Having come across an article on Flask Bcrypt during this morning's commute, I want to review and jot down some notes. I open up Qwerty. It's already in dark mode as it's remembered my preference. I select Python from the notes dropdown. I'm asked to log in using email and password. My Python notes page opens. When I use the word search facility to see if I've saved Bcrypt notes already, it tells me there are no results. I click add new to create a new note selecting Flask for the topic, and entering a note name and some contents. With a few minutes to spare, I return to the home page and check out today's Awwwards site under distraction for inspiration for my next milestone.
+As study needs to fit around home and work life, notes must be accessible from multiple devices - my personal laptop, work desktop and mobile. Having come across an article on Flask Bcrypt during this morning's commute, I want to review and jot down some notes. I open up COLETTE O'SULLIVAN. It's already in dark mode as it's remembered my preference. I select Python from the notes dropdown. I'm asked to log in using email and password. My Python notes page opens. When I use the word search facility to see if I've saved Bcrypt notes already, it tells me there are no results. I click add new to create a new note selecting Flask for the topic, and entering a note name and some contents. With a few minutes to spare, I return to the home page and check out today's Awwwards site under distraction for inspiration for my next milestone.
 
-### Break Time
+### Architecture Company
 
-When my brain is fried, motivation has dipped or its simply time for a coffee, I head to Qwerty’s distraction sidebar. I always read the randomly selected coding quote. I check out today’s site of the day from the Awwwards link. As I’m on the JavaScript milestone, I visit the sample link for that language. I click the Spotify link to start the playlist when I return to coding.
+When my brain is fried, motivation has dipped or its simply time for a coffee, I head to COLETTE O'SULLIVAN’s distraction sidebar. I always read the randomly selected coding quote. I check out today’s site of the day from the Awwwards link. As I’m on the JavaScript milestone, I visit the sample link for that language. I click the Spotify link to start the playlist when I return to coding.
 
 ## Design
 
-Simplicity is key to Qwerty with the look and flow of the site designed for ease of use.
+Simplicity is key to COLETTE O'SULLIVAN with the look and flow of the site designed for ease of use.
 
 ### Navigation
 
-The key driver of site design was navigation, allowing the user to find the desired location with as few clicks as possible.  The site was divided into two distinct sections, **notes** and **links**, highlighted by the pared back navbar **home, notes, links** and the tagline text **save notes, share links**. Users access either section by selecting a language from the notes or links navbar dropdown.
+The key driver of site design was navigation, allowing the user to find the desired location with as few clicks as possible.  The site was divided into four distinct sections, **about**, **blog**, **portfolio** and **contact** highlighted by the pared back navbar. 
 
 As links are not associated with accounts, users selecting a links language are immediately routed to the read links page for their chosen language. From here users can access the add link page, or use the bespoke accordion or word search to find and edit existing links. With four levels, the links accordion allows for efficient filtering. Again focusing on efficiency, the word search searches all four levels simultaneously.
 
@@ -94,176 +98,83 @@ Users that select a notes language are routed to the login page, if not already 
 
 ### Colours & Fonts
 
-Following on from simplified navigation, Qwerty has been designed with minimal graphics, fonts and colours. A simple pencil image, to reflect note taking, is used on the home page and repeated on the playlist. The main font *Cabin Condensed*, a very readable condensed font, was chosen to better display lists on mobile devices. In either normal or dark mode, the core colour scheme consists of a background, text and link colour. The stone and charcoal colours, taken from the pencil image, switch between background and text, depending on mode. The link colours, identifying everything clickable, were chosen for contrast and accessibility. Flashed messages follow a green/red approach to notify or alert users. Given dark mode is often discussed on the Code Institute's Diploma Slack channel, it was included as an option for users. The mode selected is saved in local storage so user preference is remembered on return visits.
+Following on from simplified navigation, COLETTE O'SULLIVAN has been designed with minimal graphics, fonts and colours. A simple pencil image, to reflect note taking, is used on the home page and repeated on the playlist. The main font *Cabin Condensed*, a very readable condensed font, was chosen to better display lists on mobile devices. In either normal or dark mode, the core colour scheme consists of a background, text and link colour. The stone and charcoal colours, taken from the pencil image, switch between background and text, depending on mode. The link colours, identifying everything clickable, were chosen for contrast and accessibility. Flashed messages follow a green/red approach to notify or alert users. Given dark mode is often discussed on the Code Institute's Diploma Slack channel, it was included as an option for users. The mode selected is saved in local storage so user preference is remembered on return visits.
 
 <div align="center">
-<img  src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/colours.png" alt="Qwerty colours">
+<img  src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/colours.png" alt="COLETTE O'SULLIVAN colours">
 </div>
 
 ### Preparation
 
-Microsoft PowerPoint was used to compile initial [planning documents](https://github.com/coderbeez/qwerty/blob/master/wireframes/wireframes.pdf) including Balsamiq wireframes, database collections and a pages flow diagram. During development several changes were made to the original design to simplify notes and distractions.
+Microsoft PowerPoint was used to compile initial [planning documents](https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/wireframes.pdf) including Balsamiq wireframes, database collections and an app diagram. During development, the original design was tweaked based on feedback from the client.
 
-# Pages
+# Apps
 
-Using Flask and Jinja, a base page is used to render Qwerty's 8 site pages as follows:
+Using Flask and Jinja, a base page is used to render COLETTE O'SULLIVAN's 8 site pages as follows:
 
-## Home Page
+## Blog
 
-![Home Page Image](https://github.com/coderbeez/qwerty/blob/master/wireframes/images/home.png)
+![Home Page Image](https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/home.png)
 
 - A pared back navbar with a home button and two simple dropdowns, notes and links, highlights the two main site sections. Both dropdowns allow users to select a language passing it onto the relevant routes. The notes dropdown has an additional register option if the user is not logged in and logout if logged in. Apart from font size, the navbar remains the same on different devices.
 
 - The text over a simple pencil image sets out the site's name, function (save notes, share links) and languages (HTML, CSS, JavaScript and Python).
 
-- A slider allows users to switch between normal and dark mode. Local storage is used to keep track of user's preference. CSS is used to style the slider while jQuery is used to check local storage for preferences, apply and remove styles.
+## Portfolio
 
-- A distraction sidebar with a coding quote and language, inspiration and music playlist links, is visible on all pages on medium and large screens. Due to space concerns, Jinja superblocks and Bootstrap display classes are used to include this sidebar on the Home Page only for small screens.
-
-- A MongoDB quotes collection of coding related quotes is randomly sampled and one displayed. Saved in the session cookie, the quote is refreshed on Home Page load or Heroku timeout.
-
-- A MongoDB links collection of language links is randomly sampled and one displayed for each language. Links that have been flagged as having a problem or that have added by a user but not checked by the administrator are not included in sampling. Again saved in the session cookie, links are refreshed on Home Page load or Heroku timeout.
-
-- Hard coded links to four site of the day web sites are included for design inspiration.
-
-- A link to a Spotify playlist of upbeat songs with a strong Irish bias was generated for the site. An initial embedded Spotify playlist was removed as it resulted in problems with audio levels in headphones.
-
-## Register Page (Notes Only)
-
-<img align="right" height="500" src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/register.png" alt="Qwerty register page">
+<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/register.png" alt="COLETTE O'SULLIVAN register page">
 
 - New users access the Register Page either by selecting register from the notes dropdown, or by clicking the register link on the Login Page.
 
 - In the forms.py file, WTForms is used to define the Register Form's name, email, password, confirm password and submit fields.
 
-- In HTML these form fields and field names are rendered using Jinga. Jinga if else loops are also used to display Flash Messages and apply Bootstrap classes, varying the formatting and user feedback depending on input validation.
+## Cart
 
-- As email rather than name is used for log in, users are free to use any name when registering but their email is checked for duplicates in app.py `mongo.db.users.find_one({"email": form.email.data})`.
-
-- Flask-Bcrypt is used to hash user passwords `bcrypt.generate_password_hash(form.password.data).decode('utf-8')`. All other validation is specified using WTForms Validators.
-
-- If a user is successfully registered, Flask-Login is used to automatically log the user in before being redirected to the Home Page.
-
-- Once the user is logged in, the register option is swapped for logout in the notes dropdown using Jinga.
-
-- Users are guided through the process of registering with Flash Messages.
-
-## Login Page (Notes Only)
-
-<img align="right" height="500" src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/login.png" alt="Qwerty login page">
+<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/login.png" alt="COLETTE O'SULLIVAN login page">
 
 - On selecting a language from the notes dropdown, users not already logged in, are routed to the Login Page using `login_manager.login_view = "login"`.
 
 - A Flask-Login `@loginrequired` decorator on read, add, edit and delete note routes ensures only logged in users access notes.
 
-- The simple Login Form consists of an email and password field defined and validated using WTForms and rendered using Jinga.
-
-- For new users, a link is provided to the Register Page.
-
-- Once users submit their email and password, the user class `get_user(email)` static method is used to retrieve the user document and Flask-Bcrypt to check the hashed password.
-
-- If a user is successfully logged in, they are redirected to the Notes Page for the language they originally selected. Flask-Login `is_safe_url(next)` checks if the page redirected to is a Qwerty page and aborts if not.
-
-- Once the user is logged in, the register option is swapped for logout in the notes dropdown using Jinga.
-
-- Users are guided through the process of logging in with Flash Messages.
-
-- Flask-Login manages the user session until they select logout or end their session.
-
-## Notes Page
+## CV
 
 <div align="center">
-<img src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/notes.gif" alt="Qwerty notes page">
+<img src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/notes.gif" alt="COLETTE O'SULLIVAN notes page">
 </div>
 
 - Users access the Notes Page by selecting a language from the notes dropdown. If a user is logged in they go directly to their language Notes Page. A Flask-Login `@loginrequired` decorator ensures users not currently logged in, are first routed to the Login Page before being redirected to their relevant language Notes Page.
 
 - Within the language Notes Page, notes are grouped by topic, sorted by name, and presented in a bespoke accordion.
 
-- If a user hasn't added notes for a language, a Flash Message directs them on how to.
+## Contact
 
-- If a user has added language notes, a MongoDB aggregate collection method is used to create a distinct list of user specific language topics. Closely aligned to Codes Institute's lesson headings, these language topics form the first level in a three level accordion.
-
-- Level two of the accordion reveals a list of sorted note names, whilst three reveals the contents, edit and delete buttons for an individual note.
-
-- The accordion, built using jQuery, uses a `slide(target)` function to check the current state of an accordion target, hiding a visible target and revealing a hidden target. On click functions, created for each accordion level, allow a button click to result in a target slide. Data attribute values associate a button to a target when the template is rendered.
-
-- Users can opt to view the full list or filter the accordion using a word search. The word search functionality is enabled by the Search Form created using WTForms and MongoDB's text index and $text operator. Firstly a text index is created `mongo.db.notes.create_index([("$**", "text")], language_override="en")` indexing all string fields in the notes collection. Then the `"$text": {"$search": form.tsearch.data}` text operator is added to both the aggregate topics and the find notes methods filtering the accordion by the `tsearch` word. A clear button with link `href="{{ url_for('notes', language=language) }}` reloads the page for the language, clearing the word search. Flash Messages guide the user through the word search process.
-
-- To delete a note, users first click the delete note icon on level three of the accordion. Bootstrap collapse is then triggered revealing the form submit button, confirm delete. Once confirm is clicked, the note id is passed to the deletenote route. As an added security measure, a MongoDB find_one_or_404 method is filtered by both the note and user ids `mongo.db.notes.find_one_or_404({"_id": ObjectId(noteid), "user_id": ObjectId(current_user.id)})` ensuring the note belongs to the current user before the delete_one operation is performed.
-
-- To edit a note, users click the edit note icon on level three of the accordion which links to the Edit Note Page for that note id using url_for.
-
-- To add a note, users click the add note icon at the top of the page which links to the Add Note Page for that language using url_for.
-
-## Add Note Page
-
-<img align="right" height="500" src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/addnote.png" alt="Qwerty add note page">
+<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/addnote.png" alt="COLETTE O'SULLIVAN add note page">
 
 - A Flask-Login `@login_required` decorator ensures access to this route is limited to logged in users.
 
 - Users access the Add Note Page from a link on the language Notes Page, passing the language argument from Notes to Add Notes.
-
-- WTForms Note Form is used to define and validate the topic, name, content and submit fields.
-
-- The select topic list displayed is language specific with a default `-select-` option.
-
-``` document_language = mongo.db.languages.find_one({"language": language }, { "topics": 1})
-topics = document_language["topics"]
-form.topic.choices = [("", "-select-")]+[(topic, topic) for topic in topics]
-```
-
-- As well as the data from the form fields, a MongoDB insert_one method takes the language from language argument and the user id from `current_user.id`.
-
-- Once a note is successfully added, the user is redirected to the language Notes Page.
-
-- Flash Messages guide the user through the add note process.
   
-## Edit Note Page
+## Cart
 
-<img align="right" height="500" src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/editnote.png" alt="Qwerty edit note page">
+<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/editnote.png" alt="COLETTE O'SULLIVAN edit note page">
 
 - A Flask-Login `@login_required` decorator ensures access to this route is limited to logged in users.
 
 - Users access the Edit Note Page from a link on level three of the language Notes Page accordion.
 
-- Both the language and note id arguments are passed from Notes to Edit Notes.
-
-- The Note Form created using WTForms and used to add a note is also used to edit a note. A get request fills the form fields with existing data for the note id. WTForms Validators verify data changes and valid changes are submitted to the notes collection using a MongoDB update_one method.
-
-- As an added security measure, a MongoDB find_one_or_404 method is filtered by both the note and user ids `mongo.db.notes.find_one_or_404({"_id": ObjectId(noteid), "user_id": ObjectId(current_user.id)})` ensuring the note belongs to the current user before the update_one operation is performed.
-
-- Once successfully edited, the user is redirected to the language Notes Page.
-
-- Flash Messages guide the user through the edit note process.
-
-## Links Page
+## User
 
 <div align="center">
-<img src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/links.gif" alt="Qwerty links page">
+<img src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/links.gif" alt="COLETTE O'SULLIVAN links page">
 </div>
 
 - Users access the Links Page by selecting a language from the links dropdown. Links are not associated with a user and no log in is required to access.
 
 - Within the language Links Page, links are grouped by topic and type, sorted by name, and presented in a bespoke accordion.
 
-- The MongoDB aggregate collection method is used to create a distinct list of language specific topics. Closely aligned to Codes Institute's lesson headings, these language topics form the first level in a four level accordion.
-
-- Level two of the accordion groups language topics by one of four types, i.e. instruct, practice, resource and other. The third accordion level reveals a list of sorted link names and average ratings, whilst the fourth reveals the description, total ratings to date, add rating and report problem buttons for an individual link.
-
-- Jinga is used to calculate this average rating `{{(link.ratings|sum)//(link.ratings|count)}}` based on the link document's array of rating integers.
-
-- The accordion, also used for the Notes Page, is built using jQuery. A `slide(target)` function checks the current state of an accordion target, hiding a visible target and revealing a hidden target. On click functions, created for each accordion level, allow a button click to slide a target. Data attribute values associate a button to a target when the template is rendered.
-
-- There is no facility for users to delete a link. Any deletions are performed by the administrator connecting directly to MongoDB.
-
-- Users can edit a link's document by adding a rating or reporting a problem for that specific link id. Star and tool icons are located on the fourth accordion level. Users click the relevant star icon to add a 1, 2, 3, 4 or 5 star rating or the tool icon to report a problem. As form submit buttons, these icons post to the ratelink or flaglink routes using url_for. A MongoDB find_one_or_404 method ensures the link id can be found before an update_one method is performed. jQuery and CSS are used to reformat icons once selected and a sleep method to delay submission allowing users to see the updated formatting. Once successfully submitted the language Link Page is reloaded. An added star rating is reflected in a link's average rating and count. Flagged problems however are not indicated to users and are handled by the administrator who verifies problems and fixes working directly with MongoDB. Flash messages guide the user through the edit process.
-
-- To add a link, users click the add link icon at the top of the page which directs them to the Add Link Page for that language using url_for.
-
 ## Add Link Page
 
-<img align="right" height="600" src="https://github.com/coderbeez/qwerty/blob/master/wireframes/images/addlink.png" alt="Qwerty add link page">
+<img align="right" height="600" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/addlink.png" alt="COLETTE O'SULLIVAN add link page">
 
 - Users access the Add Link Page from a link on the language Links Page, passing the language argument from Links to Add Links.
 
@@ -291,15 +202,15 @@ form.topic.choices = [("", "-select-")]+[(topic, topic) for topic in topics]
 
 ## Future Features
 
-**Password Reset** Facility to reset password.
+**Email** Email's from coletteosullivan.com
 
-**Language** Addition of Django and milestone 4 topics.
+**Can't think** Addition of Django and milestone 4 topics.
 
 # Database Design
 
-As per Code Institute’s requirements MongoDB, a document based NoSQL database, was used for this project.
+The default Django SQLite database was used for developement and PostgreSQL for production on deployment to Heroku.
 
-## Languages Collection
+## Blog Models
 
 The Languages Collection was created to populate topic dropdowns for each language throughout the site. As topics are updated by Code Institute, rather than hard code lists per language this approach allows for efficient list management. The administrator completes all CRUD operations directly in MongoDB.
 
@@ -309,7 +220,7 @@ The Languages Collection was created to populate topic dropdowns for each langua
 | **language** | String | N/A | N/A | Admin |
 | **topic** | Array Strings | N/A | N/A | Admin |
 
-## Links Collection
+## Portfolio Models
 
 The Links Collection is a core data collection. Users can read all existing documents and create new documents. Their update options are limited to adding a star rating or flagging an issue with an existing document. Only the administrator can delete links documents. The Links Collection is shared amongst all users, hence the limited CRUD operations for users.
 
@@ -325,7 +236,7 @@ The Links Collection is a core data collection. Users can read all existing docu
 | **check** | Boolean | N/A | N/A | Auto *(default False)* / Admin |
 | **flag** | Boolean | Button | N/A | Auto *(default False)* / User/ Admin |
 
-## Notes Collection
+## Cart Models
 
 The Notes Collection is the second core collection. Users have the full range of CRUD operations for their own notes with no access to the notes of other users. Users must register and log in for this section of the site.
 
@@ -338,7 +249,7 @@ The Notes Collection is the second core collection. Users have the full range of
 | **note_name** | String | String | Required | User |
 | **content** | String | Text Area | Required | User |
 
-## Quotes Collection
+## Contact Model
 
 The Quotes Collection is sampled in the site's distraction sidebar. Read is the only CRUD operation available to users. The collection is managed by the administrator directly through MongoDB.
 
@@ -348,7 +259,7 @@ The Quotes Collection is sampled in the site's distraction sidebar. Read is the 
 | **quote** | String | N/A | N/A | Admin |
 | **author** | String | N/A | N/A | Admin |
 
-## Users Collection
+## User Model
 
 The Users Collection is used to facilitate notes on the site. Users create a new account on the Register Page and access existing accounts on the Login Page. The remaining CRUD operations are managed by the administrator directly through MongoDB.
 
@@ -385,6 +296,7 @@ The Users Collection is used to facilitate notes on the site. Users create a new
 - [Font Awesome](https://fontawesome.com/) Used for all icons.
 - [Bootstrap](https://getbootstrap.com/) Used for responsive layout and styling.
 - [jQuery](https://jquery.com/) Used for DOM manipulation, enabling accordion and dark-mode functionality.
+- [Juicer](https://www.juicer.io/) Used to link and display client's instagram feed.
 
 ## Backend Resources
 
@@ -409,7 +321,7 @@ The Users Collection is used to facilitate notes on the site. Users create a new
 
 # Testing
 
-Testing detailed in [TESTING.md](https://github.com/coderbeez/qwerty/blob/master/TESTING.md).
+Testing detailed in [TESTING.md](https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/TESTING.md).
 
 # Deployment
 
@@ -429,7 +341,7 @@ The following instructions to clone and deploy assume the user has:
 
 The following instructions were taken from [GitHib Help]( https://help.github.com/en/articles/cloning-a-repository).
 
-1. Open the [Qwerty](https://github.com/coderbeez/qwerty) repository.
+1. Open the [COLETTE O'SULLIVAN](https://github.com/coderbeez/COLETTE O'SULLIVAN) repository.
 2. Click the **clone or download** button.
 3. In the **clone with HTTPs** pop-up, click the **copy icon**.
 4. Open **git bash**.
@@ -495,75 +407,51 @@ Create Requirements.txt file
 
 ### HTML Code
 
-- Set text area to display only from [Stack Overflow](https://stackoverflow.com/questions/12831092/textarea-without-input-functionality).
+- Remove Bootstrap card header border radius [Stack Overflow](https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4).
 
 ### CSS Code
 
-- Creating a switch in CSS from [W3Schools](https://www.w3schools.com/howto/howto_css_switch.asp).
+- Timeline [Bootsnipp](https://bootsnipp.com/snippets/xrKXW).
 
 ### JavaScript Code
 
-- On page load event from [Stack Overflow](https://stackoverflow.com/questions/42541274/jquery-on-page-load-event-not-working).
-- Check if an element is hidden from [Stack Overflow](https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery).
-- Show hide elements by data attributes from [Stack Overflow](https://stackoverflow.com/questions/31802861/show-hide-elements-by-data-attribute).
-- Get data attributes in jQuery from [Code Project](https://www.codeproject.com/Questions/369517/how-to-get-data-attributes-in-jquery).
-- Check and uncheck inputs or radios from [Learn jQuery](https://learn.jquery.com/using-jquery-core/faq/how-do-i-check-uncheck-a-checkbox-input-or-radio-button/).
-- Define CSS hover in jQuery from [Stack Overfow](https://stackoverflow.com/questions/21051440/how-to-define-the-css-hover-state-in-a-jquery-selector).
-- Not class selector in jQuery from [Stack Overfow](https://stackoverflow.com/questions/4614120/not-class-selector-in-jquery).
-- Read value local storage on load from [Stack Overfow](https://stackoverflow.com/questions/50933011/read-value-of-localstorage-on-body-load-or-document-ready).
-- Clear local storage from [Stack Overfow](https://stackoverflow.com/questions/10710674/how-to-remove-and-clear-all-localstorage-data).
+- /On page load event from [Stack Overflow](https://stackoverflow.com/questions/42541274/jquery-on-page-load-event-not-working).
 
 ### Python Code
 
 #### Database
 
-- [Maximilian Schwarzmüller - Udemy MongoDB The Complete Developer's Guide](https://www.udemy.com/course/mongodb-the-complete-developers-guide/learn/lecture/11850844?start=300#overview).
-- [Flask-PyMongo Documentation](https://flask-pymongo.readthedocs.io/en/latest/).
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/).
-- [PyMongo Documentation](https://api.mongodb.com/python/current/).
-- [Pretty Printed - YouTube Flask MongoDB Series](https://www.youtube.com/playlist?list=PLXmMXHVSvS-Db9KK1LA7lifcyZm4c-rwj).
-- Text search from [Stack Overflow](https://stackoverflow.com/questions/48371016/pymongo-how-to-use-full-text-search).
-- Text search language override from [Stack Overflow](https://stackoverflow.com/questions/50071593/pymongo-language-override-unsupported-c-when-creating-index).
+- /[Maximilian Schwarzmüller - Udemy MongoDB The Complete Developer's Guide](https://www.udemy.com/course/mongodb-the-complete-developers-guide/learn/lecture/11850844?start=300#overview).
 
 #### Forms
 
-- [WTForms Documentation](https://wtforms.readthedocs.io/en/stable/).
-- [Corey Schafer - YouTube Flask Series](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=65&t=0s).
-- [Pretty Printed - YouTube Flask WTForms Series](https://www.youtube.com/playlist?list=PLXmMXHVSvS-C_T5JWEDWIc9yEM3Hj52-1)
-- Setting data attributes on WTForms field from [Stack Overfow](https://stackoverflow.com/questions/27779024/setting-data-attributes-on-a-wtforms-field).
-- Prevent auto capitalize on mobile from [Stack Overflow](https://stackoverflow.com/questions/54372754/prevent-wtform-from-autocapitalizing-on-mobile).
+- Send POST data from inside for loop [Stack Overflow](https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop).
 
-#### User Sessions
+#### Users
 
-- [Flask-Login Documentation](https://flask-login.readthedocs.io/en/latest/).
-- [Corey Schafer - YouTube Flask Series](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=65&t=0s).
-- [Corey Schafer - YouTube Python Classes Series](https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=41&t=0s).
-- [Pretty Printed - YouTube Create User Login System with Flask PyMongo](https://www.youtube.com/watch?v=vVx1737auSE&list=PLXmMXHVSvS-Db9KK1LA7lifcyZm4c-rwj&index=6&t=0s).
-- [Running Codes - Blog PyMongo with Flask-Login](https://boh717.github.io/post/flask-login-and-mongodb).
+- Python Django Tutorial Part 6 - User Registration [Corey Schafer](https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6).
 
-#### User Passwords
+#### Pagination
 
-- [Flask-Bcrypt Documentation](https://flask-bcrypt.readthedocs.io/en/latest/).
-- [Corey Schafer - YouTube Flask Series](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=65&t=0s).
-- [Pretty Printed - YouTube Intro to Flask-Login](https://www.youtube.com/watch?v=2dEM-s3mRLE).
+- [Django Documentation](https://docs.djangoproject.com/en/3.0/topics/pagination/).
 
 #### Messages
 
-- [Flask Message Flashing Documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/).
-- [Corey Schafer - YouTube Flask Series](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=65&t=0s).
+- /[Flask Message Flashing Documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/).
 
-#### Templating
+#### Templates
 
-- [Jinja Documentation](https://jinja.palletsprojects.com/en/2.10.x/).
-- [Corey Schafer - YouTube Flask Series](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=65&t=0s).
-- Using url_for with static files from [Stack Overflow](https://stackoverflow.com/questions/16351826/link-to-flask-static-files-with-url-for).
-- Using Jinja super blocks [Real Python](https://realpython.com/primer-on-jinja-templating/#super-blocks).
+- Multiply in template tag [Stack Overflow](https://stackoverflow.com/questions/6285327/how-to-do-math-in-a-django-template).
+- Foreign key in template tag [Stack Overflow](https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template).
+
+#### Shop Cart
+
+- Django Tutorial for Beginners Part 22, Cart App [Coding Point](https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s).
 
 #### Other
 
-- Before request decorator [Pythonise](https://pythonise.com/series/learning-flask/python-before-after-request).
-- Heroku CSS not updating [Stack Overflow](https://stackoverflow.com/questions/11266849/heroku-css-file-not-updating).
+- /Before request decorator [Pythonise](https://pythonise.com/series/learning-flask/python-before-after-request).
 
 ## Acknowledgements
 
-- Many thanks to my mentor Ali Ashik, Simen Daehlin, Sean Murphy and ***all*** on Slack who take the time to share useful links for their fellow students.
+- Many thanks to my client for her direction and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel.
