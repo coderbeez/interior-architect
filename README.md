@@ -1,51 +1,5 @@
 [![Build Status](https://travis-ci.com/coderbeez/interior-architect.svg?branch=master)](https://travis-ci.com/coderbeez/interior-architect)
 
-MILESTONE 4
-https://github.com/AndrewIngram/django-extra-views/
-
-Forms
-<!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
-
-Stripe
-Do not rely on the redirect to the success_url alone for fulfilling purchases as:
-
-Malicious users could directly access the success_url without paying and gain access to your goods or services.
-Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs.
-
-Email receipt sent to customers by stripe with COS colors and icon
-https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011
-
-
-Bugs
-Email https://support.google.com/mail/thread/5621336?hl=en
-Set Less secure apps to on in google account
-Price in success - decimal
-Can't use build uri for stripe success url
-
-Email cos web link including safe links - making url look ugly
-Why Outlook Adding “Safelinks.Protection.Outlook.Com” to All URLs
-https://www.askvg.com/why-outlook-adding-safelinks-protection-outlook-com-to-all-urls-in-your-emails-and-how-to-disable-it/
-
-Trying to implement get or 404 throws error
-'Manager' object has no attribute 'get_object_or_404'
-
-
-
-AWS django storages
-https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
-
-Brad Traversy Real Estate https://www.udemy.com/course/python-django-dev-to-deployment/
-
-https://pypi.org/project/django-heroku/
-
-Email videos
-https://www.youtube.com/watch?v=51mmqf5a0Ss
-https://startcodingnow.com/making-your-own-email-templates-in-django/
-
-<div align="center">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
-</div>
-
 # [COLETTE O'SULLIVAN](https://coletteosullivan.com)
 
 *A portfolio website for an interior architect and designer, developed for Code Institute's full stack milestone project.*
@@ -103,7 +57,9 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 
 ## Home App
 
-![Home Page Image](https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/home.png)
+App intro.
+
+![Home Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_home.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -113,7 +69,9 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 
 ## CV App
 
-<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/register.png" alt="COLETTE O'SULLIVAN register page">
+App intro.
+
+![CV Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cv.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -126,7 +84,9 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 
 ## Blog App
 
-<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/login.png" alt="COLETTE O'SULLIVAN login page">
+App intro.
+
+![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -139,9 +99,24 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 
 ## Portfolio App
 
-<div align="center">
-<img src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/notes.gif" alt="COLETTE O'SULLIVAN notes page">
-</div>
+App intro.
+
+![Potfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
+
+| **TYPE** | **NAME** | **DESCRIPTION** |
+| --- | --- | --- |
+| **Model** | Role | N/A |
+| **Model** | Point | N/A |
+| **Model** | Example | N/A |
+| **Model** | Skill | N/A |
+| **View** | About | - |
+| **Template** | About | - |
+
+## Cart App
+
+App intro.
+
+![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -154,7 +129,9 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 
 ## Contact App
 
-<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/addnote.png" alt="COLETTE O'SULLIVAN add note page">
+App intro.
+
+![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_contact.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -165,24 +142,12 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 | **View** | About | - |
 | **Template** | About | - |
   
-## Cart App
-
-<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/editnote.png" alt="COLETTE O'SULLIVAN edit note page">
-
-| **TYPE** | **NAME** | **DESCRIPTION** |
-| --- | --- | --- |
-| **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
-| **View** | About | - |
-| **Template** | About | - |
 
 ## User App
 
-<div align="center">
-<img src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/links.gif" alt="COLETTE O'SULLIVAN links page">
-</div>
+App intro.
+
+![User Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_user.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -385,3 +350,56 @@ Create Requirements.txt file
 ## Acknowledgements
 
 - Many thanks to my client for her direction and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel.
+
+<div align="center">
+<img src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/notes.gif" alt="COLETTE O'SULLIVAN notes page">
+</div>
+
+<img align="right" height="500" src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/addnote.png" alt="COLETTE O'SULLIVAN add note page">
+
+MILESTONE 4
+https://github.com/AndrewIngram/django-extra-views/
+
+Forms
+<!--WHERE: Corey Schafer https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6-->
+
+Stripe
+Do not rely on the redirect to the success_url alone for fulfilling purchases as:
+
+Malicious users could directly access the success_url without paying and gain access to your goods or services.
+Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs.
+
+Email receipt sent to customers by stripe with COS colors and icon
+https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011
+
+
+Bugs
+Email https://support.google.com/mail/thread/5621336?hl=en
+Set Less secure apps to on in google account
+Price in success - decimal
+Can't use build uri for stripe success url
+
+Email cos web link including safe links - making url look ugly
+Why Outlook Adding “Safelinks.Protection.Outlook.Com” to All URLs
+https://www.askvg.com/why-outlook-adding-safelinks-protection-outlook-com-to-all-urls-in-your-emails-and-how-to-disable-it/
+
+Trying to implement get or 404 throws error
+'Manager' object has no attribute 'get_object_or_404'
+
+
+
+AWS django storages
+https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+
+Brad Traversy Real Estate https://www.udemy.com/course/python-django-dev-to-deployment/
+
+https://pypi.org/project/django-heroku/
+
+Email videos
+https://www.youtube.com/watch?v=51mmqf5a0Ss
+https://startcodingnow.com/making-your-own-email-templates-in-django/
+
+<div align="center">
+<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
+</div>
+
