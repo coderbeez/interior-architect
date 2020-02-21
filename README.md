@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.com/coderbeez/interior-architect.svg?branch=master)](https://travis-ci.com/coderbeez/interior-architect)
 
+<div align="center">
+<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
+</div>
+
 # [COLETTE O'SULLIVAN](https://coletteosullivan.com)
 
 *A portfolio website for an interior architect and designer, developed for Code Institute's full stack milestone project.*
@@ -72,6 +76,7 @@ App intro.
 App intro.
 
 ![CV Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cv.JPG)
+*CV Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -87,61 +92,78 @@ App intro.
 App intro.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
+*Blog Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
-| **View** | About | - |
-| **Template** | About | - |
+| **Model** | Category | - |
+| **Model** | Blog | - |
+| **Model** | Section | - |
+| **Model** | Comment | - |
+| **Form** | CommentForm | - |
+| **Form** | ReplyForm | - |
+| **View** | Blogs | - |
+| **View** | Blog | - |
+| **View** | Like | - |
+| **View** | Comments | Login required |
+| **Template** | Blogs | - |
+| **Template** | Blog | - |
+| **Template** | Comments | - |
 
 ## Portfolio App
 
 App intro.
 
 ![Potfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
+*Portfolio Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
-| **View** | About | - |
-| **Template** | About | - |
+| **Model** | Category | N/A |
+| **Model** | Project | N/A |
+| **Model** | Section | N/A |
+| **Model** | Download | N/A |
+| **Form** | ContactForm | - |
+| **Form** | ReplyForm | - |
+| **View** | Projects | - |
+| **View** | Project | - |
+| **Template** | Projects | - |
+| **Template** | Project | - |
 
 ## Cart App
 
 App intro.
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
+*Cart Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
-| **View** | About | - |
-| **Template** | About | - |
+| **Model** | Cart | - |
+| **View** | Cart | - |
+| **View** | Add | - |
+| **View** | Remove | - |
+| **View** | Charge | - |
+| **View** | Success | - |
+| **Template** | Cart | - |
+| **Template** | Charge | - |
+| **Template** | Success | - |
 
 ## Contact App
 
 App intro.
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_contact.JPG)
+*Contact Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
-| **View** | About | - |
-| **Template** | About | - |
-  
+| **Model** | Contact | - |
+| **View** | Contact | - |
+| **View** | Contacts | - |
+| **Template** | Contact | - |
+| **Template** | Contacts | Login required |
+| **Template** | Reply Email | - |
 
 ## User App
 
@@ -151,12 +173,11 @@ App intro.
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
-| **View** | About | - |
-| **Template** | About | - |
+| **Form** | UserRegisterForm | N/A |
+| **View** | Register | - |
+| **Template** | Login | - |
+| **Template** | Logout | - |
+| **Template** | Register? | - |
 
 ## Future Features
 
@@ -399,7 +420,5 @@ Email videos
 https://www.youtube.com/watch?v=51mmqf5a0Ss
 https://startcodingnow.com/making-your-own-email-templates-in-django/
 
-<div align="center">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
-</div>
+
 
