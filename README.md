@@ -68,7 +68,7 @@ App intro.
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **View** | index | Import portfolio and blog models to display the top 3 most liked blogs and 3 selected projects. |
-| **Template** | index | Landing and teaser page showing client intro, instagram posts, portfolio & blog samples. Provides access to admin pages for client. |
+| **Template** | index | Landing and teaser page showing client intro, instagram posts (enabled by Juicer), portfolio & blog samples. Provides access to admin pages for client. |
 | | include-intro | Used to position client photo and introductory text depepening on device size. |
 
 ## CV App
@@ -216,6 +216,7 @@ App intro.
 - [Font Awesome](https://fontawesome.com/) Used for all icons.
 - [Bootstrap](https://getbootstrap.com/) Used for responsive layout and styling.
 - [jQuery](https://jquery.com/) Used for navbar, carousel, accordion, data circles & stripe functionality.
+- [jquery-circle-progress](https://github.com/kottenator/jquery-circle-progress) Used for animated skill circles.
 - [Juicer](https://www.juicer.io/) Used to link and display client's instagram feed.
 
 ## Backend Resources
@@ -330,7 +331,13 @@ Create Requirements.txt file
 
 ### JavaScript Code
 
-- /On page load event from [Stack Overflow](https://stackoverflow.com/questions/42541274/jquery-on-page-load-event-not-working).
+- jquery-circle-progress [Kottenator](https://github.com/kottenator/jquery-circle-progress).
+- Determine if item is at top of screen [Stack Overflow](https://stackoverflow.com/questions/7543718/test-in-jquery-if-an-element-is-at-the-top-of-screen).
+- Carousel set first loop image as active [Stack Overflow](https://stackoverflow.com/questions/52870493/carousel-set-first-loop-image-as-active-item).
+- $.each [Stack Overflow](https://stackoverflow.com/questions/34949440/how-to-get-data-attribute-value-of-all-elements-using-jquery).
+- Check if element is hidden in jQuery [Stack Overflow](https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery).
+- Show, hide elements by data attribute [Stack Overflow](https://stackoverflow.com/questions/31802861/show-hide-elements-by-data-attribute).
+- Get data attributes in jQuery [Stack Overflow](https://www.codeproject.com/Questions/369517/how-to-get-data-attributes-in-jquery).
 
 ### Python Code
 
