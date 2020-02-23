@@ -69,21 +69,21 @@ App intro.
 | --- | --- | --- |
 | **View** | index | Import portfolio and blog models to display the top 3 most liked blogs and 3 selected projects. |
 | **Template** | index | Landing and teaser page showing client intro, instagram posts, portfolio & blog samples. Provides access to admin pages for client. |
-| **Template** | include-intro | Used to position client photo and introductory text depepening on device size. |
+| | include-intro | Used to position client photo and introductory text depepening on device size. |
 
 ## CV App
 
 App intro.
 
 ![CV Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cv.JPG)
-*CV Schema*
+*Diagram: CV Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Role | N/A |
-| **Model** | Point | N/A |
-| **Model** | Example | N/A |
-| **Model** | Skill | N/A |
+| | Point | N/A |
+| | Example | N/A |
+| | Skill | N/A |
 | **View** | About | - |
 | **Template** | About | - |
 
@@ -92,78 +92,78 @@ App intro.
 App intro.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
-*Blog Schema*
+*Diagram: Blog Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Category | - |
-| **Model** | Blog | - |
-| **Model** | Section | - |
-| **Model** | Comment | - |
+| | Blog | - |
+| | Section | - |
+| | Comment | - |
 | **Form** | CommentForm | - |
-| **Form** | ReplyForm | - |
+| | ReplyForm | - |
 | **View** | Blogs | - |
-| **View** | Blog | - |
-| **View** | Like | - |
-| **View** | Comments | Login required |
+| | Blog | - |
+| | Like | - |
+| | Comments | Login required |
 | **Template** | Blogs | - |
-| **Template** | Blog | - |
-| **Template** | Comments | - |
+| | Blog | - |
+| | Comments | - |
 
 ## Portfolio App
 
 App intro.
 
 ![Potfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
-*Portfolio Schema*
+*Diagram: Portfolio Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Category | N/A |
-| **Model** | Project | N/A |
-| **Model** | Section | N/A |
-| **Model** | Download | N/A |
+| | Project | N/A |
+| | Section | N/A |
+| | Download | N/A |
 | **Form** | ContactForm | - |
-| **Form** | ReplyForm | - |
+| | ReplyForm | - |
 | **View** | Projects | - |
-| **View** | Project | - |
+| | Project | - |
 | **Template** | Projects | - |
-| **Template** | Project | - |
+| | Project | - |
 
 ## Cart App
 
 App intro.
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
-*Cart Schema*
+*Diagram: Cart Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Cart | - |
 | **View** | Cart | - |
-| **View** | Add | - |
-| **View** | Remove | - |
-| **View** | Charge | - |
-| **View** | Success | - |
+| | Add | - |
+| | Remove | - |
+| | Charge | - |
+| | Success | - |
 | **Template** | Cart | - |
-| **Template** | Charge | - |
-| **Template** | Success | - |
+| | Charge | - |
+| | Success | - |
 
 ## Contact App
 
 App intro.
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_contact.JPG)
-*Contact Schema*
+*Diagram: Contact Schema*
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Contact | - |
 | **View** | Contact | - |
-| **View** | Contacts | - |
+| | Contacts | - |
 | **Template** | Contact | - |
-| **Template** | Contacts | Login required |
-| **Template** | Reply Email | - |
+| | Contacts | Login required |
+| | Reply Email | - |
 
 ## User App
 
@@ -173,11 +173,10 @@ App intro.
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Form** | UserRegisterForm | N/A |
-| **View** | Register | - |
 | **Template** | Login | - |
-| **Template** | Logout | - |
-| **Template** | Register? | - |
+| | Logout | - |
+
+## Django Admin Interface
 
 ## Future Features
 
