@@ -132,7 +132,17 @@ App intro.
 
 ## Cart App
 
-App intro.
+When it came to the cart, client requirements drove app design.
+
+Although the app gives the client an opprtunity to sell her project drawings, it's not the main purpose of the site, and she wanted a subtle approach. On the project detail page, if downloads are availble, costed downloads appear with a purchase button and free downloads appear with a download button. The cart navbar menu item only appears after clicking purchase on a costed download.
+
+Although the client doesn't imagine a lot of cart activity, she was interested in knowing the contents of carts that visitors both do and do not end up checking out. For these reasones, just the cart id is stored in session, with the remaining data stored in the cart table and available to the client in the Djnago admin interface.
+
+Stripe Checkout was chosen as the payment option for the site. According to the Stripe website it *creates a secure, Stripe-hosted payment page that lets you collect payments with just a few lines of code. It works across devices and is designed to increase your conversion.* The client really appreciated:
+
+1. Stripe hosting means she doesn't have to worry about payment security.
+2. Stripe Checkout meets the 2019 European Strong Customer Authentication (SCA) requirements.
+3. A customisable interface allowed her logo and colour scheme to be incorporated.
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
 *Diagram: Cart Schema*
