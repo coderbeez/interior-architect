@@ -162,7 +162,7 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 | | Success | - |
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow.JPG)
-*Diagram: Cart Flow*
+*Diagram: Cart Flow - Successful Purchase*
 
 ## Contact App
 
@@ -180,7 +180,7 @@ App intro.
 | | Contacts | Login required |
 | | Reply Email | - |
 
-![Cart Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow.JPG)
+![Contact Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow.JPG)
 *Diagram: Contact Flow*
 
 ## User App
