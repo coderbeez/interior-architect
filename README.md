@@ -132,9 +132,6 @@ App intro.
 
 ## Cart App
 
-![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow.JPG)
-*Diagram: Cart Flow*
-
 When it came to the Cart App, client requirements drove design decisions.
 
 Although the app gives the client an opprtunity to sell her project drawings, it's not the main purpose of the site, and she wanted a subtle approach. On the project detail page, if downloads are available, costed downloads appear with a purchase button and free downloads with a download button. The cart navbar menu item only appears after clicking purchase on a costed download.
@@ -146,6 +143,8 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 1. As a Stripe hosted option she doesn't have to worry about payment security.
 2. Stripe Checkout meets the 2019 European Strong Customer Authentication (SCA) requirements.
 3. A customisable interface still allowed her logo and colour scheme to be incorporated.
+4. Stripe notifications settings allowed the clients to receive an email after every successful payment.
+5. Stripe email settings allowed the client's customers to receive receipts directly from Stripe.
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
 *Diagram: Cart Schema*
@@ -162,6 +161,9 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 | | Charge | - |
 | | Success | - |
 
+![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow.JPG)
+*Diagram: Cart Flow*
+
 ## Contact App
 
 App intro.
@@ -177,6 +179,9 @@ App intro.
 | **Template** | Contact | - |
 | | Contacts | Login required |
 | | Reply Email | - |
+
+![Cart Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow.JPG)
+*Diagram: Contact Flow*
 
 ## User App
 
