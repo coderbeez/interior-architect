@@ -166,10 +166,8 @@ Email receipts: Automatic email receipts to your customers
 | | Charge | - |
 | | Success | - |
 
-![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow1.JPG)
-![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow2.JPG)
-
-
+![Successful Purchase 1](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow1_dark.JPG)
+![Successful Purchase 2](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow2_dark.JPG)
 *Diagram: Cart Flow - Successful Purchase*
 
 ## Contact App
@@ -188,19 +186,12 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 | | Contacts | Login required |
 | | Reply Email | - |
 
-![Contact Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow.JPG)
+![Contact Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark.JPG)
 *Diagram: Contact Flow*
-
-<div align="center">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark.JPG" alt="COLETTE O'SULLIVAN contact flow">
-<strong>Contact Flow Diagram</strong>
-</div>
 
 ## User App
 
 The user app is currently limited to login and logout templates using Django's User models. For this site, the client is the user, logging in using the admin link on the landing page to access the outstanding comments and contacts pages.
-
-![User Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_user.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -211,20 +202,16 @@ The user app is currently limited to login and logout templates using Django's U
 
 The client needed an interface to allow content updates. Having walked her through Django's default admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in more with the style of the main site, the admin inteface css was customised.
 
-<div align="center" style="border-style: solid 1px double;">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG" alt="COLETTE O'SULLIVAN django admin">
-<strong>Customised Django Admin Interface</strong>
-</div>
+![Django Admin](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG)
+*Customised Django Admin Interface*
 
 ## Future Features
 
-**Automated Fulfillment** Look up Stripe site???
+**Automated Fulfillment** Currently fulfillment for paid downloads is manual but we would like to take advantage of automated fulfillment using webhooks as outlined in [Stripe's documentation](https://stripe.com/docs/payments/checkout/fulfillment#webhooks).
 
-**Cart Analysis** Statistics
+**Search Facility** As the client is currently building up her portfolio and blogs she did not want a search facility, feeling it would emphasis the lack of content. As content grows, I really feel this is something the site will need.
 
-**Search Facility** Statistics
-
-**Email??** Email's from coletteosullivan.com
+**Email** Currently emails are sent from a gmail that was setup specifically for the site. In time the client would like emails to come from coletteosullivan.com
 
 # Technologies & Programmes Used
 
