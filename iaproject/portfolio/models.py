@@ -30,7 +30,7 @@ class Section(models.Model):
     caption = models.CharField(max_length=200, blank=True)
     caption_url = models.URLField(max_length=200, blank=True)
     exclude = models.BooleanField(default=False)
-    #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
+    #Credit: Related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
 class Download(models.Model):
     project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='downloads')

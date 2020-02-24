@@ -11,4 +11,3 @@ class Cart(models.Model):
 
     def __str__(self):
         return f'Cart {self.id} {self.date}'
-    #credit https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s

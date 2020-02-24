@@ -29,5 +29,4 @@ class Contact(models.Model):
     
     def __str__(self):
         return f'{self.name}'
-    # from django docs  
-    # Why define choice variables https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django  
+    # Credit: Choice fields https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django  

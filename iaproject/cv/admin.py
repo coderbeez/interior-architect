@@ -17,3 +17,6 @@ class RoleAdmin(admin.ModelAdmin):
 
 admin.site.register(Role, RoleAdmin)
 admin.site.register(Skill)
+# Credit: Inlines https://stackoverflow.com/questions/14308050/django-admin-nested-inline
+# Credit: Display, filters, edits Brad Traversey https://www.udemy.com/course/python-django-dev-to-deployment/
+# Credit: Order https://stackoverflow.com/questions/4571916/django-admin-sort-order

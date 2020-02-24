@@ -331,13 +331,11 @@ Create Requirements.txt file
 ## Content
 
 - Site concept and design by website developer.
-- Language topics reflect Code Institute’s Diploma in Full Stack Web Development.
-- Links collected by site developer during studies and from Code Institute's Diploma Slack channel.
-- Quotes from [CodeWisdom](https://twitter.com/CodeWisdom), [DZone - Programming Quores](https://dzone.com/articles/best-programming-jokes-amp-quotes), [DZone - Software Developer Quotes](https://dzone.com/articles/more-inspirational-quotes-for-software-developers), [GoodReads](https://www.goodreads.com/quotes/tag/programming?page=1), [JournalDev](https://www.journaldev.com/240/my-25-favorite-programming-quotes-that-are-funny-too).
+- Site content by client.
 
 ## Media
 
-- Logo by Blasko purchased from [Vector Stock](https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011).
+- Favicon/Stripe logo by Blasko purchased from [Vector Stock](https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011).
 - /Spotify image adapted from [Spotify](https://www.spotify.com/ie/).
 
 ## Code
@@ -366,9 +364,21 @@ Create Requirements.txt file
 
 ### Python Code
 
-#### Database
+#### Django
 
-- /[Maximilian Schwarzmüller - Udemy MongoDB The Complete Developer's Guide](https://www.udemy.com/course/mongodb-the-complete-developers-guide/learn/lecture/11850844?start=300#overview).
+- [Brad Traversy - YouTube Django Crash Course](https://www.youtube.com/watch?v=e1IyzVyrLSU).
+- [Brad Traversy - Udemy Django Dev To Development](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- [Pretty Printed - YouTube Django Playlist](https://www.youtube.com/watch?v=QVX-etwgvJ8&list=PLXmMXHVSvS-DQfOsQdXkzEZyD0Vei7PKf&index=1).
+- [Corey Schafer - YouTube Django Playlist](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p).
+- [Real Python - Build A Portfolio App](https://realpython.com/get-started-with-django-1/).
+- [Coding Point - Django Ecommerce Web App](https://www.youtube.com/playlist?list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK).
+- [Django 2.2 Documentation](https://docs.djangoproject.com/en/2.2/).
+
+#### Models
+
+- Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
+- Choice Fields [Stack Overflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
+- Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
 
 #### Forms
 
@@ -396,21 +406,28 @@ Create Requirements.txt file
 - Django Tutorial for Beginners Part 22, Cart App [Coding Point](https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s).
 - Stripe Checkout documentation [Stripe](https://stripe.com/docs/payments/checkout/one-time).
 
-#### Django Admin Interface Settings
+#### Admin
 
-- Admin.py [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
-- CSS [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- Admin.py Inlines [Stack Overflow](https://stackoverflow.com/questions/14308050/django-admin-nested-inline).
+- Admin.py Display, filters, edits [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- Admin.py Order [Stack Overflow](https://stackoverflow.com/questions/4571916/django-admin-sort-order).
+- Admin CSS [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- Admin HTML [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- Admin HTML Setting favicon [Stack Overflow](https://stackoverflow.com/questions/34959897/set-favicon-in-django-admin).
 
+#### Email
+
+- How to send emails in Django [Data Flair](https://data-flair.training/blogs/django-send-email/).
+- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
+- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
 
 #### Other
 
 - /Before request decorator [Pythonise](https://pythonise.com/series/learning-flask/python-before-after-request).
 
-
-
 ## Acknowledgements
 
-- Many thanks to my client for her direction and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel.
+- Many thanks to my client for her faith and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel.
 
 <div align="center">
 <img src="https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/images/notes.gif" alt="COLETTE O'SULLIVAN notes page">
@@ -430,8 +447,7 @@ Do not rely on the redirect to the success_url alone for fulfilling purchases as
 Malicious users could directly access the success_url without paying and gain access to your goods or services.
 Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs.
 
-Email receipt sent to customers by stripe with COS colors and icon
-https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011
+
 
 
 Bugs
@@ -444,21 +460,15 @@ Email cos web link including safe links - making url look ugly
 Why Outlook Adding “Safelinks.Protection.Outlook.Com” to All URLs
 https://www.askvg.com/why-outlook-adding-safelinks-protection-outlook-com-to-all-urls-in-your-emails-and-how-to-disable-it/
 
-Trying to implement get or 404 throws error
-'Manager' object has no attribute 'get_object_or_404'
-
-
-
 AWS django storages
 https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
 
-Brad Traversy Real Estate https://www.udemy.com/course/python-django-dev-to-deployment/
+
 
 https://pypi.org/project/django-heroku/
 
-Email videos
-https://www.youtube.com/watch?v=51mmqf5a0Ss
-https://startcodingnow.com/making-your-own-email-templates-in-django/
+
+
 
 
 
