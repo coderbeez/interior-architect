@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from django.contrib import messages
+from django.shortcuts import render
 from .models import Role, Point, Example, Skill
 
 def about(request):

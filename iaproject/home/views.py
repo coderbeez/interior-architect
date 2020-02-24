@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from portfolio.models import Project
 from blog.models import Blog
+from portfolio.models import Project
+
 
 def index(request):
     projects = Project.objects.filter(exclude=False, home=True).order_by('order')[:3]
