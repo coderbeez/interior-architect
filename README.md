@@ -168,6 +168,8 @@ Email receipts: Automatic email receipts to your customers
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow1.JPG)
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow2.JPG)
+
+
 *Diagram: Cart Flow - Successful Purchase*
 
 ## Contact App
@@ -191,6 +193,7 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 
 <div align="center">
 <img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark.JPG" alt="COLETTE O'SULLIVAN contact flow">
+<strong>Contact Flow Diagram</strong>
 </div>
 
 ## User App
@@ -209,7 +212,10 @@ The user app is currently limited to login and logout templates using Django's U
 The client needed an interface to allow content updates. Having walked her through Django's default admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in more with the style of the main site, the admin inteface css was customised.
 
 ![Django Admin](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin.JPG)
-*Diagram: Customised Django Admin Interface*
+<div align="center">
+<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG" alt="COLETTE O'SULLIVAN django admin">
+<strong>Customised Django Admin Interface</strong>
+</div>
 
 ## Future Features
 
