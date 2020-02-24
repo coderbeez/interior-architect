@@ -22,7 +22,7 @@ class Point(models.Model):
 class Example(models.Model):
     role = models.ForeignKey('Role', on_delete=models.CASCADE, related_name='examples')  
     project = models.ForeignKey('portfolio.Project', on_delete=models.CASCADE, related_name='cv_examples')
-    order = models.IntegerField()    
+    order = models.IntegerField(null=True, blank=True)    
     #related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
 class Skill(models.Model):
