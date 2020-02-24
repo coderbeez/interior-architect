@@ -211,9 +211,8 @@ The user app is currently limited to login and logout templates using Django's U
 
 The client needed an interface to allow content updates. Having walked her through Django's default admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in more with the style of the main site, the admin inteface css was customised.
 
-![Django Admin](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin.JPG)
 <div align="center">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG" alt="COLETTE O'SULLIVAN django admin">
+<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG" alt="COLETTE O'SULLIVAN django admin" style="border-style: solid double;">
 <strong>Customised Django Admin Interface</strong>
 </div>
 
