@@ -96,7 +96,7 @@ def success(request):
     cart.stripe = stripe_session
     cart.save() #saving the session id to cart model so have record and can see what carts were purchased
     del request.session['cart_id'] #can't purchase same cart twice
-    context = {'title': 'Purchase Complete', 'stripe_data': stripe_data, }
+    context = {'title': 'Complete', 'stripe_data': stripe_data, }
     return render(request, 'cart/success.html', context)
     #https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get
     #https://stackoverflow.com/questions/16039399/how-to-clear-all-session-variables-without-getting-logged-out
