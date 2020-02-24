@@ -6,7 +6,7 @@
 
 # [coletteosullivan.com](https://coletteosullivan.com)
 
-*A portfolio website for an interior architect and designer, developed for a client while completing the Code Institute's fullstack milestone project.*
+*A portfolio website for an interior architect and designer, developed for a client while completing the Code Institute's fullstack milestone module.*
 
 # UX
 
@@ -89,7 +89,7 @@ The main challenge of the CV app was to find a way to allow the client to presen
 
 ## Blog App
 
-The Blog app updated regularly, Site visitors can interact with blogs, adding a like and/or a comment. The 3 blogs with the highest number of likes are displayed on the home page. As the client wanted to reply to all posted comments, a flag is sent to the client when a new comment is added. After logging in, the comments page allows the client to quickly review, reply and/or exclude outstanding comments from the site.
+The Blog App provides the client with a facility to create blogs with different formats and site visitors the facility to add likes and comments to blogs. The 3 blogs with the highest number of likes are displayed on the home page. As the client wanted to reply to all posted comments, a flag is sent to the client when a new comment is added. After logging in, the comments page allows the client to quickly review, reply and/or exclude outstanding comments from the site.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
 *Diagram: Blog Schema*
@@ -112,7 +112,7 @@ The Blog app updated regularly, Site visitors can interact with blogs, adding a 
 
 ## Portfolio App
 
-App intro.
+The portfolio app is allows the client present detailed projects. The client can additinal content. She had chosen to make some available free of charge and others are charged.
 
 ![Potfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
 *Diagram: Portfolio Schema*
@@ -145,6 +145,11 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 3. A customisable interface still allowed her logo and colour scheme to be incorporated.
 4. Stripe notifications settings allowed the clients to receive an email after every successful payment.
 5. Stripe email settings allowed the client's customers to receive receipts directly from Stripe.
+Payment methods: Credit cards, debit cards, Apple Pay, Google Pay, FPX and iDEAL
+Payment types: One-time and recurring payments
+Payment authentication: Dynamic 3D Secure (ready for Strong Customer Authentication)
+Localization: Localized for 14 languages
+Email receipts: Automatic email receipts to your customers
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
 *Diagram: Cart Schema*
@@ -167,7 +172,7 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 
 ## Contact App
 
-App intro.
+Site visitors can contact the client by submitting a contact form. New contacts are flagged to the client and outstanding comments pages gives her the facility to save and send replies.
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_contact.JPG)
 *Diagram: Contact Schema*
@@ -186,7 +191,7 @@ App intro.
 
 ## User App
 
-App intro.
+The user app is currently limited to login and logout templates using Django's User models. For this site, the client is the user, logging in using the admin link on the landing page to access the outstanding comments and contacts pages.
 
 ![User Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_user.JPG)
 
@@ -196,6 +201,11 @@ App intro.
 | | Logout | - |
 
 ## Django Admin Interface
+
+The client needed an interface to allow content updates. Having walked her through Django's default admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in more with the style of the main site, the admin inteface css was customised.
+
+![Django Admin](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin.JPG)
+*Diagram: Customised Django Admin Interface*
 
 ## Future Features
 
@@ -331,8 +341,8 @@ Create Requirements.txt file
 
 ## Media
 
-- Pencil image by Yoann Siloine from [Unsplash](https://unsplash.com/photos/dyaxQ-aoGWY).
-- Spotify image adapted from [Spotify](https://www.spotify.com/ie/).
+- Logo by Blasko purchased from [Vector Stock](https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011).
+- /Spotify image adapted from [Spotify](https://www.spotify.com/ie/).
 
 ## Code
 
@@ -388,10 +398,19 @@ Create Requirements.txt file
 #### Shop Cart
 
 - Django Tutorial for Beginners Part 22, Cart App [Coding Point](https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s).
+- Stripe Checkout documentation [Stripe](https://stripe.com/docs/payments/checkout/one-time).
+
+#### Django Admin Interface Settings
+
+- Admin.py [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
+- CSS [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
+
 
 #### Other
 
 - /Before request decorator [Pythonise](https://pythonise.com/series/learning-flask/python-before-after-request).
+
+
 
 ## Acknowledgements
 
