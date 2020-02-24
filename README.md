@@ -4,13 +4,13 @@
 <img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
 </div>
 
-# [COLETTE O'SULLIVAN](https://coletteosullivan.com)
+# [coletteosullivan.com](https://coletteosullivan.com)
 
-*A portfolio website for an interior architect and designer, developed for Code Institute's full stack milestone project.*
+*A portfolio website for an interior architect and designer, developed for a client while completing the Code Institute's fullstack milestone project.*
 
 # UX
 
-This portfolio website was developed to provide a platform for the client, an interior architect and designer, to showcase her work. The site content, including instagram posts, blogs, and detailed projects, is frequently updated so the client needs a site that is both flexible and easy to update.
+This portfolio website was developed to provide a platform for the client, an interior architect and designer, to showcase her work. The site content, including instagram posts, blogs, and detailed projects, is frequently updated so the client needed a site that was both flexible and easy to update.
 
 ## User Stories
 
@@ -38,7 +38,7 @@ The client receives an email flag whenever a new comment, contact or purchase is
 
 ## Design
 
-Simplicity is key to COLETTE O'SULLIVAN with the look and flow of the site designed for ease of use.
+Simplicity is key to COLETTE O'SULLIVAN with the look and flow of the site designed to provide a neutral background for the client's work.
 
 ### Navigation
 
@@ -61,19 +61,19 @@ Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoii
 
 ## Home App
 
-App intro.
+The Home App provides a landing page for the site, introducing the client and her work. Blogs, instagram posts and project images entice the visitor to look further. This content is linked to either external sources
 
 ![Home Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_home.JPG)
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **View** | index | Import portfolio and blog models to display the top 3 most liked blogs and 3 selected projects. |
-| **Template** | index | Landing and teaser page showing client intro, instagram posts (enabled by Juicer), portfolio & blog samples. Provides access to admin pages for client. |
+| **Template** | index | - |
 | | include-intro | Used to position client photo and introductory text depepening on device size. |
 
 ## CV App
 
-App intro.
+The main challenge of the CV app was to find a way to allow the client to present and maintain her CV in a novel way. Divided into 3 sections, skills, eductaion and expertise content is linked to model tables verses hard coded to enable the client to easily update through Django's default interface.
 
 ![CV Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cv.JPG)
 *Diagram: CV Schema*
@@ -89,7 +89,7 @@ App intro.
 
 ## Blog App
 
-App intro.
+The Blog app updated regularly, Site visitors can interact with blogs, adding a like and/or a comment. The 3 blogs with the highest number of likes are displayed on the home page. As the client wanted to reply to all posted comments, a flag is sent to the client when a new comment is added. After logging in, the comments page allows the client to quickly review, reply and/or exclude outstanding comments from the site.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
 *Diagram: Blog Schema*
