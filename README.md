@@ -190,7 +190,7 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 *Diagram: Contact Flow*
 
 <div align="center">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark_JPG" alt="COLETTE O'SULLIVAN contact flow">
+<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark.JPG" alt="COLETTE O'SULLIVAN contact flow">
 </div>
 
 ## User App
