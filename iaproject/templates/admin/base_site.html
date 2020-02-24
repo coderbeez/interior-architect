@@ -1,12 +1,16 @@
 {% extends 'admin/base.html' %}
 {% load static %}
 
+{% block extrahead %}
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+{% endblock %}
+<!--Credit: Setting favicon https://stackoverflow.com/questions/34959897/set-favicon-in-django-admin -->
+
 {%  block branding %}
-<h1 id="head">COLETTE O'SULLIVAN - Interior Architect - Site Admin</h1>
+<h1 id="head"><img class="brand_img" src="{% static 'images/logo.PNG' %}" alt="Logo COS" width="40"> COLETTE O'SULLIVAN</h1>
 {% endblock %}
 
 {% block extrastyle %}
 <link rel="stylesheet" href="{% static 'css/admin.css' %}">
 {% endblock %}
-
-<!--WHERE: Brad Real Estate-->
+<!--Credit: Extending admin/base Brad Traversy https://www.udemy.com/course/python-django-dev-to-deployment/ -->
