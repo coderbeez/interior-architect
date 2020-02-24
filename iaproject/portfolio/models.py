@@ -2,12 +2,14 @@ from django.db import models
 from django.utils import timezone
 
 class Category(models.Model):
+    '''Project category list item.'''
     title = models.CharField(max_length=100)
     
     def __str__(self):
         return f'{self.title}'
 
 class Project(models.Model):
+    '''Individual project and header data.'''
     category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=200)
     date = models.DateField(default=timezone.now)
@@ -23,6 +25,8 @@ class Project(models.Model):
         return f'{self.title}'
 
 class Section(models.Model):
+    '''Section data for an individual project.
+    Fields set to blank=True allow for maximum flexibility.'''
     project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='sections')
     title = models.CharField(max_length=500, blank=True)
     content = models.TextField(blank=True)
@@ -33,6 +37,8 @@ class Section(models.Model):
     #Credit: Related names https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models
 
 class Download(models.Model):
+    '''PDF download available for an individual project.
+    Price set to null=True and blank=True as some downloads are free.'''
     project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name='downloads')
     title = models.CharField(max_length=500, blank=True)
     content = models.TextField()

@@ -80,10 +80,10 @@ The main challenge of the CV app was to find a way to allow the client to presen
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | N/A |
-| | Point | N/A |
-| | Example | N/A |
-| | Skill | N/A |
+| **Model** | Role | Individual role and header data. Job field differentiates employment from education. |
+| | Point | Bullet point for an individual role. |
+| | Example | Link between a project and an individual role. |
+| | Skill | Skill and level to display in animated data circle. |
 | **View** | About | - |
 | **Template** | About | - |
 
@@ -96,10 +96,10 @@ The Blog App provides the client with a facility to create blogs with different 
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Category | - |
-| | Blog | - |
-| | Section | - |
-| | Comment | - |
+| **Model** | Category | Blog category list item. |
+| | Blog | Individual blog and header data. |
+| | Section | Section data for an individual blog. Fields set to blank=True allow for maximum flexibility. |
+| | Comment | Visitor comment and admin reply for an individual blog. |
 | **Form** | CommentForm | - |
 | | ReplyForm | - |
 | **View** | Blogs | - |
@@ -119,10 +119,10 @@ The portfolio app is allows the client present detailed projects. The client can
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Category | N/A |
-| | Project | N/A |
-| | Section | N/A |
-| | Download | N/A |
+| **Model** | Category | Project category list item. |
+| | Project | Individual project and header data. |
+| | Section | Section data for an individual project. Fields set to blank=True allow for maximum flexibility. |
+| | Download | PDF download available for an individual project. Price set to null=True and blank=True as some downloads are free. |
 | **Form** | ContactForm | - |
 | | ReplyForm | - |
 | **View** | Projects | - |
@@ -156,7 +156,7 @@ Email receipts: Automatic email receipts to your customers
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Cart | - |
+| **Model** | Cart | Individual cart. Stripe field indicates checked out. Fulfilled field indicates order complete. |
 | **View** | Cart | - |
 | | Add | - |
 | | Remove | - |
@@ -179,7 +179,7 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Contact | - |
+| **Model** | Contact | Indivdual visitor contact and admin reply. |
 | **View** | Contact | - |
 | | Contacts | - |
 | **Template** | Contact | - |
