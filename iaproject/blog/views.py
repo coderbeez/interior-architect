@@ -7,7 +7,7 @@ from .forms import CommentForm, ReplyForm
 
 def blogs(request):
     blog_list = Blog.objects.filter(exclude=False).order_by('order')
-    paginator = Paginator(blog_list, 6) # Show 3 blogs per page. Change to 6!
+    paginator = Paginator(blog_list, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {'title': 'Blog', 'page_obj': page_obj}
@@ -15,7 +15,8 @@ def blogs(request):
     # pagination from django docs https://docs.djangoproject.com/en/3.0/topics/pagination/
 
 def blog(request, pk):
-    blog = Blog.objects.get(pk=pk)
+    #blog = Blog.objects.get(pk=pk)
+    blog = get_object_or_404(Blog, pk=pk)
     sections = Section.objects.filter(blog=blog).order_by('id')
     comments = Comment.objects.filter(exclude=False, blog=blog).order_by('-id')
     form = CommentForm()
@@ -33,7 +34,7 @@ def blog(request, pk):
             messages.error(request, f'Something went wrong - comment not posted!')       
     context = {'title': 'Blog', 'blog': blog, 'sections': sections, 'comments': comments, 'form': form}    
     return render(request, 'blog/blog.html', context)
-    #redirect to avoid resubmission problems - ask Paul/Google?
+    #redirect to avoid resubmission problems
     #might not need an else as django creates validation errors?
     #add real python credit
     #credit: https://stackoverflow.com/questions/3209906/django-return-redirect-with-parameters
