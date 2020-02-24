@@ -8,7 +8,7 @@ class ExampleInline(admin.TabularInline):
     model = Example
 
 class RoleAdmin(admin.ModelAdmin):
-    list_display = ('order', 'job', 'company', 'title', 'timeframe')
+    list_display = ('order', 'job', 'title', 'company', 'timeframe')
     ordering = ('-job', '-order',)
     list_display_links = ('title',)
     list_filter = ('job',)
