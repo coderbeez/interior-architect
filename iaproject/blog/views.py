@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404 #error when apply?
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -40,7 +40,8 @@ def blog(request, pk):
     #credit: https://stackoverflow.com/questions/3209906/django-return-redirect-with-parameters
 
 def like(request, pk):
-    blog = Blog.objects.get(pk=pk)
+    #blog = Blog.objects.get(pk=pk)
+    blog = get_object_or_404(Blog, pk=pk)
     blog.like += 1
     blog.save()
     messages.success(request, f'Thanks for liking this blog!')
@@ -49,10 +50,12 @@ def like(request, pk):
   
 @login_required
 def comments(request, pk=None):
-    comments = Comment.objects.filter(exclude=False, reply='').order_by('id') #order by oldest without reply
+    '''order by oldest without reply'''
+    comments = Comment.objects.filter(exclude=False, reply='').order_by('id')
     form = ReplyForm()  
     if request.method == 'POST':
-        comment = Comment.objects.get(pk=pk) 
+        #comment = Comment.objects.get(pk=pk)
+        comment = get_object_or_404(Comment, pk=pk)
         form = ReplyForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()

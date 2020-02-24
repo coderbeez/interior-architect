@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Category, Project, Section, Download
 
@@ -12,7 +12,8 @@ def projects(request):
     # pagination from django docs https://docs.djangoproject.com/en/3.0/topics/pagination/
 
 def project(request, pk):
-    project = Project.objects.get(pk=pk)
+    #project = Project.objects.get(pk=pk)
+    project = get_object_or_404(Project, pk=pk)
     sections = Section.objects.filter(project=project).order_by('id')
     downloads = Download.objects.filter(exclude=False, project=project)
     context = {'title': 'Portfolio', 'project': project, 'sections': sections, 'downloads': downloads}
