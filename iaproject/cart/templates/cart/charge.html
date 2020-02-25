@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block script_head %}
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+<!--WHY: As per Stripe documentation script should be saved in head.-->
+
 {% block content %}
-
 <div data-sid="{{ sid }}"></div> 
-
 {% endblock %}
 
-{% block stripe_js %}
+{% block script_body %}
 <script src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
+
+<!--WHY: Page left pretty bare as only flashes before redirect to Stripe.-->

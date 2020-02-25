@@ -2,6 +2,11 @@
 {% load static %}
 {% load mathfilters %}
 
+{% block script_head %}
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+<!--WHY: As per Stripe documentation script should be saved in head.-->
+
 {% block content %}
 {% include 'include.html' with tagline='Many thanks for purchasing today.' %}
 

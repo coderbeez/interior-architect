@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
   <title>Interior Architect {{ title }}</title>
-
-  <script src="https://js.stripe.com/v3/"></script>
+  {% block script_head %}{% endblock %}
+  <!--WHY: Used for Stripe JS script. As per documentation should be saved in head.-->
+<!--<script src="https://js.stripe.com/v3/"></script>-->
 </head>
 
 <body>
@@ -86,7 +87,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js" crossorigin="anonymous"></script>
   <!--SHOULD THIS JUST BE IN ABOUT TEMPLATE???-->
   <script src="{% static 'js/main.js' %}"></script>
-  {% block stripe_js %}{% endblock %}
+  {% block script_body %}{% endblock %}
 </body>
 
 </html>
