@@ -1,0 +1,28 @@
+/*------INSTAGRAM JUICER FEED------*/
+/*can't target the a need to leave default*/
+
+.juicer-feed h1.referral {
+    margin: auto!important;
+  
+}
+
+.juicer-feed .j-loading-wrapper, .juicer-feed .j-paginate {
+    margin: auto!important;
+}
+
+.juicer-feed .j-paginate {
+    border: 1.5px solid black!important;    color: black!important;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+
+.juicer-feed:hover {
+    font-family: 'Montserrat', sans-serif!important;
+    text-transform: uppercase!important;
+    font-size: 10px!important;
+}
+
+.j-paginate:hover {
+    background: #ffffff!important;
+    color: #000000!important;
+}
