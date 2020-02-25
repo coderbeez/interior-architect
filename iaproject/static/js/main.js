@@ -14,7 +14,7 @@ $(document).ready(function () {
         target.addClass('active');
     }
 
-    activeNav()
+    activeNav();
 
 
     /**
@@ -23,7 +23,7 @@ $(document).ready(function () {
      * Used only on small devices.
      * Credit: Modified https://stackoverflow.com/questions/7543718/test-in-jquery-if-an-element-is-at-the-top-of-screen
      */
-    var distance = $('nav').offset().top,
+    let distance = $('nav').offset().top,
         $window = $(window);
 
     $window.scroll(function () {
