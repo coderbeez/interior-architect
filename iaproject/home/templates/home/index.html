@@ -29,8 +29,8 @@
 
 {% for project in projects %}
             <div class="carousel-item" data-interval="4000">
-              <img src="{{ project.image_portrait.url }}" class="d-block d-md-none w-100" alt="Image {{ project.title }}">
-              <img src="{{ project.image_landscape.url }}" class="d-none d-md-block w-100" alt="Image {{ project.title }}">
+              <img src="{{ project.image_portrait.url }}" class="d-block d-md-none w-100" alt="{{ project.title }} image">
+              <img src="{{ project.image_landscape.url }}" class="d-none d-md-block w-100" alt="{{ project.title }} image">
             </div>
             {% endfor %}
             <!--WHY: Active class added to first item in loop using js.-->

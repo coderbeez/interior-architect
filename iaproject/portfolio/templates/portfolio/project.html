@@ -6,9 +6,9 @@
 
     <div class="col-12 col-lg-8 offset-lg-2 order-3 order-md-1 text-center p-0 ">
         <img src="{{ project.image_portrait.url }}" class="d-md-none image-fluid w-100"
-            alt="Project portrait Placeholder image">
+            alt="{{ project.title }} image">
         <img src="{{ project.image_landscape.url }}" class="d-none d-md-block image-fluid w-100"
-            alt="Project landscape Placeholder image">
+            alt="{{ project.title }} image">
     </div>
 
     <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center bg-color--stone">
@@ -37,7 +37,7 @@
             {% if section.image %}
             <figure class="row">
                 <div class="col-12 col-lg-10 offset-lg-1 text-center">
-                    <img src="{{ section.image.url }}" class="img-fluid" alt="Placeholder image">
+                    <img src="{{ section.image.url }}" class="img-fluid" alt="project section image">
                     <br>
                     <figcaption class="pl-md-1">
                         {{ section.caption }}

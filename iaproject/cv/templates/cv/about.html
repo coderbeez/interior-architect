@@ -87,9 +87,9 @@
                                     <a class="link"
                                         href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
                                     <img src="{{ example.project.image_portrait.url }}"
-                                        class="d-block d-md-none img-fluid" alt="project image">
+                                        class="d-block d-md-none img-fluid" alt="{{ example.project.title }} image">
                                     <img src="{{ example.project.image_landscape.url }}"
-                                        class="d-none d-md-block img-fluid" alt="project image">
+                                        class="d-none d-md-block img-fluid" alt="{{ example.project.title }} image">
                                 </div>
                             </div>
                             {% endfor %}
@@ -142,9 +142,9 @@
                                     <a class="link"
                                         href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
                                     <img src="{{ example.project.image_portrait.url }}"
-                                        class="d-block d-md-none img-fluid border-color--stone" alt="project image">
+                                        class="d-block d-md-none img-fluid border-color--stone" alt="{{ example.project.title }} image">
                                     <img src="{{ example.project.image_landscape.url }}"
-                                        class="d-none d-md-block img-fluid border-color--stone" alt="project image">
+                                        class="d-none d-md-block img-fluid border-color--stone" alt="{{ example.project.title }} image">
                                 </div>
                             </div>
                             {% endfor %}
