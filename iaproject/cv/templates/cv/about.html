@@ -70,16 +70,16 @@
                 <ul class="timeline">
 
                     {% for study in studies %}
-                    <li data-slide="job">
+                    <li>
                         <strong class="uppercase">{{ study.title }}</strong>
                         <span class="d-none d-md-block float-right">{{ study.timeframe }}</span>
                         <p class="d-block d-md-none m-0">{{ study.timeframe }}</p>
                         <p class="m-0">{{ study.company }}</p>
-                        <small>{{ study.content }}</small>
+                        <small>{{ study.content }}</small><br>
                         {% if study.examples.all %}
-                        <button class="button-more" data-btn="id{{ job.id }}">...</button>
+                        <button class="button-more" data-btn="id{{ study.id }}">...</button>
                         {% endif %}
-                        <div class="hide-start bg-color--stone pt-2" data-div="id{{ job.id }}">
+                        <div class="hide-start bg-color--stone pt-2" data-div="id{{ study.id }}">
                             {% for example in study.examples.all %}
                             <div class="row mt-3">
                                 <div class="col-12">
@@ -87,9 +87,9 @@
                                     <a class="link"
                                         href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
                                     <img src="{{ example.project.image_portrait.url }}"
-                                        class="d-block d-md-none img-fluid" alt="Placeholder image">
+                                        class="d-block d-md-none img-fluid" alt="project image">
                                     <img src="{{ example.project.image_landscape.url }}"
-                                        class="d-none d-md-block img-fluid" alt="Placeholder image">
+                                        class="d-none d-md-block img-fluid" alt="project image">
                                 </div>
                             </div>
                             {% endfor %}
@@ -119,11 +119,11 @@
                 </div>
             </header>
 
-            <!--EMPLOYMET CONTENT-->
+            <!--EMPLOYMENT CONTENT-->
             <section class="col-12 col-lg-7 p-1">
                 <ul class="timeline">
                     {% for job in jobs %}
-                    <li data-slide="job">
+                    <li>
                         <strong class="uppercase">{{ job.title }}</strong>
                         <span class="d-none d-md-block float-right">{{ job.timeframe }}</span>
                         <p class="d-block d-md-none m-0">{{ job.timeframe }}</p>
@@ -142,9 +142,9 @@
                                     <a class="link"
                                         href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
                                     <img src="{{ example.project.image_portrait.url }}"
-                                        class="d-block d-md-none img-fluid border-color--stone" alt="Placeholder image">
+                                        class="d-block d-md-none img-fluid border-color--stone" alt="project image">
                                     <img src="{{ example.project.image_landscape.url }}"
-                                        class="d-none d-md-block img-fluid border-color--stone" alt="Placeholder image">
+                                        class="d-none d-md-block img-fluid border-color--stone" alt="project image">
                                 </div>
                             </div>
                             {% endfor %}
