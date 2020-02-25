@@ -53,11 +53,12 @@ A minimal colour scheme of black, white and stone, provides a neutral background
 
 ### Preparation
 
-Microsoft PowerPoint was used to compile initial [planning documents](https://github.com/coderbeez/COLETTE O'SULLIVAN/blob/master/wireframes/wireframes.pdf) including Balsamiq wireframes and an app diagram. During development, the original design was tweaked based on client feedback and requirements.
+Balsamiq was used to create wireframes for [large](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf), [medium](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf) and [small](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf) devices. During development, the original design was tweaked based on client feedback and requirements.
 
 # Apps
 
 Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoiio, contact, cart and users.
+guest &B/82a"x view permissions
 
 ## Home App
 
