@@ -2,6 +2,7 @@
 {% block content %}
 {% include 'include.html' with tagline='Outstanding comments needing reply.' %}
 
+{% if comments %}
 {% for comment in comments %}
 <div class="bg-color--stone mb-4 p-2">
 
@@ -29,6 +30,10 @@
 
 </div>
 {% endfor %}
+
+{% else %}
+<p>There are no outstanding comments.</p>
+{% endif %}
 
 </div>
 </section>

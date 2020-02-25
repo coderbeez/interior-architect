@@ -2,6 +2,7 @@
 {% block content%}
 {% include 'include.html' with tagline='Outstanding contacts needing reply.' %}
 
+{% if contacts %}
 {% for contact in contacts %}
 <div class="bg-color--stone mb-4 p-2">
 
@@ -33,6 +34,11 @@
 
 </div>
 {% endfor %}
+
+{% else %}
+<p>There are no outstanding contacts.</p>
+{% endif %}
+
 
 </div>
 </section>
