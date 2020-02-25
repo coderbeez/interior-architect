@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block style_head %}
+<link rel="stylesheet" href="{% static 'cv/css/main.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <header class="row mt-3" data-page="{{ title }}">

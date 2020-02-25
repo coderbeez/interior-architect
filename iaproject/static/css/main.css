@@ -310,7 +310,7 @@ nav {
 /*------INSTAGRAM JUICER FEED------*/
 /*can't target the a need to leave default*/
 
-.juicer-feed h1.referral {
+/*.juicer-feed h1.referral {
     margin: auto!important;
   
 }
@@ -334,13 +334,13 @@ nav {
 .j-paginate:hover {
     background: #ffffff!important;
     color: #000000!important;
-}
+}*/
 
     
 /*------TIMELINE------*/
 
 /*TIMELINE*/
-ul.timeline {
+/*ul.timeline {
     list-style-type: none;
     position: relative;
 }
@@ -373,11 +373,11 @@ ul.timeline > li:before {
 
 ul {
     padding-left: 25px;
-}
+}*/
 /*WHERE: Timeline https://bootsnipp.com/snippets/xrKXW*/
 
 /*------EXPERTISE CIRCLES------*/
-.circle {
+/*.circle {
     width: 100px;
     margin: 0;
     display: inline-block;
@@ -398,13 +398,9 @@ ul {
     text-align: center;
     line-height: 40px;
     font-size: 20px;
-}
+}*/
 
 /*WHERE: http://kottenator.github.io/jquery-circle-progress/ */
-
-
-/*------DJANGO ADMIN------*/
-
 
 
 /*------MEDIA QUERIES------*/
