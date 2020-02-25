@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Blog, Section, Comment
@@ -28,6 +29,7 @@ def blog(request, pk):
                 content = form.cleaned_data['content']
             )
             comment.save()
+            send_mail('New Comment','You have a new comment.','cos.interior.architect@gmail.com',['sullivanedel@hotmail.com',],fail_silently=False,)
             messages.success(request, f'Thanks for your comment!')
             return redirect('blog', pk=pk)
         else:
