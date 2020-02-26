@@ -168,7 +168,7 @@ a>.header-title:hover {
 /* WHY: Important to overwrite Bootstrap???? - taken off*/
 
 .bg-img--work {
-    background: url("/static/images/work.jpg");
+    background: url("/static/images/work.caebcbd05d4c.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -176,7 +176,7 @@ a>.header-title:hover {
 }
 
 .bg-img--desk {
-    background: url("/static/images/desk.jpg");
+    background: url("/static/images/desk.a682f37db855.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
