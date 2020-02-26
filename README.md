@@ -103,11 +103,11 @@ The Blog App provides the client with a facility to create blogs with different 
 | | Comment | Visitor comment and admin reply for an individual blog. |
 | **Form** | CommentForm | - |
 | | ReplyForm | - |
-| **View** | Blogs | - |
-| | Blog | - |
-| | Like | - |
+| **View** | Blogs | Render an ordered list of blogs. Paginate after every 6 blogs. |
+| | Blog | Render an individual blog, its sections and comments. Render a comment form. Create an indivdual comment on valid from post. Send mail flag on valid form post. |
+| | Like | Increment like field for an individual blog. |
 | | Comments | Login required |
-| **Template** | Blogs | - |
+| **Template** | Blogs | View accessed by site admin only, login required. Render outstanding comments (i.e. not excluded and no reply), oldest first. Render reply form for each comment. Update individual comment on valid form post. |
 | | Blog | - |
 | | Comments | - |
 
@@ -207,6 +207,8 @@ The client needed an interface to allow content updates. Having walked her throu
 *Customised Django Admin Interface*
 
 ## Future Features
+
+**Search Engine Optimisation** The next thing to work before my client launche her site is SEO.
 
 **Automated Fulfillment** Currently fulfillment for paid downloads is manual but we would like to take advantage of automated fulfillment using webhooks as outlined in [Stripe's documentation](https://stripe.com/docs/payments/checkout/fulfillment#webhooks).
 
@@ -384,6 +386,7 @@ Create Requirements.txt file
 #### Forms
 
 - Send POST data from inside for loop [Stack Overflow](https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop).
+- Save instance [Real Python](https://realpython.com/get-started-with-django-1).
 
 #### Users
 
