@@ -6,6 +6,7 @@ from django.template.loader import get_template
 from .models import Contact
 from .forms import ContactForm, ReplyForm
 
+
 def contact(request):
     '''Renders contact form on contact page.
     Creates a contact on valid form post.
@@ -16,18 +17,29 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            send_mail('New Contact','You have a new contact.','cos.interior.architect@gmail.com',['sullivanedel@hotmail.com',],fail_silently=False,)
-            messages.success(request, f'Thanks for your query, I will get back shortly!')
+            send_mail(
+                'New Contact',
+                'You have a new contact.',
+                'cos.interior.architect@gmail.com',
+                ['sullivanedel@hotmail.com', ],
+                fail_silently=False,
+            )
+            messages.success(
+                request,
+                f'Thanks for your query, I will get back shortly!'
+            )
             return redirect('index')
         else:
-            messages.error(request, f'Sorry something went wrong!')   
-    context = {'title': 'Contact', 'form': form} 
+            messages.error(request, f'Sorry something went wrong!')
+    context = {'title': 'Contact', 'form': form}
     return render(request, 'contact/contact.html', context)
+
 
 @login_required
 def contacts(request, pk=None):
     ''' View accessed by site admin only, login required.
-    Renders outstanding contacts (i.e. not excluded and no reply), oldest first, on contacts page.
+    Renders outstanding contacts (i.e. not excluded and no reply),
+    oldest first, on contacts page.
     Renders reply form for each contact.
     Updates individual contact on valid form post.
     If update is reply, sends email, either text or html template.
@@ -42,16 +54,16 @@ def contacts(request, pk=None):
             form.save()
             if contact.exclude:
                 messages.success(request, f'{contact.name} contact closed.')
-            elif contact.reply !='':   
+            elif contact.reply != '':
                 subject = 'Reply from COS Interior Architect'
                 from_email = 'cos.interior.architect@gmail.com'
-                to = [contact.email,]
+                to = [contact.email, ]
                 text_content = f"""
                 Dear {contact.name}
 
                 Many thanks you for your {contact.category} enquiry.
 
-                QUERY: {contact.query} 
+                QUERY: {contact.query}
 
                 REPLY: {contact.reply}
 
@@ -64,15 +76,21 @@ def contacts(request, pk=None):
                 http://www.coletteosullivan.com/
 
                 """
-                html_template = get_template('contact/reply_email.html').render({'contact': contact, 'title': 'Contact Reply'})
-                msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                html_template = get_template(
+                    'contact/reply_email.html'
+                ).render(
+                    {'contact': contact, 'title': 'Contact Reply'}
+                )
+                msg = EmailMultiAlternatives(
+                    subject, text_content, from_email, [to]
+                )
                 msg.attach_alternative(html_template, "text/html")
-                msg.send()               
+                msg.send()
                 messages.success(request, f'{contact.name} emailed.')
             else:
-                messages.warning(request, 'No change saved!')    
+                messages.warning(request, 'No change saved!')
             return redirect('contacts')
         else:
-            messages.error(request, f'Something went wrong!')      
+            messages.error(request, f'Something went wrong!')
     context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
     return render(request, 'contact/contacts.html', context)
