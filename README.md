@@ -180,9 +180,9 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Contact | Indivdual visitor contact and admin reply. |
-| **View** | Contact | - |
-| | Contacts | - |
+| **Model** | Contact | Individual visitor contact and admin reply. |
+| **View** | Contact | Render contact form. Create a contact on valid form save. Send email flag on valid from save. |
+| | Contacts | View accessed by site admin only, login required. Render outstanding contacts (i.e. not excluded and no reply), oldest first. Render reply form for each contact. Update individual contact on valid form post. If update is reply, send email, either text or html template. |
 | **Template** | Contact | - |
 | | Contacts | Login required |
 | | Reply Email | - |
@@ -383,6 +383,7 @@ Create Requirements.txt file
 - Choice Fields [Stack Overflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
 - Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
 - Limiting query results [Stack Overflow](https://stackoverflow.com/questions/6574003/django-limiting-query-results).
+- F strings [Real Python](https://realpython.com/python-f-strings/).
 
 #### Forms
 

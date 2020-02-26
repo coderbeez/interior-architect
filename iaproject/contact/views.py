@@ -7,6 +7,10 @@ from .models import Contact
 from .forms import ContactForm, ReplyForm
 
 def contact(request):
+    '''Render contact form.
+    Create a contact on valid form save.
+    Send email flag on valid from save.
+    '''
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -19,31 +23,26 @@ def contact(request):
             messages.error(request, f'Sorry something went wrong!')   
     context = {'title': 'Contact', 'form': form} 
     return render(request, 'contact/contact.html', context)
-    #send mail from django docs
-
-'''def reply_email(request, pk):
-    contact = Contact.objects.get(pk=pk)
-    context = {'contact': contact,}
-    return render(request, 'contact/reply_email.html', context)'''
 
 @login_required
 def contacts(request, pk=None):
-    contacts = Contact.objects.filter(exclude=False, reply='').order_by('id') #order by oldest without reply
+     ''' View accessed by site admin only, login required.
+    Render outstanding contacts (i.e. not excluded and no reply), oldest first.
+    Render reply form for each contact.
+    Update individual contact on valid form post.
+    If update is reply, send email, either text or html template.
+    Credit: F strings https://realpython.com/python-f-strings/
+    '''
+    contacts = Contact.objects.filter(exclude=False, reply='').order_by('id')
     form = ReplyForm()
-
     if request.method == 'POST':
         contact = Contact.objects.get(pk=pk)
-        form = ReplyForm(request.POST, instance=contact) # POST the form data
+        form = ReplyForm(request.POST, instance=contact)
         if form.is_valid():
             form.save()
             if contact.exclude:
                 messages.success(request, f'{contact.name} contact closed.')
-            elif contact.reply !='':
-                
-
-
-
-                #subject, from_email, to = 'hello', 'from@example.com', 'to@example.com'    
+            elif contact.reply !='':   
                 subject = 'Reply from COS Interior Architect'
                 from_email = 'cos.interior.architect@gmail.com'
                 to = [contact.email,]
@@ -65,13 +64,10 @@ def contacts(request, pk=None):
                 http://www.coletteosullivan.com/
 
                 """
-                #html_content = "<h1>hello</h1><a href='https://www.coletteosullivan.com'>click</a>"
                 html_template = get_template('contact/reply_email.html').render({'contact': contact, 'title': 'Contact Reply'})
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
                 msg.attach_alternative(html_template, "text/html")
                 msg.send()               
-                #send_mail(subject, message, html_message, from_email, recipient_list, fail_silently=False, auth_user=None, auth_password=None,
-                #connection=None, html_message=html_message)
                 messages.success(request, f'{contact.name} emailed.')
             else:
                 messages.warning(request, 'No change saved!')    
@@ -79,7 +75,4 @@ def contacts(request, pk=None):
         else:
             messages.error(request, f'Something went wrong!')      
     context = {'title': 'Contacts', 'contacts': contacts, 'form': form}
-    return render(request, 'contact/contacts.html', context)    
-    #https://realpython.com/python-f-strings/
-    #Credit: https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop
-
+    return render(request, 'contact/contacts.html', context)
