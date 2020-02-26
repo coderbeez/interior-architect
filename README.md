@@ -68,7 +68,7 @@ The Home App provides a landing page for the site, introducing the client and he
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **View** | index | Import portfolio and blog models to display the top 3 most liked blogs and 3 selected projects. |
+| **View** | index | Render the home page. Include 3 projects where the home field is True, order by order field. Include the 3 most liked blogs, most liked first. |
 | **Template** | index | - |
 | | include-intro | Used to position client photo and introductory text depepening on device size. |
 
@@ -377,11 +377,12 @@ Create Requirements.txt file
 - [Coding Point - Django Ecommerce Web App](https://www.youtube.com/playlist?list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK).
 - [Django 2.2 Documentation](https://docs.djangoproject.com/en/2.2/).
 
-#### Models
+#### Models & Views
 
 - Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
 - Choice Fields [Stack Overflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
 - Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
+- Limiting query results [Stack Overflow](https://stackoverflow.com/questions/6574003/django-limiting-query-results).
 
 #### Forms
 
