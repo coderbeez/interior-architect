@@ -337,7 +337,7 @@ Create Requirements.txt file
 ## Media
 
 - Favicon/Stripe logo by Blasko purchased from [Vector Stock](https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011).
-- /Spotify image adapted from [Spotify](https://www.spotify.com/ie/).
+- Work desk photo by Jessica Arends from [Unsplash](https://unsplash.com/photos/UzPbvwqvKNE).
 
 ## Code
 
