@@ -6,22 +6,14 @@
 
     <div class="col-12 col-md-6 order-2 order-md-1 bg-img d-flex justify-content-center"
         style="background-image: url({{ blog.image.url }})">
-        <!-- WHY: Inline style allows url to come from database.-->
-        <!--HEADER TEXT - SM DEVICES-->
-        <!--<div class="col-12 d-md-none header-opaque align-self-center">
-            <div class="header-border">
-                <h1 class="header-category">{{ blog.category.title }}</h1>
-                <h2 class="header-title">{{ blog.title }}</h2>
-            </div>
-        </div>-->
     </div>
 
     <div class="col-12 col-md-6 order-1 order-md-2 bg-color--stone d-flex justify-content-center">
         <div class="align-self-center m-3 m-md-4 m-lg-5 text-center">
             <!--HEADER TEXT - MD & LG DEVICES-->
             <div class="d-inline-block header-border">
-                <h1 class="header-category">{{ blog.category.title }}</h1>
-                <h2 class="header-title">{{ blog.title }}</h2>
+                <h2 class="header-category">{{ blog.category.title }}</h2>
+                <h3 class="header-title">{{ blog.title }}</h3>
             </div>
             <p class="italics m-0 mt-3">{{ blog.content }}</p>
             <!--BUG: class not being applied with to alls ps when using linebreaks-->
@@ -35,7 +27,7 @@
     <div class="col-12 col-lg-10 offset-lg-1 mb-4">
         {% for section in sections %}
         <div class="mt-4">
-            <h3 class="h-section">{{ section.title }}</h3>
+            <h4 class="h-section">{{ section.title }}</h4>
             <p>{{ section.content|linebreaks }}</p>
             {% if section.image %}
             <figure class="row">
@@ -63,7 +55,7 @@
     <!--HEADING-->
     <header class="col-12 col-md-5 col-lg-4 offset-lg-1 text-center">
         <div class="header-border">
-            <h1 class="header-title mt-2">COMMENTS</h1>
+            <h4 class="header-title mt-2">COMMENTS</h4>
         </div>
         <span class="d-inline-block mt-4">Like this blog?</span>
         <a class="d-inline-block button-a" href="{% url 'like' pk=blog.id %}">Like</a>

@@ -14,8 +14,8 @@
     <div class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center bg-color--stone">
         <div class="align-self-center m-3 m-md-4 m-lg-5 text-center">
             <div class="header-border">
-                <h1 class="header-category">{{ project.category.title }}</h1>
-                <h2 class="header-title">{{ project.title }}</h2>
+                <h2 class="header-category">{{ project.category.title }}</h2>
+                <h3 class="header-title">{{ project.title }}</h3>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="col-12 col-lg-10 offset-lg-1 mb-5">
         {% for section in sections %}
         <div class="mt-5">
-            <h3 class="h-section">{{ section.title }}</h3>
+            <h4 class="h-section">{{ section.title }}</h4>
             <p>{{ section.content|linebreaks }}</p>
             {% if section.image %}
             <figure class="row">
@@ -62,7 +62,7 @@
 
     <header class="col-12 col-md-5 col-lg-4 offset-lg-1 text-center">
         <div class="header-border">
-            <h1 class="header-title mt-2">DOWNLOADS</h1>
+            <h4 class="header-title mt-2">DOWNLOADS</h4>
         </div>
         <span class="d-block mt-4 mb-2">Additional project content available for download.
         </span>
