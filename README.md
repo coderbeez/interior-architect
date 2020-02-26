@@ -126,8 +126,8 @@ The portfolio app is allows the client present detailed projects. The client can
 | | Download | PDF download available for an individual project. Price set to null=True and blank=True as some downloads are free. |
 | **Form** | ContactForm | - |
 | | ReplyForm | - |
-| **View** | Projects | - |
-| | Project | - |
+| **View** | Projects | Render an ordered list of projects. Paginate after every 6 projects. |
+| | Project | Render an individual project, its sections and downloads. |
 | **Template** | Projects | - |
 | | Project | - |
 
