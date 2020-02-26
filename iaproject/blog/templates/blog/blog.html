@@ -27,28 +27,35 @@
     <div class="col-12 col-lg-10 offset-lg-1 mb-4">
         {% for section in sections %}
         <div class="mt-4">
+            {% if section.title %}
             <h4 class="h-section">{{ section.title }}</h4>
+            {% endif %}
+            {% if section.content %}
             <p>{{ section.content|linebreaks }}</p>
+            {% endif %}
             {% if section.image %}
-            <figure class="row">
-                <div class="col-12 col-md-8 offset-md-2 text-center">
+            <div class="row">
+                <figure class="col-12 col-md-10 offset-md-1 text-center">
                     <img src="{{ section.image.url }}" class="img-fluid" alt="blog section image">
                     <br>
+                    {% if section.caption %}
                     <figcaption class="pl-md-1 ">
                         {{ section.caption }}
-                    </figcaption>
-                    {% if section.caption_url %}
+                        {% if section.caption_url %}
                         <a href="{{ section.caption_url }}" class="link">
                             source
                         </a>
+                        {% endif %}
+                    </figcaption>
                     {% endif %}
-                </div>
-            </figure>
+                </figure>
+            </div>
             {% endif %}
         </div>
         {% endfor %}
     </div>
 </section>
+<!--WHY: Multiple ifs used to ensure no empty tags in rendered page.-->
 
 <!--BLOG COMMENTS-->
 <section class="row bg-color--stone pt-4 mb-4">
@@ -59,11 +66,11 @@
         </div>
         <span class="d-inline-block mt-4">Like this blog?</span>
         <a class="d-inline-block button-a" href="{% url 'like' pk=blog.id %}">Like</a>
-        <i class="far fa-heart mute"></i>
-        <mute>{{ blog.like }}</mute>
-        <span class="d-block mt-2 mb-2">I would love to hear from you! Simply leave a comment or query about this blog and I will reply.
+        <i class="far fa-heart mute"><span class="ml-1 ">{{ blog.like }}</span></i>
+        <span class="d-block mt-2 mb-2">I would love to hear from you! Simply leave a comment or query about this blog
+            and I will reply.
         </span>
-        
+
     </header>
 
     <!--COMMENT FORM-->
@@ -80,7 +87,7 @@
         {% for comment in comments %}
         <p class="mb-4">{{ comment.content }} <br>
             {% if comment.reply %}
-            <span class="mr-2">REPLY</span><span class="">{{ comment.reply }}</span></p>
+            <span class="mr-2">REPLY</span><span>{{ comment.reply }}</span></p>
         {% endif %}
         <!--WHY: Included if to prevent REPLY from printing is no reply.-->
         {% endfor %}

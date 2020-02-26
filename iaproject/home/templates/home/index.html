@@ -32,24 +32,27 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade border-color--stone" data-ride="carousel">
           <div class="carousel-inner">
 
-{% for project in projects %}
+            {% for project in projects %}
             <div class="carousel-item" data-interval="4000">
-              <img src="{{ project.image_portrait.url }}" class="d-block d-md-none w-100" alt="{{ project.title }} image">
-              <img src="{{ project.image_landscape.url }}" class="d-none d-md-block w-100" alt="{{ project.title }} image">
+              <img src="{{ project.image_portrait.url }}" class="d-block d-md-none w-100"
+                alt="{{ project.title }} image">
+              <img src="{{ project.image_landscape.url }}" class="d-none d-md-block w-100"
+                alt="{{ project.title }} image">
             </div>
             {% endfor %}
             <!--WHY: Active class added to first item in loop using js.-->
-  
-          <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
 
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        
       </div>
     </article>
 
@@ -119,17 +122,18 @@
       <ul class="juicer-feed" data-feed-id="colette_o_sullivan" data-per="1">
         <h1 class="referral"></h1>
         <!--WHY: Cannot change or remove h1 as it results in Juicer logo being displayed.-->
+        <!--WHY: Types left in script as per Juicer documentation.-->
       </ul>
     </article>
     <!--WHERE: Instagram feed by Juicer https://www.juicer.io/-->
 
     <!--SITE ADMIN-->
-      <section class="text-center">
-        <small>
-          <a class="mr-3" href="#">- site by coderbeez</a>
-          <a class="link" href="{% url 'login' %}">admin -</a>
-        </small>
-      </section>
+    <section class="text-center">
+      <small>
+        <a class="mr-3" href="#">- site by coderbeez</a>
+        <a class="link" href="{% url 'login' %}">admin -</a>
+      </small>
+    </section>
 
   </aside>
 </div>

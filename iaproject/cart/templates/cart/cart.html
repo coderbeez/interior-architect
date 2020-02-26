@@ -11,10 +11,11 @@
 <div class="bg-color--stone mb-4 p-2">
     {% if request.session.download_count is not 0 %}  
 <table class="table">  
-    <thead>
+    <tr>
         <th>Title</th>
         <th>Price</th>
-    </thead>
+        <th></th>
+    </tr>
     {% for item in cart.downloads.all %}
     <tr>
         <td>{{ item.title }}</td>

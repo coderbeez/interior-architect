@@ -6,11 +6,29 @@
 
 [W3C Validation Service](https://validator.w3.org/) Used to test the validity of HTML – no errors found.
 
+A number of issues associated with templates:
+
+- Textarea linebreaks adds extra p tags. ```<p><p>Text</p></p>```
+- Blog Form ```{{form}}``` extra empty tags added.
+
+```<tr><th></th><td>
+<textarea name="content" cols="40" rows="5" class="textarea-style" required id="id_content">
+</textarea>
+</td></tr>
+```
+
+- Juicer Intagram feed errors and warnings associated with a h1 required according to the documentation. Leaving text within the h1 obviously showed Juicer text which the client did not want showing. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the empty h1 tags.
+
+```Element h1 not allowed as child of element ul in this context.```
+
 ### CSS
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) Used to test the validity of CSS – no errors found.
+no errors but -webkit-sticky is an unknown vendor extension
+cv, home, admin, main
 
 [Autoprefixer CSS](https://autoprefixer.github.io/) Used to ensure all relevant vendor prefixes included.
+cv, home, admin, main
 
 ### JavaScript
 

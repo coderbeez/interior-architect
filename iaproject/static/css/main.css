@@ -20,7 +20,8 @@ figcaption {
 /*Put near top as other css might overwrite*/
 
 li>span,
-a>span {
+a>span,
+i>span {
     font-style: normal;
 }
 

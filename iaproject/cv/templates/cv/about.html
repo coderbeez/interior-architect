@@ -17,7 +17,7 @@
     </div>
 </header>
 
-<section class="row border-color--stone mb-4">
+<div class="row border-color--stone mb-4">
     <div class="col-12 m-0 p-0">
         <!--WHY: Wrapping row & col to apply border to section.-->
 
@@ -38,7 +38,7 @@
             </header>
 
             <!--EXTERTISE CONTENT-->
-            <section class="col-12 col-lg-7">
+            <div class="col-12 col-lg-7">
                 <div class="row">
                     {% for skill in skills %}
                     <div class="col-6 col-md-3 text-center mb-3">
@@ -50,7 +50,7 @@
                     {% endfor %}
                 </div>
                 <!--WHY: Row used to allow grid to determine number circles to display per screen width-->
-            </section>
+            </div>
             <!--WHERE: Multiply in template tag https://stackoverflow.com/questions/6285327/how-to-do-math-in-a-django-template-->
         </article>
 
@@ -71,7 +71,7 @@
             </header>
 
             <!--EDUCATION CONTENT-->
-            <section class="col-12 col-lg-7 p-1">
+            <div class="col-12 col-lg-7 p-1">
                 <ul class="timeline">
 
                     {% for study in studies %}
@@ -105,7 +105,7 @@
                 <!--END TIMELINE-->
                 <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
                 <!--WHERE: Foreign key in template tag https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
-            </section>
+            </div>
         </article>
         
     <!--EMPLOYMENT-->
@@ -125,7 +125,7 @@
             </header>
 
             <!--EMPLOYMENT CONTENT-->
-            <section class="col-12 col-lg-7 p-1">
+            <div class="col-12 col-lg-7 p-1">
                 <ul class="timeline">
                     {% for job in jobs %}
                     <li>
@@ -160,11 +160,11 @@
                 <!--END TIMELINE-->
                 <!--WHERE: Timeline https://bootsnipp.com/snippets/xrKXW-->
                 <!--WHERE: Foreign key in template tag https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
-            </section>
+            </div>
         </article>
 
     </div>
-</section>
+</div>
 {% endblock %}
 
 {% block script_body %}

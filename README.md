@@ -53,7 +53,7 @@ A minimal colour scheme of black, white and stone, provides a neutral background
 
 ### Preparation
 
-Balsamiq was used to create wireframes for [large](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf), [medium](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf) and [small](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf) devices. During development, the original design was tweaked based on client feedback and requirements.
+Balsamiq was used to create wireframes for [large](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_lg.pdf), [medium](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_md.pdf) and [small](https://github.com/coderbeez/interior-architect/blob/master/wireframes/wireframes_sm.pdf) devices. During development, the original design was tweaked based on client feedback and requirements.
 
 # Apps
 
