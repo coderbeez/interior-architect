@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Project, Section, Download
+from .models import Project, Section, Download
 
 def projects(request):
     '''Render an ordered list of projects.
