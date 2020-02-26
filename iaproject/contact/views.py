@@ -7,9 +7,9 @@ from .models import Contact
 from .forms import ContactForm, ReplyForm
 
 def contact(request):
-    '''Render contact form.
-    Create a contact on valid form save.
-    Send email flag on valid from save.
+    '''Renders contact form on contact page.
+    Creates a contact on valid form post.
+    Sends email flag on valid form post.
     '''
     form = ContactForm()
     if request.method == 'POST':
@@ -27,10 +27,10 @@ def contact(request):
 @login_required
 def contacts(request, pk=None):
     ''' View accessed by site admin only, login required.
-    Render outstanding contacts (i.e. not excluded and no reply), oldest first.
-    Render reply form for each contact.
-    Update individual contact on valid form post.
-    If update is reply, send email, either text or html template.
+    Renders outstanding contacts (i.e. not excluded and no reply), oldest first, on contacts page.
+    Renders reply form for each contact.
+    Updates individual contact on valid form post.
+    If update is reply, sends email, either text or html template.
     Credit: F strings https://realpython.com/python-f-strings/
     '''
     contacts = Contact.objects.filter(exclude=False, reply='').order_by('id')

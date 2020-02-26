@@ -68,7 +68,7 @@ The Home App provides a landing page for the site, introducing the client and he
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **View** | index | Render the home page. Include 3 projects where the home field is True, order by order field. Include the 3 most liked blogs, most liked first. |
+| **View** | index | Renders the home page. Includes 3 projects where the home field is True, order by order field. Includes the 3 most liked blogs, most liked first. |
 | **Template** | index | - |
 | | include-intro | Used to position client photo and introductory text depepening on device size. |
 
@@ -85,7 +85,7 @@ The main challenge of the CV app was to find a way to allow the client to presen
 | | Point | Bullet point for an individual role. |
 | | Example | Link between a project and an individual role. |
 | | Skill | Skill and level to display in animated data circle. |
-| **View** | About | - |
+| **View** | About | Renders about page. Includes all roles as jobs or studies, depending on job field. Includes all skills. |
 | **Template** | About | - |
 
 ## Blog App
@@ -103,11 +103,11 @@ The Blog App provides the client with a facility to create blogs with different 
 | | Comment | Visitor comment and admin reply for an individual blog. |
 | **Form** | CommentForm | - |
 | | ReplyForm | - |
-| **View** | Blogs | Render an ordered list of blogs. Paginate after every 6 blogs. |
-| | Blog | Render an individual blog, its sections and comments. Render a comment form. Create an indivdual comment on valid from post. Send mail flag on valid form post. |
-| | Like | Increment like field for an individual blog. |
-| | Comments | Login required |
-| **Template** | Blogs | View accessed by site admin only, login required. Render outstanding comments (i.e. not excluded and no reply), oldest first. Render reply form for each comment. Update individual comment on valid form post. |
+| **View** | Blogs | Renders an ordered list of blogs on the blogs page. Paginates after every 6 blogs. |
+| | Blog | Renders an individual blog, its sections and comments, on the blog page. Renders a comment form. Creates an indivdual comment on valid from post. Sends email flag on valid form post.|
+| | Like | Increments like field for an individual blog. |
+| | Comments | View accessed by site admin only, login required. Renders outstanding comments (i.e. not excluded and no reply), oldest first, on the comments page. Renders reply form for each comment. Updates individual comment on valid form post. |
+| **Template** | Blogs | ????. |
 | | Blog | - |
 | | Comments | - |
 
@@ -126,8 +126,8 @@ The portfolio app is allows the client present detailed projects. The client can
 | | Download | PDF download available for an individual project. Price set to null=True and blank=True as some downloads are free. |
 | **Form** | ContactForm | - |
 | | ReplyForm | - |
-| **View** | Projects | Render an ordered list of projects. Paginate after every 6 projects. |
-| | Project | Render an individual project, its sections and downloads. |
+| **View** | Projects | Renders an ordered list of projects on portfolio page. Paginates after every 6 projects. |
+| | Project | Renders an individual project, its sections and downloads, on project page. |
 | **Template** | Projects | - |
 | | Project | - |
 
@@ -158,11 +158,11 @@ Email receipts: Automatic email receipts to your customers
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Cart | Individual cart. Stripe field indicates checked out. Fulfilled field indicates order complete. |
-| **View** | Cart | - |
-| | Add | - |
-| | Remove | - |
-| | Charge | - |
-| | Success | - |
+| **View** | Cart | Renders cart page. If it exists, gets current cart id from session. |
+| | Add | Adds a download to a cart. If it exists, gets current cart id from session. If it doesn't, creates a cart and adds its id to session. If passed download is not already in current cart, updates download and total in cart, and cart count in session. |
+| | Remove | Removes a download from a cart. Gets current cart id from session. Removes passed download from cart. Updates cart total in cart, and cart count in session. |
+| | Charge | Renders charge page and redirects payment to Stripe. Gets current cart id from session. Creates list of all downloads for current cart id. Creates Stripe checkout session as per Stripe documentation. Makes Stripe's session id availble in context. |
+| | Success | Renders success page. Gets Stripe's session id from url and uses to retrieve Stripe's session data. Gets current cart id from session. Saves Stripe's session id to cart as reference. Removes cart data from session to prevent repurchase errors. Makes Stripe's session data available in context. |
 | **Template** | Cart | - |
 | | Charge | - |
 | | Success | - |
@@ -181,8 +181,8 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Contact | Individual visitor contact and admin reply. |
-| **View** | Contact | Render contact form. Create a contact on valid form save. Send email flag on valid from save. |
-| | Contacts | View accessed by site admin only, login required. Render outstanding contacts (i.e. not excluded and no reply), oldest first. Render reply form for each contact. Update individual contact on valid form post. If update is reply, send email, either text or html template. |
+| **View** | Contact | Renders contact form on contact page. Creates a contact on valid form post. Sends email flag on valid form post. |
+| | Contacts | View accessed by site admin only, login required. Renders outstanding contacts (i.e. not excluded and no reply), oldest first, on contacts page. Renders reply form for each contact. Updates individual contact on valid form post. If update is reply, sends email, either text or html template. |
 | **Template** | Contact | - |
 | | Contacts | Login required |
 | | Reply Email | - |
@@ -411,6 +411,8 @@ Create Requirements.txt file
 
 - Django Tutorial for Beginners Part 22, Cart App [Coding Point](https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s).
 - Stripe Checkout documentation [Stripe](https://stripe.com/docs/payments/checkout/one-time).
+- Capture url parameters [Stack Overflow](https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get).
+- Clear session [Stack Overflow](https://stackoverflow.com/questions/16039399/how-to-clear-all-session-variables-without-getting-logged-out).
 
 #### Admin
 

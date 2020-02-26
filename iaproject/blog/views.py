@@ -7,8 +7,8 @@ from .models import Blog, Section, Comment
 from .forms import CommentForm, ReplyForm
 
 def blogs(request):
-    '''Render an ordered list of blogs.
-    Paginate after every 6 blogs.
+    '''Renders an ordered list of blogs on the blogs page.
+    Paginates after every 6 blogs.
     Credit: Pagination https://docs.djangoproject.com/en/3.0/topics/pagination/ '''
     blog_list = Blog.objects.filter(exclude=False).order_by('order')
     paginator = Paginator(blog_list, 6)
@@ -18,10 +18,10 @@ def blogs(request):
     return render(request, 'blog/blogs.html', context)
 
 def blog(request, pk):
-    '''Render an individual blog, its sections and comments.
-    Render a comment form.
-    Create an indivdual comment on valid from post.
-    Send mail flag on valid form post.
+    '''Renders an individual blog, its sections and comments, on the blog page.
+    Renders a comment form.
+    Creates an indivdual comment on valid from post.
+    Sends email flag on valid form post.
     Credit: Save instance https://realpython.com/get-started-with-django-1/
     Credit: Redirect with parameters https://stackoverflow.com/questions/3209906/django-return-redirect-with-parameters'''
     blog = get_object_or_404(Blog, pk=pk)
@@ -46,7 +46,7 @@ def blog(request, pk):
 
 
 def like(request, pk):
-    '''Increment like field for an individual blog.
+    '''Increments like field for an individual blog.
     Credit: Upvoting https://stackoverflow.com/questions/36479776/adding-vote-buttons-to-django-objects'''
     blog = get_object_or_404(Blog, pk=pk)
     blog.like += 1
@@ -58,9 +58,9 @@ def like(request, pk):
 @login_required
 def comments(request, pk=None):
     ''' View accessed by site admin only, login required.
-    Render outstanding comments (i.e. not excluded and no reply), oldest first.
-    Render reply form for each comment.
-    Update individual comment on valid form post.
+    Renders outstanding comments (i.e. not excluded and no reply), oldest first, on the comments page.
+    Renders reply form for each comment.
+    Updates individual comment on valid form post.
     '''
     comments = Comment.objects.filter(exclude=False, reply='').order_by('id')
     form = ReplyForm()  
