@@ -26,7 +26,7 @@ def contact(request):
 
 @login_required
 def contacts(request, pk=None):
-     ''' View accessed by site admin only, login required.
+    ''' View accessed by site admin only, login required.
     Render outstanding contacts (i.e. not excluded and no reply), oldest first.
     Render reply form for each contact.
     Update individual contact on valid form post.
