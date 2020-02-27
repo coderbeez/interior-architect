@@ -101,8 +101,8 @@ The Blog App provides the client with a facility to create blogs with different 
 | | Blog | Individual blog and header data. |
 | | Section | Section data for an individual blog. Fields set to blank=True allow for maximum flexibility. |
 | | Comment | Visitor comment and admin reply for an individual blog. |
-| **Form** | CommentForm | - |
-| | ReplyForm | - |
+| **Form** | CommentForm | Create a comment by adding data to the content field. |
+| | ReplyForm | Update a comment by adding data to the reply and/or exclude fields. |
 | **View** | Blogs | Renders an ordered list of blogs on the blogs page. Paginates after every 6 blogs. |
 | | Blog | Renders an individual blog, its sections and comments, on the blog page. Renders a comment form. Creates an indivdual comment on valid from post. Sends email flag on valid form post.|
 | | Like | Increments like field for an individual blog. |
@@ -124,8 +124,8 @@ The portfolio app is allows the client present detailed projects. The client can
 | | Project | Individual project and header data. |
 | | Section | Section data for an individual project. Fields set to blank=True allow for maximum flexibility. |
 | | Download | PDF download available for an individual project. Price set to null=True and blank=True as some downloads are free. |
-| **Form** | ContactForm | - |
-| | ReplyForm | - |
+| **Form** | ContactForm | Create a contact. |
+| | ReplyForm | Update a contact by adding data to the reply and/or exclude fields. |
 | **View** | Projects | Renders an ordered list of projects on portfolio page. Paginates after every 6 projects. |
 | | Project | Renders an individual project, its sections and downloads, on project page. |
 | **Template** | Projects | - |
@@ -389,6 +389,9 @@ Create Requirements.txt file
 
 - Send POST data from inside for loop [Stack Overflow](https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop).
 - Save instance [Real Python](https://realpython.com/get-started-with-django-1).
+- Customising model form fields [Django Docs](https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/).
+- Form Widgets [Coding Entrepreneurs](https://www.youtube.com/watch?v=-oWIyFYyNQw).
+- /Save instance [Real Python](https://realpython.com/get-started-with-django-1).
 
 #### Users
 

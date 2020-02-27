@@ -8,6 +8,8 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
+    '''Create a contact.
+    '''
     class Meta:
         model = Contact
         fields = ['name', 'email', 'phone', 'location', 'category', 'query']
@@ -15,6 +17,7 @@ class ContactForm(forms.ModelForm):
 
 class ReplyForm(forms.ModelForm):
     '''
+    Update a contact by adding data to the reply and/or exclude fields.
     Credit: Customising model form fields
     https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/
     Credit: Form widgets Coding Entrepreneurs

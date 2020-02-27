@@ -9,6 +9,7 @@ from .models import Comment
 
 class CommentForm(forms.ModelForm):
     '''
+    Create a comment by adding data to the content field.
     Credit: Customising model form fields
     https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/
     Credit: Form widgets Coding Entrepreneurs
@@ -25,6 +26,7 @@ class CommentForm(forms.ModelForm):
 
 class ReplyForm(forms.ModelForm):
     '''
+    Update a comment by adding data to the reply and/or exclude fields.
     '''
     class Meta:
         model = Comment
