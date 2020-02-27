@@ -69,7 +69,7 @@ The Home App provides a landing page for the site, introducing the client and he
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **View** | index | Renders the home page. Includes 3 projects where the home field is True, order by order field. Includes the 3 most liked blogs, most liked first. |
-| **Template** | index | - |
+| **Template** | index | Owner introduction, portfolio carousel, most liked blog links, instagram feed. |
 | | include-intro | Used to position client photo and introductory text depepening on device size. |
 
 ## CV App
@@ -86,7 +86,7 @@ The main challenge of the CV app was to find a way to allow the client to presen
 | | Example | Link between a project and an individual role. |
 | | Skill | Skill and level to display in animated data circle. |
 | **View** | About | Renders about page. Includes all roles as jobs or studies, depending on job field. Includes all skills. |
-| **Template** | About | - |
+| **Template** | About | Owner introduction, animated expertise levels, education timeline and accordion, cv download, employment timeline and accordion. |
 
 ## Blog App
 
@@ -107,9 +107,9 @@ The Blog App provides the client with a facility to create blogs with different 
 | | Blog | Renders an individual blog, its sections and comments, on the blog page. Renders a comment form. Creates an indivdual comment on valid from post. Sends email flag on valid form post.|
 | | Like | Increments like field for an individual blog. |
 | | Comments | View accessed by site admin only, login required. Renders outstanding comments (i.e. not excluded and no reply), oldest first, on the comments page. Renders reply form for each comment. Updates individual comment on valid form post. |
-| **Template** | Blogs | ????. |
-| | Blog | - |
-| | Comments | - |
+| **Template** | Blogs | Blog cards with links to individual blogs. Paginates after 6 blogs. |
+| | Blog | Blog introduction and sections. Blog like count and upvote. Previous visitor blog comments and replies. New blog comment form. |
+| | Comments | Login required. Outstanding blog comments. Exclude buttons and reply textboxes to update comments.  |
 
 ## Portfolio App
 
@@ -128,8 +128,8 @@ The portfolio app is allows the client present detailed projects. The client can
 | | ReplyForm | Update a contact by adding data to the reply and/or exclude fields. |
 | **View** | Projects | Renders an ordered list of projects on portfolio page. Paginates after every 6 projects. |
 | | Project | Renders an individual project, its sections and downloads, on project page. |
-| **Template** | Projects | - |
-| | Project | - |
+| **Template** | Projects | Project cards with links to individual projects. Paginates after 6 projects. |
+| | Project | Project introduction and sections. Downloads, if applicable, to purchase or  |
 
 ## Cart App
 
@@ -163,9 +163,9 @@ Email receipts: Automatic email receipts to your customers
 | | Remove | Removes a download from a cart. Gets current cart id from session. Removes passed download from cart. Updates cart total in cart, and cart count in session. |
 | | Charge | Renders charge page and redirects payment to Stripe. Gets current cart id from session. Creates list of all downloads for current cart id. Creates Stripe checkout session as per Stripe documentation. Makes Stripe's session id availble in context. |
 | | Success | Renders success page. Gets Stripe's session id from url and uses to retrieve Stripe's session data. Gets current cart id from session. Saves Stripe's session id to cart as reference. Removes cart data from session to prevent repurchase errors. Makes Stripe's session data available in context. |
-| **Template** | Cart | - |
-| | Charge | - |
-| | Success | - |
+| **Template** | Cart | Lists downloads in cart. Remove button to remove downloads from cart. Checkout button to proceed with purchase.  |
+| | Charge | Redirects to Stripe from this page. Makes the Stripe session id available for Stripe js.|
+| | Success | Confirmation of success. Summary of order and reference from Stripe session data. |
 
 ![Successful Purchase 1](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow1_dark.JPG)
 ![Successful Purchase 2](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow2_dark.JPG)
@@ -183,9 +183,9 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 | **Model** | Contact | Individual visitor contact and admin reply. |
 | **View** | Contact | Renders contact form on contact page. Creates a contact on valid form post. Sends email flag on valid form post. |
 | | Contacts | View accessed by site admin only, login required. Renders outstanding contacts (i.e. not excluded and no reply), oldest first, on contacts page. Renders reply form for each contact. Updates individual contact on valid form post. If update is reply, sends email, either text or html template. |
-| **Template** | Contact | - |
-| | Contacts | Login required |
-| | Reply Email | - |
+| **Template** | Contact | Contact form with highlighted required fields. |
+| | Contacts | Login required. Outstanding contacts. Exclude buttons and reply textboxes to update contacts.  |
+| | Reply Email | Contact reply formatted. |
 
 ![Contact Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark.JPG)
 *Diagram: Contact Flow*
@@ -196,8 +196,8 @@ The user app is currently limited to login and logout templates using Django's U
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Template** | Login | - |
-| | Logout | - |
+| **Template** | Login | Login for site owner. |
+| | Logout | Logout for site owner |
 
 ## Django Admin Interface
 
