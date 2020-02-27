@@ -5,8 +5,9 @@ from iaproject.settings import STRIPE_PUBLISHABLE, STRIPE_SECRET
 from .models import Cart
 from portfolio.models import Download
 
-# Credit: Coding Point
-# https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23
+''' Credit: Cart approach adapted from Coding Point
+https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23
+'''
 
 
 def cart(request):
@@ -32,7 +33,6 @@ def add(request, pk):
     updates download and total in cart, and
     cart count in session.
     '''
-    # Is passed the right term????
     try:
         current_cart_id = request.session['cart_id']
     except Exception(e):
@@ -54,7 +54,7 @@ def add(request, pk):
         messages.success(request, f'{download.title} added to cart.')
     else:
         messages.warning(request, f'{download.title} already in cart.')
-    return redirect('project', pk=project)  # request throws an error?
+    return redirect('project', pk=project)
 
 
 def remove(request, pk):
@@ -64,7 +64,6 @@ def remove(request, pk):
     Updates cart total in cart, and cart count in session.
     '''
     cart = Cart.objects.get(pk=request.session['cart_id'])
-    # Do I need 404 here?
     download = get_object_or_404(Download, pk=pk)
     cart.downloads.remove(download)
     new_total = 0.00
@@ -85,7 +84,6 @@ def charge(request):
     Makes Stripe's session id availble in context.
     '''
     cart = Cart.objects.get(pk=request.session['cart_id'])
-    # Do I need 404 here?
     items = []
     for download in cart.downloads.all():
         item = {
@@ -106,7 +104,6 @@ def charge(request):
         client_reference_id='A0'+str(cart.id)
         )
     context = {'sid': session.id, }
-    # Do I need , ????
     return render(request, 'cart/charge.html', context)
 
 
@@ -131,7 +128,6 @@ def success(request):
     cart.stripe = stripe_session
     cart.save()
     del request.session['cart_id']
-    del request.session['download_count']  # 1 line?
+    del request.session['download_count']
     context = {'title': 'Complete', 'stripe_data': stripe_data, }
     return render(request, 'cart/success.html', context)
-    # ????? Is the del in the right place here????
