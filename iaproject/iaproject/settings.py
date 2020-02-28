@@ -186,6 +186,8 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # SSLify
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+SECURE_SSL_REDIRECT = True
+
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
