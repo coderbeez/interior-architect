@@ -71,8 +71,8 @@ def remove(request, pk):
     download = get_object_or_404(Download, pk=pk)
     cart.downloads.remove(download)
     new_total = 0.00
-    for download in cart.downloads.all():
-        new_total += float(download.price)
+    for item in cart.downloads.all():
+        new_total += float(item.price)
     cart.total = new_total
     cart.save()
     request.session['download_count'] = cart.downloads.count()
