@@ -5,8 +5,7 @@ from portfolio.models import Project
 
 def index(request):
     '''Renders the home page.
-    Includes 3 projects where the home field is True, order by order field.
-    Includes the 3 most liked blogs, most liked first.
+    Includes 3 projects and 3 blogs.
     Credit: Limiting results
     https://stackoverflow.com/questions/6574003/django-limiting-query-results
     '''
