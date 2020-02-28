@@ -13,7 +13,12 @@
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   {% block style_head %}{% endblock %}
   <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
-  <title>Interior Architect {{ title }}</title>
+  {% if title %}
+  <title>COS - {{ title }}</title>
+  {% else %}
+  <title>COS</title>
+  {% endif %}
+ 
   {% block script_head %}{% endblock %}
   <!--WHY: Used for Stripe JS script. As per documentation should be saved in head.-->
 <!--<script src="https://js.stripe.com/v3/"></script>-->
