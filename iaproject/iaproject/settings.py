@@ -183,9 +183,11 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #Credit https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
 #Credit Corey Schafer https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16
 
+# SSLify
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
 
-# SSLify
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
