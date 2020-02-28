@@ -4,7 +4,7 @@ from .models import Cart
 
 class CartAdmin(admin.ModelAdmin):
     list_display = ('id', 'date', 'total', 'stripe', 'fulfilled')
-    ordering = ('fulfilled', '-stripe', 'id',)
+    ordering = ('fulfilled', '-id', '-stripe')
     list_display_links = ('id',)
     list_filter = ('fulfilled',)
     list_editable = ('fulfilled',)
