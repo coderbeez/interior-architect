@@ -13,11 +13,13 @@ https://www.youtube.com/watch?v=5q3c3kYSRzk&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8r
 def cart(request):
     '''Renders cart page.
     If it exists, gets current cart id from session.
+    Credit: Bare except
+    https://stackoverflow.com/questions/4990718/about-catching-any-exception
     '''
     try:
         current_cart_id = request.session['cart_id']
         cart = Cart.objects.get(pk=current_cart_id)
-    except Exception(e):
+    except Exception as e:
         current_cart_id = None
         cart = None
         messages.error(request, f'A cart has not been created!')
@@ -32,10 +34,12 @@ def add(request, pk):
     If passed download is not already in current cart,
     updates download and total in cart, and
     cart count in session.
+    Credit: Bare except
+    https://stackoverflow.com/questions/4990718/about-catching-any-exception
     '''
     try:
         current_cart_id = request.session['cart_id']
-    except Exception(e):
+    except Exception as e:
         new_cart = Cart()
         new_cart.save()
         request.session['cart_id'] = new_cart.id
