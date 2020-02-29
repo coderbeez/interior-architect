@@ -158,4 +158,4 @@ N/A - Not Applicable
 
 6. **DNS** The DNS service provider for the client's custom domain did not support redirecting the naked domain to Heroku. This was solved by switching to a third party Heroku add on, pointhq, to manage the client's custom domain DNS service.
 
-7. **Auto Deployment** During deployment it became apparent the Django project needed to be at the root of the Git repository in order to support auto deployment from GitHub to Heroku. The workaround was to deploy locally from Git to Heroku using a subtree.
+7. **Auto Deployment** During deployment it became apparent the Django project needed to be at the root of the Git repository in order to support auto deployment from GitHub to Heroku. The workaround was to deploy locally from Git to Heroku using a subtree ```git subtree push --prefix iaproject heroku master```.
