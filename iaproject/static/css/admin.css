@@ -4,7 +4,14 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-#header, #branding h1, #branding h1 a:link, #branding h1 a:visited, .module h2, .module caption, .inline-group h2, div.breadcrumbs  {
+#header,
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited,
+.module h2,
+.module caption,
+.inline-group h2,
+div.breadcrumbs {
     background: rgba(244, 244, 244);
     color: #000000;
 }
@@ -15,17 +22,24 @@ h1 {
 }
 
 a {
-    color: #000000!important;
+    color: #000000 !important;
 }
 
-.button, input[type=submit], input[type=button], .submit-row input, a.button{
-    background-color: #000000!important; 
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+    background-color: #000000 !important;
 }
 
-a.section:link, a.section:visited{
-    color: #B8190C!important;
+a.section:link,
+a.section:visited {
+    color: #B8190C !important;
 }
 
-#changelist .actions .button, #changelist #toolbar form input[type="submit"], .delete-confirmation form .cancel-link {
-    color: #ffffff!important;
+#changelist .actions .button,
+#changelist #toolbar form input[type="submit"],
+.delete-confirmation form .cancel-link {
+    color: #ffffff !important;
 }

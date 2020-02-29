@@ -10,7 +10,11 @@
 <header class="row mt-3" data-page="{{ title }}">
     <div class="col-12 order-2 col-md-6 col-lg-8 bg-color--stone d-flex">
         <p class="align-self-center m-3 m-md-4 m-lg-5">
-            I would describe myself as a creative person with a passion for architecture and design. My experience has ranged from working in architectural and engineering offices, to teaching and directing a course at the Interior Design Academy of Ireland. I have gained the skills to work effectively and efficiently both independently and within a team. Combining my industry experience with good communication and presentation skills, enables me take a design from initial concept through to completion.
+            I would describe myself as a creative person with a passion for architecture and design. My experience has
+            ranged from working in architectural and engineering offices, to teaching and directing a course at the
+            Interior Design Academy of Ireland. I have gained the skills to work effectively and efficiently both
+            independently and within a team. Combining my industry experience with good communication and presentation
+            skills, enables me take a design from initial concept through to completion.
         </p>
     </div>
     <div class="col-12 order-1 col-md-6 col-lg-4 p-0 bg-img--work">
@@ -107,20 +111,22 @@
                 <!--WHERE: Foreign key in template tag https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template-->
             </div>
         </article>
-        
-    <!--EMPLOYMENT-->
+
+        <!--EMPLOYMENT-->
         <article class="row m-0">
-<!--EMPLOYMENT HEADING-->
+            <!--EMPLOYMENT HEADING-->
             <header class="col-12 col-lg-3 offset-lg-1 mt-4">
                 <!--SM DEVICES-->
                 <div class="d-block d-md-none header-border mb-3">
                     <h2 class="h-article">EMPLOYMENT</h2>
-                    <span>Download Full CV </span><a class="link" href="{% static 'pdfs/cv_colette_o_sullivan.pdf' %}" target="_blank" rel="noopener">here</a>
+                    <span>Download Full CV </span><a class="link" href="{% static 'pdfs/cv_colette_o_sullivan.pdf' %}"
+                        target="_blank" rel="noopener">here</a>
                 </div>
                 <!--MD & LG DEVICES-->
                 <div class="d-none d-md-block mt-lg-4">
                     <h2 class="h-article">EMPLOYMENT</h2>
-                    <span>Download Full CV </span><a class="link" href="{% static 'pdfs/cv_colette_o_sullivan.pdf' %}" target="_blank" rel="noopener">here</a>
+                    <span>Download Full CV </span><a class="link" href="{% static 'pdfs/cv_colette_o_sullivan.pdf' %}"
+                        target="_blank" rel="noopener">here</a>
                 </div>
             </header>
 
@@ -147,9 +153,11 @@
                                     <a class="link"
                                         href="{% url 'project' pk=example.project.id %}">{{ example.project.title }}</a>
                                     <img src="{{ example.project.image_portrait.url }}"
-                                        class="d-block d-md-none img-fluid border-color--stone" alt="{{ example.project.title }} image">
+                                        class="d-block d-md-none img-fluid border-color--stone"
+                                        alt="{{ example.project.title }} image">
                                     <img src="{{ example.project.image_landscape.url }}"
-                                        class="d-none d-md-block img-fluid border-color--stone" alt="{{ example.project.title }} image">
+                                        class="d-none d-md-block img-fluid border-color--stone"
+                                        alt="{{ example.project.title }} image">
                                 </div>
                             </div>
                             {% endfor %}

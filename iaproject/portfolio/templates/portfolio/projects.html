@@ -2,7 +2,7 @@
 {% block content%}
 
 <section class="row" data-page="{{ title }}">
-<!--PROJECT CARDS-->
+    <!--PROJECT CARDS-->
     {% for project in page_obj %}
     <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card rounded-0 border-0 mb-2">
@@ -19,15 +19,15 @@
         </div>
     </div>
     {% endfor %}
-<!--WHERE: Remove Bootstrap border radius https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
+    <!--WHERE: Remove Bootstrap border radius https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
 </section>
 
 <!--PAGINATION-->
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -35,8 +35,8 @@
         </span>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>

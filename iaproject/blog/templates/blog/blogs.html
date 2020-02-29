@@ -7,10 +7,9 @@
     <div class="col-12 col-md-6 col-lg-4">
         <div class="card rounded-0 border-0 mb-3">
             <!-- Inline style allows url to come from database.-->
-            <div class="bg-img d-flex justify-content-center"
-                style="background-image: url({{ blog.image.url }})">
+            <div class="bg-img d-flex justify-content-center" style="background-image: url({{ blog.image.url }})">
                 <div class="header-opaque align-self-center">
-                    <div class="header-border" >
+                    <div class="header-border">
                         <a href="{% url 'blog' pk=blog.id %}">
                             <h2 class="header-category">{{ blog.category.title }}</h2>
                             <h3 class="header-title">{{ blog.title }}</h3>
@@ -20,7 +19,7 @@
             </div>
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </section>
 <!--WHERE: Remove Bootstrap border radius https://stackoverflow.com/questions/46316719/how-to-make-card-header-no-border-radius-in-bootstrap-4-->
 
@@ -28,8 +27,8 @@
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -37,8 +36,8 @@
         </span>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>
