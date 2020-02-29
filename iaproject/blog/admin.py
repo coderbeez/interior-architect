@@ -15,16 +15,9 @@ class BlogAdmin(admin.ModelAdmin):
     inlines = [SectionInline]
 
 
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'date', 'blog','exclude')
-    ordering = ('exclude', '-id')
-    list_display_links = ('id',)
-    list_filter = ('exclude',)
-
-
 admin.site.register(Category)
 admin.site.register(Blog, BlogAdmin)
-admin.site.register(CommentAdmin)
+admin.site.register(Comment)
 '''Credit: Inlines
 https://stackoverflow.com/questions/14308050/django-admin-nested-inline
 Credit: Display, filters, edits Brad Traversey
