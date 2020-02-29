@@ -294,6 +294,9 @@ The following instructions to clone and deploy assume the user has:
 - Virtual Environment
 - GitHub Account
 - Heroku Account
+- Heroku CLI
+- AWS S3 Account & Bucket
+- Stripe Account
 
 ### Clone in GitHub
 
@@ -309,31 +312,43 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 ### IDE Development Setup
 
-1. Add the `MONGO_URI` to your environment file for local deployment. Replace `<password>` with your **password** and `test` with your **database name**.
-2. Add a `SECRET_KEY` to your environment file.
-3. Use `pip install -r requirements.txt` to install requirements.
+1. Create a virtual environment for your Python project.
+2. Create a env.py file in the iaproject folder.
+3. Add the following variables to the env.py file.
+
+```import os
+os.environ['DEBUG_VALUE']='False'
+os.environ['EMAIL_HOST_USER']
+os.environ['EMAIL_PASSWORD']
+os.environ['SECRET_KEY']
+os.environ['STRIPE_PUBLISHABLE']
+os.environ['STRIPE_SECRET']
+os.environ['AWS_ACCESS_KEY_ID']
+os.environ['AWS_SECRET_ACCESS_KEY']
+os.environ['AWS_STORAGE_BUCKET_NAME']
+os.environ['DATABASE_URL']
+os.environ['ALLOWED_HOSTS']
+```
+
+4. Use `pip install -r requirements.txt` to install Python required modules.
 
 ### Deploy to Heroku
-
-Create Procfile ```web: gunicorn <name of directory hold setting.py file>.wsgi```
-Create Requirements.txt file
 
 1. On the [Heroku](https://id.heroku.com/login) website log into your account.
 2. Click **new** and **create new app**.
 3. Give your app a **name** (it must be unique), select a **region** and click **create app**.
-4. Under **resources** add on Postgres, hobby free
-5. Reveal ID - paste that into env file
-6. Under **settings/ config vars** click **reveal vars**.
-7. add key values for your env variables
-8. heroku login - when prompted click any key to open browser and log into heroku account
-9. heroku git:remote -a interiorarchitect
-10. git subtree push --prefix iaproject heroku master to push code to Heroku
-11. run migrations
-12. create super user
-13. site/admin add blogs, projects, and roles
-14. debug mode off - collectstatic??
-15. add address to allowed hosts settings.py
-16. add address to aws s3.
+4. Under **resources** add on Postgres, hobby free.
+5. Click **Reveal ID**.
+6. Return to your IDE and fill the values for your environment variables in the env.py file.
+7. Return to the Heroku dashboard and under **settings/ config vars** click **reveal vars**. Add the key values for all your environment variables.
+8. In your console type ```heroku login```, and when prompted click any key to open the browser and log into your heroku account.
+9. Type ```heroku git:remote -a appname``` to create ?
+10. Type ```git subtree push --prefix iaproject heroku master``` to push the code to Heroku.
+11. Cd into iaproject and type ```python manage.py makemigrations``` and ```python manage.py migrate``` to create and run migrations.
+12. Type ```python manage.py createsuperuser``` to create a super user.
+13. Open the Heroku app address adding ```/admin``` to the end of the url and login with the super user credentials.
+14. Use this Django admin interface to add data to populate the blog, cv and portfolio apps.
+
 
 ## Credits
 
@@ -438,6 +453,7 @@ Create Requirements.txt file
 - How to send emails in Django [Data Flair](https://data-flair.training/blogs/django-send-email/).
 - Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
 - Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
+- Gmail less secure apps [Google](https://support.google.com/mail/thread/5621336?hl=en).
 
 ##### Other
 
