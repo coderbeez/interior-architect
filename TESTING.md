@@ -6,7 +6,7 @@
 
 [W3C Validation Service](https://validator.w3.org/) Used to test the validity of HTML.
 
-1. A number of issues associated with templates caused errors in rendered html:
+- A number of issues associated with templates caused errors in rendered html:
 
 Linebreaks in textareas adds extra p tags.
 
@@ -17,9 +17,10 @@ Empty th tags are added to single field forms.
 ```<tr><th></th><td>
 <textarea name="content" cols="40" rows="5" class="textarea-style" required id="id_content">
 </textarea>
-</td></tr>```
+</td></tr>
+```
 
-2. A h1 required according to the documentation for the Juicer Intagram, causes errors and warnings. Leaving text within the h1 renders Juicer logo, which the client did not want. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the h1 tag empty.
+- A h1 required according to the documentation for the Juicer Intagram, causes errors and warnings. Leaving text within the h1 renders Juicer logo, which the client did not want. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the h1 tag empty.
 
 ```Element h1 not allowed as child of element ul in this context.```
 
