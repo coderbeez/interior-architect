@@ -17,7 +17,7 @@ figcaption {
     font-style: italic;
 }
 
-/*Put near top as other css might overwrite*/
+/*WHY: Put near top as other css might overwrite*/
 
 li>span,
 a>span,
@@ -120,7 +120,7 @@ mute,
     margin: 1rem;
 }
 
-/*https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
+/*CREDIT: https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders*/
 
 .header-category {
     font-weight: 600;
@@ -162,11 +162,7 @@ a>.header-title:hover {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 300px;
-    /*height: 100%;*/
 }
-
-/* WHERE: credit anna_ci https://github.com/AJGreaves/familyhub*/
-/* WHY: Important to overwrite Bootstrap???? - taken off*/
 
 .bg-img--work {
     background: url("/static/images/work.jpg");
@@ -184,7 +180,7 @@ a>.header-title:hover {
     min-height: 300px;
 }
 
-/*Credit:https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django*/
+/*CREDIT: https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django*/
 
 .bg-color--stone {
     background-color: rgba(244, 244, 244, .95);
@@ -225,7 +221,7 @@ a>.header-title:hover {
     border: 0;
 }
 
-/*WHY: class added in forms.py*/
+/*WHY: Class added in forms.py*/
 
 /*------BUTTONS------*/
 
@@ -262,7 +258,7 @@ button:hover,
     color: black;
 }
 
-/*WHY: Background color specified to stop button styles applyig.*/
+/*WHY: Background color specified to stop button styles applying.*/
 
 /*------NAVBAR------*/
 
@@ -288,6 +284,8 @@ nav {
     height: 700px;
 }
 
+/*WHY: Set height for blog card images as images are not consistent size.*/
+
 .card-body--category {
     font-size: .9rem;
     font-weight: bold;
@@ -297,7 +295,6 @@ nav {
     font-size: .8rem;
 }
 
-/*WHY: Set height for blog card images as images are not consistent size.*/
 .wrap-img--card {
     height: 250px;
     position: relative;
@@ -309,6 +306,7 @@ nav {
 }
 
 /*WHY: Set height as title text is not conistent length.*/
+
 .height-cardtext {
     height: 100px;
 }
@@ -325,7 +323,7 @@ nav {
     }
 }
 
-/*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
+/*CREDIT: https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
 
 @media (min-width: 768px) and (max-width: 991px) {}
 
