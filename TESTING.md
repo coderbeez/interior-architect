@@ -20,18 +20,13 @@ Empty th tags are added to single field forms.
 </td></tr>
 ```
 
-- A h1 required according to the documentation for the Juicer Intagram, causes errors and warnings. Leaving text within the h1 renders Juicer logo, which the client did not want. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the h1 tag empty.
-
-```Element h1 not allowed as child of element ul in this context.```
+- A Juicer h1 causes errors and warnings. Leaving text within the h1 renders the Juicer logo, which the client did not want. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the h1 tag empty.
 
 ### CSS
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) Used to test the validity of CSS – no errors found.
-no errors but -webkit-sticky is an unknown vendor extension
-cv, home, admin, main
 
 [Autoprefixer CSS](https://autoprefixer.github.io/) Used to ensure all relevant vendor prefixes included.
-cv, home, admin, main
 
 ### JavaScript
 
@@ -39,12 +34,15 @@ cv, home, admin, main
 
 ### Python
 
-[????](https://jshint.com/) Used to test the ???? of Python functions – no errors found.
+[Python-autopep8](https://pypi.org/project/autopep8/) Used to ensure Python conforms to Pep 8 styling. All code conforms apart from:
 
-- *Settings.py Line too long* Password validator didn't want to split string.
+- *Settings.py Line too long* Didn't want to split string in password validator.
 - *Settings.py Module level import not at top of file* Django Heroku docs say to place at bottom of file.
+- *Credit urls too long* Some urls for credits are showing errors for length.
 
-Travis for continuous integration.
+### Continuous Integration
+
+[Travis](https://travis-ci.com/) was used throughout the build for continuous integration. Full details on how to apply are available [here](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci).
 
 ## Manual Testing
 
@@ -55,8 +53,8 @@ After sign-off, structured manual testing of the site was carried out on various
 | **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Large** | **Large** | **Large** | **Large** |
-| www.domain | P | P | P | P | P | P | P |
-| domain | P | P | P | P | P | P | P |
+| coletteosullivan https | P | P | P | P | P | P | P |
+| www.coletteosullivan https | P | P | P | P | P | P | P |
 | **HOME PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Carousel | P | P | P | P | P | P | P |
 | Liked Blogs | P | P | P | P | P | P | P |
@@ -79,13 +77,10 @@ After sign-off, structured manual testing of the site was carried out on various
 | **BLOG DETAIL PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Navbar Link Bold | P | P | P | P | P | P | P |
 | Detail | P | P | P | P | P | P | P |
-| Source Link | P | P | P | P | P | P | P |
 | Like Count | P | P | P | P | P | P | P |
-| Like Click Count | P | P | P | P | P | P | P |
-| Like Click Message | P | P | P | P | P | P | P |
+| Like Click Count & Message | P | P | P | P | P | P | P |
 | Comment List | P | P | P | P | P | P | P |
-| Comment Post | P | P | P | P | P | P | P |
-| Comment Post Message | P | P | P | P | P | P | P |
+| Comment Post & Message | P | P | P | P | P | P | P |
 | Comment Post List | P | P | P | P | P | P | P |
 | Email Flag | P | P | P | P | P | P | P |
 | **PORTFOLIO LIST PAGE** | --- | --- | --- | --- | --- | --- | --- |
@@ -96,13 +91,12 @@ After sign-off, structured manual testing of the site was carried out on various
 | **PORTFOLIO DETAIL PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Navbar Link Bold | P | P | P | P | P | P | P |
 | Detail | P | P | P | P | P | P | P |
-| Source Link | P | P | P | P | P | P | P |
 | **Project 1** | --- | --- | --- | --- | --- | --- | --- |
 | Download Costed Click & Message | P | P | P | P | P | P | P |
 | Navbar Cart & Count | P | P | P | P | P | P | P |
 | Download Duplicate Message | P | P | P | P | P | P | P |
 | **Project 2** | --- | --- | --- | --- | --- | --- | --- |
-| Download Fee Click & Message | P | P | P | P | P | P | P |
+| Download Fee Click | P | P | P | P | P | P | P |
 | Download PDF | P | P | P | P | P | P | P |
 | **CART PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Navbar Link Bold | P | P | P | P | P | P | P |
@@ -113,9 +107,7 @@ After sign-off, structured manual testing of the site was carried out on various
 | Client Name & Logo | P | P | P | P | P | P | P |
 | Total | P | P | P | P | P | P | P |
 | Download Name, Price & Desciption | P | P | P | P | P | P | P |
-| Card 1 | P | P | P | P | P | P | P |
-| Card 2 | P | P | P | P | P | P | P |
-| Card 3 | P | P | P | P | P | P | P |
+| Card | P | P | P | P | P | P | P |
 | **SUCCESS PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Navbar Cart | P | P | P | P | P | P | P |
 | Order Summary | P | P | P | P | P | P | P |
