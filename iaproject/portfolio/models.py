@@ -12,7 +12,7 @@ class Category(models.Model):
 
 
 class Project(models.Model):
-    '''Individual project and header data.
+    '''Individual project.
     '''
     category = models.ForeignKey(
         'Category',

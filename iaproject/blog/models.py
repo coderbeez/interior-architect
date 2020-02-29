@@ -11,7 +11,7 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    '''Individual blog and header data.'''
+    '''Individual blog.'''
     category = models.ForeignKey(
         'Category',
         on_delete=models.CASCADE,

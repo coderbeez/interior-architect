@@ -4,7 +4,7 @@ from portfolio.models import Project
 
 
 class Role(models.Model):
-    '''Individual role and header data.
+    '''Individual role.
     Job field differentiates employment from education.
     '''
     company = models.CharField(max_length=200)
@@ -49,7 +49,7 @@ class Example(models.Model):
 
 
 class Skill(models.Model):
-    '''Skill and level to display in animated data circle.
+    '''Skill level to display in animated data circle.
     '''
     program = models.CharField(max_length=50)
     percent = models.DecimalField(max_digits=3, decimal_places=2)
