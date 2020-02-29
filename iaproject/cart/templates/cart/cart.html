@@ -9,36 +9,36 @@
 {% include 'include.html' with tagline='Downloads in current shopping cart.' %}
 
 <div class="bg-color--stone mb-4 p-2">
-    {% if request.session.download_count is not 0 %}  
-<table class="table">  
-    <tr>
-        <th>Title</th>
-        <th>Price</th>
-        <th></th>
-    </tr>
-    {% for item in cart.downloads.all %}
-    <tr>
-        <td>{{ item.title }}</td>
-        <td>€{{ item.price }}</td>
-        <td><a class="d-inline-block button-a m-0" href="{% url 'remove' pk=item.id %}">
-            <i class="d-md-none fas fa-trash-alt"></i>
-            <span class="d-none d-md-inline-block">REMOVE</span>
-        </a></td>
-    </tr>
-{% endfor %}
-<tr>
-    <td>TOTAL</td>
-    <td>€{{ cart.total }}</td>
-    <td></td>
-</tr>
-</table> 
+    {% if request.session.download_count is not 0 %}
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        {% for item in cart.downloads.all %}
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>€{{ item.price }}</td>
+            <td><a class="d-inline-block button-a m-0" href="{% url 'remove' pk=item.id %}">
+                    <i class="d-md-none fas fa-trash-alt"></i>
+                    <span class="d-none d-md-inline-block">REMOVE</span>
+                </a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>TOTAL</td>
+            <td>€{{ cart.total }}</td>
+            <td></td>
+        </tr>
+    </table>
 
-<span class="d-block client text-center">Downloads sent to email provided at payment.</span>
-<a class="d-inline-block button-a" id="checkout" href="{% url 'charge' %}">CHECKOUT</a>
+    <span class="d-block client text-center">Downloads sent to email provided at payment.</span>
+    <a class="d-inline-block button-a" id="checkout" href="{% url 'charge' %}">CHECKOUT</a>
 
-{% else %}
-<p>This cart is empty. Visit a portfolio project page to add a download.</p>
-{% endif %}
+    {% else %}
+    <p>This cart is empty. Visit a portfolio project page to add a download.</p>
+    {% endif %}
 
 </div>
 
