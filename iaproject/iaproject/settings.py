@@ -10,13 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+
 import os
 import dj_database_url
 
-#code from Slack Anna
 from os import path
 if path.exists("env.py"):
     import env
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,11 +30,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get("DEBUG_VALUE") == 'True') #will return boolean True if string true
-#Corey 16 debug will be set to true if debug value if equal to true
+''' Will return boolean True if string is True.
+Credit: Corey Schafer
+https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=17&t=0s
+'''
+DEBUG = (os.environ.get("DEBUG_VALUE") == 'True')
+
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
-#Enter heroku address here Corey 16
+
 
 # Application definition
 
@@ -92,32 +97,30 @@ WSGI_APPLICATION = 'iaproject.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = {'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL')
+    )}
 else:
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
-        }
+    }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
+    {'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator', },
+    {'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator', },
+    {'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator', },
 ]
 
 
@@ -138,54 +141,71 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #corey 16 required for heroku deploy
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    #'/var/www/static/',
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# full path to a directory where we would like django to store uploaded files
-# for performance reasons the files are not stored in the database
-MEDIA_URL = '/media/'
-# public url of media directory(folder)
-# how we access the image in the browser /media/profile-pics/image.jpg
-# Credit: Corey Schafer https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8
 
+# Media
+'''Credit: Corey Schafer
+https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8
+'''
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+# Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'index' # where u want successful login to redirect
-LOGIN_URL = 'login' # after addind decorator to route default url for login
-#Credit Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
 
+# Logins
+'''Credit Corey Schafer
+https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
+'''
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
+
+
+# Stripe
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
-#Email Configuration
+
+# Email
+'''Credit: Brad Traversy
+https://www.udemy.com/course/python-django-dev-to-deployment/
+'''
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
-# Credit Brad Traversy real estate project
 
-#AWS S3 Configuration
+
+# AWS S3
+'''Credit: Corey Schafer
+https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16
+Credit: Django Storages
+https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+'''
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 
-AWS_S3_FILE_OVERWRITE = False #stops files with same name being overwritten
-AWS_DEFAULT_ACL = None #current default can cause issues
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
-#Credit https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
-#Credit Corey Schafer https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+
+# SSL Redirect
 SECURE_SSL_REDIRECT = True
 
+
 # Configure Django App for Heroku.
+'''Django Heroku docs say to place at end of file.
+'''
 import django_heroku
 django_heroku.settings(locals())
-
-
