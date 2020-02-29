@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.com/coderbeez/interior-architect.svg?branch=master)](https://travis-ci.com/coderbeez/interior-architect)
 
-<div align="center">
-<img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
-</div>
+![Site Header](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG)
 
 *A portfolio website developed for an interior architect and designer using Django 2.2.*
 
@@ -156,11 +154,6 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 3. A customisable interface still allowed her logo and colour scheme to be incorporated.
 4. Stripe notifications settings allowed the clients to receive an email after every successful payment.
 5. Stripe email settings allowed the client's customers to receive receipts directly from Stripe.
-Payment methods: Credit cards, debit cards, Apple Pay, Google Pay, FPX and iDEAL
-Payment types: One-time and recurring payments
-Payment authentication: Dynamic 3D Secure (ready for Strong Customer Authentication)
-Localization: Localized for 14 languages
-Email receipts: Automatic email receipts to your customers
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
 **Diagram: Cart Schema**
@@ -256,6 +249,7 @@ The client needed an interface to allow content updates. Having walked her throu
 
 ### Frontend Resources
 
+- [Stripe Checkout](https://stripe.com/ie/payments/checkout) Used to manage online payments.
 - [Google Fonts](https://fonts.google.com/) Used for all fonts.
 - [Font Awesome](https://fontawesome.com/) Used for all icons.
 - [Bootstrap](https://getbootstrap.com/) Used for responsive layout and styling.
@@ -267,16 +261,16 @@ The client needed an interface to allow content updates. Having walked her throu
 
 - [pip](https://pypi.org/project/pip/) Used to install Python modules.
 - [Django](https://www.djangoproject.com/) Web framework used.
+- [Django Heroku](https://pypi.org/project/django-heroku/) Used to improve deployment.
+- [Gunicorn](http://docs.gunicorn.org/en/stable/) A Python WSGI HTTP server for UNIX.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) Used to render Django forms.
 - [Django Math Filters](https://pypi.org/project/django-mathfilters/) Used to provide math filters for Django.
+- [Pillow](https://pypi.org/project/Pillow/) A Python imaging library.
+- [AWS Django Storages](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html) A custom storage backend for Django.
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) Used to create, configure, and manage AWS services.
+- [Psycopg2](https://pypi.org/project/psycopg2/) A PostgreSQL database adapter for Python.
+- [Whitenoise](http://whitenoise.evans.io/en/stable/) Used to allow the web app to serve its own static files.
 - [Stripe Checkout](https://stripe.com/ie/payments/checkout) Used to manage online payments.
-- [AWS Django Storages](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html) Custom storage backend for Django.
-- Boto3 to enable creation, configuration and management of AWS S3.
-- Django Heroku to improve deployment of django projects on heroku.
-- Gunicorn WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
-- Pillow as python imaging library to aid in processing image files to store in database.
-- Psycopg2 as PostgreSQL database adapter for Python.
-- Whitenoise to allows the web app to serve its own static files.
 
 ### Design Tools
 
@@ -451,6 +445,4 @@ Create Requirements.txt file
 
 ### Acknowledgements
 
-- Many thanks to my client for her faith and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel.
-
-https://pypi.org/project/django-heroku/
+- Many thanks to my client for her wonderful content, endless faith and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel for making this journey possible.
