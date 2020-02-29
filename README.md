@@ -6,11 +6,11 @@
 <img src="https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/header.JPG" alt="Site header">
 </div>
 
-*A portfolio website developed for an interior architect and designer while completing Code Institute's fullstack milestone module.*
+*A portfolio website developed for an interior architect and designer using Django 2.2.*
 
 ## UX
 
-This portfolio website was developed to provide a platform for the client, an interior architect and designer, to showcase her work. The site content, including instagram posts, blogs, and detailed projects, is frequently updated so the client needed a site she could maintain that was both flexible and easy to update.
+This portfolio website was developed to provide a platform for the client, an interior architect and designer, to showcase her work. The site content, including Instagram posts, blogs, and detailed projects, is frequently updated so the client needed a site that was easy to maintain.
 
 ### User Stories
 
@@ -22,11 +22,11 @@ After talking about it for years, I'll decided to build an extension to my house
 
 #### Home Owner - New Build
 
-Having been gifted a site by my Uncle, I've decided to build a holiday home. I would like the house to be as sustainable as possible, but my funds are limited. Having seen an instagram post by Colette on budget builds, I check out her site. I start with browsing blogs on sustainability and budgeting. I visit some of the portfolio projects. I fill out the contact form outlining my requirements. I'm so impressed by the reply from Colette that we agree to meet to discuss further. She's now drawing up my dream holiday home.
+Having been gifted a site by my Uncle, I've decided to build a holiday home. I would like the house to be as sustainable as possible, but my funds are limited. Having seen an Instagram post by Colette on budget builds, I check out her site. I start with browsing blogs on sustainability and budgeting. I visit some of the portfolio projects. I fill out the contact form outlining my requirements. I'm so impressed by the reply from Colette that we agree to meet to discuss further. She's now drawing up my dream holiday home.
 
 #### Interior Design Student
 
-I'm currently enrolled in an interior design course but struggling with a colour rendering project. A fellow student recommended Colette's site. I visit the blog page and find two rendering blogs. I leave a like and a comment on both blogs. I'm sorted - they were just what I needed. I click on instagram to start following Colette as she often posts when new blogs are uploaded. I know I'll be revisiting the site and recommending it to fellow students.
+I'm currently enrolled in an interior design course but struggling with a colour rendering project. A fellow student recommended Colette's site. I visit the blog page and find two rendering blogs. I leave a like and a comment on both blogs. I'm sorted - they were just what I needed. I click on Instagram to start following Colette as she often posts when new blogs are uploaded. I know I'll be revisiting the site and recommending it to fellow students.
 
 #### Architecture Firm
 
@@ -34,7 +34,7 @@ My firm is looking to hire an architectural technician. I've received an applica
 
 #### Client
 
-The client receives an email flag whenever a new comment, contact or purchase is made. She opens the site and clicks admin at the bottom of the home page. On login she can easily see and respond to outstanding comments and contacts. She simply clicks exclue on any comment or contact she would like to close. To update the site or fulfill an order, she enters admin at the end of the url and logs into the Django admin interface. Styled and customised to look similar to the main site, the interface feels bespoke for the client.
+The client receives an email flag whenever a new comment, contact or purchase is made. She opens the site and clicks admin at the bottom of the home page. On login she can easily see and respond to outstanding comments and contacts. She simply clicks exclude on any comment or contact she would like to close. To update the site or fulfill an order, she enters admin at the end of the url and logs into the Django admin interface. Styled and customised to look similar to the main site, the interface feels bespoke for the client.
 
 ### Design
 
@@ -43,13 +43,14 @@ Simplicity is key to COLETTE O'SULLIVAN with the look and flow of the site desig
 #### Navigation
 
 As a portfolio site, the client's name is centred and prominent above the navbar.
+
 The main site is divided into four distinct sections, **about**, **blog**, **portfolio** and **contact** highlighted by a pared back navbar.
 
-Navbar sticky.
+On small devices, the prominent name above the navbar is swapped for one in the navbar when it reaches the top the screen. From this point the navbar is sticky.
 
 #### Colours & Fonts
 
-A minimal colour scheme of black, white and stone, provides a neutral background for the client's colourful content. The Google font *Montserrat*, is used in uppercase for all headings.  While another Google font *Ibarra Real Nova* is used, in both regular and italics styles, for all remaining text. Italics and hover colour changes are used to identify link text. Messages follow a traffic light green, orange and red colour scheme to inform, alert or warn users.
+A minimal colour scheme of black, white and stone, provides a neutral background for the client's content. The Google font *Montserrat*, is used in uppercase for all headings.  While another Google font *Ibarra Real Nova* is used, in both regular and italics styles, for all remaining text. Italics and hover colour changes are used to identify link text. Messages follow a traffic light green, orange and red colour scheme to inform, alert or warn users.
 
 #### Preparation
 
@@ -57,48 +58,57 @@ Balsamiq was used to create wireframes for [large](https://github.com/coderbeez/
 
 ## Apps
 
-Using Django 2.2.10, the web site is built with 7 apps: home, cv, blog, portfoiio, contact, cart and users.
-guest &B/82a"x view permissions
+Built with Django 2.2.10, the web site contains 7 apps: home, cv, blog, portfolio, contact, cart and users.
+As there is no facility for users to register, a guest account has been created for assessment, username: guest, password: &B/82a"x
+
+For ease of assessment:
+
+- The BA education has a project example.
+- The KOBW employment has a project example.
+- The 1960s extension project has costed downloads.
+- The Fordson project has a free download.
 
 ### Home App
 
-The Home App provides a landing page for the site, introducing the client and her work. Portfolio images, blogs, and instagram posts entice the visitor to look further. Linked to other internal and external sources, content on this page updates automatically.
-
-![Home Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_home.JPG)
+The Home App provides a landing page for the site, introducing the client and her work. Portfolio images, blogs, and Instagram posts, entice the visitor to look further. Linked to other internal and external sources, content on this page updates automatically.
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **View** | index | Renders the home page. Includes 3 projects where the home field is True, order by order field. Includes the 3 most liked blogs, most liked first. |
-| **Template** | index | Owner introduction, portfolio carousel, most liked blog links, instagram feed. |
-| | include-intro | Used to position client photo and introductory text depepening on device size. |
+| **View** | index | Includes 3 projects and 3 blogs. |
+| **Template** | index | Owner introduction, portfolio carousel, most liked blog links, Instagram feed and admin login link. |
+| | include-intro | Used to vary position of client photo and introductory text, depepening on device size. |
+| **Static** | Main CSS | Juicer Instagram feed formatting. |
+| | Main JS | Set first carousel item as active. |
 
 ### CV App
 
-The main challenge of the CV app was to present the clients CV in a novel way easily viewed on all devices. Divided into 3 sections, expertise, education and employment, animated data circles and accordions help to break up the content. Updates are through Django's administration interface.
+The main challenge of the CV app was to present the clients CV in a novel way that could be easily viewed on all devices. Divided into 3 sections, expertise, education and employment, animated data circles and accordions help to break up the content. Updates are through Django's administration interface.
 
 ![CV Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cv.JPG)
-*Diagram: CV Schema*
+**Diagram: CV Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
-| **Model** | Role | Individual role and header data. Job field differentiates employment from education. |
+| **Model** | Role | Individual role. Job field differentiates employment from education. |
 | | Point | Bullet point for an individual role. |
 | | Example | Link between a project and an individual role. |
-| | Skill | Skill and level to display in animated data circle. |
+| | Skill | Skill level to display in animated data circle. |
 | **View** | About | Renders about page. Includes all roles as jobs or studies, depending on job field. Includes all skills. |
-| **Template** | About | Owner introduction, animated expertise levels, education timeline and accordion, cv download, employment timeline and accordion. |
+| **Template** | About | Owner introduction, animated expertise, education timeline and accordion, cv download and employment timeline and accordion. |
+| **Static** | Main CSS | Timeline and data circle formatting. |
+| | Main JS | Data circles and accordion animations. |
 
 ### Blog App
 
 The Blog App affords the client the opprtunity to create blogs with varying formats and site visitors the opportunity to like and comment on blogs. Although the client doesn't expect a lot of traffic, she is anxious to reply to all comments promptly so receives an email flag on new post. The comments page allows her to review and reply to all outstanding comments. Outside of comment replies, updates are through Django's administration interface.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
-*Diagram: Blog Schema*
+**Diagram: Blog Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Category | Blog category list item. |
-| | Blog | Individual blog and header data. |
+| | Blog | Individual blog. |
 | | Section | Section data for an individual blog. Fields set to blank=True allow for maximum flexibility. |
 | | Comment | Visitor comment and admin reply for an individual blog. |
 | **Form** | CommentForm | Create a comment by adding data to the content field. |
@@ -116,12 +126,12 @@ The Blog App affords the client the opprtunity to create blogs with varying form
 Through this app the client presents her project portfolio. Additional content, costed and free to download, is available for some projects. Updates are through Django's administration interface.
 
 ![Potfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
-*Diagram: Portfolio Schema*
+**Diagram: Portfolio Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
 | **Model** | Category | Project category list item. |
-| | Project | Individual project and header data. |
+| | Project | Individual project. |
 | | Section | Section data for an individual project. Fields set to blank=True allow for maximum flexibility. |
 | | Download | PDF download available for an individual project. Price set to null=True and blank=True as some downloads are free. |
 | **Form** | ContactForm | Create a contact. |
@@ -129,7 +139,7 @@ Through this app the client presents her project portfolio. Additional content, 
 | **View** | Projects | Renders an ordered list of projects on portfolio page. Paginates after every 6 projects. |
 | | Project | Renders an individual project, its sections and downloads, on project page. |
 | **Template** | Projects | Project cards with links to individual projects. Paginates after 6 projects. |
-| | Project | Project introduction and sections. Downloads, if applicable, to purchase or  |
+| | Project | Project introduction and sections. Downloads, if applicable, to purchase or download for free.  |
 
 ### Cart App
 
@@ -153,7 +163,7 @@ Localization: Localized for 14 languages
 Email receipts: Automatic email receipts to your customers
 
 ![Cart Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cart.JPG)
-*Diagram: Cart Schema*
+**Diagram: Cart Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -166,22 +176,22 @@ Email receipts: Automatic email receipts to your customers
 | **Template** | Cart | Lists downloads in cart. Remove button to remove downloads from cart. Checkout button to proceed with purchase.  |
 | | Charge | Redirects to Stripe from this page. Makes the Stripe session id available for Stripe js.|
 | | Success | Confirmation of success. Summary of order and reference from Stripe session data. |
-
-Stripe
-Do not rely on the redirect to the success_url alone for fulfilling purchases as:
-Malicious users could directly access the success_url without paying and gain access to your goods or services.
-Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs.
+| **Static** | Stripe JS | Stripe redirect. |
 
 ![Successful Purchase 1](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow1_dark.JPG)
 ![Successful Purchase 2](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/cart_flow2_dark.JPG)
-*Diagram: Cart Flow - Successful Purchase*
+**Diagram: Cart Flow For Successful Purchase**
+
+Stripe outline on their site *"not rely on the redirect to the success_url alone for fulfilling purchases as:
+Malicious users could directly access the success_url without paying and gain access to your goods or services.
+Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs."* For these reasons the success page order summary shows Stripe's session data. For now order fulfillment is manual and my client relies on her Stripe account dashboard to verify payment success before sending pdfs.
 
 ### Contact App
 
-Site visitors can contact the client by submitting a contact form. New contacts are flagged to the client and outstanding comments pages gives her the facility to save and send replies.
+Site visitors can contact the client by submitting a contact form. New contacts are flagged to the client and outstanding contacts pages gives her the facility to save and send email replies.
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_contact.JPG)
-*Diagram: Contact Schema*
+**Diagram: Contact Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -190,14 +200,14 @@ Site visitors can contact the client by submitting a contact form. New contacts 
 | | Contacts | View accessed by site admin only, login required. Renders outstanding contacts (i.e. not excluded and no reply), oldest first, on contacts page. Renders reply form for each contact. Updates individual contact on valid form post. If update is reply, sends email, either text or html template. |
 | **Template** | Contact | Contact form with highlighted required fields. |
 | | Contacts | Login required. Outstanding contacts. Exclude buttons and reply textboxes to update contacts.  |
-| | Reply Email | Contact reply formatted. |
+| | Reply Email | Contact reply formatted for email. |
 
 ![Contact Flow](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/contact_flow_dark.JPG)
-*Diagram: Contact ++++Flow*
+**Diagram: Contact Flow**
 
 ### User App
 
-The user app is currently limited to login and logout templates using Django's User models. For this site, the client is the user, logging in using the admin link on the landing page to access the outstanding comments and contacts pages.
+The user app is currently limited to login and logout templates using Django's User model. For this site, the client is the user, logging in using the admin link on the landing page to access the outstanding comments and contacts pages.
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -206,14 +216,14 @@ The user app is currently limited to login and logout templates using Django's U
 
 ### Django Admin Interface
 
-The client needed an interface to allow content updates. Having walked her through Django's default admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in more with the style of the main site, the admin inteface css was customised.
+The client needed an interface to allow content updates. Having walked her through Django's admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in with the style of the main site, the admin interface was customised using html and css.
 
 ![Django Admin](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG)
-*Customised Django Admin Interface*
+**Diagram: Customised Django Admin Interface**
 
 ### Future Features
 
-**Search Engine Optimisation** The next thing to work before my client launche her site is SEO.
+**Search Engine Optimisation** The next thing to work on before my client launches her site is SEO.
 
 **Automated Fulfillment** Currently fulfillment for paid downloads is manual but we would like to take advantage of automated fulfillment using webhooks as outlined in [Stripe's documentation](https://stripe.com/docs/payments/checkout/fulfillment#webhooks).
 
@@ -234,15 +244,15 @@ The client needed an interface to allow content updates. Having walked her throu
 
 - [Visual Studio Code](https://code.visualstudio.com/) IDE used.
 - [Git](https://git-scm.com/) Used to track changes during development.
-- [GitHub](https://github.com/) Used to host the version control system and website content before deployment to Heroku.
+- [GitHub](https://github.com/) Used to host the version control system and website content.
 
-### Hosting Platforms & Database
+### Hosting Platforms & Databases
 
-- [Heroku](https://www.heroku.com/) Cloud based hosting service.
-- [Go Daddy](???) Domain hosting service.
-- [SQLite](???) Default Django database used for developement.
-- [PostgreSQL](???) Database used for production on deployment to Heroku.
-- [AWS django storages](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html) ???
+- [SQLite](https://www.sqlite.org/index.html) Default Django database used for developement.
+- [PostgreSQL](https://www.postgresql.org/) Database used for production on deployment to Heroku.
+- [Heroku](https://www.heroku.com/) Cloud based hosting service, dns pointer, ssl???.
+- [AWS S3](https://aws.amazon.com/free/storage/?trk=ps_a131L000005OOOyQAO&trkCampaign=UK&sc_channel=PS&sc_campaign=acquisition_UK&sc_publisher=Google&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Storage|S3|UK|EN|Text&sc_content=s3_e&sc_detail=amazon%20s3&sc_category=S3&sc_segment=293639776553&sc_matchtype=e&sc_country=UK&s_kwcid=AL!4422!3!293639776553!e!!g!!amazon%20s3&ef_id=EAIaIQobChMI29XMofj25wIViaztCh2KzQZjEAAYASAAEgIR7PD_BwE:G:s) Cloud based storage for media files saved to database.
+- [Go Daddy](https://ie.godaddy.com/) Domain hosting service.
 
 ### Frontend Resources
 
@@ -250,33 +260,37 @@ The client needed an interface to allow content updates. Having walked her throu
 - [Font Awesome](https://fontawesome.com/) Used for all icons.
 - [Bootstrap](https://getbootstrap.com/) Used for responsive layout and styling.
 - [jQuery](https://jquery.com/) Used for navbar, carousel, accordion, data circles & stripe functionality.
-- [jquery-circle-progress](https://github.com/kottenator/jquery-circle-progress) Used for animated skill circles.
-- [Juicer](https://www.juicer.io/) Used to link and display client's instagram feed.
+- [jquery-circle-progress](https://github.com/kottenator/jquery-circle-progress) Used for animated data circles.
+- [Juicer](https://www.juicer.io/) Used to link and display client's Instagram feed.
 
 ### Backend Resources
 
 - [pip](https://pypi.org/project/pip/) Used to install Python modules.
-- [Django](???) Used ???.
-- [Crispy Forms](???) Used to format html forms.
-- [Django Math Filters](https://pypi.org/project/django-mathfilters/) Used for hashing user passwords.
-- [Stripe](???) Used for managing online payment.
+- [Django](https://www.djangoproject.com/) Web framework used.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) Used to render Django forms.
+- [Django Math Filters](https://pypi.org/project/django-mathfilters/) Used to provide math filters for Django.
+- [Stripe Checkout](https://stripe.com/ie/payments/checkout) Used to manage online payments.
+- [AWS Django Storages](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html) Custom storage backend for Django.
+- Boto3 to enable creation, configuration and management of AWS S3.
+- Django Heroku to improve deployment of django projects on heroku.
+- Gunicorn WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
+- Pillow as python imaging library to aid in processing image files to store in database.
+- Psycopg2 as PostgreSQL database adapter for Python.
+- Whitenoise to allows the web app to serve its own static files.
 
 ### Design Tools
 
 - [Balsamiq](https://balsamiq.com/) Used to develop wireframes for the website.
-- [Microsoft PowerPoint](https://office.live.com/start/PowerPoint.aspx) Used to develop the initial website proposal.
-- [Affinity Designer](https://affinity.serif.com/en-gb/) Used to edit images and identify hex colours for fonts and backgrounds.
-- [Microsoft Screen Recorder](https://uk.pcmag.com/operating-systems/86044/how-to-capture-video-clips-in-windows-10) Used to record README videos.
-- [EZgif](https://ezgif.com/) Used to create README gifs.
-- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) Used to create README device images.
+- [Microsoft Access & Publisher](https://www.office.com/) Used to create README diagrams.
+- [Affinity Designer & Photo](https://affinity.serif.com/en-gb/) Used to edit images and identify hex colours for fonts and backgrounds.
 
 ## Testing
 
-Testing detailed in [TESTING.md](https://github.com/interiorarchitect/COLETTE O'SULLIVAN/blob/master/TESTING.md).
+Testing detailed in [TESTING.md](https://github.com/coderbeez/interior-architect/blob/master/TESTING.md).
 
 ## Deployment
 
-The website was developed in Visual Studio Code using a virtual environment and deployed to Heroku via GitHub.
+The website was developed in Visual Studio Code using a virtual environment and deployed to Heroku via Git.
 
 The following instructions to clone and deploy assume the user has:
 
@@ -332,11 +346,11 @@ Create Requirements.txt file
 ### Content
 
 - Site concept and design by website developer.
-- Site content by client.
+- Site content provided by client.
 
 ### Media
 
-- Favicon/Stripe logo by Blasko purchased from [Vector Stock](https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011).
+- Favicon/logo by Blasko purchased from [Vector Stock](https://www.vectorstock.com/royalty-free-vector/house-construction-architect-logo-icon-vector-23672011).
 - Work desk photo by Jessica Arends from [Unsplash](https://unsplash.com/photos/UzPbvwqvKNE).
 
 ### Code
@@ -382,6 +396,7 @@ Create Requirements.txt file
 - Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
 - Limiting query results [Stack Overflow](https://stackoverflow.com/questions/6574003/django-limiting-query-results).
 - F strings [Real Python](https://realpython.com/python-f-strings/).
+- Bare excepts [Stack Overflow](https://stackoverflow.com/questions/4990718/about-catching-any-exception)
 
 ##### Forms
 
