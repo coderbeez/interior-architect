@@ -16,7 +16,7 @@ User stories for potential visitors to the website include:
 
 #### Home Owner - Extension
 
-After talking about it for years, I'll decided to build an extension to my house. A friend recommended Colette's site. I go straight to the Potfolio page and select a project similar to mine. Having read the story behind the design and build I purchase one of the drawings. I'm taken to a Stripe payment page, I prefer that as it feels more secure. Once complete I see a summary of my order and take note of my reference number. By email I receive both a receipt from Stripe and the drawing pdf from Colette. After mulling it over for a few days, I go back to the site amd fill out the contact form leaving a description of my dream extension. Colette responds with useful advice on planning and designing to maximise light.
+After talking about it for years, I'll decided to build an extension to my house. A friend recommended Colette's site. I go straight to the Portfolio page and select a project similar to mine. Having read the story behind the design and build I purchase one of the drawings. I'm taken to a Stripe payment page, I prefer that as it feels more secure. Once complete I see a summary of my order and take note of my reference number. By email I receive both a receipt from Stripe and the drawing pdf from Colette. After mulling it over for a few days, I go back to the site and fill out the contact form leaving a description of my dream extension. Colette responds with useful advice on planning and designing to maximise light.
 
 #### Home Owner - New Build
 
@@ -32,7 +32,7 @@ My firm is looking to hire an architectural technician. I've received an applica
 
 #### Client
 
-The client receives an email flag whenever a new comment, contact or purchase is made. She opens the site and clicks admin at the bottom of the home page. On login she can easily see and respond to outstanding comments and contacts. She simply clicks exclude on any comment or contact she would like to close. To update the site or fulfill an order, she enters admin at the end of the url and logs into the Django admin interface. Styled and customised to look similar to the main site, the interface feels bespoke for the client.
+The client receives an email flag whenever a new comment, contact or purchase is made. She opens the site and clicks admin at the bottom of the home page. On login she can easily see and respond to outstanding comments and contacts. She simply clicks exclude on any comment or contact she would like to close. To update the site or fulfil an order, she enters admin at the end of the URL and logs into the Django admin interface. Styled and customised to look similar to the main site, the interface feels bespoke for the client.
 
 ### Design
 
@@ -74,7 +74,7 @@ The Home App provides a landing page for the site, introducing the client and he
 | --- | --- | --- |
 | **View** | index | Includes 3 projects and 3 blogs. |
 | **Template** | index | Owner introduction, portfolio carousel, most liked blog links, Instagram feed and admin login link. |
-| | include-intro | Used to vary position of client photo and introductory text, depepening on device size. |
+| | include-intro | Used to vary position of client photo and introductory text, depending on device size. |
 | **Static** | Main CSS | Juicer Instagram feed formatting. |
 | | Main JS | Set first carousel item as active. |
 
@@ -98,7 +98,7 @@ The main challenge of the CV app was to present the clients CV in a novel way th
 
 ### Blog App
 
-The Blog App affords the client the opprtunity to create blogs with varying formats and site visitors the opportunity to like and comment on blogs. Although the client doesn't expect a lot of traffic, she is anxious to reply to all comments promptly so receives an email flag on new post. The comments page allows her to review and reply to all outstanding comments. Outside of comment replies, updates are through Django's administration interface.
+The Blog App affords the client the opportunity to create blogs with varying formats and site visitors the opportunity to like and comment on blogs. Although the client doesn't expect a lot of traffic, she is anxious to reply to all comments promptly so receives an email flag on new post. The comments page allows her to review and reply to all outstanding comments. Outside of comment replies, updates are through Django's administration interface.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
 **Diagram: Blog Schema**
@@ -112,7 +112,7 @@ The Blog App affords the client the opprtunity to create blogs with varying form
 | **Form** | CommentForm | Create a comment by adding data to the content field. |
 | | ReplyForm | Update a comment by adding data to the reply and/or exclude fields. |
 | **View** | Blogs | Renders an ordered list of blogs on the blogs page. Paginates after every 6 blogs. |
-| | Blog | Renders an individual blog, its sections and comments, on the blog page. Renders a comment form. Creates an indivdual comment on valid from post. Sends email flag on valid form post.|
+| | Blog | Renders an individual blog, its sections and comments, on the blog page. Renders a comment form. Creates an individual comment on valid from post. Sends email flag on valid form post.|
 | | Like | Increments like field for an individual blog. |
 | | Comments | View accessed by site admin only, login required. Renders outstanding comments (i.e. not excluded and no reply), oldest first, on the comments page. Renders reply form for each comment. Updates individual comment on valid form post. |
 | **Template** | Blogs | Blog cards with links to individual blogs. Paginates after 6 blogs. |
@@ -123,7 +123,7 @@ The Blog App affords the client the opprtunity to create blogs with varying form
 
 Through this app the client presents her project portfolio. Additional content, costed and free to download, is available for some projects. Updates are through Django's administration interface.
 
-![Potfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
+![Portfolio Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_portfolio.JPG)
 **Diagram: Portfolio Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
@@ -143,9 +143,9 @@ Through this app the client presents her project portfolio. Additional content, 
 
 When it came to the Cart App, client requirements drove design decisions.
 
-Although the app gives the client an opprtunity to sell project content, it's not the main purpose of the site, and she wanted a subtle approach. On the project detail page, if downloads are available, costed downloads appear with a purchase button and free downloads with a download button. The cart navbar menu item only appears after clicking purchase on a costed download.
+Although the app gives the client an opportunity to sell project content, it's not the main purpose of the site, and she wanted a subtle approach. On the project detail page, if downloads are available, costed downloads appear with a purchase button and free downloads with a download button. The cart navbar menu item only appears after clicking purchase on a costed download.
 
-Although the client doesn't imagine a lot of sales, she was interested in knowing what visitors do and do not end up checking out. For these reasones, just the cart id is stored in session, with the remaining data is stored in the cart table and available to the client through the Django admin interface.
+Although the client doesn't imagine a lot of sales, she was interested in knowing what visitors do and do not end up checking out. For these reasons, just the cart id is stored in session, with the remaining data is stored in the cart table and available to the client through the Django admin interface.
 
 Stripe Checkout was chosen as the payment option for the site. According to the Stripe website it *creates a secure, Stripe-hosted payment page that lets you collect payments with just a few lines of code. It works across devices and is designed to increase your conversion.* The client really appreciated:
 
@@ -164,10 +164,10 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 | **View** | Cart | Renders cart page. If it exists, gets current cart id from session. |
 | | Add | Adds a download to a cart. If it exists, gets current cart id from session. If it doesn't, creates a cart and adds its id to session. If passed download is not already in current cart, updates download and total in cart, and cart count in session. |
 | | Remove | Removes a download from a cart. Gets current cart id from session. Removes passed download from cart. Updates cart total in cart, and cart count in session. |
-| | Charge | Renders charge page and redirects payment to Stripe. Gets current cart id from session. Creates list of all downloads for current cart id. Creates Stripe checkout session as per Stripe documentation. Makes Stripe's session id availble in context. |
-| | Success | Renders success page. Gets Stripe's session id from url and uses to retrieve Stripe's session data. Gets current cart id from session. Saves Stripe's session id to cart as reference. Removes cart data from session to prevent repurchase errors. Makes Stripe's session data available in context. |
+| | Charge | Renders charge page and redirects payment to Stripe. Gets current cart id from session. Creates list of all downloads for current cart id. Creates Stripe checkout session as per Stripe documentation. Makes Stripe's session id available in context. |
+| | Success | Renders success page. Gets Stripe's session id from URL and uses to retrieve Stripe's session data. Gets current cart id from session. Saves Stripe's session id to cart as reference. Removes cart data from session to prevent repurchase errors. Makes Stripe's session data available in context. |
 | **Template** | Cart | Lists downloads in cart. Remove button to remove downloads from cart. Checkout button to proceed with purchase.  |
-| | Charge | Redirects to Stripe from this page. Makes the Stripe session id available for Stripe js.|
+| | Charge | Redirects to Stripe from this page. Makes the Stripe session id available for Stripe JS.|
 | | Success | Confirmation of success. Summary of order and reference from Stripe session data. |
 | **Static** | Stripe JS | Stripe redirect. |
 
@@ -177,7 +177,7 @@ Stripe Checkout was chosen as the payment option for the site. According to the 
 
 Stripe outline on their site *"not rely on the redirect to the success_url alone for fulfilling purchases as:
 Malicious users could directly access the success_url without paying and gain access to your goods or services.
-Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs."* For these reasons the success page order summary shows Stripe's session data. For now order fulfillment is manual and my client relies on her Stripe account dashboard to verify payment success before sending pdfs.
+Customers may not always reach the success_url after a successful payment. It is possible they close their browser tab before the redirect occurs."* For these reasons the success page order summary shows Stripe's session data. For now order fulfilment is manual and my client relies on her Stripe account dashboard to verify payment success before sending pdfs.
 
 ### Contact App
 
@@ -209,7 +209,7 @@ The user app is currently limited to login and logout templates using Django's U
 
 ### Django Admin Interface
 
-The client needed an interface to allow content updates. Having walked her through Django's admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in with the style of the main site, the admin interface was customised using html and css.
+The client needed an interface to allow content updates. Having walked her through Django's admin interface, she felt comfortable with this option. To improve usability, app admin files were used to add inlines, order fields, filter, make editable etc. To tie in with the style of the main site, the admin interface was customised using HTML and CSS.
 
 ![Django Admin](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/django_admin_dark.JPG)
 **Diagram: Customised Django Admin Interface**
@@ -218,11 +218,11 @@ The client needed an interface to allow content updates. Having walked her throu
 
 **Search Engine Optimisation** The next thing to work on before my client launches her site is SEO.
 
-**Automated Fulfillment** Currently fulfillment for paid downloads is manual but we would like to take advantage of automated fulfillment using webhooks as outlined in [Stripe's documentation](https://stripe.com/docs/payments/checkout/fulfillment#webhooks).
+**Automated Fulfilment** Currently fulfilment for paid downloads is manual but we would like to take advantage of automated fulfilment using webhooks as outlined in [Stripe's documentation](https://stripe.com/docs/payments/checkout/fulfillment#webhooks).
 
 **Search Facility** As the client is currently building up her portfolio and blogs she did not want a search facility, feeling it would emphasis the lack of content. As content grows, I really feel this is something the site will need.
 
-**Email** Currently emails are sent from a gmail that was setup specifically for the site. In time the client would like emails to come from coletteosullivan.com
+**Email** Currently emails are sent from a Gmail that was setup specifically for the site. In time the client would like emails to come from coletteosullivan.com
 
 ## Technologies & Programmes Used
 
@@ -241,9 +241,9 @@ The client needed an interface to allow content updates. Having walked her throu
 
 ### Hosting Platforms & Databases
 
-- [SQLite](https://www.sqlite.org/index.html) Default Django database used for developement.
+- [SQLite](https://www.sqlite.org/index.html) Default Django database used for development.
 - [PostgreSQL](https://www.postgresql.org/) Database used for production on deployment to Heroku.
-- [Heroku](https://www.heroku.com/) Cloud based hosting service, dns pointer, ssl???.
+- [Heroku](https://www.heroku.com/) Cloud based hosting service.
 - [AWS S3](https://aws.amazon.com/free/storage/?trk=ps_a131L000005OOOyQAO&trkCampaign=UK&sc_channel=PS&sc_campaign=acquisition_UK&sc_publisher=Google&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Storage|S3|UK|EN|Text&sc_content=s3_e&sc_detail=amazon%20s3&sc_category=S3&sc_segment=293639776553&sc_matchtype=e&sc_country=UK&s_kwcid=AL!4422!3!293639776553!e!!g!!amazon%20s3&ef_id=EAIaIQobChMI29XMofj25wIViaztCh2KzQZjEAAYASAAEgIR7PD_BwE:G:s) Cloud based storage for media files saved to database.
 - [Go Daddy](https://ie.godaddy.com/) Domain hosting service.
 
@@ -337,18 +337,17 @@ os.environ['ALLOWED_HOSTS']
 1. On the [Heroku](https://id.heroku.com/login) website log into your account.
 2. Click **new** and **create new app**.
 3. Give your app a **name** (it must be unique), select a **region** and click **create app**.
-4. Under **resources** add on Postgres, hobby free.
-5. Click **Reveal ID**.
+4. Under **resources** choose add on postgres hobby free.
+5. Click **reveal id**.
 6. Return to your IDE and fill the values for your environment variables in the env.py file.
 7. Return to the Heroku dashboard and under **settings/ config vars** click **reveal vars**. Add the key values for all your environment variables.
 8. In your console type ```heroku login```, and when prompted click any key to open the browser and log into your heroku account.
-9. Type ```heroku git:remote -a appname``` to create ?
+9. Type ```heroku git:remote -a appname```.
 10. Type ```git subtree push --prefix iaproject heroku master``` to push the code to Heroku.
 11. Cd into iaproject and type ```python manage.py makemigrations``` and ```python manage.py migrate``` to create and run migrations.
 12. Type ```python manage.py createsuperuser``` to create a super user.
-13. Open the Heroku app address adding ```/admin``` to the end of the url and login with the super user credentials.
+13. Open the Heroku app address adding ```/admin``` to the end of the URL and login with the super user credentials.
 14. Use this Django admin interface to add data to populate the blog, cv and portfolio apps.
-
 
 ## Credits
 
@@ -407,37 +406,39 @@ os.environ['ALLOWED_HOSTS']
 - F strings [Real Python](https://realpython.com/python-f-strings/).
 - Bare excepts [Stack Overflow](https://stackoverflow.com/questions/4990718/about-catching-any-exception)
 
+##### Users
+
+- Python Django Tutorial Part 6 - User Registration [Corey Schafer](https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6).
+
 ##### Forms
 
 - Send POST data from inside for loop [Stack Overflow](https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop).
 - Save instance [Real Python](https://realpython.com/get-started-with-django-1).
 - Customising model form fields [Django Docs](https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/).
 - Form Widgets [Coding Entrepreneurs](https://www.youtube.com/watch?v=-oWIyFYyNQw).
-- /Save instance [Real Python](https://realpython.com/get-started-with-django-1).
-
-##### Users
-
-- Python Django Tutorial Part 6 - User Registration [Corey Schafer](https://www.youtube.com/watch?v=q4jPR-M0TAQ&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=6).
-
-##### Pagination
-
-- [Django Documentation](https://docs.djangoproject.com/en/3.0/topics/pagination/).
-
-##### Messages
-
-- /[Flask Message Flashing Documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/).
 
 ##### Templates
 
 - Multiply in template tag [Stack Overflow](https://stackoverflow.com/questions/6285327/how-to-do-math-in-a-django-template).
 - Foreign key in template tag [Stack Overflow](https://stackoverflow.com/questions/12281965/django-foreign-key-relation-in-template).
 
+##### Pagination
+
+- [Django Documentation](https://docs.djangoproject.com/en/3.0/topics/pagination/).
+
 ##### Shop Cart
 
 - Django Tutorial for Beginners Part 22, Cart App [Coding Point](https://www.youtube.com/watch?v=20HCDEwEdeo&list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK&index=23&t=0s).
 - Stripe Checkout documentation [Stripe](https://stripe.com/docs/payments/checkout/one-time).
-- Capture url parameters [Stack Overflow](https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get).
+- Capture URL parameters [Stack Overflow](https://stackoverflow.com/questions/150505/capturing-url-parameters-in-request-get).
 - Clear session [Stack Overflow](https://stackoverflow.com/questions/16039399/how-to-clear-all-session-variables-without-getting-logged-out).
+
+##### Email
+
+- How to send emails in Django [Data Flair](https://data-flair.training/blogs/django-send-email/).
+- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
+- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
+- Gmail less secure apps [Google](https://support.google.com/mail/thread/5621336?hl=en).
 
 ##### Admin
 
@@ -448,17 +449,6 @@ os.environ['ALLOWED_HOSTS']
 - Admin HTML [Brad Traversy](https://www.udemy.com/course/python-django-dev-to-deployment/).
 - Admin HTML Setting favicon [Stack Overflow](https://stackoverflow.com/questions/34959897/set-favicon-in-django-admin).
 
-##### Email
-
-- How to send emails in Django [Data Flair](https://data-flair.training/blogs/django-send-email/).
-- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
-- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
-- Gmail less secure apps [Google](https://support.google.com/mail/thread/5621336?hl=en).
-
-##### Other
-
-- /Before request decorator [Pythonise](https://pythonise.com/series/learning-flask/python-before-after-request).
-
 ### Acknowledgements
 
-- Many thanks to my client for her wonderful content, endless faith and infectious enthusiasum! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel for making this journey possible.
+- Many thanks to my client for her wonderful content, endless faith and infectious enthusiasm! To my mentor Ali Ashik, and ***all*** on Code Institute's Slack channel for making this journey possible.
