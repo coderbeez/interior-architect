@@ -38,7 +38,7 @@ Empty th tags are added to single field forms.
 
 - *Settings.py Line too long* Didn't want to split string in password validator.
 - *Settings.py Module level import not at top of file* Django Heroku docs say to place at bottom of file.
-- *Credit urls too long* Some urls for credits are showing errors for length.
+- *Credit URLs too long* Some URLs for credits are showing errors for length.
 
 ### Continuous Integration
 
@@ -53,8 +53,8 @@ After sign-off, structured manual testing of the site was carried out on various
 | **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Large** | **Large** | **Large** | **Large** |
-| coletteosullivan https | P | P | P | P | P | P | P |
-| www.coletteosullivan https | P | P | P | P | P | P | P |
+| domain https | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
+| www domain https | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | **HOME PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Carousel | P | P | P | P | P | P | P |
 | Liked Blogs | P | P | P | P | P | P | P |
@@ -106,7 +106,7 @@ After sign-off, structured manual testing of the site was carried out on various
 | **CHARGE/STRIPE PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Client Name & Logo | P | P | P | P | P | P | P |
 | Total | P | P | P | P | P | P | P |
-| Download Name, Price & Desciption | P | P | P | P | P | P | P |
+| Download Name, Price & Description | P | P | P | P | P | P | P |
 | Card | P | P | P | P | P | P | P |
 | **SUCCESS PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Navbar Cart | P | P | P | P | P | P | P |
@@ -142,17 +142,20 @@ P - Passed
 
 N/A - Not Applicable
 
+5, 6 - Please see Bug Log
+
 ## Bug Log
 
-1. **Heroku CSS Updates** During development it became apparent that CSS updates were not being reflected in Heroku deployments. The solution from Stack Overflow was to restart Heroku in the terminal `Heroku restart -a coderbeez-qwerty` .
-Email https://support.google.com/mail/thread/5621336?hl=en
-Set Less secure apps to on in google account
+1. **Email Format** Using Django send email resulted in unformatted email text. Outlook also added safelinks protection to all URLs resulting in long complicated URLs. The solution was to use Django's email multi alternatives to send a html email formatted using inline CSS and tables.
 
-Price in success - decimal
+2. **Email Sender Account** Initial Django send mail attempts resulted in an error message solved by setting less secure apps to on in the sender Gmail account [Gmail support](https://support.google.com/mail/thread/5621336?hl=en).
 
-Email cos web link including safe links - making url look ugly
-Why Outlook Adding “Safelinks.Protection.Outlook.Com” to All URLs
+3. **Stripe Unit** As Stripe saves item value in cents, to display the order summary in the success page it needed to be converted to euros. As multiplying wasn't possible in the template tags, [Django Math Filters](https://pypi.org/project/django-mathfilters/) was installed to allow this.
 
-coletteosullivan.com not working
+4. **SSL** The client was anxious that the site would be served with https verses http for her custom domain. This required signing up for paid dynos with Heroku.
 
-1. Open AWS account https://devcenter.heroku.com/articles/pointdns
+5. **SSL** During testing it became obvious that unless https was typed, a http site was served. Adding ```SECURE_SSL_REDIRECT = True``` to the settings.py file solved this issue.
+
+6. **DNS** The DNS service provider for the client's custom domain did not support redirecting the naked domain to Heroku. This was solved by switching to a third party Heroku add on, pointhq, to manage the client's custom domain DNS service.
+
+7. **Auto Deployment** During deployment it became apparent the Django project needed to be at the root of the Git repository in order to support auto deployment from GitHub to Heroku. The workaround was to deploy locally from Git to Heroku using a subtree.
