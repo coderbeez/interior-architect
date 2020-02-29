@@ -44,7 +44,7 @@ As a portfolio site, the client's name is centred and prominent above the navbar
 
 The main site is divided into four distinct sections, **about**, **blog**, **portfolio** and **contact** highlighted by a pared back navbar.
 
-On small devices, the prominent name above the navbar is swapped for one in the navbar when it reaches the top the screen. From this point the navbar is sticky.
+On small devices, the prominent name above the navbar is swapped for one in the navbar when it reaches the top of the screen. From this point the navbar is sticky.
 
 #### Colours & Fonts
 
