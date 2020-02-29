@@ -13,14 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-# Credit: auth views Corey Schafer https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
-# settings & static 4 media https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,14 +29,23 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('portfolio/', include('portfolio.urls')),
     path('cart/', include('cart.urls')),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), # class based views
-    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), # handles forms & logic but not templates
+    path('login/', auth_views.LoginView.as_view(
+        template_name='users/login.html'
+    ), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(
+        template_name='users/logout.html'
+    ), name='logout'),
 ]
-# template name tells django where to look for the template
+
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+    )
 
-# credit: Corey https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-# Used to serve image files uploaded by user during development
+'''Credit: Corey Schafer
+https://www.youtube.com/watch?v=3aVqWaLjqS4&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=7
+https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8
+Credit: Django Docs
+https://docs.djangoproject.com/en/3.0/howto/static-files/
+'''
