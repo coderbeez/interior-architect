@@ -36,7 +36,7 @@ The client receives an email flag whenever a new comment, contact or purchase is
 
 ### Design
 
-Simplicity is key to COLETTE O'SULLIVAN with the look and flow of the site designed to provide a neutral background for the client's work.
+Simplicity is key with the look and flow of the site designed to provide a neutral background for the client's work.
 
 #### Navigation
 
@@ -57,14 +57,13 @@ Balsamiq was used to create wireframes for [large](https://github.com/coderbeez/
 ## Apps
 
 Built with Django 2.2.10, the web site contains 7 apps: home, cv, blog, portfolio, contact, cart and users.
-As there is no facility for users to register, a guest account has been created for assessment, username: guest, password: &B/82a"x
 
-For ease of assessment:
+As there is no facility for users to register, a guest account has been created for assessment, username: guest password: &B/82a"x To ease of assessment please note:
 
-- The BA education has a project example.
-- The KOBW employment has a project example.
-- The 1960s extension project has costed downloads.
-- The Fordson project has a free download.
+- About Page: The BA education has a project example.
+- About Page: The KOBW employment has a project example.
+- Project Page: The 1960s extension project has costed downloads.
+- Project Page: The Fordson project has a free download.
 
 ### Home App
 
@@ -80,7 +79,7 @@ The Home App provides a landing page for the site, introducing the client and he
 
 ### CV App
 
-The main challenge of the CV app was to present the clients CV in a novel way that could be easily viewed on all devices. Divided into 3 sections, expertise, education and employment, animated data circles and accordions help to break up the content. Updates are through Django's administration interface.
+The main challenge of the CV app was to present the clients CV in a novel way that could be easily viewed on all devices. Divided into 3 sections, expertise, education and employment, animated data circles and accordions help to break up the content. Updates are through Django's admin interface.
 
 ![CV Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_cv.JPG)
 **Diagram: CV Schema**
@@ -98,10 +97,10 @@ The main challenge of the CV app was to present the clients CV in a novel way th
 
 ### Blog App
 
-The Blog App affords the client the opportunity to create blogs with varying formats and site visitors the opportunity to like and comment on blogs. Although the client doesn't expect a lot of traffic, she is anxious to reply to all comments promptly so receives an email flag on new post. The comments page allows her to review and reply to all outstanding comments. Outside of comment replies, updates are through Django's administration interface.
+The Blog App affords the client the opportunity to create blogs with varying formats and site visitors the opportunity to like and comment on blogs. Although the client doesn't expect a lot of traffic, she is anxious to reply to all comments promptly so receives an email flag on new post. The comments page allows her to review and reply to all outstanding comments. Outside of comment replies, updates are through Django's admin interface.
 
 ![Blog Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_blog.JPG)
-**Diagram: Blog Schema**
+<br>**Diagram: Blog Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -184,7 +183,7 @@ Customers may not always reach the success_url after a successful payment. It is
 Site visitors can contact the client by submitting a contact form. New contacts are flagged to the client and outstanding contacts pages gives her the facility to save and send email replies.
 
 ![Contact Schema](https://github.com/coderbeez/interior-architect/blob/master/wireframes/images/schema_contact.JPG)
-**Diagram: Contact Schema**
+<br>**Diagram: Contact Schema**
 
 | **TYPE** | **NAME** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -374,6 +373,9 @@ os.environ['ALLOWED_HOSTS']
 #### CSS Code
 
 - Timeline [Bootsnipp](https://bootsnipp.com/snippets/xrKXW).
+- Semi transparent borders [Stack Overflow](https://stackoverflow.com/questions/28252119/creating-semi-transparent-borders).
+- Background images in Django [Stack Overflow](https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django).
+- Sticky element [W3 Schools](https://www.w3schools.com/howto/howto_css_sticky_element.asp).
 
 #### JavaScript Code
 
@@ -401,7 +403,6 @@ os.environ['ALLOWED_HOSTS']
 
 - Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
 - Choice Fields [Stack Overflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
-- Related names [Simple Is Better Then Complex](https://simpleisbetterthancomplex.com/tips/2018/02/10/django-tip-22-designing-better-models.html#naming-your-models).
 - Limiting query results [Stack Overflow](https://stackoverflow.com/questions/6574003/django-limiting-query-results).
 - F strings [Real Python](https://realpython.com/python-f-strings/).
 - Bare excepts [Stack Overflow](https://stackoverflow.com/questions/4990718/about-catching-any-exception)
@@ -415,7 +416,7 @@ os.environ['ALLOWED_HOSTS']
 - Send POST data from inside for loop [Stack Overflow](https://stackoverflow.com/questions/38046905/sending-post-data-from-inside-a-django-template-for-loop).
 - Save instance [Real Python](https://realpython.com/get-started-with-django-1).
 - Customising model form fields [Django Docs](https://docs.djangoproject.com/en/3.0/topics/forms/modelforms/).
-- Form Widgets [Coding Entrepreneurs](https://www.youtube.com/watch?v=-oWIyFYyNQw).
+- Form widgets [Coding Entrepreneurs](https://www.youtube.com/watch?v=-oWIyFYyNQw).
 
 ##### Templates
 
@@ -436,7 +437,6 @@ os.environ['ALLOWED_HOSTS']
 ##### Email
 
 - How to send emails in Django [Data Flair](https://data-flair.training/blogs/django-send-email/).
-- Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
 - Sending a confirmation email using Gmail [Coding Entrepreneurs](https://www.youtube.com/watch?v=51mmqf5a0Ss).
 - Gmail less secure apps [Google](https://support.google.com/mail/thread/5621336?hl=en).
 
