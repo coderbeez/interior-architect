@@ -6,9 +6,9 @@
 
 [W3C Validation Service](https://validator.w3.org/) Used to test the validity of HTML.
 
-- A number of issues associated with templates caused errors in rendered html:
+- A number of issues associated with templates cause errors in rendered html:
 
-Linebreaks in textareas adds extra p tags.
+Linebreaks for textfields add extra p tags.
 
 ```<p><p>Text</p></p>```
 
@@ -58,7 +58,7 @@ After sign-off, structured manual testing of the site was carried out on various
 | **HOME PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Carousel | P | P | P | P | P | P | P |
 | Liked Blogs | P | P | P | P | P | P | P |
-| Instgarm Feed | P | P | P | P | P | P | P |
+| Instagram Feed | P | P | P | P | P | P | P |
 | Navbar Home Link | P | P | P | P | P | P | P |
 | Navbar Sticky | P | P | N/A | N/A | N/A | N/A | N/A |
 | **ABOUT PAGE** | --- | --- | --- | --- | --- | --- | --- |
@@ -159,3 +159,5 @@ N/A - Not Applicable
 6. **DNS** The DNS service provider for the client's custom domain did not support redirecting the naked domain to Heroku. This was solved by switching to a third party Heroku add on, pointhq, to manage the client's custom domain DNS service.
 
 7. **Auto Deployment** During deployment it became apparent the Django project needed to be at the root of the Git repository in order to support auto deployment from GitHub to Heroku. The workaround was to deploy locally from Git to Heroku using a subtree ```git subtree push --prefix iaproject heroku master```.
+
+8. **Template Linebreaks** When using ```|linebreaks``` to render textfields with linebreaks, classes are not applied to all text. No fix was found so linebreaks were only used where classes were not required.
