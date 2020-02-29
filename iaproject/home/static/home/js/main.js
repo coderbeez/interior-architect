@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    console.log('home static')
+
     /**
      * CAROUSEL
      * Set first item in for loop as active.
@@ -8,4 +8,5 @@ $(document).ready(function () {
      */
     $('#carouselExampleFade').find('.carousel-item').first().addClass('active');
 
+    
 });

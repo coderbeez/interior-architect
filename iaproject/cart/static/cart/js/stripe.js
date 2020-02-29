@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
+
   const stripe = Stripe('pk_test_YEXVz6hJlfDMCQfrvKnuAPnG00T43RtZAU');
   const sid = $('[data-sid]').attr('data-sid');
+
 
   /**
    * Make the id field from the Checkout Session creation API response available to this file.
@@ -10,5 +12,6 @@ $(document).ready(function () {
   stripe.redirectToCheckout({
     sessionId: sid,
   });
+
 
 });

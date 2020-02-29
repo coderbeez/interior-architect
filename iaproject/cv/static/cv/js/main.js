@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    console.log('cv static')
 
     /**
      * SKILL CIRCLES
@@ -33,6 +32,7 @@ $(document).ready(function () {
         }
     }
 
+    
     /**
      * For each level in the accordion allows a button click to slide a target.
      * Data attribute values allow the association of a button to a target when the template is rendered.
