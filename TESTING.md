@@ -4,20 +4,22 @@
 
 ### HTML
 
-[W3C Validation Service](https://validator.w3.org/) Used to test the validity of HTML – no errors found.
+[W3C Validation Service](https://validator.w3.org/) Used to test the validity of HTML.
 
-A number of issues associated with templates:
+1. A number of issues associated with templates caused errors in rendered html:
 
-- Textarea linebreaks adds extra p tags. ```<p><p>Text</p></p>```
-- Blog Form ```{{form}}``` extra empty tags added.
+Linebreaks in textareas adds extra p tags.
+
+```<p><p>Text</p></p>```
+
+Empty th tags are added to single field forms.
 
 ```<tr><th></th><td>
 <textarea name="content" cols="40" rows="5" class="textarea-style" required id="id_content">
 </textarea>
-</td></tr>
-```
+</td></tr>```
 
-- Juicer Intagram feed errors and warnings associated with a h1 required according to the documentation. Leaving text within the h1 obviously showed Juicer text which the client did not want showing. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the empty h1 tags.
+2. A h1 required according to the documentation for the Juicer Intagram, causes errors and warnings. Leaving text within the h1 renders Juicer logo, which the client did not want. Removing the h1 completely resulted in the Juicer logo showing. We compromised by leaving the h1 tag empty.
 
 ```Element h1 not allowed as child of element ul in this context.```
 
@@ -37,6 +39,11 @@ cv, home, admin, main
 ### Python
 
 [????](https://jshint.com/) Used to test the ???? of Python functions – no errors found.
+
+- *Settings.py Line too long* Password validator didn't want to split string.
+- *Settings.py Module level import not at top of file* Django Heroku docs say to place at bottom of file.
+
+Travis for continuous integration.
 
 ## Manual Testing
 
@@ -136,7 +143,7 @@ After sign-off, structured manual testing of the site was carried out on various
 | **ADMIN LOGOUT PAGE** | --- | --- | --- | --- | --- | --- | --- |
 | Logout Click | P | P | P | P | P | P | P |
 | Navbar Remove Comments, Contacts, Logout | P | P | P | P | P | P | P |
-| Login | P | P | P | P | P | P | P |
+| Login Click | P | P | P | P | P | P | P |
 
 P - Passed
 
